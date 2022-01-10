@@ -1,0 +1,44 @@
+body {
+    background-color: #F5F1F0;
+}
+
+#content {
+    background-color: white;
+    width: 1028px;
+    height: 300px;
+    margin: auto;
+    position: relative;
+}
+
+.center {
+    margin: auto;
+    width: 1028px;
+}
+
+#rhythmButtons {
+    position: absolute;
+    left: 10px;
+    top: 0px;
+}
+
+button {
+    margin-top: 10px;
+    height: 30px;
+    width: 100px;
+    display: block;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: #B5B5B5;
+    cursor: pointer;
+    vertical-align: middle;
+}
+    
+#lesson {
+    background-color: white;
+    width: 1018px;
+    margin: 5px auto;
+    padding: 5px;
+    position: relative;
+}
