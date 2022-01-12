@@ -1695,10 +1695,11 @@ function updateSequenceDisplay() {
 
 function capturePreset() {
   var preset = {
-      meta: captureMeta(),
+      // meta: captureMeta(),
+      meta: patternMeta(),
       innerCustomPattern: patternFrom(innerCustomPattern),
       outerCustomPattern: patternFrom(outerCustomPattern),
-      samplerCustomPattern: patternFrom(samplerCustomPattern)
+      // samplerCustomPattern: patternFrom(samplerCustomPattern)
   }
   return preset;
 }
@@ -1722,7 +1723,7 @@ function loadPreset(preset) {
   loadPattern(preset.outerCustomPattern, outerCustomPattern);
   loadPattern(preset.samplerCustomPattern, samplerCustomPattern);
   var meta = preset.meta ?? patternMeta();
-  loadMeta(meta);
+  // loadMeta(meta);
   patternUpdated();
   updatePattern();
 }

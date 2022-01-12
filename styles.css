@@ -35,10 +35,18 @@ button {
     vertical-align: middle;
 }
     
-#lesson {
+#lessons {
     background-color: white;
     width: 1018px;
     margin: 5px auto;
     padding: 5px;
     position: relative;
+}
+
+.lesson {
+    
+}
+
+.hide {
+    display: none
 }
