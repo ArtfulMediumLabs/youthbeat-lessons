@@ -50,6 +50,45 @@ const bassPattern = {
     },
     samplerCustomPattern: emptyPattern()
 }
+const bassSnarePattern = {
+    innerCustomPattern: emptyPattern(),
+    "outerCustomPattern": 
+    { 
+        "value": [ "B", "-", "-", "-", "-", "-", "-", "-", "S", "-", "-", "-", "-", "-", "-", "-", "B", "-", "-", "-", "-", "-", "-", "-", "S", "-", "-", "-", "-", "-", "-", "-" ], 
+        "amplitude": [ 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ], 
+        "duration": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ] 
+    },
+    samplerCustomPattern: emptyPattern()
+}
+const bassSnareGapPattern = {
+    innerCustomPattern: emptyPattern(),
+    "outerCustomPattern": 
+    { 
+        "value": [ "B", "-", "-", "-", "-", "-", "-", "-", "S", "-", "-", "-", "-", "-", "-", "-", "-", "-", "B", "-", "-", "-", "-", "-", "S", "-", "-", "-", "-", "-", "-", "-" ], 
+        "amplitude": [ 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ], 
+        "duration": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ] 
+    },
+    samplerCustomPattern: emptyPattern()
+}
+const bassSnareLongGapPattern = {
+    innerCustomPattern: emptyPattern(),
+    "outerCustomPattern": 
+    { 
+        "value": [ "B", "-", "-", "-", "-", "-", "-", "-", "S", "-", "-", "-", "B", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "S", "-", "-", "-", "-", "-", "-", "-" ], 
+        "amplitude": [ 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ], 
+        "duration": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ] 
+    },
+    samplerCustomPattern: emptyPattern()
+}
+
 const lessonPatterns = []
 lessonPatterns[1] = bassPattern;
 lessonPatterns[2] = bassPattern;
+lessonPatterns[3] = bassPattern;
+lessonPatterns[4] = bassSnarePattern;
+lessonPatterns[5] = bassSnareGapPattern;
+lessonPatterns[6] = bassSnareLongGapPattern;
+lessonPatterns[7] = bassSnareLongGapPattern;
+lessonPatterns[8] = bassSnareLongGapPattern;
+lessonPatterns[9] = bassSnareLongGapPattern;
+lessonPatterns[10] = bassSnareLongGapPattern;
