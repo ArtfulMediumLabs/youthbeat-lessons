@@ -21,7 +21,7 @@ body {
     top: 0px;
 }
 
-button {
+button.rhythm {
     margin-top: 10px;
     height: 30px;
     width: 100px;
@@ -34,19 +34,110 @@ button {
     cursor: pointer;
     vertical-align: middle;
 }
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
     
 #lessons {
     background-color: white;
-    width: 1018px;
-    margin: 5px auto;
-    padding: 5px;
+    width: 1028px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
     position: relative;
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
 }
 
-.lesson {
-    
+
+/* 
+ *  General lesson styling
+ */
+
+.lesson__title {
+    font-size: 15px;
+    letter-spacing: 1.1px;
+    color: gray;
+    font-weight: 600;
 }
 
-.hide {
-    display: none
+.lesson__container {
+    margin-bottom: 50px;
+    font-family: Verdana, sans-serif;
+}
+
+
+/* 
+ * Lesson section 
+ */
+
+.section__sub-heading {
+    color: rgb(21, 21, 21);
+    font-size: 20px;
+}
+
+/* 
+ *  Lesson pagination
+ */
+
+.lesson-pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.lesson-pagination__button {
+    padding: 5px;
+    font-family: Verdana, sans-serif;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.lesson-pagination__button:hover {
+    background-color: #ddd;
+    transition: background-color .25s ease-in-out;
+}
+
+.lesson-pagination__button--selected, .lesson-pagination__button--selected:hover {
+    background-color: rgb(198, 135, 198);
+    color: white;
+}
+
+/* 
+ * Lesson widget
+ */
+
+.widget-element {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    padding: 12px 0;
+
+}
+
+.widget-element__title {
+    font-weight: 700;
+}
+
+.widget-element__content{
+    padding: 20px 0;
+}
+
+.widget-element--disabled .widget-element__arrow-up {
+    display: none;
+}
+
+.widget-element--enabled .widget-element__arrow-down {
+    display: none;
+}
+
+.widget-element--disabled .widget-element__content {
+    display: none;
 }
