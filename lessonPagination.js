@@ -16,10 +16,10 @@ export class LessonPagination {
         pageControl.appendChild(arrow);
     })
 
-    lessonSections.forEach((_lesson, index) => {
+    lessonSections.forEach((lesson, index) => {
       const pageControlNode = document.createElement("button");
       pageControlNode.className = `lesson-pagination__button ${initialSectionIndex === index ? 'lesson-pagination__button--selected' :''}`;
-      pageControlNode.textContent = `${index + 1}`;
+      pageControlNode.textContent = lesson.lessonNum;
       pageControl.insertBefore(pageControlNode, pageControl.children[pageControl.children.length - 1]);
       pageControlNode.addEventListener("click", () => this.updatePagination({ sectionIndex: index }));
       this.pageControlNodes.push(pageControlNode);

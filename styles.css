@@ -41,8 +41,41 @@ button.rhythm {
     align-items: center;
     padding: 10px 0;
 }
-    
-#lessons {
+
+/* 
+ *  Lesson heading
+ */
+
+.lesson-header {
+    width: 1028px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-family: Verdana, sans-serif;
+}
+
+.lesson-header__heading {
+    font-size: 16px;
+    letter-spacing: 1.1px;
+    color: gray;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.lesson-header__sub-heading {
+    color: rgb(21, 21, 21);
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+
+/* 
+ *  Lesson content styling
+ */
+
+.lesson-content {
     background-color: white;
     width: 1028px;
     margin: 0 auto;
@@ -53,31 +86,9 @@ button.rhythm {
     font-family: Verdana, sans-serif;
 }
 
-
-/* 
- *  General lesson styling
- */
-
-.lesson__title {
-    font-size: 15px;
-    letter-spacing: 1.1px;
-    color: gray;
-    font-weight: 600;
-}
-
-.lesson__container {
+.lesson-content__container {
     margin-bottom: 50px;
-    font-family: Verdana, sans-serif;
-}
-
-
-/* 
- * Lesson section 
- */
-
-.section__sub-heading {
-    color: rgb(21, 21, 21);
-    font-size: 20px;
+    font-size: 18px;
 }
 
 /* 
@@ -118,8 +129,14 @@ button.rhythm {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
-    padding: 12px 0;
+    display: flex;
+    flex-direction: column;
+}
 
+.widget-element__header {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
 }
 
 .widget-element__title {
@@ -130,14 +147,51 @@ button.rhythm {
     padding: 20px 0;
 }
 
-.widget-element--disabled .widget-element__arrow-up {
+.widget-element__icon {
+    padding-right: 5px;
+    width: 30px;
+}
+
+.widget-element__arrow-down {
+    transform: rotate(180deg);
+}
+
+.widget-element--disabled .widget-element__arrow-up, .widget-element--enabled .widget-element__arrow-down, .widget-element--disabled .widget-element__content {
     display: none;
 }
 
-.widget-element--enabled .widget-element__arrow-down {
-    display: none;
+/* 
+ * Action steps
+ */
+
+.action-steps {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #888888;
+    margin: 20px 25px;
+    border-radius: 2px;
 }
 
-.widget-element--disabled .widget-element__content {
-    display: none;
+.action-steps__header {
+    background: #888888;
+    color: white;
+    padding: 5px;
+}
+
+.action-steps__heading {
+    margin: 0;    
+}
+
+.action-steps__content {
+    background: #F8F8F8;
+}
+
+.action-steps__content-list {
+    list-style-type: decimal;
+    line-height: 1.3;
+    padding-right: 15px;
+}
+
+.action-steps__description {
+    padding-left: 15px;
 }
