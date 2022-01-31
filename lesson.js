@@ -52,6 +52,25 @@ sectionPatterns[9] = bassSnareLongGapPattern;
 sectionPatterns[10] = bassSnareLongGapPattern;
 
 /*
+ * actions: string[] 
+ */
+const constructActionSteps = (actions, description = '') => `
+  <section class="action-steps">
+    <header class="action-steps__header">
+      <h4 class="action-steps__heading">Action Steps</h4>
+    </header>
+    <div class="action-steps__content">
+      ${ description && `<p class="action-steps__description">${description}</p>` }
+      <ul class="action-steps__content-list">
+        ${
+          actions.map(action => `<li>${action}</li>`).join(' ')
+        }
+      </ul>
+    </div>
+  </section>
+  `
+
+/*
 * Lesson Schema:
 *
 * lessonNum: number
@@ -80,9 +99,11 @@ export const lessonSections = [
         `
         <!-- [bass drum on spaces 0, 4, 8, 12] -->
         <p>There are hundreds or even thousands of musical sounds (called notes) in a piece of music. How do we keep track of them all?</p>
-        <ul>
-          <li>Press Play <img src="assets/play.svg" alt="play button" width="20px"/> to listen to this pattern, called ‘the beat’. Press again to stop.</li>
-        </ul>
+        ${
+          constructActionSteps([
+            `Press Play <img src="assets/play.svg" alt="play button" width="20px"/> to listen to this pattern, called ‘the beat’. Press again to stop.`
+          ])
+        }
         <p>This pattern - the basic beat - helps us keep track of the timing of all the music, just as a clock helps us keeps track of minutes and hours.</p>
         <p>Always start with this basic beat pattern when you’re making a new piece.</p>
         <p>Notice the sounds or notes are all 4 spaces apart. Each group of 4 spaces is called a beat unit. There are 4 beat units to the circle, which stands for one bar of music.</p>
@@ -97,13 +118,18 @@ export const lessonSections = [
         <div class="image-container">
           <img src="assets/drums.png" width="200" />
         </div>
-        <ul>
-          <li>Change the 2nd and 4th drum sounds above to snare drum: tap the drum name, then the  space in the circle, then press Play.</li>
+        ${
+          constructActionSteps([
+            `Change the 2nd and 4th drum sounds above to snare drum: tap the drum name, then the  space in the circle, then press Play.`
+          ])
+        }
         </ul>
         <p>Notice we now hear 2 pairs of sounds, not 4 individual sounds. Each pair is bass drum-snare drum. This makes us hear the pattern in halves.</p>
-        <ul>
-          <li>Now change the 2nd and 4th sounds to Rim Shot. How is this sound different from the snare drum?</li>
-        </ul>
+        ${
+          constructActionSteps([
+            `Now change the 2nd and 4th sounds to Rim Shot. How is this sound different from the snare drum?`
+          ])
+        }
         `,
       widgets: [
         {
@@ -118,11 +144,13 @@ export const lessonSections = [
       content:
         `
         <p>The notes in the basic beat pattern are normally not all played at the same loudness. There is a pattern of stresses or how loud each beat is played.</p>
-        <ul>
-        <li>Tap the first note in the pattern above twice to make it as loud as possible.</li>
-        <li>Tap the third note in the pattern once to make it louder.</li>
-        <li>Press Play to listen.</li>
-        </ul>
+        ${
+          constructActionSteps([
+            `Tap the first note in the pattern above twice to make it as loud as possible.`,
+            `Tap the third note in the pattern once to make it louder.`,
+            `Press Play to listen.`
+          ])
+        }
         <p>Notice this makes a Strong-Weak-Medium-Weak pattern.</p>
         <p>The Medium third beat tells us the second half of the bar is beginning. (This is like the chimes on a clock at the hour and half hour).</p>
         <p>This pattern helps listeners know where they are in the bar. That can be very helpful in following complicated musical patterns.</p>
@@ -141,14 +169,14 @@ export const lessonSections = [
         `
         <p>We feel the beat in our bodies, most often with our feet.</p>
         <p>If we change the space of one note in the basic beat, it makes us move in a different way - our feet or another part of us like our shoulder or waist.</p>
-  
-        <ul>
-          <li>Listen to the basic beat again.</li>
-          <li>Now click either the third or fourth beat a few times to remove it and then re-enter it one space early or late.</li>
-          <li>Press Play to listen. How does this make you want to move?</li>
-          <li>Press Save Pattern to save your idea.</li>
-        </ul>
-        
+        ${
+          constructActionSteps([
+            `Listen to the basic beat again.`,
+            `Now click either the third or fourth beat a few times to remove it and then re-enter it one space early or late.`,
+            `Press Play to listen. How does this make you want to move?`,
+            `Press Save Pattern to save your idea.`
+          ])
+        }
         <p>Notice that there is a difference in the spacing of the two pairs of notes now. This is a common pattern in music: we start with something regular in the first half, then change it up a bit in the second half. As we learned earlier, we find it easy to compare the two halves of patterns.</p>
         `,
       widgets: [
@@ -178,13 +206,13 @@ export const lessonSections = [
       content:
         `
         <p>If we put a gap in a pattern, it’s like a short pause in the music. (A gap is called a rest, because the player rests.)</p>
-  
-        <ul>
-          <li>Take away the third or fourth note in the pattern above. (Click a note a few times to remove it), and press Play to listen.</li>
-          <li>Now put the note back in, and take the other one in the second half away instead.</li>
-          <li>Which of the two versions seems most surprising?</li>
-        </ul>
-  
+        ${
+          constructActionSteps([
+            `Take away the third or fourth note in the pattern above. (Click a note a few times to remove it), and press Play to listen.`,
+            `Now put the note back in, and take the other one in the second half away instead.`,
+            `Which of the two versions seems most surprising?`,
+          ])
+        }
         <p>Notice because we heard both beats in the first half, we expect to hear them again in the second half. If the third note is also played, it makes the missing fourth beat stand out even more!</p>
         <p>Notice a gap makes you wait for the next sound. But while you’re waiting for it, you hold the last sound in your mind, so the gap highlights both the last note and the one you’re waiting to hear. </p>
         `,
@@ -212,9 +240,11 @@ export const lessonSections = [
       content:
         `
         <p>Longer gaps can break the flow of the music, especially in dance music. We’re not sure when to expect the next beat.</p>
-        <ul>
-          <li>Bridge over the gap in this pattern by putting a drum sound midway between the 3rd and 4th beats.</li>
-        </ul>
+        ${
+          constructActionSteps([
+            `Bridge over the gap in this pattern by putting a drum sound midway between the 3rd and 4th beats.`
+          ])
+        }
         <p>Notice this keeps the energy of the beat going forward. And it makes the pattern smoother sounding because we don’t have to wait so long for the next beat!</p>
         `
     },
@@ -224,11 +254,12 @@ export const lessonSections = [
       content:
         `
         <p>Drummers often highlight notes they want the listener to pay attention to: for example the very first note in the bar,  or where the music goes off the beat or comes back on the beat. </p>
-        <p>Try these two ways to highlight a note in this pattern:</p>
-        <ul>
-          <li>Double a beat, by putting a drum sound in the very next space.</li>
-          <li>Make a beat that you want to stand out louder, by tapping it more than once. (Highlight a beat that moves off the beat or one that comes back on the beat).</li>
-        </ul>
+        ${
+          constructActionSteps([
+            `Double a beat, by putting a drum sound in the very next space.`,
+            `Make a beat that you want to stand out louder, by tapping it more than once. (Highlight a beat that moves off the beat or one that comes back on the beat).`
+          ], "Try these two ways to highlight a note in this pattern:")
+        }
         <p>Notice how this makes you pay more attention to the note that is highlighted.</p>
         `,
       widgets: [
@@ -245,11 +276,11 @@ export const lessonSections = [
         `
         <p>We get used to the drum beats being spaced evenly every four spaces apart.</p>
         <p>So if we fill in all the spaces between two beats, it makes the music seem to go faster, have more forward energy or momentum in that one part.</p>
-  
-        <ul>
-          <li>In the second or third beat unit above, ‘fill in’ the beat unit, adding drum sounds in each empty space. Listen.</li>
-        </ul>
-  
+        ${
+          constructActionSteps([
+            `In the second or third beat unit above, ‘fill in’ the beat unit, adding drum sounds in each empty space. Listen.`
+          ])
+        }
         <p>Notice how the music seems to lead up to the drum sound right after the run of short notes.</p>
         <p>Did you know that drummers often put a row of short notes in the fourth beat unit? Called a flourish, this picks up the energy as the music leads back into the next bar.</p>
         `
@@ -260,11 +291,12 @@ export const lessonSections = [
       content: 
         `
         <p>Listen to this pattern. </p>
-        <ul>
-          <li>Now, take away the third beat, the one right after the close together notes.</li>
-          <li>Listen again. How does this change the way you hear the pattern?</li>
-        </ul>
-  
+        ${
+          constructActionSteps([
+            `Now, take away the third beat, the one right after the close together notes.`,
+            `Listen again. How does this change the way you hear the pattern?`
+          ])
+        }
         <p>Notice when we hear a run of close together notes and then a gap, the music can almost seem to stop. We expect to hear a sound, so it’s surprising to hear no sound at all.</p>
         `,
 
@@ -281,18 +313,20 @@ export const lessonSections = [
       content:
         `
         <p>What we hear first in music is the most important. So when we’re creating a piece of music, we need to make sure the listener is familiar with the first idea.</p>
-        <ul>
-          <li>Listen to the patterns in this list. The main idea is Pattern #1. Enter the patterns in the sequencer in this order: (click the > button beside the pattern to enter it in the sequencer,
-            <ul>
-              <li>Main Idea</li>
-              <li>Repeat main Idea</li>
-              <li>Make small changes</li>
-              <li>Repeat main idea.</li>
-            </ul>
-          </li>
-          <li>Press Start and then press Play in the circle to listen. To change the order, press Stop and Clear and re-enter.</li>
-        </ul>
-        
+        ${
+          constructActionSteps([
+            `
+            Listen to the patterns in this list. The main idea is Pattern #1. Enter the patterns in the sequencer in this order: (click the > button beside the pattern to enter it in the sequencer,
+              <ul>
+                <li>Main Idea</li>
+                <li>Repeat main Idea</li>
+                <li>Make small changes</li>
+                <li>Repeat main idea.</li>
+              </ul>
+            `,
+            `Press Start and then press Play in the circle to listen. To change the order, press Stop and Clear and re-enter.`
+          ])
+        }        
         <p>Notice that the music keeps going back to the original idea: that’s so listeners can compare the small changes to the original idea. The further we get into a piece, the less we have to repeat the original idea because listeners are so familiar with it by now.</p>
         `,
       widgets: [
@@ -304,7 +338,12 @@ export const lessonSections = [
     }
   ];
 
-export const lessonContainer = document.querySelector('.lesson__container');
+export const lessonContentContainer = document.querySelector('.lesson-content__container');
+export const lessonSubHeader = document.querySelector('.lesson-header__sub-heading');
+export const widgets = Object.freeze({
+  DidYouKnow: 'did-you-know',
+  MathConnection: 'math-connection'
+});
 
 /*
 * sectionIndex: number
@@ -320,16 +359,13 @@ export const loadLessonSection = (sectionIndex) => {
       updatePattern();
   }
  
-  removeAllChildNodes(lessonContainer);
+  removeAllChildNodes(lessonContentContainer);
   const section = lessonSections[sectionIndex];
-  const sectionHeader = document.createElement("h3");
-  sectionHeader.textContent = section.title;
-  sectionHeader.className = "section__sub-heading";
-  lessonContainer.appendChild(sectionHeader);
-  lessonContainer.appendChild(parseHTML(section.content));
+  lessonSubHeader.textContent = section.title;
+  lessonContentContainer.appendChild(parseHTML(section.content));
 
   section.widgets && section.widgets.forEach(widget => {  
-    if (!widget.type || !['did-you-know', 'math-connection'].includes(widget.type)) return;
+    if (!widget.type || !Object.values(widgets).includes(widget.type)) return;
    
     const widgetElement = document.createElement("section");
     widgetElement.className = "widget-element widget-element--disabled";
@@ -343,19 +379,34 @@ export const loadLessonSection = (sectionIndex) => {
       widgetElement.classList.add(newClass);
     });
 
-    const widgetIcon = widget.type === 'did-you-know' ? '<img src="assets/lightbulb.svg" width=20px" />' : '<img src="assets/math-symbol.svg" width=20px" />';
-    const widgetTitle = widget.type === 'did-you-know' ? "Did you know?" : "Math Connection";
+    let widgetTitle;
+    let widgetIcon;
+    let createWidgetIcon = (svgName) => `
+      <img src="assets/${svgName}.svg" class="widget-element__icon" />
+    `;
+
+    if (widget.type === widgets.DidYouKnow) {
+      widgetIcon = createWidgetIcon('lightbulb');
+      widgetTitle = 'Did you know?';
+    } else if (widget.type === widgets.MathConnection) {
+      widgetIcon = createWidgetIcon('math-symbol');
+      widgetTitle = 'Math Connection';
+    }
+
     widgetElement.appendChild(parseHTML(
      `
-     ${widgetIcon}
-     <span class="widget-element__title">${widgetTitle}</span>
-     <img src="assets/arrow-up.svg" width="10px" class="widget-element__arrow-up"/>
-     <img src="assets/arrow-down.svg" width="10px" class="widget-element__arrow-down"/>
+      <header class="widget-element__header">
+        ${widgetIcon}
+        <span class="widget-element__title">${widgetTitle}</span>
+        <img src="assets/arrow-up.svg" class="widget-element__icon widget-element__arrow-up"/>
+        <img src="assets/arrow-up.svg" class="widget-element__icon widget-element__arrow-down"/>
+      </header>
      <div class="widget-element__content">
      ${widget.content}
      </div>
      `
     ));
-   lessonContainer.appendChild(widgetElement);
-  })
+
+    lessonContentContainer.appendChild(widgetElement);
+  });
 };
