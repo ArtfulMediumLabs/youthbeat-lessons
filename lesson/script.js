@@ -1,3 +1,5 @@
+import { emptyPattern } from '../utils.js';
+
 var offset = 0
 
 function currentBeat() {
@@ -81,19 +83,11 @@ setVoice("synth");
 var sequence = [];
 var currentSequence = -1;
 
-function emptyPreset() {
+export function emptyPreset() {
   return {meta: patternMeta(),
           innerCustomPattern: emptyPattern(),
           outerCustomPattern: emptyPattern(),
           samplerCustomPattern: emptyPattern()}
-}
-
-function emptyPattern() {
-  return {
-    value: Array(32).fill('-'), 
-    amplitude: Array(32).fill(0),
-    duration: Array(32).fill(0)
-  }
 }
 
 function patternMeta() {
@@ -107,7 +101,7 @@ function patternMeta() {
 }
 
 
-function updatePattern(time) {
+export function updatePattern(time) {
   var progressStep = Math.floor(Tone.Transport.progress * 64) % 32
 
   drawPattern(innerPatternNotes, innerCustomPattern, innerMidRadius, progressStep, 32)
@@ -1718,7 +1712,7 @@ function captureMeta() {
   }
 }
 
-function loadPreset(preset) {
+export function loadPreset(preset) {
   loadPattern(preset.innerCustomPattern, innerCustomPattern);
   loadPattern(preset.outerCustomPattern, outerCustomPattern);
   loadPattern(preset.samplerCustomPattern, samplerCustomPattern);
