@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>YouthBeat</title>
+  <meta name="description" content="YouthBeat">
+  <meta name="author" content="The Royal Conservatory">
+
+  <link rel="stylesheet" href="./lesson/index.css">
+
+  <script src="https://unpkg.com/konva@^7/konva.min.js"></script>
+  <script src="https://unpkg.com/tone@14.7.*/build/Tone.js"></script>
+  <script src="https://unpkg.com/@ungap/url-search-params@0.1.2/min.js"></script>
+  <script src="./lesson/pSBC.js"></script>
+  <script src="./lesson/fill.js"></script>
+  <script src="./lesson/strings.js"></script>
+</head>
+
+<body>
+  <div class="lesson-header">
+    <h2 class="lesson-header__heading"></h2>
+    <h3 class="lesson-header__sub-heading"></h3>
+  </div>
+  <div id="content">
+    <div id="container" class="center"></div>
+    <div id="rhythmButtons">
+      <button id="bassDrum" class="rhythm" data-instrument="B" lang="en">
+        Bass Drum
+      </button>
+      <button id="snareDrum" class="rhythm" data-instrument="S" lang="en">
+        Snare Drum
+      </button>
+      <button id="rimshot" class="rhythm" data-instrument="R" lang="en">
+        Rim Shot
+      </button>
+      <button id="hihat" class="rhythm" data-instrument="H" lang="en">
+        Hi-hat
+      </button>
+      <button id="openHihat" class="rhythm" data-instrument="O" lang="en">
+        Open Hi-hat
+      </button>
+      <button id="rideCymbal" class="rhythm" data-instrument="C" lang="en">
+        Ride Cymbal
+      </button>
+    </div>
+  </div>
+  <div class="lesson-content">
+    <div class="lesson-content__container"></div>
+    <div class="lesson-pagination">
+      <div class="lesson-pagination__content">
+      </div>
+    </div>
+   </div>
+  <script src="./lesson/index.js" type="module"></script>
+</body>
+
+</html>

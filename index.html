@@ -4,60 +4,27 @@
 <head>
   <meta charset="utf-8">
 
-  <title>YouthBeat</title>
+  <title>YouthBeat | Homepage</title>
   <meta name="description" content="YouthBeat">
   <meta name="author" content="The Royal Conservatory">
 
-  <link rel="stylesheet" href="styles.css">
-
-  <script src="https://unpkg.com/konva@^7/konva.min.js"></script>
-  <script src="https://unpkg.com/tone@14.7.*/build/Tone.js"></script>
-  <script src="https://unpkg.com/@ungap/url-search-params@0.1.2/min.js"></script>
-  <script src="pSBC.js"></script>
-  <script src="fill.js"></script>
-  <script src="strings.js"></script>
+  <link rel="stylesheet" href="./index.css">
 </head>
 
-<body>
-  <div class="lesson-header">
-    <h2 class="lesson-header__heading">Rhythm - The Drums</h2>
-    <h3 class="lesson-header__sub-heading"></h3>
+<body class="making-music">
+  <div class="making-music__container">
+    <h1 class="making-music__heading">Making Music</h1>
+    <br />
+    <h2 class="making-music__sub-heading">The Big Ideas in YouthBeat</h2>
+    <p>In this tutorial, we explore how music creates emotions through the push and pull of rhythms against the beat, and of melodies against the chord.</p>
+    <p>We look at how note colour, volume, tempo, and a variety of highlighting tools draw our attention to these basic patterns, changing how they make us feel.</p>
+    <p>Everything is learned hands-on through short experiments. Students then apply each new tool to their own creative projects. Music overlaps in significant ways with language and math, so we include meaningful curriculum connections throughout. </p>
+    <br />
+    <h2 class="making-music__sub-heading">Lessons</h2>
+    <ol class="making-music__lesson-list">
+    </ol>
   </div>
-  <div id="content">
-    <div id="container" class="center"></div>
-    <div id="rhythmButtons">
-      <button id="bassDrum" class="rhythm" data-instrument="B" lang="en">
-        Bass Drum
-      </button>
-      <button id="snareDrum" class="rhythm" data-instrument="S" lang="en">
-        Snare Drum
-      </button>
-      <button id="rimshot" class="rhythm" data-instrument="R" lang="en">
-        Rim Shot
-      </button>
-      <button id="hihat" class="rhythm" data-instrument="H" lang="en">
-        Hi-hat
-      </button>
-      <button id="openHihat" class="rhythm" data-instrument="O" lang="en">
-        Open Hi-hat
-      </button>
-      <button id="rideCymbal" class="rhythm" data-instrument="C" lang="en">
-        Ride Cymbal
-      </button>
-    </div>
-  </div>
-  <div class="lesson-content">
-    <div class="lesson-content__container"></div>
-    <div class="lesson-pagination">
-      <div class="lesson-pagination__content">
-      </div>
-    </div>
-   </div>
-  <script src="utils.js"></script>
-  <script src="script.js"></script>
-  <script src="lesson.js" type="module"></script>
-  <script src="lessonPagination.js" type="module"></script>
-  <script src="index.js" type="module"></script>
+  <script src="./index.js" type="module" type="text/javascript"></script>
 </body>
 
 </html>

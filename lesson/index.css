@@ -70,6 +70,11 @@ button.rhythm {
     margin: 10px 0;
 }
 
+.lesson-header__link {
+    font-size: 14px;
+    text-decoration: none;
+}
+
 
 /* 
  *  Lesson content styling
