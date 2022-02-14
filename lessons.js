@@ -541,7 +541,16 @@ export const lessons = {
           <strong>Notice</strong> that these changes are easier to follow because they don&#8217;t involve moving or deleting a hi hat note that falls on the beat.
         </p>
         `,
-        pattern: patterns.constructPattern(emptyPattern(), emptyPattern(), emptyPattern()),
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 4, 8, 12, 20, 24].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 4, 8, 12, 20, 24].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+          emptyPattern(),
+        ),
       },
     },
     tierFilter: {
