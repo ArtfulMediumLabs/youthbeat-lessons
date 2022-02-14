@@ -1364,17 +1364,17 @@ stage.add(layer);
 var slider = document.getElementById("tempo");
 var tempoLabel = document.getElementById("tempoLabel");
 setTempo(90);
-// updateTempoDisplay(90);
+updateTempoDisplay(90);
 
 function updateTempoDisplay(value) {
   slider.value = value;
   updateTempoLabel(value);
 }
       
-// slider.oninput = function() {
-//   updateTempoLabel(this.value);
-//   setTempo(this.value);
-// }
+slider.oninput = function() {
+  updateTempoLabel(this.value);
+  setTempo(this.value);
+}
 
 function updateTempoLabel(value) {
   tempoLabel.innerHTML = localizedString("Tempo") + ": " + value;
