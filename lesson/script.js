@@ -1564,13 +1564,13 @@ var presets = [];
 var addPresetButton = document.getElementById("addPresetButton");
 var presetList = document.getElementById("presetList");
 
-// addPresetButton.addEventListener('click', 
-//   function() {
-//     addPreset(capturePreset());
-//     updateVisibility()
-//   }, 
-//   false
-// );
+addPresetButton.addEventListener('click', 
+  function() {
+    addPreset(capturePreset());
+    updateVisibility()
+  }, 
+  false
+);
 
 function savePreset(id) {
   presets[id] = capturePreset();
@@ -1583,7 +1583,7 @@ function addPreset(preset) {
   presets[presetCounter] = preset;
 
   var entry = document.createElement('li');
-  entry.append(savePresetButton(presetCounter));
+  // entry.append(savePresetButton(presetCounter));
   var link = document.createElement('a');
   link.href = ''
   link.innerHTML = localizedString("Pattern") + " " + presetCounter;
@@ -1597,7 +1597,7 @@ function addPreset(preset) {
       event.preventDefault();
     }, false)
   entry.appendChild(deleteButton(presetCounter));
-  entry.appendChild(sequenceButton(presetCounter));
+  // entry.appendChild(sequenceButton(presetCounter));
   presetList.appendChild(entry);
   presetCounter += 1;
   updatePattern();
@@ -1662,6 +1662,7 @@ function sequenceButton(preset) {
 }
 
 function updateSequenceDisplay() {
+  return;
   var display = sequence.map(function(preset, index){
     var step = document.createElement("SPAN")
     step.innerHTML = preset;
@@ -1715,7 +1716,7 @@ function captureMeta() {
 export function loadPreset(preset) {
   loadPattern(preset.innerCustomPattern, innerCustomPattern);
   loadPattern(preset.outerCustomPattern, outerCustomPattern);
-  loadPattern(preset.samplerCustomPattern, samplerCustomPattern);
+  // loadPattern(preset.samplerCustomPattern, samplerCustomPattern);
   var meta = preset.meta ?? patternMeta();
   // loadMeta(meta);
   patternUpdated();
@@ -2056,6 +2057,7 @@ function toggleAll() {
 
 
 function updateVisibility() {
+  return;
   const levelText = ["Note Entry", "Sequencing", "Special Tools"][level]
   enableAllButton.innerText = localizedString(levelText);
     var controls = document.querySelectorAll(".level2")
