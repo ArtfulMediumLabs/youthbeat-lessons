@@ -150,18 +150,18 @@ function createSampler(voice) {
   return sampler;
 }
 
-// var voiceButtons = document.getElementById("voices").children ??;
+var voiceButtons = document.getElementById("voices").children;
 
-// for (var i=0; i < voiceButtons.length; i++) {
-//   voiceButtons[i].addEventListener('click', function() {
-//     activeInstrument = scale[0];
-//     showSelectedButton();
-//     selectRing();
+for (var i=0; i < voiceButtons.length; i++) {
+  voiceButtons[i].addEventListener('click', function() {
+    activeInstrument = scale[0];
+    showSelectedButton();
+    selectRing();
 
-//     setVoice(this.dataset.voice);
-//     updateVoiceDisplay(this.dataset.voice);
-//   });
-// }
+    setVoice(this.dataset.voice);
+    updateVoiceDisplay(this.dataset.voice);
+  });
+}
 
 function setVoice(voice) {
   sampler = samplerLibrary[voice];
@@ -169,7 +169,6 @@ function setVoice(voice) {
 }
 
 function updateVoiceDisplay(voice) {
-return; 
   for (var i=0; i < voiceButtons.length; i++) {
     var button = voiceButtons[i];
     if (button.dataset.voice == voice) {
@@ -260,7 +259,7 @@ var loop = new Tone.Sequence(function(time, step){
     playActiveNote(outerCustomPattern, step, time);
 //   }
 //   if (melody.checked) {
-//     playActiveNote(samplerCustomPattern, step, time);
+    playActiveNote(samplerCustomPattern, step, time);
 //   }
 //   if (currentSequence >= 0 && step == 31) {
 //     currentSequence = ++currentSequence % sequence.length
@@ -281,7 +280,6 @@ function playActiveNote(customPattern, step, time) {
   } else {
     var velocity = velocityFor(customPattern, step);
     var duration = durationFor(customPattern, step);
-    // sampler.triggerAttack(note, time, velocity);
     sampler.triggerAttackRelease(note, duration, time, velocity);
   }
 }
@@ -372,8 +370,8 @@ Tone.loaded().then(function(){
 var stage = new Konva.Stage({
   container: 'container',   // id of container <div>
   width: 1028,
-  // height: 768 - 200
-  height: 768 - 380
+  height: 768 - 200
+  // height: 768 - 380
 });
 
 var layer = new Konva.Layer();
@@ -383,14 +381,13 @@ var outerPadding = (34 + 12)
 var samplerWidth = (34 + 12) + 48
 var innerRadius = (97 + 12) - 48
 var patternOriginX = stage.width() / 2
-// patternOriginX = patternOriginX / 2
 var patternOriginY = innerRadius + patternWidth * 2 + samplerWidth + outerPadding
-patternOriginY = patternOriginY / 1.5
+// patternOriginY = patternOriginY / 1.5
 var innerMidRadius = innerRadius + patternWidth / 2
 var outerMidRadius = innerRadius + patternWidth * 1.5
 var samplerMidRadius = innerRadius + patternWidth * 2 + samplerWidth * 0.5
-// var outerRadius = samplerMidRadius + samplerWidth * 0.5
-var outerRadius = innerRadius + patternWidth * 2
+var outerRadius = samplerMidRadius + samplerWidth * 0.5
+// var outerRadius = innerRadius + patternWidth * 2
 
 
 // https://jsfiddle.net/PimpTrizkit/a7ac0qvp/
@@ -458,7 +455,7 @@ var samplerPatternNotes = new Konva.Group()
 var samplerPatternControls = new Konva.Group()
 var samplerPatternRing = createPatternControl(patternOriginX, patternOriginY, innerRadius + patternWidth * 2, innerRadius + patternWidth * 2 + samplerWidth, controlBackgrounds[2], samplerPatternControls, samplerCustomPattern, samplerFilter, 16, false, true, function(){ toggleSequence();}, function(){  toggleSequence(); })
 
-// layer.add(samplerPatternRing);
+layer.add(samplerPatternRing);
 layer.add(outerPatternRing);
 layer.add(innerPatternRing);
 
@@ -1694,7 +1691,7 @@ function capturePreset() {
       meta: patternMeta(),
       innerCustomPattern: patternFrom(innerCustomPattern),
       outerCustomPattern: patternFrom(outerCustomPattern),
-      // samplerCustomPattern: patternFrom(samplerCustomPattern)
+      samplerCustomPattern: patternFrom(samplerCustomPattern)
   }
   return preset;
 }
@@ -1716,7 +1713,7 @@ function captureMeta() {
 export function loadPreset(preset) {
   loadPattern(preset.innerCustomPattern, innerCustomPattern);
   loadPattern(preset.outerCustomPattern, outerCustomPattern);
-  // loadPattern(preset.samplerCustomPattern, samplerCustomPattern);
+  loadPattern(preset.samplerCustomPattern, samplerCustomPattern);
   var meta = preset.meta ?? patternMeta();
   // loadMeta(meta);
   patternUpdated();
