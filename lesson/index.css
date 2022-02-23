@@ -56,6 +56,17 @@ button.rhythm {
     margin-top: 20px
 }
 
+#volumeControl {
+    position: absolute;
+    left: 150px;
+    bottom: 10px;
+}
+
+#volumeLabel {
+    display: block;
+    margin-top: 20px
+}
+
 /* 
  *  Lesson heading
  */

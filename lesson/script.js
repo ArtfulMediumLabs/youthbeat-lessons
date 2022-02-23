@@ -1387,12 +1387,12 @@ function setTempo(value) {
 var volumeSlider = document.getElementById("volume");
 var volumeLabel = document.getElementById("volumeLabel");
 setVolume(60);
-// updateVolumeDisplay(60);
+updateVolumeDisplay(60);
       
-// volumeSlider.oninput = function() {
-//   updateVolumeLabel(this.value);
-//   setVolume(this.value);
-// }
+volumeSlider.oninput = function() {
+  updateVolumeLabel(this.value);
+  setVolume(this.value);
+}
 
 function setVolume(value) {
   Tone.Master.volume.value = scaleMap(value, 0, 100, -32, 6);
