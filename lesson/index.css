@@ -99,6 +99,19 @@ button.controlB {
     background-color: #DB3352;
 }
 
+#notes {
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    width: 100px;
+}
+
+#notes fieldset {
+    margin: 10px 0;  
+    padding: 0;
+    border: none;
+}
+
 #controlB {
     position: absolute;
     width: 175px;

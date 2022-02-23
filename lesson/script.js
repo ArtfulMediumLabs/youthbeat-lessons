@@ -248,10 +248,10 @@ function updateMuteGroupDisplay(muteGroup) {
 }
 
 var loop = new Tone.Sequence(function(time, step){
-//   var chordNote = document.querySelector('input[name="chord"]:checked').value
-//   if (step == 0 & chordNote.length > 0) {
-//     chords.triggerAttackRelease(chordNote, '1m', time, 0.5);
-//   }
+  var chordNote = document.querySelector('input[name="chord"]:checked').value
+  if (step == 0 & chordNote.length > 0) {
+    chords.triggerAttackRelease(chordNote, '1m', time, 0.5);
+  }
 //   if (hiHat.checked) {
     playActiveNote(innerCustomPattern, step, time);
 //   }
