@@ -1,6 +1,21 @@
 body {
     background-color: #F5F1F0;
 }
+.center {
+    margin: auto;
+    width: 1028px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+/*
+ * Instrument
+ */
 
 #content {
     background-color: white;
@@ -8,11 +23,6 @@ body {
     /* height: 300px; */
     margin: auto;
     position: relative;
-}
-
-.center {
-    margin: auto;
-    width: 1028px;
 }
 
 #rhythmButtons {
@@ -35,11 +45,15 @@ button.rhythm {
     vertical-align: middle;
 }
 
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
+#controlA {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+#tempoLabel {
+    display: block;
+    margin-top: 20px
 }
 
 /* 
