@@ -1687,12 +1687,12 @@ function updateSequenceDisplay() {
 
 function capturePreset() {
   var preset = {
-      // meta: captureMeta(),
-      meta: patternMeta(),
+      meta: captureMeta(),
       innerCustomPattern: patternFrom(innerCustomPattern),
       outerCustomPattern: patternFrom(outerCustomPattern),
       samplerCustomPattern: patternFrom(samplerCustomPattern)
   }
+  console.log(preset)
   return preset;
 }
 
@@ -1701,10 +1701,11 @@ function captureMeta() {
   return {
     tempo: Tone.Transport.bpm.value,
     volume: getVolume(),
-    mute: {
-      bassSnare: bassSnare.checked, 
-      hiHat: hiHat.checked, 
-      melody: melody.checked},
+    mute: {bassSnare: true, hiHat: true, melody: true},
+    // mute: {
+    //   bassSnare: bassSnare.checked, 
+    //   hiHat: hiHat.checked, 
+    //   melody: melody.checked},
     chord: chordNote,
     voice: getVoice()
   }
@@ -1715,7 +1716,7 @@ export function loadPreset(preset) {
   loadPattern(preset.outerCustomPattern, outerCustomPattern);
   loadPattern(preset.samplerCustomPattern, samplerCustomPattern);
   var meta = preset.meta ?? patternMeta();
-  // loadMeta(meta);
+  loadMeta(meta);
   patternUpdated();
   updatePattern();
 }
@@ -1755,7 +1756,7 @@ function loadMeta(meta) {
   setVolume(meta.volume);
   updateVolumeDisplay(meta.volume);
 
-  updateMuteGroupDisplay(meta.mute);
+  // updateMuteGroupDisplay(meta.mute);
 
   updateChordDisplay(meta.chord);
 

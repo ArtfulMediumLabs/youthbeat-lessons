@@ -51,7 +51,17 @@ export const bassFirstBeatPattern = {
   },
   samplerCustomPattern: emptyPattern(),
 };
-export const constructPattern = (innerCustomPattern, outerCustomPattern, samplerCustomPattern) => ({
+
+export const defaultMeta = {
+  tempo: 90,
+  volume: 60,
+  mute: {bassSnare: true, hiHat: true, melody: true},
+  chord: "",
+  voice: "synth"
+}
+
+export const constructPattern = (innerCustomPattern, outerCustomPattern, samplerCustomPattern, meta = defaultMeta) => ({
+  meta,
   innerCustomPattern,
   outerCustomPattern,
   samplerCustomPattern,
