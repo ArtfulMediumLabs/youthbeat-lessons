@@ -852,11 +852,62 @@ export const lessons = {
             content: 'Think about how music could be represented using x and y coordinates, with the x being time and y pitch.',
           },
         ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          {
+            value: ['E4'].concat(Array(31).fill('-')),
+            amplitude: [3].concat(Array(31).fill(0)),
+            duration: [1].concat(Array(31).fill(0))
+          },
+        ),
+      },
+      2: {
+        title: 'Scale',
+        content: `
+          <p>A scale is a kind of pitch ladder.</p>
+          <p>Are the steps in the ladder always the same distance apart? </p>
+          ${
+  constructActionSteps([
+    'On the locations of the hi hat notes, add Synth pitches that rise in pitch from the lower to higher B.',
+    'Listen.',
+    'How many steps up are there from the lower to the higher B?',
+    'Are they all the same size?'
+  ])
+}
+          <p>
+            <strong>Notice</strong> there are two sizes. The pattern is B-D (larger), D-E (smaller), E-F# (smaller), F#-A (larger), A-B (smaller). 
+          </p>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'A scale with five pitches (making five steps up in pitch) is called pentatonic? (Penta means 5).',
+          },
+          {
+            type: widgets.MathConnection,
+            content: `
+            <ul>
+              <li>What part of the whole scale is each of the steps in the pentatonic scale beginning on B?</li> 
+              <li>The total number of steps is 6 (the denominator). What is the numerator for each step?</li>
+            </ul>
+           `,
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            value: Array(32).fill('-').map((e, i) => (i % 4 == 0 ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => (i % 4 == 0 ? 1 : 0)),
+            duration: Array(32).fill(0)
+          },
+          emptyPattern(),
+          emptyPattern()
+        ),
       },
     },
     tierFilter: {
       1: {
-        cutoff: 1,
+        cutoff: 2,
       },
       2: {
         cutoff: 2,
