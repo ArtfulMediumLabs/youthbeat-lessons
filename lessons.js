@@ -1153,7 +1153,18 @@ export const lessons = {
         pattern: patterns.constructPattern(
           emptyPattern(),
           emptyPattern(),
-          emptyPattern(),
+          {
+            value: ['D4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', '-', '-', '-', '-', 'D4', '-', '-', '-'],
+            amplitude: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0],
+            duration: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: {bassSnare: true, hiHat: true, melody: true},
+            chord: "B1",
+            voice: "synth"
+          }
         ),
       },
       6: {
