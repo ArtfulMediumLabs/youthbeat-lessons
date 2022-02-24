@@ -605,7 +605,12 @@ export const lessons = {
           },
         ],
         pattern: patterns.constructPattern(
-          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([2, 12, 18, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([2, 12, 18, 28].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
           {
             // eslint-disable-next-line no-nested-ternary
             value: Array(32).fill('-').map((e, i) => ([0, 14].includes(i) ? 'B' : ([6, 24].includes(i) ? 'S' : '-'))),
@@ -679,7 +684,18 @@ export const lessons = {
             amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 24].includes(i) ? 1 : 0)),
             duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           },
-          emptyPattern(),
+          {
+            value: ['D4', '-', '-', '-', '-', '-', 'A4', '-', '-', '-', '-', '-', 'F#4', '-', '-', '-', 'E4', '-', '-', '-', '-', '-', '-', '-', 'F#4', '-', '-', '-', '-', '-', '-', '-'],
+            amplitude: [3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
+            duration: [4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: {bassSnare: true, hiHat: true, melody: true},
+            chord: "B1",
+            voice: "synth"
+          }
         ),
       },
 
@@ -731,7 +747,18 @@ export const lessons = {
             amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 24].includes(i) ? 1 : 0)),
             duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           },
-          emptyPattern(),
+          {
+            value: ['D4', '-', '-', '-', '-', '-', 'A4', '-', '-', '-', '-', '-', 'F#4', '-', '-', '-', 'E4', '-', '-', '-', '-', '-', '-', '-', 'F#4', '-', '-', '-', '-', '-', '-', '-'],
+            amplitude: [3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
+            duration: [4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: {bassSnare: true, hiHat: true, melody: true},
+            chord: "D2",
+            voice: "synth"
+          }
         ),
       },
       2: {
@@ -759,14 +786,29 @@ export const lessons = {
           },
         ],
         pattern: patterns.constructPattern(
-          emptyPattern(),
+          {
+            value: Array(32).fill('-').map((e, i) => ([4, 12, 18, 26, 28, 30].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([4, 12, 18, 26, 28, 30].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
           {
             // eslint-disable-next-line no-nested-ternary
             value: Array(32).fill('-').map((e, i) => ([0, 14].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
             amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 22].includes(i) ? 1 : 0)),
             duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           },
-          emptyPattern(),
+          {
+            value: ['F#4', '-', '-', '-', 'B3', '-', '-', '-', '-', '-', 'E4', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', 'B3', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+            amplitude: [3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            duration: [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: {bassSnare: true, hiHat: true, melody: true},
+            chord: "B1",
+            voice: "synth"
+          }
         ),
       },
     },
@@ -810,11 +852,62 @@ export const lessons = {
             content: 'Think about how music could be represented using x and y coordinates, with the x being time and y pitch.',
           },
         ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          {
+            value: ['E4'].concat(Array(31).fill('-')),
+            amplitude: [3].concat(Array(31).fill(0)),
+            duration: [1].concat(Array(31).fill(0))
+          },
+        ),
+      },
+      2: {
+        title: 'Scale',
+        content: `
+          <p>A scale is a kind of pitch ladder.</p>
+          <p>Are the steps in the ladder always the same distance apart? </p>
+          ${
+  constructActionSteps([
+    'On the locations of the hi hat notes, add Synth pitches that rise in pitch from the lower to higher B.',
+    'Listen.',
+    'How many steps up are there from the lower to the higher B?',
+    'Are they all the same size?'
+  ])
+}
+          <p>
+            <strong>Notice</strong> there are two sizes. The pattern is B-D (larger), D-E (smaller), E-F# (smaller), F#-A (larger), A-B (smaller). 
+          </p>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'A scale with five pitches (making five steps up in pitch) is called pentatonic? (Penta means 5).',
+          },
+          {
+            type: widgets.MathConnection,
+            content: `
+            <ul>
+              <li>What part of the whole scale is each of the steps in the pentatonic scale beginning on B?</li> 
+              <li>The total number of steps is 6 (the denominator). What is the numerator for each step?</li>
+            </ul>
+           `,
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            value: Array(32).fill('-').map((e, i) => (i % 4 == 0 ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => (i % 4 == 0 ? 1 : 0)),
+            duration: Array(32).fill(0)
+          },
+          emptyPattern(),
+          emptyPattern()
+        ),
       },
     },
     tierFilter: {
       1: {
-        cutoff: 1,
+        cutoff: 2,
       },
       2: {
         cutoff: 2,
@@ -853,7 +946,11 @@ export const lessons = {
           },
         ],
         pattern: patterns.constructPattern(
-          emptyPattern(),
+          {
+            value: Array(32).fill('-').map((e, i) => ([2, 12, 18, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([2, 12, 18, 28].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
           {
             // eslint-disable-next-line no-nested-ternary
             value: Array(32).fill('-').map((e, i) => ([0, 14].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
@@ -913,14 +1010,29 @@ export const lessons = {
           },
         ],
         pattern: patterns.constructPattern(
-          emptyPattern(),
+          {
+            value: Array(32).fill('-').map((e, i) => ([0, 6, 12, 18, 22, 26].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 6, 12, 18, 22, 26].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
           {
             // eslint-disable-next-line no-nested-ternary
             value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
             amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
             duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           },
-          emptyPattern(),
+          {
+            value: ['E4', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', '-', '-', 'E4', '-', '-', '-', '-', '-', 'E4', '-', 'D4', '-', '-', '-', 'B3', '-', '-', '-', '-', '-', '-', '-'],
+            amplitude: [3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
+            duration: [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: {bassSnare: true, hiHat: true, melody: true},
+            chord: "B1",
+            voice: "synth"
+          }
         ),
       },
       3: {
@@ -953,7 +1065,18 @@ export const lessons = {
             amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
             duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           },
-          emptyPattern(),
+          {
+            value: ['F#4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', 'F#4', '-', '-', '-', '-', '-', 'B3', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+            amplitude: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            duration: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: {bassSnare: true, hiHat: true, melody: true},
+            chord: "B1",
+            voice: "synth"
+          }
         ),
       },
       4: {
@@ -985,8 +1108,19 @@ export const lessons = {
             amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
             duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           },
-          emptyPattern(),
-        ),
+          {
+            value: ['F#4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', 'F#4', '-', '-', '-', '-', '-', 'B3', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+            amplitude: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            duration: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: {bassSnare: true, hiHat: true, melody: true},
+            chord: "B1",
+            voice: "synth"
+          }
+        )
       },
       5: {
         title: 'Repeated pitches',
@@ -1019,7 +1153,18 @@ export const lessons = {
         pattern: patterns.constructPattern(
           emptyPattern(),
           emptyPattern(),
-          emptyPattern(),
+          {
+            value: ['D4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', '-', '-', '-', '-', 'D4', '-', '-', '-'],
+            amplitude: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0],
+            duration: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: {bassSnare: true, hiHat: true, melody: true},
+            chord: "B1",
+            voice: "synth"
+          }
         ),
       },
       6: {
@@ -1058,7 +1203,11 @@ export const lessons = {
         pattern: patterns.constructPattern(
           emptyPattern(),
           emptyPattern(),
-          emptyPattern(),
+          {
+            value: ['D4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'E4', '-', '-', '-', '-', '-', '-', '-', 'F#4', '-', '-', '-', '-', '-', '-', '-'],
+            amplitude: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
+            duration: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+          },
         ),
       },
 

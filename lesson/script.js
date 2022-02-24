@@ -150,18 +150,18 @@ function createSampler(voice) {
   return sampler;
 }
 
-// var voiceButtons = document.getElementById("voices").children ??;
+var voiceButtons = document.getElementById("voices").children;
 
-// for (var i=0; i < voiceButtons.length; i++) {
-//   voiceButtons[i].addEventListener('click', function() {
-//     activeInstrument = scale[0];
-//     showSelectedButton();
-//     selectRing();
+for (var i=0; i < voiceButtons.length; i++) {
+  voiceButtons[i].addEventListener('click', function() {
+    activeInstrument = scale[0];
+    showSelectedButton();
+    selectRing();
 
-//     setVoice(this.dataset.voice);
-//     updateVoiceDisplay(this.dataset.voice);
-//   });
-// }
+    setVoice(this.dataset.voice);
+    updateVoiceDisplay(this.dataset.voice);
+  });
+}
 
 function setVoice(voice) {
   sampler = samplerLibrary[voice];
@@ -169,7 +169,6 @@ function setVoice(voice) {
 }
 
 function updateVoiceDisplay(voice) {
-return; 
   for (var i=0; i < voiceButtons.length; i++) {
     var button = voiceButtons[i];
     if (button.dataset.voice == voice) {
@@ -249,10 +248,10 @@ function updateMuteGroupDisplay(muteGroup) {
 }
 
 var loop = new Tone.Sequence(function(time, step){
-//   var chordNote = document.querySelector('input[name="chord"]:checked').value
-//   if (step == 0 & chordNote.length > 0) {
-//     chords.triggerAttackRelease(chordNote, '1m', time, 0.5);
-//   }
+  var chordNote = document.querySelector('input[name="chord"]:checked').value
+  if (step == 0 & chordNote.length > 0) {
+    chords.triggerAttackRelease(chordNote, '1m', time, 0.5);
+  }
 //   if (hiHat.checked) {
     playActiveNote(innerCustomPattern, step, time);
 //   }
@@ -260,7 +259,7 @@ var loop = new Tone.Sequence(function(time, step){
     playActiveNote(outerCustomPattern, step, time);
 //   }
 //   if (melody.checked) {
-//     playActiveNote(samplerCustomPattern, step, time);
+    playActiveNote(samplerCustomPattern, step, time);
 //   }
 //   if (currentSequence >= 0 && step == 31) {
 //     currentSequence = ++currentSequence % sequence.length
@@ -281,7 +280,6 @@ function playActiveNote(customPattern, step, time) {
   } else {
     var velocity = velocityFor(customPattern, step);
     var duration = durationFor(customPattern, step);
-    // sampler.triggerAttack(note, time, velocity);
     sampler.triggerAttackRelease(note, duration, time, velocity);
   }
 }
@@ -372,8 +370,8 @@ Tone.loaded().then(function(){
 var stage = new Konva.Stage({
   container: 'container',   // id of container <div>
   width: 1028,
-  // height: 768 - 200
-  height: 768 - 380
+  height: 768 - 200
+  // height: 768 - 380
 });
 
 var layer = new Konva.Layer();
@@ -383,14 +381,13 @@ var outerPadding = (34 + 12)
 var samplerWidth = (34 + 12) + 48
 var innerRadius = (97 + 12) - 48
 var patternOriginX = stage.width() / 2
-// patternOriginX = patternOriginX / 2
 var patternOriginY = innerRadius + patternWidth * 2 + samplerWidth + outerPadding
-patternOriginY = patternOriginY / 1.5
+// patternOriginY = patternOriginY / 1.5
 var innerMidRadius = innerRadius + patternWidth / 2
 var outerMidRadius = innerRadius + patternWidth * 1.5
 var samplerMidRadius = innerRadius + patternWidth * 2 + samplerWidth * 0.5
-// var outerRadius = samplerMidRadius + samplerWidth * 0.5
-var outerRadius = innerRadius + patternWidth * 2
+var outerRadius = samplerMidRadius + samplerWidth * 0.5
+// var outerRadius = innerRadius + patternWidth * 2
 
 
 // https://jsfiddle.net/PimpTrizkit/a7ac0qvp/
@@ -458,7 +455,7 @@ var samplerPatternNotes = new Konva.Group()
 var samplerPatternControls = new Konva.Group()
 var samplerPatternRing = createPatternControl(patternOriginX, patternOriginY, innerRadius + patternWidth * 2, innerRadius + patternWidth * 2 + samplerWidth, controlBackgrounds[2], samplerPatternControls, samplerCustomPattern, samplerFilter, 16, false, true, function(){ toggleSequence();}, function(){  toggleSequence(); })
 
-// layer.add(samplerPatternRing);
+layer.add(samplerPatternRing);
 layer.add(outerPatternRing);
 layer.add(innerPatternRing);
 
@@ -1364,17 +1361,17 @@ stage.add(layer);
 var slider = document.getElementById("tempo");
 var tempoLabel = document.getElementById("tempoLabel");
 setTempo(90);
-// updateTempoDisplay(90);
+updateTempoDisplay(90);
 
 function updateTempoDisplay(value) {
   slider.value = value;
   updateTempoLabel(value);
 }
       
-// slider.oninput = function() {
-//   updateTempoLabel(this.value);
-//   setTempo(this.value);
-// }
+slider.oninput = function() {
+  updateTempoLabel(this.value);
+  setTempo(this.value);
+}
 
 function updateTempoLabel(value) {
   tempoLabel.innerHTML = localizedString("Tempo") + ": " + value;
@@ -1387,12 +1384,12 @@ function setTempo(value) {
 var volumeSlider = document.getElementById("volume");
 var volumeLabel = document.getElementById("volumeLabel");
 setVolume(60);
-// updateVolumeDisplay(60);
+updateVolumeDisplay(60);
       
-// volumeSlider.oninput = function() {
-//   updateVolumeLabel(this.value);
-//   setVolume(this.value);
-// }
+volumeSlider.oninput = function() {
+  updateVolumeLabel(this.value);
+  setVolume(this.value);
+}
 
 function setVolume(value) {
   Tone.Master.volume.value = scaleMap(value, 0, 100, -32, 6);
@@ -1564,13 +1561,13 @@ var presets = [];
 var addPresetButton = document.getElementById("addPresetButton");
 var presetList = document.getElementById("presetList");
 
-// addPresetButton.addEventListener('click', 
-//   function() {
-//     addPreset(capturePreset());
-//     updateVisibility()
-//   }, 
-//   false
-// );
+addPresetButton.addEventListener('click', 
+  function() {
+    addPreset(capturePreset());
+    updateVisibility()
+  }, 
+  false
+);
 
 function savePreset(id) {
   presets[id] = capturePreset();
@@ -1583,7 +1580,7 @@ function addPreset(preset) {
   presets[presetCounter] = preset;
 
   var entry = document.createElement('li');
-  entry.append(savePresetButton(presetCounter));
+  // entry.append(savePresetButton(presetCounter));
   var link = document.createElement('a');
   link.href = ''
   link.innerHTML = localizedString("Pattern") + " " + presetCounter;
@@ -1597,7 +1594,7 @@ function addPreset(preset) {
       event.preventDefault();
     }, false)
   entry.appendChild(deleteButton(presetCounter));
-  entry.appendChild(sequenceButton(presetCounter));
+  // entry.appendChild(sequenceButton(presetCounter));
   presetList.appendChild(entry);
   presetCounter += 1;
   updatePattern();
@@ -1662,6 +1659,7 @@ function sequenceButton(preset) {
 }
 
 function updateSequenceDisplay() {
+  return;
   var display = sequence.map(function(preset, index){
     var step = document.createElement("SPAN")
     step.innerHTML = preset;
@@ -1689,13 +1687,21 @@ function updateSequenceDisplay() {
 
 function capturePreset() {
   var preset = {
-      // meta: captureMeta(),
-      meta: patternMeta(),
+      meta: captureMeta(),
       innerCustomPattern: patternFrom(innerCustomPattern),
       outerCustomPattern: patternFrom(outerCustomPattern),
-      // samplerCustomPattern: patternFrom(samplerCustomPattern)
+      samplerCustomPattern: patternFrom(samplerCustomPattern)
   }
+  // logPattern(preset.samplerCustomPattern)
   return preset;
+}
+
+function logPattern(pattern) {
+  console.log(`{
+  value: [${pattern.value.map(v => `'${v}'`).join(', ')}],
+  amplitude: [${pattern.amplitude.join(', ')}],
+  duration: [${pattern.duration.join(', ')}]
+}`);
 }
 
 function captureMeta() {
@@ -1703,10 +1709,11 @@ function captureMeta() {
   return {
     tempo: Tone.Transport.bpm.value,
     volume: getVolume(),
-    mute: {
-      bassSnare: bassSnare.checked, 
-      hiHat: hiHat.checked, 
-      melody: melody.checked},
+    mute: {bassSnare: true, hiHat: true, melody: true},
+    // mute: {
+    //   bassSnare: bassSnare.checked, 
+    //   hiHat: hiHat.checked, 
+    //   melody: melody.checked},
     chord: chordNote,
     voice: getVoice()
   }
@@ -1717,7 +1724,7 @@ export function loadPreset(preset) {
   loadPattern(preset.outerCustomPattern, outerCustomPattern);
   loadPattern(preset.samplerCustomPattern, samplerCustomPattern);
   var meta = preset.meta ?? patternMeta();
-  // loadMeta(meta);
+  loadMeta(meta);
   patternUpdated();
   updatePattern();
 }
@@ -1757,7 +1764,7 @@ function loadMeta(meta) {
   setVolume(meta.volume);
   updateVolumeDisplay(meta.volume);
 
-  updateMuteGroupDisplay(meta.mute);
+  // updateMuteGroupDisplay(meta.mute);
 
   updateChordDisplay(meta.chord);
 
@@ -2056,6 +2063,7 @@ function toggleAll() {
 
 
 function updateVisibility() {
+  return;
   const levelText = ["Note Entry", "Sequencing", "Special Tools"][level]
   enableAllButton.innerText = localizedString(levelText);
     var controls = document.querySelectorAll(".level2")

@@ -1,6 +1,21 @@
 body {
     background-color: #F5F1F0;
 }
+.center {
+    margin: auto;
+    width: 1028px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+/*
+ * Instrument
+ */
 
 #content {
     background-color: white;
@@ -10,18 +25,13 @@ body {
     position: relative;
 }
 
-.center {
-    margin: auto;
-    width: 1028px;
-}
-
 #rhythmButtons {
     position: absolute;
     left: 10px;
     top: 0px;
 }
 
-button.rhythm {
+#content button {
     margin-top: 10px;
     height: 30px;
     width: 100px;
@@ -35,11 +45,94 @@ button.rhythm {
     vertical-align: middle;
 }
 
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
+button.controlB {
+    float: right;
+}
+
+#content button.deletePreset {
+    width: auto;
+    height: 20px;
+    margin: 2px;
+    padding: 2px;
+    display: inline-block;
+}
+
+#controlA {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+#tempoLabel {
+    display: block;
+    margin-top: 20px
+}
+
+#volumeControl {
+    position: absolute;
+    left: 150px;
+    bottom: 10px;
+}
+
+#volumeLabel {
+    display: block;
+    margin-top: 20px
+}
+
+#voices {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+
+#voices button {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0;
+}
+
+#voices button.selected {
+    background-color: #eeb8bd;
+}
+
+#voices button.selected.activeInstrument {
+    background-color: #DB3352;
+}
+
+#notes {
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    width: 100px;
+}
+
+#notes fieldset {
+    margin: 10px 0;  
+    padding: 0;
+    border: none;
+}
+
+#controlB {
+    position: absolute;
+    width: 175px;
+    right: 10px;
+    bottom: 10px;
+    overflow: hidden;
+    clear: both;
+}
+
+#presetList {
+    clear: both;
+    margin-top: 5px;
+    text-align: right;
+    padding: 5px 0 0 0;
+    list-style: outside none none;
+}
+
+#presets {
+    height: 260px;
+    overflow: hidden;
+    float: right;
 }
 
 /* 
