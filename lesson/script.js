@@ -1693,8 +1693,16 @@ function capturePreset() {
       samplerCustomPattern: patternFrom(samplerCustomPattern)
   }
 // remove
-  console.log(preset)
+  logPattern(preset.samplerCustomPattern)
   return preset;
+}
+
+function logPattern(pattern) {
+  console.log(`{
+  value: [${pattern.value.map(v => `'${v}'`).join(', ')}],
+  amplitude: [${pattern.amplitude.join(', ')}],
+  duration: [${pattern.duration.join(', ')}]
+}`);
 }
 
 function captureMeta() {
