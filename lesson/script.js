@@ -1692,8 +1692,7 @@ function capturePreset() {
       outerCustomPattern: patternFrom(outerCustomPattern),
       samplerCustomPattern: patternFrom(samplerCustomPattern)
   }
-// remove
-  logPattern(preset.samplerCustomPattern)
+  // logPattern(preset.samplerCustomPattern)
   return preset;
 }
 
