@@ -1,6 +1,6 @@
-import * as patterns from './patterns.js';
-import { widgets } from './constants.js';
-import { emptyPattern } from './utils.js';
+import * as patterns from '../patterns.js';
+import { widgets } from '../constants.js';
+import { emptyPattern } from '../utils.js';
 
 /*
  * constructActionSteps - method that constructs the HTML layout of an action step component
@@ -687,15 +687,15 @@ export const lessons = {
           {
             value: ['D4', '-', '-', '-', '-', '-', 'A4', '-', '-', '-', '-', '-', 'F#4', '-', '-', '-', 'E4', '-', '-', '-', '-', '-', '-', '-', 'F#4', '-', '-', '-', '-', '-', '-', '-'],
             amplitude: [3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
-            duration: [4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+            duration: [4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
           },
           {
             tempo: 90,
             volume: 60,
-            mute: {bassSnare: true, hiHat: true, melody: true},
-            chord: "B1",
-            voice: "synth"
-          }
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
         ),
       },
 
@@ -750,15 +750,15 @@ export const lessons = {
           {
             value: ['D4', '-', '-', '-', '-', '-', 'A4', '-', '-', '-', '-', '-', 'F#4', '-', '-', '-', 'E4', '-', '-', '-', '-', '-', '-', '-', 'F#4', '-', '-', '-', '-', '-', '-', '-'],
             amplitude: [3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
-            duration: [4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+            duration: [4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
           },
           {
             tempo: 90,
             volume: 60,
-            mute: {bassSnare: true, hiHat: true, melody: true},
-            chord: "D2",
-            voice: "synth"
-          }
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'D2',
+            voice: 'synth',
+          },
         ),
       },
       2: {
@@ -800,15 +800,15 @@ export const lessons = {
           {
             value: ['F#4', '-', '-', '-', 'B3', '-', '-', '-', '-', '-', 'E4', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', 'B3', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
             amplitude: [3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            duration: [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            duration: [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           },
           {
             tempo: 90,
             volume: 60,
-            mute: {bassSnare: true, hiHat: true, melody: true},
-            chord: "B1",
-            voice: "synth"
-          }
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
         ),
       },
     },
@@ -858,7 +858,7 @@ export const lessons = {
           {
             value: ['E4'].concat(Array(31).fill('-')),
             amplitude: [3].concat(Array(31).fill(0)),
-            duration: [1].concat(Array(31).fill(0))
+            duration: [1].concat(Array(31).fill(0)),
           },
         ),
       },
@@ -872,7 +872,7 @@ export const lessons = {
     'On the locations of the hi hat notes, add Synth pitches that rise in pitch from the lower to higher B.',
     'Listen.',
     'How many steps up are there from the lower to the higher B?',
-    'Are they all the same size?'
+    'Are they all the same size?',
   ])
 }
           <p>
@@ -896,12 +896,12 @@ export const lessons = {
         ],
         pattern: patterns.constructPattern(
           {
-            value: Array(32).fill('-').map((e, i) => (i % 4 == 0 ? 'H' : '-')),
-            amplitude: Array(32).fill(0).map((e, i) => (i % 4 == 0 ? 1 : 0)),
-            duration: Array(32).fill(0)
+            value: Array(32).fill('-').map((e, i) => (i % 4 === 0 ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => (i % 4 === 0 ? 1 : 0)),
+            duration: Array(32).fill(0),
           },
           emptyPattern(),
-          emptyPattern()
+          emptyPattern(),
         ),
       },
     },
@@ -1024,15 +1024,15 @@ export const lessons = {
           {
             value: ['E4', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', '-', '-', 'E4', '-', '-', '-', '-', '-', 'E4', '-', 'D4', '-', '-', '-', 'B3', '-', '-', '-', '-', '-', '-', '-'],
             amplitude: [3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
-            duration: [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+            duration: [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0],
           },
           {
             tempo: 90,
             volume: 60,
-            mute: {bassSnare: true, hiHat: true, melody: true},
-            chord: "B1",
-            voice: "synth"
-          }
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
         ),
       },
       3: {
@@ -1068,15 +1068,15 @@ export const lessons = {
           {
             value: ['F#4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', 'F#4', '-', '-', '-', '-', '-', 'B3', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
             amplitude: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            duration: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            duration: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           },
           {
             tempo: 90,
             volume: 60,
-            mute: {bassSnare: true, hiHat: true, melody: true},
-            chord: "B1",
-            voice: "synth"
-          }
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
         ),
       },
       4: {
@@ -1111,16 +1111,16 @@ export const lessons = {
           {
             value: ['F#4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', 'F#4', '-', '-', '-', '-', '-', 'B3', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
             amplitude: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            duration: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            duration: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           },
           {
             tempo: 90,
             volume: 60,
-            mute: {bassSnare: true, hiHat: true, melody: true},
-            chord: "B1",
-            voice: "synth"
-          }
-        )
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
+        ),
       },
       5: {
         title: 'Repeated pitches',
@@ -1156,15 +1156,15 @@ export const lessons = {
           {
             value: ['D4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', '-', '-', '-', '-', 'D4', '-', '-', '-'],
             amplitude: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0],
-            duration: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+            duration: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
           },
           {
             tempo: 90,
             volume: 60,
-            mute: {bassSnare: true, hiHat: true, melody: true},
-            chord: "B1",
-            voice: "synth"
-          }
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
         ),
       },
       6: {
@@ -1206,7 +1206,7 @@ export const lessons = {
           {
             value: ['D4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'E4', '-', '-', '-', '-', '-', '-', '-', 'F#4', '-', '-', '-', '-', '-', '-', '-'],
             amplitude: [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
-            duration: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+            duration: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
           },
         ),
       },

@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>YouthBeat | Verify</title>
+  <meta name="description" content="YouthBeat">
+  <meta name="author" content="The Royal Conservatory">
+
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body class="verify">
+  <div class="verify__container">
+    <h1>Verify</h1>
+    <form class="verify__verification-form" onsubmit="window.onVerifyFormSubmit(event)">
+      <p class="verify__verification-form-question"></p>
+      <input type="radio" id="yes" name="answer" value="yes"
+         checked>
+      <label for="yes">Yes</label>
+      <input type="radio" id="no" name="answer" value="no"
+         checked>
+      <label for="no">No</label>
+      <br />
+      <br />
+      <input type="submit" value="Continue">
+    </form>
+    <p class="verify__verification-error">
+      Invalid shared link. Please contact an administrator.
+    </p>
+  </div>
+  <script src="./index.js" type="module"></script>
+</body>
+
+</html>

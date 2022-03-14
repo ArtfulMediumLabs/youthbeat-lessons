@@ -4,8 +4,11 @@
   min-height: 100vh;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .making-music__container {
@@ -14,6 +17,7 @@
   background: white;
   padding: 20px;
   font-family: Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
 .making-music__heading {
@@ -57,4 +61,29 @@
 .making-music__lesson-link:focus, .making-music__lesson-link:hover {
   background: rgb(235, 234, 234);
   border: 1px solid rgb(199, 198, 198);
+}
+
+.making-music__footer {
+  font-family: Verdana, sans-serif;
+  margin-top: 20px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 200px;
+}
+
+.making-music__footer-links {
+  margin-top: 20px
+}
+
+.making-music__footer-link {
+  padding: 5px;
+}
+
+.making-music__content {
+  text-align: center;
 }
