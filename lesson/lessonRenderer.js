@@ -37,7 +37,7 @@ export const renderLesson = (section) => {
       let widgetTitle;
       let widgetIcon;
       const createWidgetIcon = (svgName) => `
-        <img src="assets/${svgName}.svg" class="widget-element__icon" alt="" />
+        <img src="../assets/${svgName}.svg" class="widget-element__icon" alt="" />
       `;
 
       if (widget.type === widgets.DidYouKnow) {

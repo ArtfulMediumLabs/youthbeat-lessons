@@ -1,4 +1,4 @@
-import { lessons } from '../lessons.js';
+import { lessons } from './lessons.js';
 import { renderLesson } from './lessonRenderer.js';
 import LessonPagination from './lessonPagination.js';
 import { parseHTML } from '../utils.js';
@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
   lessonHeaderElement.prepend(
     parseHTML(
       `
-        <a aria-label="Homepage" class="lesson-header__link" href="./index.html?tier=${tier}&lesson_key=${lessonKey}">&#x2190 Back</a>
+        <a aria-label="Homepage" class="lesson-header__link" href="../index.html?tier=${tier}&lesson_key=${lessonKey}">&#x2190 Back</a>
       `,
     ),
   );
