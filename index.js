@@ -74,7 +74,7 @@ window.addEventListener('load', async () => {
             : `You have ${lessonLimit - window.localStorageService.lessonCount} lessons remaining.`}
           Register to access all free lessons.<br/>
           <div class="making-music__footer-links">
-            <a href="/register" class="making-music__footer-link">Register</a>
+            <a href="./register" class="making-music__footer-link">Register</a>
           </div>
         `,
       ),
