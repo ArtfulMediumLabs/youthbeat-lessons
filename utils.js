@@ -32,7 +32,7 @@ export function generateAccessToken(length = 8) {
 
 export function generateSharedLink(accessToken) {
   return `
-    ${window.location.origin}?access_token=${accessToken}
+    ${window.location.origin}${window.location.pathname}?access_token=${accessToken}
   `;
 }
 
