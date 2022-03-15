@@ -29,6 +29,6 @@ window.addEventListener('load', async () => {
     e.preventDefault();
 
     if (e.target.answer.value === 'yes') window.localStorageService.accessToken = accessToken;
-    window.location = window.location.origin;
+    window.location = '../';
   };
 });

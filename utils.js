@@ -30,9 +30,17 @@ export function generateAccessToken(length = 8) {
   return result;
 }
 
+export function getBaseUrl() {
+  const { origin } = window.location;
+
+  return origin === 'https://artfulmediumlabs.github.io'
+    ? `${origin}/youthbeat-lessons`
+    : origin;
+}
+
 export function generateSharedLink(accessToken) {
   return `
-    ${window.location.origin}?access_token=${accessToken}
+    ${getBaseUrl()}?access_token=${accessToken}
   `;
 }
 

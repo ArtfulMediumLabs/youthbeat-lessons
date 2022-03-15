@@ -29,7 +29,7 @@ window.onRegistrationFormSubmit = async (e) => {
     });
 
     window.localStorageService.accessToken = accessToken;
-    window.location.href = '../index.html';
+    window.location.href = '../';
   } catch (error) {
     console.log(error);
   }
