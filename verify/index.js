@@ -28,7 +28,11 @@ window.addEventListener('load', async () => {
   window.onVerifyFormSubmit = (e) => {
     e.preventDefault();
 
-    if (e.target.answer.value === 'yes') window.localStorageService.accessToken = accessToken;
+    if (e.target.answer.value === 'yes') {
+      window.localStorageService.accessToken = accessToken;
+    } else {
+      window.localStorageService.accessToken = null;
+    }
     window.location = '../';
   };
 });
