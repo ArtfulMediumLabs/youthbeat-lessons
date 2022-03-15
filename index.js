@@ -1,6 +1,8 @@
 /* eslint-disable indent */
 import { getOrderedLessons } from './lesson/lessons.js';
-import { parseHTML, generateSharedLink, hideElement } from './utils.js';
+import {
+ parseHTML, generateSharedLink, hideElement, getBaseUrl,
+} from './utils.js';
 import LocalStorageService from './localStorage.js';
 import { alphabet, lessonLimit, queryParams } from './constants.js';
 import { getUser } from './firestore.js';
@@ -24,7 +26,7 @@ window.addEventListener('load', async () => {
 
   // If access token query param, redirect to verify page
   if (accessToken) {
-    const url = new URL(`${window.location.origin}/verify/`);
+    const url = new URL(`${getBaseUrl()}/verify/`);
     url.searchParams.set(queryParams.accessToken, accessToken);
     window.location.replace(url.toString());
     return;
@@ -46,7 +48,7 @@ window.addEventListener('load', async () => {
         parseHTML(
           `
             <li class="making-music__lesson">
-              <a class="making-music__lesson-link" onClick="window.localStorageService.lessonCount = window.localStorageService.lessonCount + 1;" href="./lesson/index.html?tier=${1}&lesson_key=${key}">${alphabet[index]}. ${title}</a>
+              <a class="making-music__lesson-link" onClick="window.localStorageService.lessonCount = window.localStorageService.lessonCount + 1;" href="./lesson/?tier=${1}&lesson_key=${key}">${alphabet[index]}. ${title}</a>
             </li>
           `,
         ),

@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
   lessonHeaderElement.prepend(
     parseHTML(
       `
-        <a aria-label="Homepage" class="lesson-header__link" href="../index.html?tier=${tier}&lesson_key=${lessonKey}">&#x2190 Back</a>
+        <a aria-label="Homepage" class="lesson-header__link" href="../?tier=${tier}&lesson_key=${lessonKey}">&#x2190 Back</a>
       `,
     ),
   );
