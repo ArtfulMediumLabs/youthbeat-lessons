@@ -136,10 +136,10 @@ button.controlB {
 }
 
 /* 
- *  Lesson heading
+ *  Section heading
  */
 
-.lesson-header {
+.section-header {
     width: 1028px;
     margin: auto;
     background: white;
@@ -149,7 +149,7 @@ button.controlB {
     font-family: Verdana, sans-serif;
 }
 
-.lesson-header__heading {
+.section-header__heading {
     font-size: 16px;
     letter-spacing: 1.1px;
     color: gray;
@@ -157,23 +157,23 @@ button.controlB {
     margin: 10px 0;
 }
 
-.lesson-header__sub-heading {
+.section-header__sub-heading {
     color: rgb(21, 21, 21);
     font-size: 22px;
     margin: 10px 0;
 }
 
-.lesson-header__link {
+.section-header__link {
     font-size: 14px;
     text-decoration: none;
 }
 
 
 /* 
- *  Lesson content styling
+ *  Section content styling
  */
 
-.lesson-content {
+.section-content {
     background-color: white;
     width: 1028px;
     margin: 0 auto;
@@ -184,22 +184,22 @@ button.controlB {
     font-family: Verdana, sans-serif;
 }
 
-.lesson-content__container {
+.section-content__container {
     margin-bottom: 50px;
     font-size: 18px;
 }
 
 /* 
- *  Lesson pagination
+ *  Section pagination
  */
 
-.lesson-pagination {
+.section-pagination {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.lesson-pagination__button {
+.section-pagination__button {
     padding: 5px;
     font-family: Verdana, sans-serif;
     background: none;
@@ -209,18 +209,18 @@ button.controlB {
     cursor: pointer;
 }
 
-.lesson-pagination__button:hover {
+.section-pagination__button:hover {
     background-color: #ddd;
     transition: background-color .25s ease-in-out;
 }
 
-.lesson-pagination__button--selected, .lesson-pagination__button--selected:hover {
+.section-pagination__button--selected, .section-pagination__button--selected:hover {
     background-color: rgb(198, 135, 198);
     color: white;
 }
 
 /* 
- * Lesson widget
+ * Widget
  */
 
 .widget-element {

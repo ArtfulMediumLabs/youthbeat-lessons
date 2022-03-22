@@ -1,4 +1,5 @@
 import { localStorageKeys } from './constants.js';
+import { publish, events } from './pubSub.js';
 
 class LocalStorageService {
   set accessToken(val) {
@@ -9,12 +10,17 @@ class LocalStorageService {
     return localStorage.getItem(localStorageKeys.accessToken);
   }
 
-  set lessonCount(val) {
-    localStorage.setItem(localStorageKeys.lessonCount, Number(val));
+  set activityCount(val) {
+    localStorage.setItem(localStorageKeys.activityCount, Number(val));
+    publish(events.activityCountChanged, null);
   }
 
-  get lessonCount() {
-    return Number(localStorage.getItem(localStorageKeys.lessonCount)) || 0;
+  get activityCount() {
+    return Number(localStorage.getItem(localStorageKeys.activityCount)) || 0;
+  }
+
+  deleteKey(val) {
+    return localStorageKeys.deleteKey(val);
   }
 }
 

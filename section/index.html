@@ -10,6 +10,11 @@
 
   <link rel="stylesheet" href="./index.css">
 
+  <script>
+    const pubSub = {
+      subscribers: {}
+    };
+  </script>
   <script src="https://unpkg.com/konva@^7/konva.min.js"></script>
   <script src="https://unpkg.com/tone@14.7.*/build/Tone.js"></script>
   <script src="https://unpkg.com/@ungap/url-search-params@0.1.2/min.js"></script>
@@ -18,10 +23,10 @@
   <script src="./strings.js"></script>
 </head>
 
-<body>
-  <div class="lesson-header">
-    <h2 class="lesson-header__heading"></h2>
-    <h3 class="lesson-header__sub-heading"></h3>
+<body class="section">
+  <div class="section-header">
+    <h2 class="section-header__heading"></h2>
+    <h3 class="section-header__sub-heading"></h3>
   </div>
   <div id="content">
     <div id="container" class="center"></div>
@@ -90,13 +95,17 @@
       </div>
     </div>
   </div>
-  <div class="lesson-content">
-    <div class="lesson-content__container"></div>
-    <div class="lesson-pagination">
-      <div class="lesson-pagination__content">
+  <div class="section-content">
+    <div class="section-content__container"></div>
+    <div class="section-pagination">
+      <div class="section-pagination__content">
       </div>
     </div>
    </div>
+   <footer class="footer">
+    <div class="footer__content">
+    </div>
+  </footer>
   <script src="./index.js" type="module"></script>
 </body>
 

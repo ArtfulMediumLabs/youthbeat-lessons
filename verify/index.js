@@ -1,7 +1,7 @@
 import { getUser } from '../firestore.js';
 import LocalStorageService from '../localStorage.js';
 import { hideElement } from '../utils.js';
-import { queryParams } from '../constants.js';
+import { queryParams, localStorageKeys } from '../constants.js';
 
 window.addEventListener('load', async () => {
   window.localStorageService = new LocalStorageService();
@@ -31,7 +31,7 @@ window.addEventListener('load', async () => {
     if (e.target.answer.value === 'yes') {
       window.localStorageService.accessToken = accessToken;
     } else {
-      window.localStorageService.accessToken = null;
+      window.localStorageService.deleteKey(localStorageKeys.accessToken);
     }
     window.location = '../';
   };

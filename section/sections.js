@@ -28,7 +28,7 @@ const constructActionSteps = (actions, description = '') => `
   `;
 
 /*
-* LessonSection Schema:
+* Activity Schema:
 *
 * title: string;
 * content: string;
@@ -39,20 +39,20 @@ const constructActionSteps = (actions, description = '') => `
 
 /*
 *
-* Lesson Schema:
+* Section Schema:
 * title: string;
 * key: string;
-* sections: {[key: number]: LessonSection};
+* activities: {[key: number]: Activity};
 * tierFilter: {{key: number]: { cutoff: number; }}
 *
 */
 
 /*
-* lessons - dictonary of lessons, where each have the Lesson schema
+* sections - dictionary of sections, where each have the Section schema
 *
 */
 
-export const lessons = {
+export const sections = {
   RHYTHM_DRUMS: {
     key: 'RHYTHM_DRUMS',
     title: 'Rhythm - Drums',
@@ -67,7 +67,7 @@ export const lessons = {
         cutoff: 13,
       },
     },
-    sections: {
+    activities: {
       1: {
         title: 'Introduction',
         content:
@@ -87,7 +87,7 @@ export const lessons = {
           <p>We only hear a few at a time. How do we keep track of them all?</p>
           ${
   constructActionSteps([
-    'Press Play <img src="assets/play.svg" alt="play button" width="20px" alt="" /> to listen. Press again to stop.',
+    'Press Play <img src="../assets/play.svg" alt="play button" width="20px" alt="" /> to listen. Press again to stop.',
     'How would you describe this pattern?',
   ])
 }
@@ -188,7 +188,7 @@ export const lessons = {
                 <li>Put the four fractions on a number line numbered from 0 to 16, drawing a line to show each fraction above the number line.</li>
               </ul>
               <div class="image-container">
-                <img src="assets/numberline.png" width="500" alt="a numberline with 17 dashes labelled 0 through 16 with the fraction 4/16 at the 5th line, 8/16 at the 9th line, 12/16 at the 13th line, and 16/16 at the 17th line." />
+                <img src="../assets/numberline.png" width="500" alt="a numberline with 17 dashes labelled 0 through 16 with the fraction 4/16 at the 5th line, 8/16 at the 9th line, 12/16 at the 13th line, and 16/16 at the 17th line." />
               </div>
             `,
           },
@@ -329,7 +329,7 @@ export const lessons = {
   RHYTHM_HI_HAT: {
     title: 'Rhythm - Hi Hat',
     key: 'RHYTHM_HI_HAT',
-    sections: {
+    activities: {
       1: {
         title: 'Introducing the Hi Hat',
         content:
@@ -568,7 +568,7 @@ export const lessons = {
   TEMPO: {
     title: 'Tempo',
     key: 'TEMPO',
-    sections: {
+    activities: {
       1: {
         title: 'Tempo is the speed of the music',
         content:
@@ -636,7 +636,7 @@ export const lessons = {
   VOLUME: {
     title: 'Volume',
     key: 'VOLUME',
-    sections: {
+    activities: {
       1: {
         title: 'Volume (loudness)',
         content: `
@@ -715,7 +715,7 @@ export const lessons = {
   TIMBRE: {
     title: 'Timbre',
     key: 'TIMBRE',
-    sections: {
+    activities: {
       1: {
         title: 'Melody instruments',
         content: `
@@ -827,7 +827,7 @@ export const lessons = {
   PITCH: {
     title: 'Pitch',
     key: 'PITCH',
-    sections: {
+    activities: {
       1: {
         title: 'Introducing pitch',
         content: `
@@ -920,7 +920,7 @@ export const lessons = {
   CHORDS: {
     title: 'Chords',
     key: 'CHORDS',
-    sections: {
+    activities: {
       1: {
         title: 'Chords paint a mood',
         content: `
@@ -977,7 +977,7 @@ export const lessons = {
   MELODY: {
     title: 'Melody',
     key: 'MELODY',
-    sections: {
+    activities: {
       1: {
         title: 'Introduction',
         content: 'Melody weaves together the rhythm and the chords. That&#8217;s why the melody gets most of the attention when we listen to a song - it&#8217;s the signature of the whole piece.',
@@ -1227,7 +1227,7 @@ export const lessons = {
   ADVANCED_TOOLS: {
     title: 'Advanced Tools',
     key: 'ADVANCED_TOOLS',
-    sections: {},
+    activities: {},
     tierFilter: {
       3: {
         cutoff: 2,
@@ -1237,7 +1237,7 @@ export const lessons = {
   SPECIAL_PROJECTS: {
     title: 'Special Projects',
     key: 'SPECIAL_PROJECTS',
-    sections: {},
+    activities: {},
     tierFilter: {
       2: {
         cutoff: 2,
@@ -1250,23 +1250,23 @@ export const lessons = {
 };
 
 /*
-* orderedLesson - method that takes a tier and returns an array of lessons in sequential order
+* getOrderedSEctions - method that takes a tier and returns an array of sections in sequential order
 *
 * Arguments:
 * tier: number;
 *
-* Returns: Lesson[]
+* Returns: Section[]
 */
 
-export const getOrderedLessons = (tier) => [
-  lessons.RHYTHM_DRUMS,
-  lessons.RHYTHM_HI_HAT,
-  lessons.TEMPO,
-  lessons.VOLUME,
-  lessons.TIMBRE,
-  lessons.PITCH,
-  lessons.CHORDS,
-  lessons.MELODY,
-  lessons.ADVANCED_TOOLS,
-  lessons.SPECIAL_PROJECTS,
-].filter((lesson) => !!lesson.tierFilter[tier]);
+export const getOrderedSections = (tier) => [
+  sections.RHYTHM_DRUMS,
+  sections.RHYTHM_HI_HAT,
+  sections.TEMPO,
+  sections.VOLUME,
+  sections.TIMBRE,
+  sections.PITCH,
+  sections.CHORDS,
+  sections.MELODY,
+  sections.ADVANCED_TOOLS,
+  sections.SPECIAL_PROJECTS,
+].filter((section) => !!section.tierFilter[tier]);
