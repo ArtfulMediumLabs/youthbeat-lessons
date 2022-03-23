@@ -21,13 +21,16 @@ export const UserSchema = Object.freeze({
 export const queryParams = Object.freeze({
   tier: 'tier',
   accessToken: 'access_token',
-  lessonKey: 'lesson_key',
+  sectionKey: 'section_key',
   isTeacher: 'is_teacher',
+  message: 'message',
 });
 
-export const lessonLimit = 10;
+export const activityLimit = 10;
 
 export const localStorageKeys = Object.freeze({
-  lessonCount: 'lesson_count',
+  activityCount: 'activity_count',
   accessToken: 'access_token',
 });
+
+export const cloudFunctionUrl = 'https://northamerica-northeast1-youth-beat-dev.cloudfunctions.net/app';

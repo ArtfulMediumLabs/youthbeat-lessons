@@ -2,25 +2,25 @@ import { parseHTML, removeAllChildNodes } from '../utils.js';
 import { emptyPreset, loadPreset, updatePattern } from './script.js';
 import { widgets } from '../constants.js';
 
-export const lessonContentContainer = document.querySelector('.lesson-content__container');
-export const lessonSubHeader = document.querySelector('.lesson-header__sub-heading');
+export const sectionContentContainer = document.querySelector('.section-content__container');
+export const sectionSubHeader = document.querySelector('.section-header__sub-heading');
 
 /*
-* section: LessonSection
+* activity: Activity
 */
-export const renderLesson = (section) => {
-  if (section.pattern) {
+export const renderSection = (activity) => {
+  if (activity.pattern) {
     emptyPreset();
-    loadPreset(section.pattern);
+    loadPreset(activity.pattern);
     updatePattern();
   }
 
-  removeAllChildNodes(lessonContentContainer);
-  lessonSubHeader.textContent = section.title;
-  lessonContentContainer.appendChild(parseHTML(section.content));
+  removeAllChildNodes(sectionContentContainer);
+  sectionSubHeader.textContent = activity.title;
+  sectionContentContainer.appendChild(parseHTML(activity.content));
 
-  if (section.widgets) {
-    section.widgets.forEach((widget) => {
+  if (activity.widgets) {
+    activity.widgets.forEach((widget) => {
       if (!widget.type || !Object.values(widgets).includes(widget.type)) return;
 
       const widgetElement = document.createElement('section');
@@ -56,8 +56,8 @@ export const renderLesson = (section) => {
         <header class="widget-element__header">
           ${widgetIcon}
           <span class="widget-element__title">${widgetTitle}</span>
-          <img src="assets/arrow-up.svg" class="widget-element__icon widget-element__arrow-up" alt="" />
-          <img src="assets/arrow-up.svg" class="widget-element__icon widget-element__arrow-down" alt="" />
+          <img src="../assets/arrow-up.svg" class="widget-element__icon widget-element__arrow-up" alt="" />
+          <img src="../assets/arrow-up.svg" class="widget-element__icon widget-element__arrow-down" alt="" />
         </header>
        <div class="widget-element__content">
        ${widget.content}
@@ -65,7 +65,10 @@ export const renderLesson = (section) => {
        `,
       ));
 
-      lessonContentContainer.appendChild(widgetElement);
+      sectionContentContainer.appendChild(widgetElement);
     });
   }
+
+  // Update activity view count
+  window.localStorageService.activityCount += 1;
 };

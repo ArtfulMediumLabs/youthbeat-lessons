@@ -16,6 +16,10 @@
   font-family: Verdana, sans-serif;
 }
 
+.register__registration-form-error {
+  color: red;
+}
+
 .register__input {
   margin-bottom: 10px;
 }

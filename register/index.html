@@ -7,7 +7,11 @@
   <title>YouthBeat | Register</title>
   <meta name="description" content="YouthBeat">
   <meta name="author" content="The Royal Conservatory">
-
+  <script>
+    const pubSub = {
+      subscribers: {}
+    };
+  </script>
   <link rel="stylesheet" href="./index.css">
 </head>
 
@@ -35,12 +39,13 @@
       <label for="school">School:</label>
       <input type="text" id="school" name="school" class="register__input" required><br />
       <label for="grade">Grade:</label>
-      <input type="number" min="1" max="12" id="grade" name="grade" class="register__input" value="5" required><br>
+    <input type="number" min="1" max="12" id="grade" name="grade" class="register__input" value="5" required><br>
       <label for="city">City/Town:</label>
       <input type="text" id="city" name="city" class="register__input" required><br>
       <label for="state">State/Province:</label>
       <input type="text" id="state" name="state" class="register__input" required><br />
-      <input type="submit" value="Register">
+      <input type="submit" value="Register"><br/><br/>
+      <span class="register__registration-form-error"></span>
     </form> 
     <p class="register__invalid-registration-prompt">
       Registration only open for teachers.
