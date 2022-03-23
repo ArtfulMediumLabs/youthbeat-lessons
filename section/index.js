@@ -42,7 +42,7 @@ window.addEventListener('load', async () => {
     if (user === null && window.localStorageService.activityCount > activityLimit) {
       const modal = constructModal(
         `
-        You've viewed all ${activityLimit} activites available to registered users.
+        You've viewed all ${activityLimit} activites available to unregistered users.
         Please <a href="${getBaseUrl()}/register">register</a> to continue.
         `,
       );
