@@ -20,7 +20,7 @@ class LocalStorageService {
   }
 
   deleteKey(val) {
-    return localStorageKeys.deleteKey(val);
+    return localStorage.removeItem(val);
   }
 }
 
