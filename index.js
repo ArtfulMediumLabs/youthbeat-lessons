@@ -4,6 +4,7 @@ import { parseHTML, getBaseUrl } from './utils.js';
 import LocalStorageService from './localStorage.js';
 import { alphabet, queryParams } from './constants.js';
 import { getUser } from './firestore.js';
+import { constructHeader } from './header.js';
 import { constructFooter } from './footer.js';
 
 window.addEventListener('load', async () => {
@@ -46,5 +47,6 @@ window.addEventListener('load', async () => {
     );
   });
 
+  constructHeader(user);
   constructFooter(user);
 });
