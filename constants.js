@@ -33,4 +33,4 @@ export const localStorageKeys = Object.freeze({
   accessToken: 'access_token',
 });
 
-export const cloudFunctionUrl = 'https://northamerica-northeast1-youth-beat-dev.cloudfunctions.net/app';
+export const cloudFunctionUrl = 'https://northamerica-northeast1-youth-beat.cloudfunctions.net/app';
