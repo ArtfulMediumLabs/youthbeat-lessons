@@ -576,10 +576,43 @@ export const sections = {
           },
         ],
       },
+      8: {
+        title: 'Editing Groups - Part 2',
+        content:
+        `
+        <p>A gap in the hi hat after a drum beat or a run leading up to one both make make the beat stand out. Let’s explore this using different positions for the drum beat.</p>
+        ${
+  constructActionSteps([
+    'Move the 2nd drum beat one space early or late.',
+    'Now move a hi hat group or delete one of the 3 notes to make a bigger gap after the drum beat you moved. Save.',
+    'Now move the 3rd drum beat one space early or late also. Change the hi hat pattern to highlight this beat, either with a run or a larger gap after it. Save.',
+    'Play the patterns back. What does each highlight?',
+  ])
+}
+        <p>
+          <strong>Notice</strong> Since changes to a drum beat location are bigger changes, hi hat patterns that highlight these changes make a bigger difference than ones where the beat is more regular.
+        </p>
+        `,
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 2, 4, 8, 10, 12, 16, 18, 20, 24, 26, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 2, 4, 8, 10, 12, 16, 18, 20, 24, 26, 28].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+      },
     },   
     tierFilter: {
       1: {
-        cutoff: 7,
+        cutoff: 8,
       },
       2: {
         cutoff: 11,
