@@ -532,10 +532,54 @@ export const sections = {
           emptyPattern(),
         ),
       },
-    },
+      7: {
+        title: 'Editing Groups of 3',
+        content:
+        `
+        <p>Hi hat patterns often involve repeated groups of 2-3 notes.</p>
+        <p>What happens if we combine groups or make a larger gap in a group?</p>
+
+        ${
+  constructActionSteps([
+    'Listen.',
+    'Move one whole group of 3 one space later. Save.',
+    'Which beat is highlighted now?',
+    'Click Pattern 1. Take away the 6th hi hat note. Save.',
+    'Which beat is highlighted now? ',
+  ])
+}
+        <p>
+          <strong>Notice</strong> Pattern 2 highlights the beat that falls in the middle of the run of short notes. Pattern 3 highlights the 2nd snare, as it puts a gap just after it that makes the snare linger in our mind.
+        </p>
+        `,
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 2, 4, 8, 10, 12, 16, 18, 20, 24, 26, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 2, 4, 8, 10, 12, 16, 18, 20, 24, 26, 28].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: `
+            You can also move one note in a group of three early or late. It's surprising how different the music can sound with these small changes - because they make us to pay attention to a different drum beat.
+            `,
+          },
+        ],
+      },
+    },   
     tierFilter: {
       1: {
-        cutoff: 6,
+        cutoff: 7,
       },
       2: {
         cutoff: 11,
