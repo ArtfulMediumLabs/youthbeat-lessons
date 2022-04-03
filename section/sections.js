@@ -58,7 +58,7 @@ export const sections = {
     title: 'Rhythm - Drums',
     tierFilter: {
       1: {
-        cutoff: 7,
+        cutoff: 8,
       },
       2: {
         cutoff: 11,
@@ -236,94 +236,40 @@ export const sections = {
           },
         ],
       },
-      //       8: {
-      //         title: 'Highlight part of the beat pattern',
-      //         content:
-      //           `
-      //           <p>Drummers often highlight notes they want the listener to pay attention to: for example the very first note in the bar,  or where the music goes off the beat or comes back on the beat. </p>
-      //           ${
-      //   constructActionSteps([
-      //     'Double a beat, by putting a drum sound in the very next space.',
-      //     'Make a beat that you want to stand out louder, by tapping it more than once. (Highlight a beat that moves off the beat or one that comes back on the beat).',
-      //   ], 'Try these two ways to highlight a note in this pattern:')
-      // }
-      //           <p>Notice how this makes you pay more attention to the note that is highlighted.</p>
-      //           `,
-      //         widgets: [
-      //           {
-      //             type: 'did-you-know',
-      //             content: 'Doubling a beat changes the flow of the music because the note that&#8217;s added is off the beat.',
-      //           },
-      //         ],
-      //         pattern: patterns.bassSnareLongGapPattern,
-      //       },
-      //       9: {
-      //         title: 'Add a row of short notes to make the music seem to speed up',
-      //         content:
-      //           `
-      //           <p>We get used to the drum beats being spaced evenly every four spaces apart.</p>
-      //           <p>So if we fill in all the spaces between two beats, it makes the music seem to go faster, have more forward energy or momentum in that one part.</p>
-      //           ${
-      //   constructActionSteps([
-      //     'In the second or third beat unit above, ‘fill in&#8217; the beat unit, adding drum sounds in each empty space. Listen.',
-      //   ])
-      // }
-      //           <p>Notice how the music seems to lead up to the drum sound right after the run of short notes.</p>
-      //           <p>Did you know that drummers often put a row of short notes in the fourth beat unit? Called a flourish, this picks up the energy as the music leads back into the next bar.</p>
-      //           `,
-      //         pattern: patterns.bassSnareLongGapPattern,
-      //       },
-      //       10: {
-      //         title: 'Create a sense of the music rushing then stopping',
-      //         content:
-      //           `
-      //           <p>Listen to this pattern. </p>
-      //           ${
-      //   constructActionSteps([
-      //     'Now, take away the third beat, the one right after the close together notes.',
-      //     'Listen again. How does this change the way you hear the pattern?',
-      //   ])
-      // }
-      //           <p>Notice when we hear a run of close together notes and then a gap, the music can almost seem to stop. We expect to hear a sound, so it&#8217;s surprising to hear no sound at all.</p>
-      //           `,
+      8: {
+        title: 'Bridging a Gap',
+        content:
+          `
+          <p>Too long a gap between drum beats can leave listeners hanging - not sure what to expect next.</p>
+          <p>How can we keep a gap from breaking the flow?</p>
+          ${
+  constructActionSteps([
+    'Listen to Pattern 1 then 2.',
+    'Put a note in Pattern 2 midway between the 3rd and 4th beats. Save.',
+    'Play the 3 patterns in this order: 1-2-1-3',
+    'Which pair is easier to follow and move to?',
+  ])
+}
+          <p><strong>Notice</strong> the new note in pattern 3 has a lighter stress. It carries the energy from one beat to the next - so the energy stays high.</p>
+          `,
 
-      //         widgets: [
-      //           {
-      //             type: 'did-you-know',
-      //             content: 'Gaps (called rests) are among the most powerful musical tools because they play tricks on our sense of timing plus they highlight the notes before and after them!',
-      //           },
-      //         ],
-      //         pattern: patterns.bassSnareLongGapPattern,
-      //       },
-      //       11: {
-      //         title: 'Story telling with the drum',
-      //         content:
-      //           `
-      //           <p>What we hear first in music is the most important. So when we&#8217;re creating a piece of music, we need to make sure the listener is familiar with the first idea.</p>
-      //           ${
-      //   constructActionSteps([
-      //     `
-      //               Listen to the patterns in this list. The main idea is Pattern #1. Enter the patterns in the sequencer in this order: (click the > button beside the pattern to enter it in the sequencer,
-      //                 <ul>
-      //                   <li>Main Idea</li>
-      //                   <li>Repeat main Idea</li>
-      //                   <li>Make small changes</li>
-      //                   <li>Repeat main idea.</li>
-      //                 </ul>
-      //               `,
-      //     'Press Start and then press Play in the circle to listen. To change the order, press Stop and Clear and re-enter.',
-      //   ])
-      // }
-      //           <p>Notice that the music keeps going back to the original idea: that&#8217;s so listeners can compare the small changes to the original idea. The further we get into a piece, the less we have to repeat the original idea because listeners are so familiar with it by now.</p>
-      //           `,
-      //         widgets: [
-      //           {
-      //             type: 'did-you-know',
-      //             content: 'To get to the sequencer, click the Note Entry button in the bottom left of the app.',
-      //           },
-      //         ],
-      //         pattern: patterns.bassSnareLongGapPattern,
-      //       },
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 12].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 12, 8, 24].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'a note midway between beats is called an <em>off</em> beat.',
+          },
+        ],
+      },
     },
   },
   RHYTHM_HI_HAT: {
