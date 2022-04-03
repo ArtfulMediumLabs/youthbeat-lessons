@@ -58,7 +58,7 @@ export const sections = {
     title: 'Rhythm - Drums',
     tierFilter: {
       1: {
-        cutoff: 8,
+        cutoff: 9,
       },
       2: {
         cutoff: 11,
@@ -267,6 +267,40 @@ export const sections = {
           {
             type: widgets.DidYouKnow,
             content: 'a note midway between beats is called an <em>off</em> beat.',
+          },
+        ],
+      },
+      9: {
+        title: 'Highlighting Tools',
+        content:
+          `
+          <p>When we're talking, we stress a word we want the other person to notice.</p>
+          <p>We do this in music too.</p>
+          ${
+  constructActionSteps([
+    'Tap one note above twice to make it as loud as possible.',
+    'Try different notes to highlight. Save your favourite.',
+    'Now, double a note - putting a note in the very next space. Try different notes. Save your favourite.',
+    'Play the patterns back in a row. Which one gets your attention the most? What kind of note is highlighted?',
+  ])
+}
+          <p><strong>Notice</strong> that highlighting draws attention to a change in the pattern, like where it goes <em>off the beat</em> or comes back <em>on the beat</em>.</p>
+          `,
+
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 12].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 12, 8, 24].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+        widgets: [
+          {
+            type: widgets.LiteracyConnection,
+            content: 'What are some tools we use to highlight words in a written text?',
           },
         ],
       },
