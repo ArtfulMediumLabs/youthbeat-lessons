@@ -1017,10 +1017,47 @@ export const sections = {
           emptyPattern(),
         ),
       },
+      2: {
+        title: 'Home Chord',
+        content: `
+          <p>The first chord we hear in a song is the most important - it's the 'home' chord that the music keeps coming back to throughout the piece.</p>
+          <p>How can we help listeners relate other chords to this one?</p>
+          ${
+  constructActionSteps([
+    'While this rhythm pattern is playing, change the chord to create these patterns:',
+    'D/D/Bm/D',
+    'Bm/Bm/D/Bm',
+  ])
+}    
+          <p>
+            <strong>Notice</strong> the main chord is played twice before the chord is changed. And after the change, we go back to the main chord again. This helps listeners remember the main chord and connect the new chord to it.
+          </p>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Further into a song, you don’t need to repeat the main chord as often, as listeners are familiar with it now.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            value: Array(32).fill('-').map((e, i) => ([4, 10, 20, 26].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([4, 10, 20, 26].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 28, 30].includes(i) ? 'B' : ([6, 14, 18, 24].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 28, 30, 6, 14, 18, 24].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+      },
     },
     tierFilter: {
       1: {
-        cutoff: 1,
+        cutoff: 2,
       },
       2: {
         start: 2,
