@@ -1333,11 +1333,57 @@ export const sections = {
           },
         ),
       },
-
+      7: {
+        title: `
+          Creating a sense of 'home' in a melody
+        `,
+        content: `
+          <p>Listeners need to know the main pitch in a melody - the one the melody starts from and comes back to throughout the song.</p>
+          ${
+  constructActionSteps([
+    'On hi hat locations, enter two D’s in the first half of the melody.',
+    'Next enter either E or B, then end with D. Save.',
+    'Now start instead with E or B then D, then E/B then end with D. Save.',
+    'Listen to the two patterns and how they help you remember D.'
+  ])
+}    
+          <p>
+            <strong>Notice</strong> repeating D, moving to a nearby pitch and back, and reversing the order all help us remember D is the main pitch.
+          </p>
+        `,
+        widgets: [
+          {
+            type: widgets.LiteracyConnection,
+            content: 'Read a familiar story and notice what the writer does to help us become familiar with the main character’s environment. Write your own story that uses these same tools at the beginning.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 6, 12, 20, 24, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 6, 12, 20, 24, 28].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'D2',
+            voice: 'synth',
+          },
+        ),
+      },
     },
     tierFilter: {
       1: {
-        cutoff: 6,
+        cutoff: 7,
       },
       2: {
         cutoff: 10,
