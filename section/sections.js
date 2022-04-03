@@ -1380,10 +1380,35 @@ export const sections = {
           },
         ),
       },
+      8: {
+        title: 'Smaller vs Larger Steps in Pitch',
+        content: `
+          <p>At the beginning of a song, the melody mostly uses small changes in pitch so listeners can connect new pitches back to the main pitch.</p>
+          <p>What does a larger step add?</p>
+          ${
+  constructActionSteps([
+    'Enter a melody that has 5 notes, using just D and E. Save.',
+    'Change one note near the end to the higher A or B to create a leap up in pitch. Save.',
+    'Play Pattern 1 then 2.',
+    'How does the leap up change the way you hear the melody?'
+  ])
+}    
+          <p>
+            <strong>Notice</strong> the longer we hear small changes in pitch, the more a leap stands out. A leap up in pitch is exciting, it adds energy to the melody, like a flourish in a drum pattern.
+          </p>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'A larger leap is often used in the chorus - to make it different from the verse, which tends to use smaller steps.',
+          },
+        ],
+      },
+      
     },
     tierFilter: {
       1: {
-        cutoff: 7,
+        cutoff: 8,
       },
       2: {
         cutoff: 10,
