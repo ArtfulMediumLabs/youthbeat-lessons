@@ -1054,10 +1054,39 @@ export const sections = {
           emptyPattern(),
         ),
       },
+      3: {
+        title: 'Which chords are more like and which less?',
+        content: `
+          <p>Which pairs of chords sound more like each other, and which are more different?</p>
+          ${
+  constructActionSteps([
+    'Listen to the D chord, then the Bm chord.',
+    'Now listen to the D chord then G.',
+    'Which pair of chords seem more like, and which are more different?',
+    'How many notes (white lines) are in common between the D and Bm chords?',
+    'Between D and G chords?',
+  ])
+}
+          <p>
+            <strong>Notice</strong> there is only one pitch in common between D to G (D), but two pitches in common between D and Bm (D, F#). This may explain why D and Bm seem more like.
+          </p>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Bm is called the relative minor of D - another way of saying these two chords are similar.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          emptyPattern(),
+        ),
+      },
     },
     tierFilter: {
       1: {
-        cutoff: 2,
+        cutoff: 3,
       },
       2: {
         start: 2,
