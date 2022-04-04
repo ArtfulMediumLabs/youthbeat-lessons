@@ -58,7 +58,7 @@ export const sections = {
     title: 'Rhythm - Drums',
     tierFilter: {
       1: {
-        cutoff: 7,
+        cutoff: 9,
       },
       2: {
         cutoff: 11,
@@ -126,7 +126,8 @@ export const sections = {
           <p>Since it&#8217;s easier to compare two halves of a pattern, big changes tend to be made from one half to the other.</p>
           ${
   constructActionSteps([
-    `Delete one note in the 2nd half above by clicking it 3 times. Save by pressing “Save Pattern”.
+    'Listen and Save.',
+    `Delete one note in the 2nd half above by clicking it 3 times. Save by pressing "Save Pattern".
     <ul>
       <li>Listen. How does this change the music?</li>
     </ul>
@@ -236,94 +237,74 @@ export const sections = {
           },
         ],
       },
-      //       8: {
-      //         title: 'Highlight part of the beat pattern',
-      //         content:
-      //           `
-      //           <p>Drummers often highlight notes they want the listener to pay attention to: for example the very first note in the bar,  or where the music goes off the beat or comes back on the beat. </p>
-      //           ${
-      //   constructActionSteps([
-      //     'Double a beat, by putting a drum sound in the very next space.',
-      //     'Make a beat that you want to stand out louder, by tapping it more than once. (Highlight a beat that moves off the beat or one that comes back on the beat).',
-      //   ], 'Try these two ways to highlight a note in this pattern:')
-      // }
-      //           <p>Notice how this makes you pay more attention to the note that is highlighted.</p>
-      //           `,
-      //         widgets: [
-      //           {
-      //             type: 'did-you-know',
-      //             content: 'Doubling a beat changes the flow of the music because the note that&#8217;s added is off the beat.',
-      //           },
-      //         ],
-      //         pattern: patterns.bassSnareLongGapPattern,
-      //       },
-      //       9: {
-      //         title: 'Add a row of short notes to make the music seem to speed up',
-      //         content:
-      //           `
-      //           <p>We get used to the drum beats being spaced evenly every four spaces apart.</p>
-      //           <p>So if we fill in all the spaces between two beats, it makes the music seem to go faster, have more forward energy or momentum in that one part.</p>
-      //           ${
-      //   constructActionSteps([
-      //     'In the second or third beat unit above, ‘fill in&#8217; the beat unit, adding drum sounds in each empty space. Listen.',
-      //   ])
-      // }
-      //           <p>Notice how the music seems to lead up to the drum sound right after the run of short notes.</p>
-      //           <p>Did you know that drummers often put a row of short notes in the fourth beat unit? Called a flourish, this picks up the energy as the music leads back into the next bar.</p>
-      //           `,
-      //         pattern: patterns.bassSnareLongGapPattern,
-      //       },
-      //       10: {
-      //         title: 'Create a sense of the music rushing then stopping',
-      //         content:
-      //           `
-      //           <p>Listen to this pattern. </p>
-      //           ${
-      //   constructActionSteps([
-      //     'Now, take away the third beat, the one right after the close together notes.',
-      //     'Listen again. How does this change the way you hear the pattern?',
-      //   ])
-      // }
-      //           <p>Notice when we hear a run of close together notes and then a gap, the music can almost seem to stop. We expect to hear a sound, so it&#8217;s surprising to hear no sound at all.</p>
-      //           `,
+      8: {
+        title: 'Level 2: Bridging a Gap',
+        content:
+          `
+          <p>Too long a gap between drum beats can leave listeners hanging - not sure what to expect next.</p>
+          <p>How can we keep a gap from breaking the flow?</p>
+          ${
+  constructActionSteps([
+    'Listen to this pattern, then save it.',
+    'Put a note in Pattern 2 midway between the 3rd and 4th beats. Save.',
+    'Play the 3 patterns in this order: 1-2-1-3',
+    'Which pair is easier to follow and move to?',
+  ])
+}
+          <p><strong>Notice</strong> the new note in pattern 3 has a lighter stress. It carries the energy from one beat to the next - so the energy stays high.</p>
+          `,
 
-      //         widgets: [
-      //           {
-      //             type: 'did-you-know',
-      //             content: 'Gaps (called rests) are among the most powerful musical tools because they play tricks on our sense of timing plus they highlight the notes before and after them!',
-      //           },
-      //         ],
-      //         pattern: patterns.bassSnareLongGapPattern,
-      //       },
-      //       11: {
-      //         title: 'Story telling with the drum',
-      //         content:
-      //           `
-      //           <p>What we hear first in music is the most important. So when we&#8217;re creating a piece of music, we need to make sure the listener is familiar with the first idea.</p>
-      //           ${
-      //   constructActionSteps([
-      //     `
-      //               Listen to the patterns in this list. The main idea is Pattern #1. Enter the patterns in the sequencer in this order: (click the > button beside the pattern to enter it in the sequencer,
-      //                 <ul>
-      //                   <li>Main Idea</li>
-      //                   <li>Repeat main Idea</li>
-      //                   <li>Make small changes</li>
-      //                   <li>Repeat main idea.</li>
-      //                 </ul>
-      //               `,
-      //     'Press Start and then press Play in the circle to listen. To change the order, press Stop and Clear and re-enter.',
-      //   ])
-      // }
-      //           <p>Notice that the music keeps going back to the original idea: that&#8217;s so listeners can compare the small changes to the original idea. The further we get into a piece, the less we have to repeat the original idea because listeners are so familiar with it by now.</p>
-      //           `,
-      //         widgets: [
-      //           {
-      //             type: 'did-you-know',
-      //             content: 'To get to the sequencer, click the Note Entry button in the bottom left of the app.',
-      //           },
-      //         ],
-      //         pattern: patterns.bassSnareLongGapPattern,
-      //       },
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 12].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 12, 8, 24].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'a note midway between beats is called an <em>off</em> beat.',
+          },
+        ],
+      },
+      9: {
+        title: 'Level 2: Highlighting Tools',
+        content:
+          `
+          <p>When we're talking, we stress a word we want the other person to notice.</p>
+          <p>We do this in music too.</p>
+          ${
+  constructActionSteps([
+    'Tap one note above twice to make it as loud as possible.',
+    'Try different notes to highlight. Save your favourite.',
+    'Now, double a note - putting a note in the very next space. Try different notes. Save your favourite.',
+    'Play the patterns back in a row. Which one gets your attention the most? What kind of note is highlighted?',
+  ])
+}
+          <p><strong>Notice</strong> that highlighting draws attention to a change in the pattern, like where it goes <em>off the beat</em> or comes back <em>on the beat</em>.</p>
+          `,
+
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 12].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 12, 8, 24].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+        widgets: [
+          {
+            type: widgets.LiteracyConnection,
+            content: 'What are some tools we use to highlight words in a written text?',
+          },
+        ],
+      },
     },
   },
   RHYTHM_HI_HAT: {
@@ -530,7 +511,7 @@ export const sections = {
         <p>Smaller changes in the hi hat tend to happen from one quarter to the next.</p>
         ${
   constructActionSteps([
-    'Listen to this pattern with a big change from half to half (missing beat).',
+    'Listen to this pattern with a big change from half to half and save.',
     'Move the 2nd or 4th note one space early or late. Save.',
     'Go back to Pattern 1 and delete the 2nd or 4th note. Save.',
     'Play the 3 patterns in a row. Is it easy to follow the changes from the 1st to 2nd quarter?',
@@ -552,10 +533,87 @@ export const sections = {
           emptyPattern(),
         ),
       },
-    },
+      7: {
+        title: 'Level 2: Editing Groups of 3',
+        content:
+        `
+        <p>Hi hat patterns often involve repeated groups of 2-3 notes.</p>
+        <p>What happens if we combine groups or make a larger gap in a group?</p>
+
+        ${
+  constructActionSteps([
+    'Listen then save this pattern.',
+    'Move one whole group of 3 one space later. Save.',
+    'Which beat is highlighted now?',
+    'Click Pattern 1. Take away the 6th hi hat note. Save.',
+    'Which beat is highlighted now? ',
+  ])
+}
+        <p>
+          <strong>Notice</strong> Pattern 2 highlights the beat that falls in the middle of the run of short notes. Pattern 3 highlights the 2nd snare, as it puts a gap just after it that makes the snare linger in our mind.
+        </p>
+        `,
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 2, 4, 8, 10, 12, 16, 18, 20, 24, 26, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 2, 4, 8, 10, 12, 16, 18, 20, 24, 26, 28].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: `
+            You can also move one note in a group of three early or late. It's surprising how different the music can sound with these small changes - because they make us to pay attention to a different drum beat.
+            `,
+          },
+        ],
+      },
+      8: {
+        title: 'Level 2: Editing Groups - Part 2',
+        content:
+        `
+        <p>A gap in the hi hat after a drum beat or a run leading up to one both make make the beat stand out. Let’s explore this using different positions for the drum beat.</p>
+        ${
+  constructActionSteps([
+    'Listen and Save. Move the 2nd drum beat one space early or late.',
+    'Now move a hi hat group or delete one of the 3 notes to make a bigger gap after the drum beat you moved. Save.',
+    'Now move the 3rd drum beat one space early or late also. Change the hi hat pattern to highlight this beat, either with a run or a larger gap after it. Save.',
+    'Play the patterns back. What does each highlight?',
+  ])
+}
+        <p>
+          <strong>Notice</strong> Since changes to a drum beat location are bigger changes, hi hat patterns that highlight these changes make a bigger difference than ones where the beat is more regular.
+        </p>
+        `,
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 2, 4, 8, 10, 12, 16, 18, 20, 24, 26, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 2, 4, 8, 10, 12, 16, 18, 20, 24, 26, 28].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+      },
+    },   
     tierFilter: {
       1: {
-        cutoff: 6,
+        cutoff: 8,
       },
       2: {
         cutoff: 11,
@@ -960,10 +1018,76 @@ export const sections = {
           emptyPattern(),
         ),
       },
+      2: {
+        title: 'Level 2: Home Chord',
+        content: `
+          <p>The first chord we hear in a song is the most important - it's the 'home' chord that the music keeps coming back to throughout the piece.</p>
+          <p>How can we help listeners relate other chords to this one?</p>
+          ${
+  constructActionSteps([
+    'While this rhythm pattern is playing, change the chord to create these patterns:',
+    'D/D/Bm/D',
+    'Bm/Bm/D/Bm',
+  ])
+}    
+          <p>
+            <strong>Notice</strong> the main chord is played twice before the chord is changed. And after the change, we go back to the main chord again. This helps listeners remember the main chord and connect the new chord to it.
+          </p>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Further into a song, you don’t need to repeat the main chord as often, as listeners are familiar with it now.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            value: Array(32).fill('-').map((e, i) => ([4, 10, 20, 26].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([4, 10, 20, 26].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 28, 30].includes(i) ? 'B' : ([6, 14, 18, 24].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 28, 30, 6, 14, 18, 24].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+      },
+      3: {
+        title: 'Level 2: Which chords are more like and which less?',
+        content: `
+          <p>Which pairs of chords sound more like each other, and which are more different?</p>
+          ${
+  constructActionSteps([
+    'Listen to the D chord, then the Bm chord.',
+    'Now listen to the D chord then G.',
+    'Which pair of chords seem more like, and which are more different?',
+    'How many notes (white lines) are in common between the D and Bm chords?',
+    'Between D and G chords?',
+  ])
+}
+          <p>
+            <strong>Notice</strong> there is only one pitch in common between D to G (D), but two pitches in common between D and Bm (D, F#). This may explain why D and Bm seem more like.
+          </p>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Bm is called the relative minor of D - another way of saying these two chords are similar.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          emptyPattern(),
+        ),
+      },
     },
     tierFilter: {
       1: {
-        cutoff: 1,
+        cutoff: 3,
       },
       2: {
         start: 2,
@@ -989,7 +1113,7 @@ export const sections = {
           <p>But does it tend to follow mainly the drum or mainly the hi hat?</p>
           ${
   constructActionSteps([
-    'Press Play to listen to this melody again.  ',
+    'Press Play to listen to this melody.',
     'Does it fall mainly on the hi hat or drum locations?',
     'Now delete the 2nd and 3rd melody note (click 5x) and re-enter them 1 space later.',
     'How does this change the melody?',
@@ -1129,7 +1253,7 @@ export const sections = {
           <p>What happens if we keep hearing one repeated pitch instead? </p>
           ${
   constructActionSteps([
-    'Play this pattern a few times.',
+    'Play this pattern a few times and save.',
     'How does it make you feel?',
     'Now change the last pitch. Save.',
     'Play Pattern 1 a few times, then Pattern 2. ',
@@ -1210,11 +1334,82 @@ export const sections = {
           },
         ),
       },
-
+      7: {
+        title: `
+          Level 2: Creating a sense of 'home' in a melody
+        `,
+        content: `
+          <p>Listeners need to know the main pitch in a melody - the one the melody starts from and comes back to throughout the song.</p>
+          ${
+  constructActionSteps([
+    'On hi hat locations, enter two D’s in the first half of the melody.',
+    'Next enter either E or B, then end with D. Save.',
+    'Now start instead with E or B then D, then E/B then end with D. Save.',
+    'Listen to the two patterns and how they help you remember D.'
+  ])
+}    
+          <p>
+            <strong>Notice</strong> repeating D, moving to a nearby pitch and back, and reversing the order all help us remember D is the main pitch.
+          </p>
+        `,
+        widgets: [
+          {
+            type: widgets.LiteracyConnection,
+            content: 'Read a familiar story and notice what the writer does to help us become familiar with the main character’s environment. Write your own story that uses these same tools at the beginning.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 6, 12, 20, 24, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 6, 12, 20, 24, 28].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'D2',
+            voice: 'synth',
+          },
+        ),
+      },
+      8: {
+        title: 'Level 2: Smaller vs Larger Steps in Pitch',
+        content: `
+          <p>At the beginning of a song, the melody mostly uses small changes in pitch so listeners can connect new pitches back to the main pitch.</p>
+          <p>What does a larger step add?</p>
+          ${
+  constructActionSteps([
+    'Enter a melody that has 5 notes, using just D and E. Save.',
+    'Change one note near the end to the higher A or B to create a leap up in pitch. Save.',
+    'Play Pattern 1 then 2.',
+    'How does the leap up change the way you hear the melody?'
+  ])
+}    
+          <p>
+            <strong>Notice</strong> the longer we hear small changes in pitch, the more a leap stands out. A leap up in pitch is exciting, it adds energy to the melody, like a flourish in a drum pattern.
+          </p>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'A larger leap is often used in the chorus - to make it different from the verse, which tends to use smaller steps.',
+          },
+        ],
+      },
+      
     },
     tierFilter: {
       1: {
-        cutoff: 6,
+        cutoff: 8,
       },
       2: {
         cutoff: 10,
