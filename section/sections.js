@@ -238,7 +238,7 @@ export const sections = {
         ],
       },
       8: {
-        title: 'Bridging a Gap',
+        title: 'Level 2: Bridging a Gap',
         content:
           `
           <p>Too long a gap between drum beats can leave listeners hanging - not sure what to expect next.</p>
@@ -272,7 +272,7 @@ export const sections = {
         ],
       },
       9: {
-        title: 'Highlighting Tools',
+        title: 'Level 2: Highlighting Tools',
         content:
           `
           <p>When we're talking, we stress a word we want the other person to notice.</p>
@@ -534,7 +534,7 @@ export const sections = {
         ),
       },
       7: {
-        title: 'Editing Groups of 3',
+        title: 'Level 2: Editing Groups of 3',
         content:
         `
         <p>Hi hat patterns often involve repeated groups of 2-3 notes.</p>
@@ -578,7 +578,7 @@ export const sections = {
         ],
       },
       8: {
-        title: 'Editing Groups - Part 2',
+        title: 'Level 2: Editing Groups - Part 2',
         content:
         `
         <p>A gap in the hi hat after a drum beat or a run leading up to one both make make the beat stand out. Let’s explore this using different positions for the drum beat.</p>
@@ -1019,7 +1019,7 @@ export const sections = {
         ),
       },
       2: {
-        title: 'Home Chord',
+        title: 'Level 2: Home Chord',
         content: `
           <p>The first chord we hear in a song is the most important - it's the 'home' chord that the music keeps coming back to throughout the piece.</p>
           <p>How can we help listeners relate other chords to this one?</p>
@@ -1056,7 +1056,7 @@ export const sections = {
         ),
       },
       3: {
-        title: 'Which chords are more like and which less?',
+        title: 'Level 2: Which chords are more like and which less?',
         content: `
           <p>Which pairs of chords sound more like each other, and which are more different?</p>
           ${
@@ -1336,7 +1336,7 @@ export const sections = {
       },
       7: {
         title: `
-          Creating a sense of 'home' in a melody
+          Level 2: Creating a sense of 'home' in a melody
         `,
         content: `
           <p>Listeners need to know the main pitch in a melody - the one the melody starts from and comes back to throughout the song.</p>
@@ -1382,7 +1382,7 @@ export const sections = {
         ),
       },
       8: {
-        title: 'Smaller vs Larger Steps in Pitch',
+        title: 'Level 2: Smaller vs Larger Steps in Pitch',
         content: `
           <p>At the beginning of a song, the melody mostly uses small changes in pitch so listeners can connect new pitches back to the main pitch.</p>
           <p>What does a larger step add?</p>
