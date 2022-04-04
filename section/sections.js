@@ -126,7 +126,8 @@ export const sections = {
           <p>Since it&#8217;s easier to compare two halves of a pattern, big changes tend to be made from one half to the other.</p>
           ${
   constructActionSteps([
-    `Delete one note in the 2nd half above by clicking it 3 times. Save by pressing “Save Pattern”.
+    'Listen and Save.',
+    `Delete one note in the 2nd half above by clicking it 3 times. Save by pressing "Save Pattern".
     <ul>
       <li>Listen. How does this change the music?</li>
     </ul>
@@ -244,7 +245,7 @@ export const sections = {
           <p>How can we keep a gap from breaking the flow?</p>
           ${
   constructActionSteps([
-    'Listen to Pattern 1 then 2.',
+    'Listen to this pattern, then save it.',
     'Put a note in Pattern 2 midway between the 3rd and 4th beats. Save.',
     'Play the 3 patterns in this order: 1-2-1-3',
     'Which pair is easier to follow and move to?',
@@ -510,7 +511,7 @@ export const sections = {
         <p>Smaller changes in the hi hat tend to happen from one quarter to the next.</p>
         ${
   constructActionSteps([
-    'Listen to this pattern with a big change from half to half (missing beat).',
+    'Listen to this pattern with a big change from half to half and save.',
     'Move the 2nd or 4th note one space early or late. Save.',
     'Go back to Pattern 1 and delete the 2nd or 4th note. Save.',
     'Play the 3 patterns in a row. Is it easy to follow the changes from the 1st to 2nd quarter?',
@@ -541,7 +542,7 @@ export const sections = {
 
         ${
   constructActionSteps([
-    'Listen.',
+    'Listen then save this pattern.',
     'Move one whole group of 3 one space later. Save.',
     'Which beat is highlighted now?',
     'Click Pattern 1. Take away the 6th hi hat note. Save.',
@@ -583,7 +584,7 @@ export const sections = {
         <p>A gap in the hi hat after a drum beat or a run leading up to one both make make the beat stand out. Let’s explore this using different positions for the drum beat.</p>
         ${
   constructActionSteps([
-    'Move the 2nd drum beat one space early or late.',
+    'Listen and Save. Move the 2nd drum beat one space early or late.',
     'Now move a hi hat group or delete one of the 3 notes to make a bigger gap after the drum beat you moved. Save.',
     'Now move the 3rd drum beat one space early or late also. Change the hi hat pattern to highlight this beat, either with a run or a larger gap after it. Save.',
     'Play the patterns back. What does each highlight?',
@@ -1112,7 +1113,7 @@ export const sections = {
           <p>But does it tend to follow mainly the drum or mainly the hi hat?</p>
           ${
   constructActionSteps([
-    'Press Play to listen to this melody again.  ',
+    'Press Play to listen to this melody.',
     'Does it fall mainly on the hi hat or drum locations?',
     'Now delete the 2nd and 3rd melody note (click 5x) and re-enter them 1 space later.',
     'How does this change the melody?',
@@ -1252,7 +1253,7 @@ export const sections = {
           <p>What happens if we keep hearing one repeated pitch instead? </p>
           ${
   constructActionSteps([
-    'Play this pattern a few times.',
+    'Play this pattern a few times and save.',
     'How does it make you feel?',
     'Now change the last pitch. Save.',
     'Play Pattern 1 a few times, then Pattern 2. ',
