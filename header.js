@@ -14,6 +14,7 @@ export const constructHeader = (user = null) => {
         <p>The educator preview lets you evaluate the resource by trying out different activities (e.g. rhythm, melody), 
         up to a limit of 10 activities. When you’re ready to bring it to your students, it's best to register, as this 
         gives students access to all the activities. However, you could have all your students do the same one or two activities first.</p>
+        <p>When you register, we'll also email you evaluation questions.</p>
       `)
     );
 
