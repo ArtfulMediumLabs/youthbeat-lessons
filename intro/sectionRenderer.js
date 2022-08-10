@@ -68,7 +68,4 @@ export const renderSection = (activity) => {
       sectionContentContainer.appendChild(widgetElement);
     });
   }
-
-  // Update activity view count
-  window.localStorageService.activityCount += 1;
 };
