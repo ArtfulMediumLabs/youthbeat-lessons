@@ -2,9 +2,8 @@
 import { renderSection } from './sectionRenderer.js';
 
 class SectionPagination {
-  constructor(section, cutoff, paginationSelector = '.section-pagination__content') {
+  constructor(section, paginationSelector = '.section-pagination__content') {
     this.section = section;
-    this.activityCutoff = cutoff;
     this.currentActivity = 1;
     this.pageControlNodes = [];
 
@@ -19,7 +18,7 @@ class SectionPagination {
       pageControl.appendChild(arrow);
     });
 
-    for (let i = 1; i <= this.activityCutoff; i += 1) {
+    for (let i = 1; i <= Object.keys(this.section.activities).length; i += 1) {
       const pageControlNode = document.createElement('button');
       pageControlNode.className = `section-pagination__button ${i === 1 ? 'section-pagination__button--selected' : ''}`;
       pageControlNode.textContent = i;
