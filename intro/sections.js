@@ -43,7 +43,6 @@ const constructActionSteps = (actions, description = '') => `
 * title: string;
 * key: string;
 * activities: {[key: number]: Activity};
-* tierFilter: {{key: number]: { cutoff: number; }}
 *
 */
 
@@ -1445,15 +1444,12 @@ export const sections = {
 };
 
 /*
-* getOrderedSEctions - method that takes a tier and returns an array of sections in sequential order
-*
-* Arguments:
-* tier: number;
+* getOrderedSEctions - method returns an array of sections in sequential order
 *
 * Returns: Section[]
 */
 
-export const getOrderedSections = (tier) => [
+export const getOrderedSections = () => [
   sections.RHYTHM_DRUMS,
   sections.RHYTHM_HI_HAT,
   sections.TEMPO,
@@ -1464,4 +1460,4 @@ export const getOrderedSections = (tier) => [
   sections.MELODY,
   sections.ADVANCED_TOOLS,
   sections.SPECIAL_PROJECTS,
-].filter((section) => !!section.tierFilter[tier]);
+];

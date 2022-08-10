@@ -15,12 +15,10 @@ window.addEventListener('load', async () => {
 
   // Query Params
   const queryParams = new URLSearchParams(window.location.search);
-  const tier = queryParams.get(queryParamKeys.tier) || 1;
   const sectionKey = queryParams.get(queryParamKeys.sectionKey) || 'RHYTHM_DRUMS';
 
   // Check for valid section
   if (!sections[sectionKey]) throw new Error(`Failed to fetch section from section dictionary by key ${sectionKey}.`);
-  if (!sections[sectionKey].tierFilter[tier]) throw new Error(`Section not supported for tier ${tier}.`);
 
   const section = sections[sectionKey];
   const initialActivity = section.activities[1];
@@ -30,11 +28,11 @@ window.addEventListener('load', async () => {
   sectionHeaderElement.prepend(
     parseHTML(
       `
-        <a aria-label="Homepage" class="section-header__link" href="../?tier=${tier}&${queryParamKeys.sectionKey}=${sectionKey}">&#x2190 Back</a>
+        <a aria-label="Homepage" class="section-header__link" href="../${queryParamKeys.sectionKey}=${sectionKey}">&#x2190 Back</a>
       `,
     ),
   );
   titleElement.textContent = `Youthbeat | ${section.title}`;
   renderSection(initialActivity);
-  window.sectionPagination = new SectionPagination(section, section.tierFilter[tier].cutoff);
+  window.sectionPagination = new SectionPagination(section);
 });

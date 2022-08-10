@@ -41,7 +41,6 @@ class SectionPagination {
     else if (activity !== undefined && !Number.isNaN(activity)) newActivity = activity;
 
     if (!this.section.activities[newActivity]) return; // Section activity doesn't exist
-    if (newActivity > this.activityCutoff) return; // Section activity not authorized by tier
 
     renderSection(this.section.activities[newActivity]);
     this.pageControlNodes[this.currentActivity - 1].classList.remove('section-pagination__button--selected');
