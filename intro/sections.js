@@ -55,17 +55,6 @@ export const sections = {
   RHYTHM_DRUMS: {
     key: 'RHYTHM_DRUMS',
     title: 'Rhythm - Drums',
-    tierFilter: {
-      1: {
-        cutoff: 9,
-      },
-      2: {
-        cutoff: 11,
-      },
-      3: {
-        cutoff: 13,
-      },
-    },
     activities: {
       1: {
         title: 'Introduction',
@@ -1415,29 +1404,6 @@ export const sections = {
       },
       3: {
         cutoff: 14,
-      },
-    },
-  },
-  ADVANCED_TOOLS: {
-    title: 'Advanced Tools',
-    key: 'ADVANCED_TOOLS',
-    activities: {},
-    tierFilter: {
-      3: {
-        cutoff: 2,
-      },
-    },
-  },
-  SPECIAL_PROJECTS: {
-    title: 'Special Projects',
-    key: 'SPECIAL_PROJECTS',
-    activities: {},
-    tierFilter: {
-      2: {
-        cutoff: 2,
-      },
-      3: {
-        cutoff: 2,
       },
     },
   },
