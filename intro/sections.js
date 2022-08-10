@@ -52,246 +52,116 @@ const constructActionSteps = (actions, description = '') => `
 */
 
 export const sections = {
-  RHYTHM_DRUMS: {
-    key: 'RHYTHM_DRUMS',
-    title: 'Rhythm - Drums',
+  BASICS: {
+    title: '8 Basics You Need To Know',
     activities: {
       1: {
-        title: 'Introduction',
+        title: 'Music\'s built up in layers, starting with the drum',
         content:
           `
-          <p>Rhythm can mean two things:</p>
+          <p>[graphic - layers in cake]</p>
           <ul>
-            <li>The timing pattern of musical sounds - <strong>when</strong> they are heard.</li>
-            <li>The music made by the rhythm section - drums and other instruments that bring the timing patterns to life.</li>
+            <li>The Mute tool lets you hear how the layers work together.</li>
+            <li>Press Play then tick each of the layers one by one.</li>
+            <li>Tick a chord in the list at top right.</li>
+            <li>Listen to how the drum, hi hat, chord, and melody fit together.</li>
+            <li>Press Play again to stop.</li>
           </ul>
           `,
       },
       2: {
-        title: 'The basic beat',
+        title: 'What can you do with drum notes?',
         content:
           `
-          <p>There are hundreds, even thousands of sounds (called <em>notes</em>) in a song.</p>
-          <p>We only hear a few at a time. How do we keep track of them all?</p>
-          ${
-  constructActionSteps([
-    'Press Play <img src="../assets/play.svg" alt="play button" width="20px" alt="" /> to listen. Press again to stop.',
-    'How would you describe this pattern?',
-  ])
-}
-          <p>
-            <strong>Notice</strong> this pattern - the <em>basic beat</em> - is very regular - like a clock.
-            The notes are always 4 spaces apart.
-          </p>
+          <p>[graphic: image of drum]</p>
+          <ul>
+            <li>Make them louder (tap more than once)</li>
+            <li>Delete them (click 3 times)</li>
+            <li>Change instrument (click a different drum then the note)</li>
+            <li>Double a note</li>
+            <li>Add a row of notes in one part of the pattern</li>
+            <li>To clear the pattern, press Reset at top left</li>
+          </ul>
           `,
         pattern: patterns.bassPattern,
-        widgets: [
-          {
-            type: widgets.DidYouKnow,
-            content: 'Each group of 4 spaces is called a <em>beat unit</em>. There are 4 beat units to the circle, which is one <em>bar</em> of music.',
-          },
-        ],
       },
       3: {
-        title: 'Two Halves',
+        title: 'What can you do with hi hat notes?',
         content:
           `
-          <p>Because music goes by fast, it&#8217;s easier to follow a pattern if we can hear it as two halves.</p>
-          ${
-  constructActionSteps([
-    'Change the 2nd and 4th drum sounds to snare drum: (tap the drum name, then the note).',
-    'Listen. Do you hear 2 pairs of notes now? One pair in each half of the circle?',
-  ])
-}
-          <p><strong>Notice</strong> that each half has the same order of drum sounds:  bass drum then snare drum. This helps us compare the two halves.</p>
-          `,
+          <ul>
+            <li>Delete a note to make a gap (tap 3 times)</li>
+            <li>Fill in the spaces between the last snare drum sound and the top of the circle to make the music pick up energy</li>
+            <li>Change the hi hat note before the last snare to "Open Hi Hat"</li>
+            <li>Listen to how each edit changes the way you hear the drum pattern.</li>
+          </ul>
+        `,
         pattern: patterns.bassPattern,
       },
       4: {
-        title: 'Big changes tend to happen from one half to the next',
+        title: 'What can you do with melody notes?',
         content:
           `
-          <p>Since it&#8217;s easier to compare two halves of a pattern, big changes tend to be made from one half to the other.</p>
-          ${
-  constructActionSteps([
-    'Listen and Save.',
-    `Delete one note in the 2nd half above by clicking it 3 times. Save by pressing "Save Pattern".
-    <ul>
-      <li>Listen. How does this change the music?</li>
-    </ul>
-    `,
-    `Now play Pattern 1 then 2 (click on the Pattern number then Play)
-    <ul>
-      <li>How does this change the way you hear Pattern 2?</li>
-    </ul>
-    `,
-  ])
-}
-          <p><strong>Notice</strong> when hear just Pattern 2, we hear the difference between the halves. When we hear Pattern 1 then 2, we first hear the 4 beats, so it&#8217;s more surprising when we hear one missing.</p>
+          <p>[graphic of singer]</p>
+          <ul>
+            <li>Delete a note (click several times)</li>
+            <li>Make the note right before the one you deleted away longer (tap more than once)</li>
+            <li>Change pitch (how high or low the note sounds): click/hold/scroll up and down</li>
+            <li>Put in a bigger leap in pitch somewhere that stands out in the melody</li>
+          </ul>
           `,
         pattern: patterns.bassPattern,
-        widgets: [
-          {
-            type: widgets.DidYouKnow,
-            content: 'The first drum sound is hardly ever left out.',
-          },
-          {
-            type: widgets.MathConnection,
-            content: `
-              <ul>
-                <li>What are the three fractions made when you put a gap in your pattern?</li>
-                <li>Put them on a number line.</li>
-                <li>Compare the smallest to the largest, by dividing the largest by the smallest.</li>
-              </ul>
-            `,
-          },
-
-        ],
       },
       5: {
-        title: 'Push and Pull',
+        title: 'What can you do with chords (blended pitches played at the same time)?',
         content:
           `
-          <p>The beat pulls the music towards it, but sometimes the music pushes back.</p>
-          ${
-  constructActionSteps([
-    'Listen to the basic beat again.',
-    'Click either the 3rd or 4th beat a few times to take it out. Re-enter it one space earlier.',
-    'Press Play to listen. How does this make you feel/want to move?',
-  ])
-}
-          <p><strong>Notice</strong> the note that comes in early pushes against the beat. We expect to hear it go back to the beat.</p>
+            <p>[graphic of white lines from app showing chord notes stacked - just a segment not the whole circle]</p>
+            <ul>
+              <li>Create a mood: compare Bm ("minor"), then D ("major"). Which is brighter? Which is sadder?</li>
+              <li>Make a repeated chord pattern with 2 or 3 chords</li>
+              <li>Turn chords into a kind of melody: make a 4-chord pattern using Bm/Em, D, Asus, and G</li>
+            </ul>
           `,
         pattern: patterns.bassSnarePattern,
-        widgets: [
-          {
-            type: widgets.DidYouKnow,
-            content: 'When a beat is moved one space early or late, it&#8217;s called <em>off the beat</em>. In its normal position it&#8217;s called <em>on the beat</em>.',
-          },
-          {
-            type: widgets.MathConnection,
-            content: `
-              <ul>
-                <li>How would you show each of the four beats in your pattern as a part of the circle as a whole?</li>
-                <li>How many spaces are there in the circle? (This is the denominator). How many spaces are there from each beat to the next? (This is the numerator).</li>
-                <li>Put the four fractions on a number line numbered from 0 to 16, drawing a line to show each fraction above the number line.</li>
-              </ul>
-              <div class="image-container">
-                <img src="../assets/numberline.png" width="500" alt="a numberline with 17 dashes labelled 0 through 16 with the fraction 4/16 at the 5th line, 8/16 at the 9th line, 12/16 at the 13th line, and 16/16 at the 17th line." />
-              </div>
-            `,
-          },
-
-        ],
       },
       6: {
-        title: 'Smaller changes happen between quarters',
+        title: 'Find the right tempo (speed) and volume (loudness)',
         content:
           `
-          <p>Big changes like a gap happen from one half to the other. But smaller changes often happen from one quarter to the next, within a half.</p>
-          ${
-  constructActionSteps([
-    'In the first quarter (called a <em>beat unit</em>), add a note midway between beats. Save.',
-    'Listen. Is the extra note a bigger or smaller change than the gap in the second half?',
-    'Now add a note in the space right before or after the single beat in the second half.',
-    'Listen. Is this a smaller or larger change?',
-
-  ])
-}
-          <p><strong>Notice</strong> that adding notes between beats is a smaller change than moving or removing one of the beats.</p>
+            <ul>
+              <li>Click/hold/slide the Tempo slider to play this pattern faster or slower</li>
+              <li>Click/hold/slide the Volume slider to make the whole pattern louder or softer</li>
+              <li>Make a faster tempo louder, and slower one softer</li>
+            </ul>
           `,
         pattern: patterns.bassSnareGapPattern,
       },
       7: {
-        title: 'Tagging the halves and quarters',
+        title: 'There\'s nothing worse than forgetting to save an idea you really like',
         content:
           `
-          <p>To make it easy to follow changes from half to half and quarter to quarter, music tags the beginning of each part of the circle.</p>
-          ${
-  constructActionSteps([
-    'Tap the 1st note above twice to make it as loud as possible.',
-    'Tap the 3rd note once to make it a bit louder.',
-    'Listen.',
-  ])
-}
-          <p><strong>Notice</strong> this makes a pattern: Strong-Weak-Medium-Weak. The Strong beat tells us when the first half begins, the Medium tells us when the second half begins. The Weaker beats tell us when the second and fourth quarters begin.</p>
+            <ul>
+              <li>Make a 2-3 changes to this pattern - delete or move a note, or add hi hat notes. Press "Save Pattern" after each change.</li>
+              <li>Now press "Note Entry" (bottom left) and "Save Set"</li>
+              <li>Press "Load Set" to reload later. You can save up to 8 patterns in a set.</li>
+            </ul>
           `,
-
         pattern: patterns.bassPattern,
-        widgets: [
-          {
-            type: widgets.DidYouKnow,
-            content: 'Patterns that change a lot from one half to the next, or from one bar to the next, are named “<em>Call and response</em>”. This kind of pattern is like a conversation!',
-          },
-        ],
       },
       8: {
-        title: 'Level 2: Bridging a Gap',
+        title: 'How Do You Play Longer Sections of Music?',
         content:
           `
-          <p>Too long a gap between drum beats can leave listeners hanging - not sure what to expect next.</p>
-          <p>How can we keep a gap from breaking the flow?</p>
-          ${
-  constructActionSteps([
-    'Listen to this pattern, then save it.',
-    'Put a note in Pattern 2 midway between the 3rd and 4th beats. Save.',
-    'Play the 3 patterns in this order: 1-2-1-3',
-    'Which pair is easier to follow and move to?',
-  ])
-}
-          <p><strong>Notice</strong> the new note in pattern 3 has a lighter stress. It carries the energy from one beat to the next - so the energy stays high.</p>
+          <p>[graphic of YB circle and long arrow to right]</p>
+          <ul>
+            <li>Make a few changes to this idea: delete a note, or change a pitch. Save each.</li>
+            <li>Click "Note Entry"</li>
+            <li>Enter patterns in the Sequencer in the order you want by clicking the > symbol beside each pattern</li>
+            <li>Press Start, then Play to listen. Press Stop, then Clear to re-enter them.</li>
+          </ul>
           `,
-
-        pattern: patterns.constructPattern(
-          emptyPattern(),
-          {
-            // eslint-disable-next-line no-nested-ternary
-            value: Array(32).fill('-').map((e, i) => ([0, 12].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
-            amplitude: Array(32).fill(0).map((e, i) => ([0, 12, 8, 24].includes(i) ? 1 : 0)),
-            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          },
-          emptyPattern(),
-        ),
-        widgets: [
-          {
-            type: widgets.DidYouKnow,
-            content: 'a note midway between beats is called an <em>off</em> beat.',
-          },
-        ],
-      },
-      9: {
-        title: 'Level 2: Highlighting Tools',
-        content:
-          `
-          <p>When we're talking, we stress a word we want the other person to notice.</p>
-          <p>We do this in music too.</p>
-          ${
-  constructActionSteps([
-    'Tap one note above twice to make it as loud as possible.',
-    'Try different notes to highlight. Save your favourite.',
-    'Now, double a note - putting a note in the very next space. Try different notes. Save your favourite.',
-    'Play the patterns back in a row. Which one gets your attention the most? What kind of note is highlighted?',
-  ])
-}
-          <p><strong>Notice</strong> that highlighting draws attention to a change in the pattern, like where it goes <em>off the beat</em> or comes back <em>on the beat</em>.</p>
-          `,
-
-        pattern: patterns.constructPattern(
-          emptyPattern(),
-          {
-            // eslint-disable-next-line no-nested-ternary
-            value: Array(32).fill('-').map((e, i) => ([0, 12].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
-            amplitude: Array(32).fill(0).map((e, i) => ([0, 12, 8, 24].includes(i) ? 1 : 0)),
-            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          },
-          emptyPattern(),
-        ),
-        widgets: [
-          {
-            type: widgets.LiteracyConnection,
-            content: 'What are some tools we use to highlight words in a written text?',
-          },
-        ],
+        pattern: patterns.bassPattern,
       },
     },
   },
