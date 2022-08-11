@@ -194,7 +194,6 @@ export const sections = {
               <li>Turn chords into a kind of melody: make a 4-chord pattern using Bm/Em, D, Asus, and G</li>
             </ul>
           `,
-        pattern: patterns.bassSnarePattern,
       },
       6: {
         title: 'Find the right tempo (speed) and volume (loudness)',
@@ -206,7 +205,20 @@ export const sections = {
               <li>Make a faster tempo louder, and slower one softer</li>
             </ul>
           `,
-        pattern: patterns.bassSnareGapPattern,
+        pattern: patterns.constructPattern(
+          {
+            value: Array(32).fill('-').map((e, i) => ([4, 6, 10, 12, 18, 20, 26, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([4, 6, 10, 12, 18, 20, 26, 28].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16, 18].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 18, 8, 22].includes(i) ? 1 : ([16].includes(i) ? 2 : 0))),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+          ),
       },
       7: {
         title: 'There\'s nothing worse than forgetting to save an idea you really like',
