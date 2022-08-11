@@ -252,15 +252,15 @@ var loop = new Tone.Sequence(function(time, step){
   if (step == 0 & chordNote.length > 0) {
     chords.triggerAttackRelease(chordNote, '1m', time, 0.5);
   }
-//   if (hiHat.checked) {
+  if (hiHat.checked) {
     playActiveNote(innerCustomPattern, step, time);
-//   }
-//   if (bassSnare.checked) {
+  }
+  if (bassSnare.checked) {
     playActiveNote(outerCustomPattern, step, time);
-//   }
-//   if (melody.checked) {
+  }
+  if (melody.checked) {
     playActiveNote(samplerCustomPattern, step, time);
-//   }
+  }
 //   if (currentSequence >= 0 && step == 31) {
 //     currentSequence = ++currentSequence % sequence.length
 //     updateSequenceDisplay();
@@ -1764,7 +1764,7 @@ function loadMeta(meta) {
   setVolume(meta.volume);
   updateVolumeDisplay(meta.volume);
 
-  // updateMuteGroupDisplay(meta.mute);
+  updateMuteGroupDisplay(meta.mute);
 
   updateChordDisplay(meta.chord);
 
