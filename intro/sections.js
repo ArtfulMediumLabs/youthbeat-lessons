@@ -108,7 +108,16 @@ export const sections = {
             <li>To clear the pattern, press Reset at top left</li>
           </ul>
           `,
-        pattern: patterns.bassPattern,
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 6, 12, 22].includes(i) ? 'B' : ([24, 28].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 6, 12, 22, 24, 28].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+        ),
       },
       3: {
         title: 'What can you do with hi hat notes?',

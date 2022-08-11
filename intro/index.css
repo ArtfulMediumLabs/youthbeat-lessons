@@ -121,6 +121,12 @@ button.controlB {
     clear: both;
 }
 
+#mirrorControl {
+    position: absolute;
+    left: 150px;
+    top: 10px;
+}
+
 #presetList {
     clear: both;
     margin-top: 5px;

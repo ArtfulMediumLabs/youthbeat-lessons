@@ -851,12 +851,12 @@ function disable32(step) {
 //     layer.batchDraw();
 //   }, false)
 
-// var resetButton = document.getElementById('reset');
-// resetButton.addEventListener('click',
-//   function(event){
-//     loadPreset(emptyPreset());
-//     updatePattern();
-//   }, false)
+var resetButton = document.getElementById('reset');
+resetButton.addEventListener('click',
+  function(event){
+    loadPreset(emptyPreset());
+    updatePattern();
+  }, false)
 
 function toggleStep(index, pattern, length, instrument=activeInstrument) {
   var currentStep = pattern.value[index];
