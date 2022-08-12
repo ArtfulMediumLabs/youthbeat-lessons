@@ -2081,7 +2081,7 @@ function updateVisibility() {
 var setCounter = 1;
 var sets = [];
 var currentSetID = 0;
-var exportSetButton = document.getElementById("exportSetButton");
+// var exportSetButton = document.getElementById("exportSetButton");
 
 var saveSetButton = document.getElementById("saveSetButton");
 var saveSetsList = document.getElementById("saveSetList");
@@ -2095,12 +2095,12 @@ function selectSaveSet(setID) {
   }
 }
 
-// saveSetButton.onclick = function(){
-//   var setID = saveSetsList.options[saveSetsList.selectedIndex].value
-//   saveSet(setID)
-//   selectLoadSet(setID)
-//   displaySetsFull()
-// }
+saveSetButton.onclick = function(){
+  var setID = saveSetsList.options[saveSetsList.selectedIndex].value
+  saveSet(setID)
+  selectLoadSet(setID)
+  displaySetsFull()
+}
 
 function saveSet(setID) {
   if (checkSetRange(setID)) {
@@ -2160,13 +2160,13 @@ function selectLoadSet(setID) {
   }
 }
 
-// loadSetButton.onclick = function(){
-//   var setID = loadSetsList.options[loadSetsList.selectedIndex].value
-//   loadSetID(setID);
-//   updatePattern();
-//   updateSequenceDisplay();
-//   updateVisibility();
-// }
+loadSetButton.onclick = function(){
+  var setID = loadSetsList.options[loadSetsList.selectedIndex].value
+  loadSetID(setID);
+  updatePattern();
+  updateSequenceDisplay();
+  updateVisibility();
+}
 
 var setsFull = document.getElementById("setsFull");
 function displaySetsFull() {

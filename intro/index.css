@@ -31,7 +31,7 @@ body {
     top: 0px;
 }
 
-#content button {
+#content button, #sets button {
     margin-top: 10px;
     height: 30px;
     width: 100px;
@@ -140,6 +140,45 @@ button.controlB {
     overflow: hidden;
     float: right;
 }
+
+#sets, #fieldRecordings {
+    background-color: white;
+    width: 1018px;
+    margin: 5px auto;
+    padding: 5px;
+    position: relative;
+}
+
+#sets div {
+    display: inline;
+    padding: 5px;
+    margin: 0px;
+}
+
+#sets ul, #sets li {
+    display: inline;
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+}
+
+#sets #saveSetButton, #sets #loadSetButton {
+    width: auto;
+    height: 20px;
+    margin: 2px 2px 2px 10px;
+    display: inline-block;
+}
+
+#sets #saveSetButton:active, #sets #loadSetButton:active {
+    background-color: #DB3352;
+}
+
+#setsFull {
+    visibility: hidden;
+    overflow: hidden;
+}
+
+
 
 /* 
  *  Section heading

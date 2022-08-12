@@ -230,7 +230,39 @@ export const sections = {
               <li>Press "Load Set" to reload later. You can save up to 8 patterns in a set.</li>
             </ul>
           `,
-        pattern: patterns.bassPattern,
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 14].includes(i) ? 'B' : ([8, 20].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 20].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => {
+              if ([4, 8, 14, 18].includes(i)) return 'E4';
+              if ([12, 22, 30].includes(i)) return 'D4';
+              if ([26].includes(i)) return 'B3';
+              return '-';
+            }),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 20, 12, 22, 30, 26].includes(i) ? 3 : 0)),
+            duration: Array(32).fill(0).map((e, i) => {
+              if ([4, 8, 18].includes(i)) return 1;
+              if ([12, 22, 30].includes(i)) return 1;
+              if ([26].includes(i)) return 1;
+              if ([14].includes(i)) return 2;
+              return 0;
+            })
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
+        ),
       },
       8: {
         title: 'How Do You Play Longer Sections of Music?',
