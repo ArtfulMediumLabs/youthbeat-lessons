@@ -194,6 +194,11 @@ export const sections = {
               <li>Turn chords into a kind of melody: make a 4-chord pattern using Bm/Em, D, Asus, and G</li>
             </ul>
           `,
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          emptyPattern(),
+        )
       },
       6: {
         title: 'Find the right tempo (speed) and volume (loudness)',
