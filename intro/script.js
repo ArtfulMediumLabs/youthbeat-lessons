@@ -261,11 +261,11 @@ var loop = new Tone.Sequence(function(time, step){
   if (melody.checked) {
     playActiveNote(samplerCustomPattern, step, time);
   }
-//   if (currentSequence >= 0 && step == 31) {
-//     currentSequence = ++currentSequence % sequence.length
-//     updateSequenceDisplay();
-//     loadPreset(presets[sequence[currentSequence]]);
-//   }
+  if (currentSequence >= 0 && step == 31) {
+    currentSequence = ++currentSequence % sequence.length
+    updateSequenceDisplay();
+    loadPreset(presets[sequence[currentSequence]]);
+  }
 }, allSteps, "32n").start(0);
 
 function playActiveNote(customPattern, step, time) {
@@ -1594,7 +1594,7 @@ function addPreset(preset) {
       event.preventDefault();
     }, false)
   entry.appendChild(deleteButton(presetCounter));
-  // entry.appendChild(sequenceButton(presetCounter));
+  entry.appendChild(sequenceButton(presetCounter));
   presetList.appendChild(entry);
   presetCounter += 1;
   updatePattern();
@@ -1659,7 +1659,6 @@ function sequenceButton(preset) {
 }
 
 function updateSequenceDisplay() {
-  return;
   var display = sequence.map(function(preset, index){
     var step = document.createElement("SPAN")
     step.innerHTML = preset;
@@ -1669,21 +1668,21 @@ function updateSequenceDisplay() {
   sequenceDisplay.innerHTML = display.join(",");
 }
 
-// var sequenceControl = document.getElementById("sequenceControl");
-// sequenceControl.addEventListener('click', 
-//   function() {
-//     if (currentSequence >= 0) {
-//       currentSequence = -1;
-//       this.innerHTML = localizedString("Start");
-//     } else {
-//       currentSequence = 0;
-//       loadPreset(presets[sequence[currentSequence]]);
-//       updateSequenceDisplay();
-//       this.innerHTML = localizedString("Stop");
-//     }
-//   }, 
-//   false
-// );
+var sequenceControl = document.getElementById("sequenceControl");
+sequenceControl.addEventListener('click', 
+  function() {
+    if (currentSequence >= 0) {
+      currentSequence = -1;
+      this.innerHTML = localizedString("Start");
+    } else {
+      currentSequence = 0;
+      loadPreset(presets[sequence[currentSequence]]);
+      updateSequenceDisplay();
+      this.innerHTML = localizedString("Stop");
+    }
+  }, 
+  false
+);
 
 function capturePreset() {
   var preset = {
@@ -1773,15 +1772,15 @@ function loadMeta(meta) {
 }
 
 
-// var sequenceClear = document.getElementById("sequenceClear");
-// sequenceClear.addEventListener('click', 
-//   function() {
-//     currentSequence = -1;
-//     sequence = [];
-//     updateSequenceDisplay();
-//   }, 
-//   false
-// );
+var sequenceClear = document.getElementById("sequenceClear");
+sequenceClear.addEventListener('click', 
+  function() {
+    currentSequence = -1;
+    sequence = [];
+    updateSequenceDisplay();
+  }, 
+  false
+);
 
 
 

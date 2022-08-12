@@ -13,6 +13,11 @@ body {
     padding: 10px 0;
 }
 
+.active {
+    font-weight: bold;
+    color: #DB3352;
+}
+
 /*
  * Instrument
  */
@@ -49,7 +54,7 @@ button.controlB {
     float: right;
 }
 
-#content button.deletePreset {
+#content button.deletePreset, #content button.sequencePreset {
     width: auto;
     height: 20px;
     margin: 2px;
@@ -139,6 +144,24 @@ button.controlB {
     height: 260px;
     overflow: hidden;
     float: right;
+}
+
+#sequence {
+    height: 100px;
+    float: right;
+}
+
+#sequenceDisplay {
+    height: 20px;
+    width: 180px;
+    overflow: hidden;
+    text-align: right;
+    clear: both;
+}
+
+#sequenceDisplay span {
+    display: inline-block;
+    padding-left: 2px;
 }
 
 #sets, #fieldRecordings {
