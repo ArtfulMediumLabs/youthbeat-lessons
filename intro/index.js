@@ -25,6 +25,7 @@ window.addEventListener('load', async () => {
 
   // Construct section
   sectionHeadingElement.textContent = section.title;
+  /*
   sectionHeaderElement.prepend(
     parseHTML(
       `
@@ -32,6 +33,7 @@ window.addEventListener('load', async () => {
       `,
     ),
   );
+  */
   titleElement.textContent = `Youthbeat | ${section.title}`;
   renderSection(initialActivity);
   window.sectionPagination = new SectionPagination(section);
