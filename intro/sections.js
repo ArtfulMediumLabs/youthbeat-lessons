@@ -319,6 +319,127 @@ export const sections = {
       },
     },
   },
+  MUSIC_CREATION: {
+    title: '8 Tips on Making Engaging Music',
+    activities: {
+      1: {
+        title: 'Let your music breathe',
+        content:
+          `
+          <ul>
+            <li>More notes = more energy</li>
+            <li>But if all the spaces are filled in, nothing stands out</li>
+            <li>To get us to pay attention, put a gap in the music</li>
+            <li>Listen to this idea, then delete notes right before and after part of it</li>
+            <li>It's still got energy, but now you hear something you missed before</li>
+          </ul>          
+          `,
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => (i % 2 == 0 ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => (i % 2 == 0 ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 14].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 24].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => {
+              if ([0, 20, 24].includes(i)) return 'E4';
+              if ([2,4,6,8].includes(i)) return 'F#4';
+              if ([10,12,22,26].includes(i)) return 'D4';
+              if ([14,16,18,28,30].includes(i)) return 'B3';
+              return '-';
+            }),
+            amplitude: Array(32).fill(0).map((e, i) => (i % 2 == 0 ? 3 : 0)),
+            duration: Array(32).fill(0).map((e, i) => (i % 2 == 0 ? 1 : 0))
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
+        ),
+        activeInstrument: 'B3',
+      },
+      2: {
+        title: 'Make sure we always hear the steady beat',
+        content:
+          `
+          <ul>
+            <li>The steady drum beat helps us count the music.</li>
+            <li>Always start with this pattern.</li>
+            <li>Mix it up a bit, but make sure we can still hear the beat.</li>
+            <li>Try moving one of the beats above one space early or late.</li>
+            <li>Now try moving it 2 spaces, can you still hear the beat?</li>
+          </ul>          
+          `,
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => (i % 8 == 0 ? 'B' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => (i % 8 == 0 ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+        ),
+        activeInstrument: 'B',
+      },
+      3: {
+        title: 'Use the backbeat to make your rhythm patterns easier to follow',
+        content:
+          `
+          <ul>
+            <li>This is called the BackBeat. It’s like the audience clapping back the 1st and 3rd beats.</li>
+            <li>It puts the beat into pairs: Bass Drum-Snare Drum, Bass Drum-Snare Drum.</li>
+            <li>This helps listeners follow rhythms by comparing the pairs.</li>
+            <li>Move the 3rd or 4th beat one space earlier or later to hear the difference.</li>
+          </ul>          
+          `,
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => (i % 16 == 0 ? 'B' : ((i + 8) % 16 == 0 ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => (i % 16 == 0 || (i + 8) % 16 == 0 ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+        ),
+        activeInstrument: 'S',
+      },
+      4: {
+        title: 'Repeat anything you don\'t catch the first time',
+        content:
+          `
+          <ul>
+            <li>Make this drum pattern more complicated: move 2 beats one space early or late. Add a note between beats.</li>
+            <li>See if you can 'get' it the first time you hear it. How many times do you need to hear it before you do?</li>
+            <li>Your listeners will need to hear it at least that many times!</li>
+          </ul>          
+          `,
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => (i % 16 == 0 ? 'B' : ((i + 8) % 16 == 0 ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => (i % 16 == 0 || (i + 8) % 16 == 0 ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+        ),
+        activeInstrument: 'S',
+      },
+    },   
+  },
 };
 
 /*
