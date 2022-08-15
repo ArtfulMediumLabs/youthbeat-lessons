@@ -1418,14 +1418,18 @@ Array.prototype.forEach.call(rhythmButtons, function(button){
   var instrument = button.dataset.instrument;
   button.addEventListener('click', 
     function() { 
-      activeInstrument = instrument;
-      showSelectedButton();
-      updateVoiceDisplay(getVoice());
-      selectRing();
+      setActiveInstrument(instrument);
     }, 
     false
   );
 })
+
+export function setActiveInstrument(instrument) {
+  activeInstrument = instrument;
+  showSelectedButton();
+  updateVoiceDisplay(getVoice());
+  selectRing();
+}
 
 function showSelectedButton() {
   Array.prototype.forEach.call(rhythmButtons, function(button){

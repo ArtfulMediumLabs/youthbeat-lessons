@@ -116,6 +116,7 @@ export const sections = {
           },
           emptyPattern(),
         ),
+        activeInstrument: 'B'
       },
       3: {
         title: 'What can you do with hi hat notes?',
@@ -142,6 +143,7 @@ export const sections = {
           },
           emptyPattern(),
         ),
+        activeInstrument: 'H'
       },
       4: {
         title: 'What can you do with melody notes?',
@@ -179,6 +181,7 @@ export const sections = {
             voice: 'synth',
           },
         ),
+        activeInstrument: 'B3'
       },
       5: {
         title: 'What can you do with chords (blended pitches played at the same time)?',

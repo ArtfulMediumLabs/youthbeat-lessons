@@ -1,5 +1,5 @@
 import { parseHTML, removeAllChildNodes } from '../utils.js';
-import { emptyPreset, loadPreset, updatePattern } from './script.js';
+import { emptyPreset, loadPreset, updatePattern, setActiveInstrument} from './script.js';
 import { widgets } from '../constants.js';
 
 export const sectionContentContainer = document.querySelector('.section-content__container');
@@ -13,6 +13,10 @@ export const renderSection = (activity) => {
     emptyPreset();
     loadPreset(activity.pattern);
     updatePattern();
+  }
+
+  if (activity.activeInstrument) {
+    setActiveInstrument(activity.activeInstrument);
   }
 
   removeAllChildNodes(sectionContentContainer);
