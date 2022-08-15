@@ -59,7 +59,6 @@ export const sections = {
         title: 'Music\'s built up in layers, starting with the drum',
         content:
           `
-          <p>[graphic - layers in cake]</p>
           <ul>
             <li>The Mute tool lets you hear how the layers work together.</li>
             <li>Press Play then tick each of the layers one by one.</li>
@@ -98,7 +97,6 @@ export const sections = {
         title: 'What can you do with drum notes?',
         content:
           `
-          <p>[graphic: image of drum]</p>
           <ul>
             <li>Make them louder (tap more than once)</li>
             <li>Delete them (click 3 times)</li>
@@ -149,7 +147,6 @@ export const sections = {
         title: 'What can you do with melody notes?',
         content:
           `
-          <p>[graphic of singer]</p>
           <ul>
             <li>Delete a note (click several times)</li>
             <li>Make the note right before the one you deleted away longer (tap more than once)</li>
@@ -187,7 +184,6 @@ export const sections = {
         title: 'What can you do with chords (blended pitches played at the same time)?',
         content:
           `
-            <p>[graphic of white lines from app showing chord notes stacked - just a segment not the whole circle]</p>
             <ul>
               <li>Create a mood: compare Bm ("minor"), then D ("major"). Which is brighter? Which is sadder?</li>
               <li>Make a repeated chord pattern with 2 or 3 chords</li>
@@ -273,7 +269,6 @@ export const sections = {
         title: 'How Do You Play Longer Sections of Music?',
         content:
           `
-          <p>[graphic of YB circle and long arrow to right]</p>
           <ul>
             <li>Make a few changes to this idea: delete a note, or change a pitch. Save each.</li>
             <li>Click "Note Entry"</li>
