@@ -186,8 +186,8 @@ export const sections = {
           `
             <ul>
               <li>Create a mood: compare Bm ("minor"), then D ("major"). Which is brighter? Which is sadder?</li>
-              <li>Make a repeated chord pattern with 2 or 3 chords</li>
-              <li>Turn chords into a kind of melody: make a 4-chord pattern using Bm/Em, D, Asus, and G</li>
+              <li>Choose 3 chords and play them in a row, then repeat the pattern.</li>
+              <li>Turn chords into a kind of melody: make a 4-chord pattern using Bm/Em, D, Asus, and G.</li>
             </ul>
           `,
         pattern: patterns.constructPattern(
