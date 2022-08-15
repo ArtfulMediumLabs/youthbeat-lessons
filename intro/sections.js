@@ -438,6 +438,70 @@ export const sections = {
         ),
         activeInstrument: 'S',
       },
+      5: {
+        title: 'With melody, less is more',
+        content:
+          `
+          <ul>
+            <li>Hit melodies start with just a few pitches.</li>
+            <li>Enter pitches in the outer circle on 3-5 drum/hi hat spaces (click/hold/scroll to change pitch)</li>
+            <li>Make one note longer (click 1-3 times)</li>
+            <li>Give your melody at least one change in direction</li>
+            <li>Everything you do stands out in a melody with just a few notes!</li>
+          </ul>          
+          `,
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ((i + 4) % 8 == 0 ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ((i + 4) % 8 == 0 ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+        ),
+        activeInstrument: 'B3',
+      },
+      6: {
+        title: 'The melody and chord talk to each other',
+        content:
+          `
+          <ul>
+            <li>We hear the melody against the backdrop of the chord.</li>
+            <li>Enter  3-5 melody pitches on drum/hi hat spaces</li>
+            <li>Put all the pitches on white lines (so they sync with the chord)</li>
+            <li>Now make one pitch clash by putting it between white lines</li>
+          </ul>          
+          `,
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ((i + 4) % 8 == 0 ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ((i + 4) % 8 == 0 ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
+        ),
+        activeInstrument: 'B3',
+      },
     },   
   },
 };
