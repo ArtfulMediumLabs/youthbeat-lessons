@@ -15,7 +15,7 @@ window.addEventListener('load', async () => {
 
   // Query Params
   const queryParams = new URLSearchParams(window.location.search);
-  const sectionKey = queryParams.get(queryParamKeys.sectionKey) || 'MUSIC_CREATION';
+  const sectionKey = queryParams.get(queryParamKeys.sectionKey) || 'BASICS';
 
   // Check for valid section
   if (!sections[sectionKey]) throw new Error(`Failed to fetch section from section dictionary by key ${sectionKey}.`);
