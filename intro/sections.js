@@ -230,7 +230,7 @@ export const sections = {
           `
             <ul>
               <li>Make a 2-3 changes to this pattern - delete or move a note, or add hi hat notes. Press "Save Pattern" after each change.</li>
-              <li>Now press "Note Entry" (bottom left) and "Save Set"</li>
+              <li>Now press "Save Set"</li>
               <li>Press "Load Set" to reload later. You can save up to 8 patterns in a set.</li>
             </ul>
           `,
@@ -274,7 +274,6 @@ export const sections = {
           `
           <ul>
             <li>Make a few changes to this idea: delete a note, or change a pitch. Save each.</li>
-            <li>Click "Note Entry"</li>
             <li>Enter patterns in the Sequencer in the order you want by clicking the + symbol beside each pattern</li>
             <li>Press Start, then Play to listen. Press Stop, then Clear to re-enter them.</li>
           </ul>
@@ -540,6 +539,56 @@ export const sections = {
         ),
         activeInstrument: 'B',
         features: ['mirror', 'rotate'],
+      },
+      8: {
+        title: 'Build longer songs up in pairs of bars',
+        content:
+          `
+          <ul>
+            <li>Make a few small changes to this idea (saving each): delete a note, move a note, make the melody go down at the end</li>
+            <li>Next, make a couple of bigger changes (saving each): change chord, change drum pattern</li>
+            <li>Play the first pattern 2x, then the 1st & 2nd, 2nd & 3rd, 3rd & 4th, and so on.</li>
+            <li>This makes it easier to follow the changes.</li>
+          </ul>
+          `,
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 6, 12, 20, 24, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 6, 12, 20, 24, 28].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 22].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => {
+              if ([0].includes(i)) return 'D4';
+              if ([16, 28].includes(i)) return 'F#4';
+              if ([22].includes(i)) return 'E4';
+              return '-';
+            }),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 28, 22].includes(i) ? 3 : 0)),
+            duration: Array(32).fill(0).map((e, i) => {
+              if ([0].includes(i)) return 4;
+              if ([16, 28].includes(i)) return 1;
+              if ([22].includes(i)) return 1;
+              return 0;
+            })
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'D2',
+            voice: 'synth',
+          },
+        ),
+        activeInstrument: 'B3',
       },
     },   
   },
