@@ -502,6 +502,45 @@ export const sections = {
         ),
         activeInstrument: 'B3',
       },
+      7: {
+        title: 'Good ideas happen when you work fast',
+        content:
+          `
+          <ul>
+            <li>Tick Mirror Horizontal and enter a drum pattern</li>
+            <li>Next, rotate the melody one or more times by pressing Melody +90</li>
+            <li>Now make one pitch longer</li>
+            <li>This creates an idea that's so different, you could use it as the Chorus to a Verse</li>
+          </ul>
+          `,
+        pattern: patterns.constructPattern(
+          {
+            value: Array(32).fill('-').map((e, i) => ([0, 6, 12, 18, 24, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 6, 12, 18, 24, 28].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            value: ['E4', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', '-', '-', 'E4', '-', '-', '-', '-', '-', 'E4', '-', 'D4', '-', '-', '-', 'B3', '-', '-', '-', '-', '-', '-', '-'],
+            amplitude: [3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
+            duration: [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
+        ),
+        activeInstrument: 'B',
+        features: ['mirror', 'rotate'],
+      },
     },   
   },
 };

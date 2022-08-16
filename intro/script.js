@@ -2069,17 +2069,26 @@ function updateVisibility() {
   return;
   const levelText = ["Note Entry", "Sequencing", "Special Tools"][level]
   enableAllButton.innerText = localizedString(levelText);
-    var controls = document.querySelectorAll(".level2")
-    for (var i = 0; i < controls.length; i++) {
-        controls[i].style.visibility = level >= 1 ? 'visible' : 'hidden';
-    }
-    controls = document.querySelectorAll(".level3")
-    for (var i = 0; i < controls.length; i++) {
-        controls[i].style.visibility = level >= 2 ? 'visible' : 'hidden';
-    }
+  var controls = document.querySelectorAll(".level2")
+  for (var i = 0; i < controls.length; i++) {
+      controls[i].style.visibility = level >= 1 ? 'visible' : 'hidden';
+  }
+  controls = document.querySelectorAll(".level3")
+  for (var i = 0; i < controls.length; i++) {
+      controls[i].style.visibility = level >= 2 ? 'visible' : 'hidden';
+  }
 }
 
-
+export function featureVisibility(featureClassNames) {
+  var controls = document.querySelectorAll(".feature")
+  for (var i = 0; i < controls.length; i++) {
+    var visibility = 'hidden'
+    if (featureClassNames.some(className => controls[i].classList.contains(className))) {
+      visibility = 'visible'
+    }
+    controls[i].style.visibility = visibility;
+  }
+}
 
 var setCounter = 1;
 var sets = [];

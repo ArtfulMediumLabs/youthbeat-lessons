@@ -209,6 +209,10 @@ button.controlB {
     overflow: hidden;
 }
 
+.feature {
+    visibility: hidden;
+}
+
 
 
 /* 
