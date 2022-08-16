@@ -65,10 +65,29 @@
           <label for="melodyCheck" lang="en">Melody</label>
         </div>
       </div>
+      <div id="rotateGroup" class="level3">
+        <button id="bass90" lang="en">
+          Bass / Snare +90
+        </button>
+        <button id="hihat90" lang="en">
+          Hi-hat +90
+        </button>
+        <button id="melody90" lang="en">
+          Melody +90
+        </button>
+      </div>
       <label for="tempo" id="tempoLabel" lang="en">Tempo</label><br>
       <input type="range" name="tempo" id="tempo" min="20" max="180" value="90" class="slider">
     </div>
     <div id="mirrorControl">  
+      <div class="level3">
+        <input type="checkbox" id="mirrorVertical" name="mirrorVertical">
+        <label for="mirrorVertical" lang="en">Mirror Vertical</label>
+      </div>
+      <div class="level3">
+        <input type="checkbox" id="mirrorHorizontal" name="mirrorHorizontal">
+        <label for="mirrorHorizontal" lang="en">Mirror Horizontal</label>
+      </div>
       <div>
         <button id="reset" lang="en">Reset</button>
       </div>

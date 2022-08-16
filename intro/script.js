@@ -832,24 +832,24 @@ function disable32(step) {
   if (enable32.indexOf(activeInstrument.toUpperCase()) == -1) {
     return step % 2 == 1;
   }
-//   if (mirrorVertical.checked || mirrorHorizontal.checked) {
-//     return step % 2 == 1;
-//   }
+  if (mirrorVertical.checked || mirrorHorizontal.checked) {
+    return step % 2 == 1;
+  }
   return false;
 }
 
-// var mirrorHorizontal = document.getElementById('mirrorHorizontal');
-// mirrorHorizontal.addEventListener('click',
-//   function(event){
-//     mirrorHorizontalLine.visible(this.checked);
-//     layer.batchDraw();
-//   }, false)
-// var mirrorVertical = document.getElementById('mirrorVertical');
-// mirrorVertical.addEventListener('click',
-//   function(event){
-//     mirrorVerticalLine.visible(this.checked);
-//     layer.batchDraw();
-//   }, false)
+var mirrorHorizontal = document.getElementById('mirrorHorizontal');
+mirrorHorizontal.addEventListener('click',
+  function(event){
+    mirrorHorizontalLine.visible(this.checked);
+    layer.batchDraw();
+  }, false)
+var mirrorVertical = document.getElementById('mirrorVertical');
+mirrorVertical.addEventListener('click',
+  function(event){
+    mirrorVerticalLine.visible(this.checked);
+    layer.batchDraw();
+  }, false)
 
 var resetButton = document.getElementById('reset');
 resetButton.addEventListener('click',
@@ -895,16 +895,16 @@ function toggleStep(index, pattern, length, instrument=activeInstrument) {
   pattern.value[index] = value;
 
 
-//   if (mirrorVertical.checked) {
-//     var verticalIndex = reflectPatternVertical(index, value, amplitude, pattern, duration);
-//     if (mirrorHorizontal.checked) {
-//       reflectPatternHorizontal(verticalIndex, value, amplitude, pattern, duration);
-//     }
-//   }
+  if (mirrorVertical.checked) {
+    var verticalIndex = reflectPatternVertical(index, value, amplitude, pattern, duration);
+    if (mirrorHorizontal.checked) {
+      reflectPatternHorizontal(verticalIndex, value, amplitude, pattern, duration);
+    }
+  }
 
-//   if (mirrorHorizontal.checked) {
-//     horizontalIndex = reflectPatternHorizontal(index, value, amplitude, pattern, duration);
-//   }
+  if (mirrorHorizontal.checked) {
+    var horizontalIndex = reflectPatternHorizontal(index, value, amplitude, pattern, duration);
+  }
 
   updatePattern();
 }
@@ -1457,42 +1457,42 @@ function selectRing() {
   layer.batchDraw();
 }
 
-// var bass90Button = document.getElementById("bass90");
-// bass90Button.addEventListener('click', 
-//   function() {
-//     rotateAnimation(outerCustomPattern, outerMidRadius - patternWidth / 2,
-//     function() {
-//       patternRotate(outerCustomPattern, 8)
-//       updatePattern();
-//     });
-//   }, 
-//   false
-// );
+var bass90Button = document.getElementById("bass90");
+bass90Button.addEventListener('click', 
+  function() {
+    rotateAnimation(outerCustomPattern, outerMidRadius - patternWidth / 2,
+    function() {
+      patternRotate(outerCustomPattern, 8)
+      updatePattern();
+    });
+  }, 
+  false
+);
 
-// var hihat90Button = document.getElementById("hihat90");
-// hihat90Button.addEventListener('click', 
-//   function() {
-//     rotateAnimation(innerCustomPattern, innerMidRadius - patternWidth / 2,
-//     function() {
-//       patternRotate(innerCustomPattern, 8);
-//       updatePattern();
-//     });
-//   }, 
-//   false
-// );
+var hihat90Button = document.getElementById("hihat90");
+hihat90Button.addEventListener('click', 
+  function() {
+    rotateAnimation(innerCustomPattern, innerMidRadius - patternWidth / 2,
+    function() {
+      patternRotate(innerCustomPattern, 8);
+      updatePattern();
+    });
+  }, 
+  false
+);
 
-// var melody90Button = document.getElementById("melody90");
-// melody90Button.addEventListener('click', 
-//   function() {
+var melody90Button = document.getElementById("melody90");
+melody90Button.addEventListener('click', 
+  function() {
 
-//     rotateAnimation(samplerCustomPattern, samplerMidRadius - patternWidth / 2,
-//     function() {
-//       patternRotate(samplerCustomPattern, 8);
-//       updatePattern();
-//     });
-//   }, 
-//   false
-// );
+    rotateAnimation(samplerCustomPattern, samplerMidRadius - patternWidth / 2,
+    function() {
+      patternRotate(samplerCustomPattern, 8);
+      updatePattern();
+    });
+  }, 
+  false
+);
 
 function patternRotate(pattern, count) {
   arrayRotate(pattern.value, count);

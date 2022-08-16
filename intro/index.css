@@ -36,6 +36,14 @@ body {
     top: 0px;
 }
 
+#muteGroup, #rotateGroup {
+    margin-top: 20px;
+}
+
+#content #rotateGroup button {
+    width: 136px;
+}
+
 #content button, #sets button {
     margin-top: 10px;
     height: 30px;
