@@ -555,6 +555,7 @@ export const sections = {
             <li>Play the first pattern 2x, then the 1st & 2nd, 2nd & 3rd, 3rd & 4th, and so on.</li>
             <li>This makes it easier to follow the changes.</li>
           </ul>
+          <p>You'll find many more tips in our full YouthBeat tutorials. Happy music making!</p>
           `,
         pattern: patterns.constructPattern(
           {
