@@ -55,6 +55,9 @@ export const renderSection = (activity) => {
       } else if (widget.type === widgets.LiteracyConnection) {
         widgetIcon = createWidgetIcon('books');
         widgetTitle = 'Literacy Connection';
+      } else if (widget.type === widgets.TeacherNote) {
+        widgetIcon = createWidgetIcon('teacher-note');
+        widgetTitle = 'Teacher Note';
       }
 
       widgetElement.appendChild(parseHTML(

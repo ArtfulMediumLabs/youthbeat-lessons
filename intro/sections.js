@@ -598,6 +598,74 @@ export const sections = {
       },
     },   
   },
+  MATH: {
+    title: 'Math Program Grades 6-8',
+    activities: {
+      1: {
+        title: 'Without math, there would be no music!',
+        content:
+          `
+          <ul>
+            <li>Press the Play button in the middle of the circle to listen, Press again to stop.</li>
+            <li>Find 4 tools on the screen that involve numbers.</li>
+            <li>Let’s see how they work:
+              <ul>
+                <li>Add 1-2 notes in one numbered quarter of the circle. Click the instrument, then the space in the circle.</li>
+                <li>Raise and lower the volume or loudness. Click/hold/drag the slider at bottom left.</li>
+                <li>Raise and lower the tempo or speed. Click/hold/drag the slider at bottom left.</li>
+              </ul>
+            </li>
+            <li>Which of these tools involves a unit rate - measuring how many of one kind of thing there are for each unit of another kind of thing?</li>
+            <li>Now, make your own musical idea, trying out different volume and tempo settings.</li>
+          </ul>          
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'The circle shows one bar of music. The four quarters of the bar are called beats or beat units.',
+          },
+          {
+            type: widgets.TeacherNote,
+            content: 'The 4 numbered tools are: tempo slider, volume slider, circle/beat numbers, and bar counter. The beat numbers mark the subdivision of the circle into four quarters or beats. The bar counter counts complete revolutions of the circle or bar of music. The tempo slider measures the number of beats per minute. The Volume slider measures the loudness level in decibels converted to a scale of 1-100. Tempo is a unit rate that measures the number of beats (quarters of the circle or bar) there are in a minute (known as BPM).',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 14].includes(i) ? 'B' : ([8, 20].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 20].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => {
+              if ([4, 8, 14, 18].includes(i)) return 'E4';
+              if ([12, 22, 30].includes(i)) return 'D4';
+              if ([26].includes(i)) return 'B3';
+              return '-';
+            }),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 20, 12, 22, 30, 26].includes(i) ? 3 : 0)),
+            duration: Array(32).fill(0).map((e, i) => {
+              if ([4, 8, 18].includes(i)) return 1;
+              if ([12, 22, 30].includes(i)) return 1;
+              if ([26].includes(i)) return 1;
+              if ([14].includes(i)) return 2;
+              return 0;
+            })
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
+        ),
+        activeInstrument: 'B3',
+      },
+    },   
+  },
 };
 
 /*

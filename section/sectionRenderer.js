@@ -49,7 +49,7 @@ export const renderSection = (activity) => {
       } else if (widget.type === widgets.LiteracyConnection) {
         widgetIcon = createWidgetIcon('books');
         widgetTitle = 'Literacy Connection';
-      }
+      } 
 
       widgetElement.appendChild(parseHTML(
         `

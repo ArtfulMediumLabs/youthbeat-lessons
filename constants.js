@@ -2,6 +2,7 @@ export const widgets = Object.freeze({
   DidYouKnow: 'did-you-know',
   MathConnection: 'math-connection',
   LiteracyConnection: 'literacy-connection',
+  TeacherNote: 'teacher-note',
 });
 
 export const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
