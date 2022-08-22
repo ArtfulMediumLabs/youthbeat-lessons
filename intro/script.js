@@ -110,9 +110,9 @@ export function updatePattern(time) {
   // updateNumbers(progressStep);
   updateHand(progressStep);
 
-//   if (rhythmPolygon.checked) {
-//     drawPolygons();
-//   }
+  if (rhythmPolygon.checked) {
+    drawPolygons();
+  }
 
   updatePosition(positionGroup, currentBeat());
   layer.batchDraw();
@@ -1788,14 +1788,14 @@ sequenceClear.addEventListener('click',
 
 
 
-// var rhythmPolygon = document.getElementById('rhythmPolygon');
+var rhythmPolygon = document.getElementById('rhythmPolygon');
 
-// rhythmPolygon.addEventListener('change', 
-//   function() {
-//     togglePolygon(rhythmPolygon.checked);
-//   }, 
-//   false
-// );
+rhythmPolygon.addEventListener('change', 
+  function() {
+    togglePolygon(rhythmPolygon.checked);
+  }, 
+  false
+);
 
 function togglePolygon(show) {
   if (show) {
@@ -1868,7 +1868,7 @@ function drawPolygon(pattern, radius) {
     return new Konva.Shape();
   }
 
-  polygon = new Konva.Line({
+  var polygon = new Konva.Line({
         points: points,
         stroke: 'black',
         strokeWidth: 1,

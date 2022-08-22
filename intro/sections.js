@@ -664,6 +664,98 @@ export const sections = {
         ),
         activeInstrument: 'B3',
       },
+      2: {
+        title: 'We love symmetry in music!',
+        content:
+          `
+          <ul>
+            <li>At top left, click Mirror Vertical.
+              <ul>
+                <li>Enter a drum beat in the 1st space of the 2nd quarter of the circle. (Click a drum, then the space. Click a note a few times to delete it).</li>
+                <li>Press Play to listen.</li>
+                <li>How far is the new note from the blue vertical line? How far is the note you entered?</li>
+              </ul>
+            </li>
+            <li>Now turn off Mirror Vertical and turn on Mirror Horizontal.
+              <ul>
+                <li>Enter a drum beat in the 1st space of the 1st quarter and listen.</li>
+                <li>How far is the new note from the horizontal blue line? How far is the note you entered?</li>
+                <li>The note you entered is in the first space of a quarter. What space is the new note in?</li>
+              </ul>
+            </li>
+            <li>Make your own rhythm patterns using these Reflection tools. Try using Vertical and Horizontal at the same time.
+              <ul>
+                <li>To save your ideas, press Save Pattern. Press Reset to clear the idea.</li>
+              </ul>
+            </li>
+          </ul>          
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'The mirror tools change the position of a drum from the first space - called \'on the beat\' to the second or fourth space, called \'off the beat\'. It\'s surprising when this happens so it catches our attention.',
+          },
+          {
+            type: widgets.TeacherNote,
+            content: 'The mirror tools reflect a note across either a vertical or horizontal line dividing the circle in half. This changes the position of a note within the quarter of the circle, and results in music that shifts off the beat in unexpected (and engaging) ways.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          emptyPattern(),
+        ),
+        activeInstrument: 'B',
+        features: ['mirror'],
+      },
+      3: {
+        title: 'There\'s a hidden geometry behind the music - what\'s it telling us?',
+        content:
+          `
+          <ul>
+            <li>Press Play to listen.</li>
+            <li>Just below the drum list, tick Rhythm Polygon.</li>
+            <li>This joins the notes using straight lines inside the circle. What shapes do you see?</li>
+            <li>Press Synth and enter a melody that has just 3 notes. Use only spaces that have a hi hat or drum note.
+              <ul>
+                <li>What do you notice when the patterns overlap?</li>
+              </ul>
+            </li>
+            <li>Press Reset and create a new pattern using Rhythm Polygon: include a triangle, a pentagon, and a hexagon shape.
+              <ul>
+                <li>Be sure to include a drum in the first space of the first quarter - we need to hear this to follow your beat.</li>
+              </ul>
+            </li>
+          </ul>          
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'When patterns pull apart, we feel tension. When they come back together, we feel relief.',
+          },
+          {
+            type: widgets.TeacherNote,
+            content: 'This is a good opportunity to highlight that a square is a rectangle (meets the definition of a rectangle), as some students don\'t realize this.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0,6,12,20,26].includes(i) ? 'B' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0,6,12,20,26].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => (i % 16 == 0 ? 'B' : ((i + 8) % 16 == 0 ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => (i % 16 == 0 || (i + 8) % 16 == 0 ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+        ),
+        activeInstrument: 'B',
+        features: ['polygon'],
+      },
     },   
   },
 };
