@@ -519,6 +519,7 @@ export const sections = {
             <li>Next, rotate the melody one or more times by pressing Melody +90</li>
             <li>Now make one pitch longer</li>
             <li>This creates an idea that's so different, you could use it as the Chorus to a Verse</li>
+            <li>In the full app, to get to Mirror and Rotation tools, click Note Entry at bottom left to reach Special Tools.</li>
           </ul>
           `,
         pattern: patterns.constructPattern(
@@ -527,12 +528,7 @@ export const sections = {
             amplitude: Array(32).fill(0).map((e, i) => ([0, 6, 12, 18, 24, 28].includes(i) ? 1 : 0)),
             duration: Array(32).fill(0),
           },
-          {
-            // eslint-disable-next-line no-nested-ternary
-            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
-            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
-            duration: Array(32).fill(0),
-          },
+          emptyPattern(),
           {
             value: ['E4', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', '-', '-', 'E4', '-', '-', '-', '-', '-', 'E4', '-', 'D4', '-', '-', '-', 'B3', '-', '-', '-', '-', '-', '-', '-'],
             amplitude: [3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
