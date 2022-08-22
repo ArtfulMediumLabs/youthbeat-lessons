@@ -756,6 +756,70 @@ export const sections = {
         activeInstrument: 'B',
         features: ['polygon'],
       },
+      4: {
+        title: 'Rotation totally changes the music. It can even turn a verse into a chorus!',
+        content:
+          `
+          <ul>
+            <li>Press Play to listen.</li>
+            <li>Press the Melody +90 button three times. This rotates the pattern 270 degrees in a clockwise direction.
+              <ul>
+                <li>Listen. How does this change the way the music sounds?</li>
+              </ul>
+            </li>
+            <li>What if the rotation went the other way - counterclockwise? 
+              <ul>
+                <li>How many degrees would you have to rotate the pattern to get to the same position in a counterclockwise direction? (Think about how many degrees are there in a circle, then subtract 270 degrees from this to get the answer).</li>
+              </ul>
+            </li>
+            <li>Rotate the melody back to its original position by clicking the Melody +90 button once.
+              <ul>
+                <li>Choose a different number of degrees to rotate it.</li>
+                <li>Take away one note in the melody by tapping it several times.</li>
+                <li>Make the note before the one you took away longer by tapping it once or twice.</li>
+              </ul>
+            </li>
+            <li>Listen. Can you still connect this new idea to the original one?</li>
+          </ul>          
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Rotation changes what we hear first, so It really changes how we hear the music. You can use rotation to make a chorus from a verse!',
+          },
+          {
+            type: widgets.TeacherNote,
+            content: 'We only hear music a note at a time, so we tend to relate everything to what we hear first. This activity can be extended by having students apply different degrees of rotation to the different lines in an idea (drum, hi hat, melody).',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            value: Array(32).fill('-').map((e, i) => ([0, 6, 12, 18, 24, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 6, 12, 18, 24, 28].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 22].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            value: ['E4', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', '-', '-', 'E4', '-', '-', '-', '-', '-', 'E4', '-', 'D4', '-', '-', '-', 'B3', '-', '-', '-', '-', '-', '-', '-'],
+            amplitude: [3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
+            duration: [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
+        ),
+        activeInstrument: 'B3',
+        features: ['rotate'],
+      },
     },   
   },
 };
