@@ -820,6 +820,116 @@ export const sections = {
         activeInstrument: 'B3',
         features: ['rotate'],
       },
+      5: {
+        title: 'How do we know it\'s hip hop, not dubstep?',
+        content:
+          `
+          <ul>
+            <li>Move 1-2 drum or hi hat notes to personalize this beat.
+              <ul>
+                <li>To move a note, tap it several times to delete it, then re-enter it.</li>
+              </ul>
+            </li>
+            <li>Choose a tempo for your beat using the tempo slider. 
+              <ul>
+                <li>Press \"Save Pattern\".</li>
+              </ul>
+            </li>
+            <li>Increase the tempo until the music sounds different, and makes you move in a different way. Press "Save Pattern."
+              <ul>
+                <li>How big an increase in tempo is the new tempo over the first one you used?</li>
+                <li>What percentage increase is the new tempo compared to the original tempo?
+                  <ul>
+                    <li>First divide the increase in tempo by the original tempo, then multiply the result by 100.</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Now click on Pattern 1. Make the original tempo slower until it sounds different. Press "Save Pattern".
+              <ul>
+                <li>How big a decrease in tempo is the new tempo compared to the original one? What percentage decrease is it compared to the original tempo?
+                  <ul>
+                    <li>First, divide the decrease in tempo by the original tempo. Then multiply the result by 100.</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Listen again to the 3 patterns and how different they sound and make you want to move.</li>
+          </ul>          
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Every musical genre, like hip hop, has a tempo range, not just a single tempo. There’s a point beyond which the music sounds so different it can’t be the same genre. Research these tempo ranges online!',
+          },
+          {
+            type: widgets.TeacherNote,
+            content: 'Students sometimes struggle with percentages because they don’t take the time to consider what they are relating the increase or decrease to. We’ve tried to make that clear in this activity, but you may have to underline this for some students.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            value: Array(32).fill('-').map((e, i) => ([4, 6, 10, 12, 18, 20, 26, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([4, 6, 10, 12, 18, 20, 26, 28].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 14, 22].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 22, 8, 24].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+          ),
+        activeInstrument: 'B',
+      },
+      6: {
+        title: 'Fractions get our toes tapping!',
+        content:
+          `
+          <ul>
+            <li>Listen to this pattern, called the basic beat.
+              <ul>
+                <li>The notes are all placed in the first space of a quarter or beat unit.</li>
+              </ul>
+            </li>
+            <li>Make a new pattern of fractions.</li> 
+            <li>Leave in the first beat (in the first quarter), then change the pattern to create the following fractions:
+              <ul>
+                <li>¼,⅛,¼,⅛,¼</li>
+                <li>Convert the fractions to a common denominator (bottom number) of 16.</li>
+                <li>•	Multiply both top and bottom numbers for each fraction by the number of times the bottom number goes into 16. The numerator (top number) will tell you the number of spaces from one note to the next (counting from the first note up to the space before the next note).</li>
+              </ul>
+            </li>
+            <li>Now press Reset. Make a rhythm with these fractions: 
+              <ul>
+                <li>⅛,¹⁄₁₆,¼,⁵⁄₁₆,⅛,⅛</li>
+              </ul>
+            </li>
+          </ul>          
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'All the fractions in the rhythm are multiples of the smallest fraction used - making it easier for listeners to relate them all.',
+          },
+          {
+            type: widgets.TeacherNote,
+            content: 'If time permits, ask students to transfer their rhythm fractions to a number line. It’s good practice and easier to measure and compare values in the linear format.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => (i % 16 == 0 ? 'B' : ((i + 8) % 16 == 0 ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => (i % 16 == 0 || (i + 8) % 16 == 0 ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+        ),
+        activeInstrument: 'H',
+      },  
     },   
   },
 };
