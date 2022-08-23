@@ -736,7 +736,7 @@ export const sections = {
         pattern: patterns.constructPattern(
           {
             // eslint-disable-next-line no-nested-ternary
-            value: Array(32).fill('-').map((e, i) => ([0,6,12,20,26].includes(i) ? 'B' : '-')),
+            value: Array(32).fill('-').map((e, i) => ([0,6,12,20,26].includes(i) ? 'H' : '-')),
             amplitude: Array(32).fill(0).map((e, i) => ([0,6,12,20,26].includes(i) ? 1 : 0)),
             duration: Array(32).fill(0),
           },
@@ -893,7 +893,7 @@ export const sections = {
               <ul>
                 <li>¼,⅛,¼,⅛,¼</li>
                 <li>Convert the fractions to a common denominator (bottom number) of 16.</li>
-                <li>•	Multiply both top and bottom numbers for each fraction by the number of times the bottom number goes into 16. The numerator (top number) will tell you the number of spaces from one note to the next (counting from the first note up to the space before the next note).</li>
+                <li>Multiply both top and bottom numbers for each fraction by the number of times the bottom number goes into 16. The numerator (top number) will tell you the number of spaces from one note to the next (counting from the first note up to the space before the next note).</li>
               </ul>
             </li>
             <li>Now press Reset. Make a rhythm with these fractions: 
@@ -923,7 +923,7 @@ export const sections = {
           },
           emptyPattern(),
         ),
-        activeInstrument: 'H',
+        activeInstrument: 'B',
       },
       7: {
         title: 'Music that gets a lot louder jumps out. But what about smaller changes in loudness?',
