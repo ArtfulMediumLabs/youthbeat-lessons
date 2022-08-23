@@ -487,12 +487,7 @@ export const sections = {
           </ul>          
           `,
         pattern: patterns.constructPattern(
-          {
-            // eslint-disable-next-line no-nested-ternary
-            value: Array(32).fill('-').map((e, i) => ((i + 4) % 8 == 0 ? 'H' : '-')),
-            amplitude: Array(32).fill(0).map((e, i) => ((i + 4) % 8 == 0 ? 1 : 0)),
-            duration: Array(32).fill(0),
-          },
+          emptyPattern(),
           {
             // eslint-disable-next-line no-nested-ternary
             value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
@@ -929,7 +924,220 @@ export const sections = {
           emptyPattern(),
         ),
         activeInstrument: 'H',
-      },  
+      },
+      7: {
+        title: 'Music that gets a lot louder jumps out. But what about smaller changes in loudness?',
+        content:
+          `
+          <ul>
+            <li>Play with the loudness level of this pattern, using the volume slider.</li> 
+            <li>Find the smallest amount of increase in loudness that stands out when you play it back after the original volume.
+              <ul>
+                <li>What percentage increase does this represent?
+                  <ul>
+                    <li>The volume slider is already on a scale of 100, so you just need to subtract the new loudness level from the original, and multiply by 100 to get the percentage.</li>
+                  </ul>
+                </li>
+                <li>Now find the smallest decrease in loudness that stands out when you play it back.
+                  <ul>
+                    <li>What percentage decrease is this? </li>
+                    <li>Did you get a different number for the decrease compared to the increase?</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Take this pattern and save it at 8 gradually increasing levels of volume, pressing Save Pattern each time. Use the percentage increase you calculated above throughout.</li>
+            <li>Play them back from 1-8 then from 8-1 to hear the impact this makes.</li>
+          </ul>
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Gradually increasing the volume can be used to build up to a change of mood or to a new section of the piece. Decreasing the volume might be used to bring the piece to an end.',
+          },
+          {
+            type: widgets.TeacherNote,
+            content: 'We\'ve tried to be clear about having students compare the new volume to the original when calculating percentages. You might need to reinforce this as it can be confusing to some students.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => {
+              if ([0].includes(i)) return 'D4';
+              if ([6].includes(i)) return 'A4';
+              if ([12,24].includes(i)) return 'F#4';
+              if ([16].includes(i)) return 'E4';
+              return '-';
+            }),
+            amplitude: Array(32).fill(0).map((e, i) => ([0,8,14,6,12,24,16].includes(i) ? 3 : 0)),
+            duration: Array(32).fill(0).map((e, i) => {
+              if ([0].includes(i)) return 4;
+              if ([6].includes(i)) return 1;
+              if ([12,24].includes(i)) return 1;
+              if ([16].includes(i)) return 3;
+              return 0;
+            })
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
+        ),
+      },
+      8: {
+        title: 'The melody is the signature of a song. It\'s also a set of fractions (Part 1)',
+        content:
+          `
+          <ul>
+            <li>Make a melody with 3-5 notes
+              <ul>
+                <li>Enter the notes on spaces that also have a hi hat or drum note.</li>
+                <li>Put most of the notes on the white lines running through the outer part of the circle.</li>
+                <li>Make one note length 4 times as long by clicking it 3 times.
+                  <ul>
+                    <li>What’s the effect when the melody includes one longer note like this?</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Make a new melody with these note lengths or durations: ¹⁄₁₆, ⅛, ³⁄₁₆, and ¼. 
+              <ul>
+                <li>How are the last three related to the first in length?</li>
+              </ul>
+            </li>
+          </ul>
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'All the note lengths in the app are multiples of the shortest length. This makes it easier for listeners to compare and follow them.',
+          },
+          {
+            type: widgets.TeacherNote,
+            content: 'This is another opportunity to have students plot values on a number line. The white lines in the pitch layer of the circle show the pitches in the chord that is playing. The melody mostly uses these pitches.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([4,8,12,16,22,28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([4,8,12,16,22,28].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
+        ),
+        activeInstrument: 'B3',
+      },
+      9: {
+        title: 'The melody is the signature of the song. It\'s also a set of fractions (Part 2)',
+        content:
+          `
+          <ul>
+            <li>Listen to this pattern.
+              <ul>
+                <li>What do you notice about the steps up in pitch - how high each note sounds compared to the one before it?</li>
+                <li>What sizes of steps are there?</li>
+                <li>What is the pattern of steps starting with the first note (B)?</li>
+                <li>What is the pattern of steps starting with the second note (D)?</li>
+              </ul>
+            </li>
+            <li>Now create a melody using 3-4 pitches. 
+              <ul>
+                <li>Use mostly small steps up in pitch, but include one larger leap.</li>
+                <li>What is the pattern of steps up or down in pitch in your melody?</li>
+                <li>What\'s the effect when you go from small steps to a larger leap?</li>
+              </ul>
+            </li>
+          </ul>
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'The original pattern is a pentatonic scale. It has 5 lettered pitches (2 of them are repeated at a higher pitch). Penta means 5 and tone is another word for pitch. So a pentatonic scale is a set of 5 pitches played in order from lowest to highest.',
+          },
+          {
+            type: widgets.TeacherNote,
+            content: 'A scale is a grid. This is an opportunity to ask students to name other grids and what they measure and help organize. They could also be asked to put the steps in the scale and/or their melody onto a number line.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => {
+              var notes = ['B3','D4','E4','F#4','A4','B4','D5']
+              if (i <= 24 && i % 4 == 0) {
+                return notes[i/4]
+              } else {
+                return '-';
+              }
+            }),
+            amplitude: Array(32).fill(0).map((e, i) => (i <= 24 && i % 4 == 0) ? 3 : 0),
+            duration: Array(32).fill(0).map((e, i) => (i <= 24 && i % 4 == 0) ? 1 : 0)
+          },
+        ),
+        activeInstrument: 'B3',
+      },
+      10: {
+        title: 'Putting it all together.',
+        content:
+          `
+          <ul>
+            <li>Create a musical idea using all the math tools we’ve explored so far:
+              <ul>
+                <li>Mirror Vertical and Horizontal</li>
+                <li>Rotation</li>
+                <li>Rhythm Polygon</li>
+                <li>Changes to tempo and volume levels</li>
+                <li>Fractions of the beat, duration, and pitch in rhythm and melody</li>
+              </ul>
+            </li>
+            <li>Write out how you built the idea, including the patterns of fractions of the beat, the steps in pitch and the sizes of durations, as well as the percentage increases and decreases in tempo and volume.</li>
+          </ul>
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'This activity shows how many ways music relies on math. It\'s proof that without math, there would be no music!',
+          },
+          {
+            type: widgets.TeacherNote,
+            content: 'This is an ideal opportunity to evaluate for understanding, as well as to celebrate students\' creativity. Have students share their projects - both playing their ideas and telling how they built them. Ensure students clearly label each part of their math description of their musical idea.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          emptyPattern(),
+        ),
+        activeInstrument: 'B',
+        features: ['mirror', 'rotate', 'polygon'],
+      },
     },   
   },
 };
