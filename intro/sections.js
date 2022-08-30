@@ -432,6 +432,12 @@ export const sections = {
             <li>It's still got energy, but now you hear something you missed before</li>
           </ul>          
           `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'Many students start off by wanting to fill in every space in the music. This makes the music high energy (which students love), but it all sounds the same. Putting space into the music is like putting punctuation around a phrase, it calls attention to it. It also puts air into the music, so the pace is not just fast forward, it can meander or flow, creating more of a vibe.',
+          },
+        ],
         pattern: patterns.constructPattern(
           {
             // eslint-disable-next-line no-nested-ternary
@@ -479,6 +485,12 @@ export const sections = {
             <li>Now try moving it 2 spaces, can you still hear the beat?</li>
           </ul>          
           `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'We only hear music one slice at a time. The regular beat is a kind of grid that helps us as lis-teners or performers to put all the individual slices together to build meaning and follow the music. When the YouthBeat app loads, it always starts with this basic beat pattern.',
+          },
+        ],
         pattern: patterns.constructPattern(
           emptyPattern(),
           {
@@ -502,6 +514,12 @@ export const sections = {
             <li>Move the 3rd or 4th beat one space earlier or later to hear the difference.</li>
           </ul>          
           `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'The term \'backbeat\' refers to the idea that the second and fourth notes involve \'clapping back\' the first and third. The snare drum has a higher, snappier sound than the Bass drum, so it\'s often used for the back beat sound.',
+          },
+        ],
         pattern: patterns.constructPattern(
           emptyPattern(),
           {
@@ -524,6 +542,12 @@ export const sections = {
             <li>Your listeners will need to hear it at least that many times!</li>
           </ul>          
           `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'Repetition is a big part of music as an auditory art form! Because we only hear music in small slices, our brain needs repetition to build an accurate mental map of how the sounds fit to-gether. The more complicated the pattern, the more times we need to hear it repeated!',
+          },
+        ],
         pattern: patterns.constructPattern(
           emptyPattern(),
           {
@@ -548,6 +572,12 @@ export const sections = {
             <li>Everything you do stands out in a melody with just a few notes!</li>
           </ul>          
           `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'This is a challenging idea for students, not unlike the idea of communicating with as few words as are needed - so that every word has meaning. This task, which involves removing notes from an idea - will help students grasp that there are hidden relationships in the music that deserve to be heard and developed! This is essentially the art of composition. You could ask students to think about the beginning of a song they like - most songs start with just a few pitches and gradually build in length through an additive process.',
+          },
+        ],
         pattern: patterns.constructPattern(
           {
             // eslint-disable-next-line no-nested-ternary
@@ -576,6 +606,12 @@ export const sections = {
             <li>Now make one pitch clash by putting it between white lines</li>
           </ul>          
           `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'Pitch is complicated! We’ve tried to make it simpler by showing which pitch locations in the melody are part of the chord that’s playing (white lines). Chord notes tend to be heard throughout the bar, so we naturally expect to hear them in the melody, too. When other pitch-es are used instead, they create tension and contrast with the chord. A lot of the emotional impact of music comes from this clash and its resolution when the melody goes back to a chord note. So students just need to pay attention to the white lines and the mix of notes in the melody that are on the white lines or not.',
+          },
+        ],
         pattern: patterns.constructPattern(
           emptyPattern(),
           {
@@ -607,6 +643,12 @@ export const sections = {
             <li>In the full app, to get to Mirror and Rotation tools, click Note Entry at bottom left to reach Special Tools.</li>
           </ul>
           `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'Ideation works best when it happens quickly, without distractions or changes in mode. Once students have a few ideas saved, they can listen and evaluate them to determine which ones suit their purposes best. They shouldn\'t be trying to do that while they\'re involved in ideation.',
+          },
+        ],
         pattern: patterns.constructPattern(
           {
             value: Array(32).fill('-').map((e, i) => ([0, 6, 12, 18, 24, 28].includes(i) ? 'H' : '-')),
@@ -642,6 +684,12 @@ export const sections = {
           </ul>
           <p>You'll find many more tips in our full YouthBeat tutorials. Happy music making!</p>
           `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'When we listen to music, we\'re always comparing what we\'re hearing right now to what we just heard. Placing patterns into pairs, then groups of 4 or 8 bars, makes it easier for listeners to make those comparisons and keep track of where the music is going. Music has conventions, like any art form, and you rarely, if ever, encounter a 3-bar phrase in a song!',
+          },
+        ],
         pattern: patterns.constructPattern(
           {
             // eslint-disable-next-line no-nested-ternary
