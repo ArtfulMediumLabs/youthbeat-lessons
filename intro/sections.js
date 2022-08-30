@@ -51,11 +51,50 @@ const constructActionSteps = (actions, description = '') => `
 *
 */
 
+const intro = {
+  title: 'Getting Started',
+  content:
+    `
+    <ul>
+      <li>Press the Play button in the middle of the circle. Press again to stop. The purple squares show you the timing of the drum sounds.</li>
+      <li>Press Snare Drum at top left, then click 2 of the purple notes. Listen.</li>
+      <li>Click Hi Hat and click spaces in the circle to make a pattern. Listen.</li>
+      <li>Delete a note, by clicking it 3 times.</li>
+      <li>Click Synth and enter 3-4 notes. Click/hold/scroll to change how high or low they sound.
+        <ul>
+          <li>Make a synth note longer by tapping it more than once.</li>
+        </ul>
+      </li>
+      <li>Click on a Guitar sound and press play to listen.</li>
+      <li>Take a few minutes to play with your pattern. When you're done, share it with a classmate.</li>
+      <li>To save it, press Save Pattern at the right.</li>
+    </ul>          
+    `,
+  widgets: [
+    {
+      type: widgets.TeacherNote,
+      content: 'Students may need a little more time the first time they use the app, as they are excited to create their first idea. Some students even create 4 or 5 the first time they use the app!',
+    },
+  ],
+  pattern: patterns.constructPattern(
+    emptyPattern(),
+    {
+      // eslint-disable-next-line no-nested-ternary
+      value: Array(32).fill('-').map((e, i) => ([0, 8, 16, 22].includes(i) ? 'B' : '-')),
+      amplitude: Array(32).fill(0).map((e, i) => (i % 8 == 0 ? 1 : 0)),
+      duration: Array(32).fill(0),
+    },
+    emptyPattern(),
+  ),
+  activeInstrument: 'B',
+};
+
 export const sections = {
   BASICS: {
     title: '8 Basics You Need To Know',
     activities: {
-      1: {
+      1: intro,
+      2: {
         title: 'Music\'s built up in layers, starting with the drum',
         content:
           `
@@ -93,7 +132,7 @@ export const sections = {
             },
           ),
       },
-      2: {
+      3: {
         title: 'What can you do with drum notes?',
         content:
           `
@@ -118,7 +157,7 @@ export const sections = {
         ),
         activeInstrument: 'B'
       },
-      3: {
+      4: {
         title: 'What can you do with hi hat notes?',
         content:
           `
@@ -145,7 +184,7 @@ export const sections = {
         ),
         activeInstrument: 'H'
       },
-      4: {
+      5: {
         title: 'What can you do with melody notes?',
         content:
           `
@@ -183,7 +222,7 @@ export const sections = {
         ),
         activeInstrument: 'B3'
       },
-      5: {
+      6: {
         title: 'What can you do with chords (blended pitches played at the same time)?',
         content:
           `
@@ -208,7 +247,7 @@ export const sections = {
           emptyPattern(),
         ),
       },
-      6: {
+      7: {
         title: 'Find the right tempo (speed) and volume (loudness)',
         content:
           `
@@ -233,7 +272,7 @@ export const sections = {
           emptyPattern(),
           ),
       },
-      7: {
+      8: {
         title: 'There\'s nothing worse than forgetting to save an idea you really like',
         content:
           `
@@ -277,7 +316,7 @@ export const sections = {
           },
         ),
       },
-      8: {
+      9: {
         title: 'How Do You Play Longer Sections of Music?',
         content:
           `
@@ -596,7 +635,8 @@ export const sections = {
   MATH: {
     title: 'Math Program Grades 6-8',
     activities: {
-      1: {
+      1: intro,
+      2: {
         title: 'Without math, there would be no music!',
         content:
           `
@@ -659,7 +699,7 @@ export const sections = {
         ),
         activeInstrument: 'B3',
       },
-      2: {
+      3: {
         title: 'We love symmetry in music!',
         content:
           `
@@ -703,7 +743,7 @@ export const sections = {
         activeInstrument: 'B',
         features: ['mirror'],
       },
-      3: {
+      4: {
         title: 'There\'s a hidden geometry behind the music - what\'s it telling us?',
         content:
           `
@@ -751,7 +791,7 @@ export const sections = {
         activeInstrument: 'B',
         features: ['polygon'],
       },
-      4: {
+      5: {
         title: 'Rotation totally changes the music. It can even turn a verse into a chorus!',
         content:
           `
@@ -815,7 +855,7 @@ export const sections = {
         activeInstrument: 'B3',
         features: ['rotate'],
       },
-      5: {
+      6: {
         title: 'How do we know it\'s hip hop, not dubstep?',
         content:
           `
@@ -878,7 +918,7 @@ export const sections = {
           ),
         activeInstrument: 'B',
       },
-      6: {
+      7: {
         title: 'Fractions get our toes tapping!',
         content:
           `
@@ -925,7 +965,7 @@ export const sections = {
         ),
         activeInstrument: 'B',
       },
-      7: {
+      8: {
         title: 'Music that gets a lot louder jumps out. But what about smaller changes in loudness?',
         content:
           `
@@ -995,7 +1035,7 @@ export const sections = {
           },
         ),
       },
-      8: {
+      9: {
         title: 'The melody is the signature of a song. It\'s also a set of fractions (Part 1)',
         content:
           `
@@ -1052,7 +1092,7 @@ export const sections = {
         ),
         activeInstrument: 'B3',
       },
-      9: {
+      10: {
         title: 'The melody is the signature of the song. It\'s also a set of fractions (Part 2)',
         content:
           `
@@ -1103,7 +1143,7 @@ export const sections = {
         ),
         activeInstrument: 'B3',
       },
-      10: {
+      11: {
         title: 'Putting it all together.',
         content:
           `
