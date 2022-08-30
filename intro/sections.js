@@ -426,10 +426,11 @@ export const sections = {
           `
           <ul>
             <li>More notes = more energy</li>
-            <li>But if all the spaces are filled in, nothing stands out</li>
+            <li>But if all the spaces are filled in, as in this example, nothing stands out.</li>
             <li>To get us to pay attention, put a gap in the music</li>
             <li>Listen to this idea, then delete notes right before and after part of it</li>
             <li>It's still got energy, but now you hear something you missed before</li>
+            <li>Try different places to put space into this pattern. What stands out in each of them?</li>
           </ul>          
           `,
         widgets: [
@@ -511,7 +512,9 @@ export const sections = {
             <li>This is called the BackBeat. It\'s like the audience clapping back the 1st and 3rd beats.</li>
             <li>It puts the beat into pairs: Bass Drum-Snare Drum, Bass Drum-Snare Drum.</li>
             <li>This helps listeners follow rhythms by comparing the pairs.</li>
-            <li>Move the 3rd or 4th beat one space earlier or later to hear the difference.</li>
+            <li>Change the two snare drums to bass drum.</li>
+            <li>Move the 3rd of 4th bass drum one space earlier or later and listen.</li>
+            <li>Now change the 2nd and 4th drum sounds to snare drum and listen to the difference this makes.</li>
           </ul>          
           `,
         widgets: [
@@ -537,7 +540,8 @@ export const sections = {
         content:
           `
           <ul>
-            <li>Make this drum pattern more complicated: move 2 beats one space early or late. Add a note between beats.</li>
+            <li>Make this drum pattern more complicated: move 2 beats one space earlier or later (but not the first one at the top of the circle - we always need to hear this to know when the bar is beginning).</li>
+            <li>Now add a note between two beats somewhere in the pattern.</li>
             <li>See if you can 'get' it the first time you hear it. How many times do you need to hear it before you do?</li>
             <li>Your listeners will need to hear it at least that many times!</li>
           </ul>          
@@ -568,7 +572,7 @@ export const sections = {
             <li>Hit melodies start with just a few pitches.</li>
             <li>Enter pitches in the outer circle on 3-5 drum/hi hat spaces (click/hold/scroll to change pitch)</li>
             <li>Make one note longer (click 1-3 times)</li>
-            <li>Give your melody at least one change in direction</li>
+            <li>Give your melody at least one change in direction (going up instead of down or down instead of up).</li>
             <li>Everything you do stands out in a melody with just a few notes!</li>
           </ul>          
           `,
@@ -604,6 +608,7 @@ export const sections = {
             <li>Enter  3-5 melody pitches on drum/hi hat spaces</li>
             <li>Put all the pitches on white lines (so they sync with the chord)</li>
             <li>Now make one pitch clash by putting it between white lines</li>
+            <li>We expect to hear the pitches in the chord used in the melody, too, So when a note that\'s not in the chord is heard in the melody, it draws our attention.</li>
           </ul>          
           `,
         widgets: [
@@ -640,7 +645,7 @@ export const sections = {
             <li>Next, rotate the melody one or more times by pressing Melody +90</li>
             <li>Now make one pitch longer</li>
             <li>This creates an idea that's so different, you could use it as the Chorus to a Verse</li>
-            <li>In the full app, to get to Mirror and Rotation tools, click Note Entry at bottom left to reach Special Tools.</li>
+            <li>When using the full app, press the Note Entry button to get to Special Tools - this is where you\'ll find the Rotation and Reflection tools.</li>
           </ul>
           `,
         widgets: [
@@ -680,7 +685,7 @@ export const sections = {
             <li>Make a few small changes to this idea (saving each): delete a note, move a note, make the melody go down at the end</li>
             <li>Next, make a couple of bigger changes (saving each): change chord, change drum pattern</li>
             <li>Play the first pattern 2x, then the 1st & 2nd, 2nd & 3rd, 3rd & 4th, and so on.</li>
-            <li>This makes it easier to follow the changes.</li>
+            <li>Playing patterns in pairs makes it easier for listeners to follow the changes.</li>
           </ul>
           <p>You'll find many more tips in our full YouthBeat tutorials. Happy music making!</p>
           `,
