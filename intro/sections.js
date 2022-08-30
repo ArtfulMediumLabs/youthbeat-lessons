@@ -131,6 +131,12 @@ export const sections = {
               voice: 'synth',
             },
           ),
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'The mute tool helps students hear the connections between the different layers: drum, hi hat, and melody. It’s a useful tool for musical story telling, as students can introduce an idea grad-ually, adding a layer at a time, or combine layers in unexpected ways. This is one key to creat-ing longer pieces from a single idea. Ask students to explore all the ways they can play this idea using the mute tool (i.e. one layer at a time, two layers, three).',
+          },
+        ],
       },
       3: {
         title: 'What can you do with drum notes?',
@@ -145,6 +151,12 @@ export const sections = {
             <li>To clear the pattern, press Reset at top left</li>
           </ul>
           `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'Our goal is to enable students to become familiar with the tools and the resources. We want them to be actively exploring - listening and discovering - without interrupting the process at this early stage with analysis or ideas. The drum is the foundation of popular music, which is why we begin with the drum layer. It fulfills an important function in keeping time and organizing the overall rhythm of a song.',
+          },
+        ],
         pattern: patterns.constructPattern(
           emptyPattern(),
           {
@@ -168,6 +180,12 @@ export const sections = {
             <li>Listen to how each edit changes the way you hear the drum pattern.</li>
           </ul>
         `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'The hi hat is part of the drum kit. It\'s played by a foot pedal that bangs 2 metal cymbals to-gether. With the Closed Hi Hat sound, the pedal stops the cymbals from reverberating right after they are played, making a dry sound. With the Open Hi Hat sound, the cymbals are al-lowed to continue to vibrate, making a \'wetter\' sound. Ask students to describe the difference between the sounds in their own words.',
+          },
+        ],
         pattern: patterns.constructPattern(
           {
             value: Array(32).fill('-').map((e, i) => ([4, 12, 20, 28].includes(i) ? 'H' : '-')),
@@ -195,6 +213,12 @@ export const sections = {
             <li>Put in a bigger leap in pitch somewhere that stands out in the melody</li>
           </ul>
           `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'Almost all of music\'s reputation for complexity comes from pitch. Here we just want students to explore changing pitch and how that sounds and feels, rather than jumping into pitch nam-ing or pitch steps. We build to that gradually...',
+          },
+        ],
         pattern: patterns.constructPattern(
           {
             value: Array(32).fill('-').map((e, i) => ([0, 6, 12, 18, 24, 28].includes(i) ? 'H' : '-')),
@@ -232,6 +256,12 @@ export const sections = {
               <li>Turn chords into a kind of melody: make a 4-chord pattern using Bm/Em, D, Asus, and G.</li>
             </ul>
           `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'Our emphasis is on getting students to explore and listen to how different chords sound and feel. At the same time, we’re introducing the idea that chords in a song make a kind of melody - scaffolding the idea of a chord onto a concept (melody) with which students are  already fa-miliar. The melody is formed by the lowest note in each chord.',
+          },
+        ],
         pattern: patterns.constructPattern(
           {
             value: Array(32).fill('-').map((e, i) => ([4, 10, 20, 26].includes(i) ? 'H' : '-')),
@@ -257,6 +287,12 @@ export const sections = {
               <li>Make a faster tempo louder, and slower one softer</li>
             </ul>
           `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'Almost nothing changes music as much as changing the tempo, and changing the volume is not far behind in impact. Encourage students to explore the extremes as well as more subtle changes. Prompt them for vocabulary to describe these changes: this will help them firm up their awareness.',
+          },
+        ],
         pattern: patterns.constructPattern(
           {
             value: Array(32).fill('-').map((e, i) => ([4, 6, 10, 12, 18, 20, 26, 28].includes(i) ? 'H' : '-')),
@@ -282,6 +318,15 @@ export const sections = {
               <li>Press "Load Set" to reload later. You can save up to 8 patterns in a set.</li>
             </ul>
           `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: `
+            <p>When students save a pattern for the first time using the full app (as opposed to in these tuto-rials), the generic app URL switches to a personal URL. Have them bookmark this. YouthBeat organizes ideas into patterns and Sets. There are 8 slots for patterns and 8 for Sets.</p>
+            <p>When a group of patterns has been saved as a Set, students can over-write or delete the original patterns to create another Set. If they need more space, they can export their work by tapping the arrow icon in the bottom right corner of Special Tools (reached via the Note En-try button on the main screen), bookmarking the new URL that is created. Then they can over-write the patterns in their personal URL. Unlike a personal URL, an exported URL can be played by anyone, so it's helpful for evaluating student work!</p>
+            `,
+          },
+        ],
         pattern: patterns.constructPattern(
           emptyPattern(),
           {
@@ -326,6 +371,12 @@ export const sections = {
             <li>Press Start, then Play to listen. Press Stop, then Clear to re-enter them.</li>
           </ul>
           `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'The sequencer plays back up to 8 patterns in the order selected by students. It\'s how they go from a single idea to a longer section of music. Encourage them to try out different ways of organizing the patterns, this can make a huge difference! Students can save a sequence when they press Save Set. (This is helpful when work is exported, as it allows others to listen to patterns in the intended order).',
+          },
+        ],
         pattern: patterns.constructPattern(
           {
             // eslint-disable-next-line no-nested-ternary
