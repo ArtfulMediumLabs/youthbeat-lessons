@@ -134,7 +134,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.TeacherNote,
-            content: 'The mute tool helps students hear the connections between the different layers: drum, hi hat, and melody. It’s a useful tool for musical story telling, as students can introduce an idea grad-ually, adding a layer at a time, or combine layers in unexpected ways. This is one key to creat-ing longer pieces from a single idea. Ask students to explore all the ways they can play this idea using the mute tool (i.e. one layer at a time, two layers, three).',
+            content: 'The mute tool helps students hear the connections between the different layers: drum, hi hat, and melody. It\'s a useful tool for musical story telling, as students can introduce an idea grad-ually, adding a layer at a time, or combine layers in unexpected ways. This is one key to creat-ing longer pieces from a single idea. Ask students to explore all the ways they can play this idea using the mute tool (i.e. one layer at a time, two layers, three).',
           },
         ],
       },
@@ -259,7 +259,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.TeacherNote,
-            content: 'Our emphasis is on getting students to explore and listen to how different chords sound and feel. At the same time, we’re introducing the idea that chords in a song make a kind of melody - scaffolding the idea of a chord onto a concept (melody) with which students are  already fa-miliar. The melody is formed by the lowest note in each chord.',
+            content: 'Our emphasis is on getting students to explore and listen to how different chords sound and feel. At the same time, we\'re introducing the idea that chords in a song make a kind of melody - scaffolding the idea of a chord onto a concept (melody) with which students are  already fa-miliar. The melody is formed by the lowest note in each chord.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -508,7 +508,7 @@ export const sections = {
         content:
           `
           <ul>
-            <li>This is called the BackBeat. It’s like the audience clapping back the 1st and 3rd beats.</li>
+            <li>This is called the BackBeat. It\'s like the audience clapping back the 1st and 3rd beats.</li>
             <li>It puts the beat into pairs: Bass Drum-Snare Drum, Bass Drum-Snare Drum.</li>
             <li>This helps listeners follow rhythms by comparing the pairs.</li>
             <li>Move the 3rd or 4th beat one space earlier or later to hear the difference.</li>
@@ -609,7 +609,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.TeacherNote,
-            content: 'Pitch is complicated! We’ve tried to make it simpler by showing which pitch locations in the melody are part of the chord that’s playing (white lines). Chord notes tend to be heard throughout the bar, so we naturally expect to hear them in the melody, too. When other pitch-es are used instead, they create tension and contrast with the chord. A lot of the emotional impact of music comes from this clash and its resolution when the melody goes back to a chord note. So students just need to pay attention to the white lines and the mix of notes in the melody that are on the white lines or not.',
+            content: 'Pitch is complicated! We\'ve tried to make it simpler by showing which pitch locations in the melody are part of the chord that\'s playing (white lines). Chord notes tend to be heard throughout the bar, so we naturally expect to hear them in the melody, too. When other pitch-es are used instead, they create tension and contrast with the chord. A lot of the emotional impact of music comes from this clash and its resolution when the melody goes back to a chord note. So students just need to pay attention to the white lines and the mix of notes in the melody that are on the white lines or not.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -994,7 +994,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'Every musical genre, like hip hop, has a tempo range, not just a single tempo. There’s a point beyond which the music sounds so different it can’t be the same genre. Research these tempo ranges online!',
+            content: 'Every musical genre, like hip hop, has a tempo range, not just a single tempo. There\'s a point beyond which the music sounds so different it can\'t be the same genre. Research these tempo ranges online!',
           },
           {
             type: widgets.TeacherNote,
@@ -1030,7 +1030,7 @@ export const sections = {
             </li>
             <li>Make a new pattern of fractions that's less regular..</li> 
             <li>Leave the first 2 beats in their current location. Then change the rest of the pattern so that the complete pattern divides the circle up into these fractions: ¼, ⅛, ¼, ⅛, ¼. (You'll have to add one drum note to do this).</li>
-            <li>To calculate the space to put each note in, convert the fractions to a common denominator of 16. (First calculate how many times each fraction’s denominator or bottom number goes into 16. Then multiply both top and bottom numbers by this number).
+            <li>To calculate the space to put each note in, convert the fractions to a common denominator of 16. (First calculate how many times each fraction's denominator or bottom number goes into 16. Then multiply both top and bottom numbers by this number).
               <ul>
                 <li>The numerator or top number for each converted fraction tells you how many spaces there are from the note to the next note.</li>
               </ul>
@@ -1199,7 +1199,7 @@ export const sections = {
         content:
           `
           <ul>
-            <li>Create a musical idea using all the math tools we’ve explored so far:
+            <li>Create a musical idea using all the math tools we've explored so far:
               <ul>
                 <li>Mirror Vertical and Horizontal</li>
                 <li>Rotation</li>
