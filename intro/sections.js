@@ -643,7 +643,7 @@ export const sections = {
           <ul>
             <li>Press the Play button in the middle of the circle to listen, Press again to stop.</li>
             <li>Find 4 tools on the screen that involve numbers.</li>
-            <li>Let’s see how they work:
+            <li>Let's see how they work:
               <ul>
                 <li>Add 1-2 notes in one numbered quarter of the circle. Click the instrument, then the space in the circle.</li>
                 <li>Raise and lower the volume or loudness. Click/hold/drag the slider at bottom left.</li>
@@ -715,7 +715,7 @@ export const sections = {
               <ul>
                 <li>Enter a drum beat in the 1st space of the 1st quarter and listen.</li>
                 <li>How far is the new note from the horizontal blue line? How far is the note you entered?</li>
-                <li>The note you entered is in the first space of a quarter. What space is the new note in?</li>
+                <li>The note you entered is in the first space of a quarter. What space within a quarter is the new note in?</li>
               </ul>
             </li>
             <li>Make your own rhythm patterns using these Reflection tools. Try using Vertical and Horizontal at the same time.
@@ -753,7 +753,7 @@ export const sections = {
             <li>This joins the notes using straight lines inside the circle. What shapes do you see?</li>
             <li>Press Synth and enter a melody that has just 3 notes. Use only spaces that have a hi hat or drum note.
               <ul>
-                <li>What do you notice when the patterns overlap?</li>
+                <li>What do you notice when the shapes overlap?</li>
               </ul>
             </li>
             <li>Press Reset and create a new pattern using Rhythm Polygon: include a triangle, a pentagon, and a hexagon shape.
@@ -804,7 +804,7 @@ export const sections = {
             </li>
             <li>What if the rotation went the other way - counterclockwise? 
               <ul>
-                <li>How many degrees would you have to rotate the pattern to get to the same position in a counterclockwise direction? (Think about how many degrees are there in a circle, then subtract 270 degrees from this to get the answer).</li>
+                <li>How many degrees would you have to rotate the pattern to get to the same position in a counterclockwise direction? (Think about how many degrees are there in a circle, then subtract 270 degrees from this).</li>
               </ul>
             </li>
             <li>Rotate the melody back to its original position by clicking the Melody +90 button once.
@@ -820,7 +820,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'Rotation changes what we hear first, so It really changes how we hear the music. You can use rotation to make a chorus from a verse!',
+            content: 'Rotation changes what we hear first, so it really changes how we hear the music. You can use rotation to make a chorus from a verse!',
           },
           {
             type: widgets.TeacherNote,
@@ -875,12 +875,12 @@ export const sections = {
                 <li>How big an increase in tempo is the new tempo over the first one you used?</li>
                 <li>What percentage increase is the new tempo compared to the original tempo?
                   <ul>
-                    <li>First divide the increase in tempo by the original tempo, then multiply the result by 100.</li>
+                    <li>First show the increase in tempo as a fraction. What is the denominator or lower number? What is the numerator or upper number? Next, divide out the fraction. Then multiply by 100 to get the percentage (percentage means "per 100" or for each 100)</li>
                   </ul>
                 </li>
               </ul>
             </li>
-            <li>Now click on Pattern 1. Make the original tempo slower until it sounds different. Press "Save Pattern".
+            <li>Now click on Pattern 1. Make the original tempo slower until the music sounds different.
               <ul>
                 <li>How big a decrease in tempo is the new tempo compared to the original one? What percentage decrease is it compared to the original tempo?
                   <ul>
@@ -899,7 +899,7 @@ export const sections = {
           },
           {
             type: widgets.TeacherNote,
-            content: 'Students sometimes struggle with percentages because they don’t take the time to consider what they are relating the increase or decrease to. We’ve tried to make that clear in this activity, but you may have to underline this for some students.',
+            content: 'This activity can be extended by having students calculate the percentage increase or decrease between the musical genres they research online, for example between Hip Hop and Dubstep.”',
           },
         ],
         pattern: patterns.constructPattern(
@@ -926,19 +926,19 @@ export const sections = {
             <li>Listen to this pattern, called the basic beat.
               <ul>
                 <li>The notes are all placed in the first space of a quarter or beat unit.</li>
+                <li>The drum sounds divide the circle into 4 quarters, so each represents ¼ of the circle or bar of music.</li>
               </ul>
             </li>
-            <li>Make a new pattern of fractions.</li> 
-            <li>Leave in the first beat (in the first quarter), then change the pattern to create the following fractions:
+            <li>Make a new pattern of fractions that's less regular..</li> 
+            <li>Leave the first 2 beats in their current location. Then change the rest of the pattern so that the complete pattern divides the circle up into these fractions: ¼, ⅛, ¼, ⅛, ¼. (You'll have to add one drum note to do this).</li>
+            <li>To calculate the space to put each note in, convert the fractions to a common denominator of 16. (First calculate how many times each fraction’s denominator or bottom number goes into 16. Then multiply both top and bottom numbers by this number).
               <ul>
-                <li>¼,⅛,¼,⅛,¼</li>
-                <li>Convert the fractions to a common denominator (bottom number) of 16.</li>
-                <li>Multiply both top and bottom numbers for each fraction by the number of times the bottom number goes into 16. The numerator (top number) will tell you the number of spaces from one note to the next (counting from the first note up to the space before the next note).</li>
+                <li>The numerator or top number for each converted fraction tells you how many spaces there are from the note to the next note.</li>
               </ul>
             </li>
-            <li>Now press Reset. Make a rhythm with these fractions: 
+            <li>Now Press Reset. Make a pattern with 5 notes that includes these fractions: 
               <ul>
-                <li>⅛,¹⁄₁₆,¼,⁵⁄₁₆,⅛,⅛</li>
+                <li>⅛,¹⁄₁₆,¼,½</li>
               </ul>
             </li>
           </ul>          
@@ -946,11 +946,11 @@ export const sections = {
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'All the fractions in the rhythm are multiples of the smallest fraction used - making it easier for listeners to relate them all.',
+            content: 'All the fractions in the example you just created are multiples of the smallest fraction (¹⁄₁₆). This helps listeners relate the different values.',
           },
           {
             type: widgets.TeacherNote,
-            content: 'If time permits, ask students to transfer their rhythm fractions to a number line. It’s good practice and easier to measure and compare values in the linear format.',
+            content: 'If time permits, ask students to transfer their rhythm fractions to a number line. This reinforces learning as it is easier to measure and compare values in the linear format.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -966,96 +966,48 @@ export const sections = {
         activeInstrument: 'B',
       },
       8: {
-        title: 'Music that gets a lot louder jumps out. But what about smaller changes in loudness?',
+        title: 'Pushing And Pulling Against the Beat - there\'s math behind that!',
         content:
           `
           <ul>
-            <li>Play with the loudness level of this pattern, using the volume slider.</li> 
-            <li>Find the smallest amount of increase in loudness that stands out when you play it back after the original volume.
-              <ul>
-                <li>What percentage increase does this represent?
-                  <ul>
-                    <li>The volume slider is already on a scale of 100, so you just need to subtract the new loudness level from the original, and multiply by 100 to get the percentage.</li>
-                  </ul>
-                </li>
-                <li>Now find the smallest decrease in loudness that stands out when you play it back.
-                  <ul>
-                    <li>What percentage decrease is this? </li>
-                    <li>Did you get a different number for the decrease compared to the increase?</li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li>Take this pattern and save it at 8 gradually increasing levels of volume, pressing Save Pattern each time. Use the percentage increase you calculated above throughout.</li>
-            <li>Play them back from 1-8 then from 8-1 to hear the impact this makes.</li>
+            <li>Add Hi Hat notes 3 spaces apart to this pattern, starting with the 1st space at the top of the circle. (Click closed hi hat, then the space). Listen.</li> 
+            <li>Where does the hi hat move away from the drum? Where do the two patterns sync up?</li>
+            <li>What do you feel when the hi hat moves away from the drum? When it comes back to the beat?</li>
+            <li>Put the drum and hi hat patterns on a number line numbered from 1-16. Fill in the spaces that have drum notes with one colour, and the spaces with hi hat notes with a different colour.</li>
+            <li>Circle the spaces where the hi hat and drum come together.</li>
+            <li>Divide these space numbers by 3 - the number of spaces between each pair of hi hat notes.</li>
+            <li>Now divide these same space numbers where the drum and hi hat come together by 4 - the number of spaces between each pair of drum notes.</li>
           </ul>
           `,
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'Gradually increasing the volume can be used to build up to a change of mood or to a new section of the piece. Decreasing the volume might be used to bring the piece to an end.',
+            content: 'When numbers can be divided by two different numbers, such as 3 and 4 in our example, they are called common multiples (in this case, of 3 and 4).',
           },
           {
             type: widgets.TeacherNote,
-            content: 'We\'ve tried to be clear about having students compare the new volume to the original when calculating percentages. You might need to reinforce this as it can be confusing to some students.',
+            content: 'This example can be extended by having students create a third pattern using the melody in which notes are spaced 2 or 5 spaces apart.',
           },
         ],
         pattern: patterns.constructPattern(
           emptyPattern(),
           {
             // eslint-disable-next-line no-nested-ternary
-            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
-            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
+            value: Array(32).fill('-').map((e, i) => (i % 16 == 0 ? 'B' : ((i + 8) % 16 == 0 ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => (i % 16 == 0 || (i + 8) % 16 == 0 ? 1 : 0)),
             duration: Array(32).fill(0),
           },
-          {
-            // eslint-disable-next-line no-nested-ternary
-            value: Array(32).fill('-').map((e, i) => {
-              if ([0].includes(i)) return 'D4';
-              if ([6].includes(i)) return 'A4';
-              if ([12,24].includes(i)) return 'F#4';
-              if ([16].includes(i)) return 'E4';
-              return '-';
-            }),
-            amplitude: Array(32).fill(0).map((e, i) => ([0,8,14,6,12,24,16].includes(i) ? 3 : 0)),
-            duration: Array(32).fill(0).map((e, i) => {
-              if ([0].includes(i)) return 4;
-              if ([6].includes(i)) return 1;
-              if ([12,24].includes(i)) return 1;
-              if ([16].includes(i)) return 3;
-              return 0;
-            })
-          },
-          {
-            tempo: 90,
-            volume: 60,
-            mute: { bassSnare: true, hiHat: true, melody: true },
-            chord: 'B1',
-            voice: 'synth',
-          },
+          emptyPattern(),
         ),
+        activeInstrument: 'B',
       },
       9: {
         title: 'The melody is the signature of a song. It\'s also a set of fractions (Part 1)',
         content:
           `
           <ul>
-            <li>Make a melody with 3-5 notes
-              <ul>
-                <li>Enter the notes on spaces that also have a hi hat or drum note.</li>
-                <li>Put most of the notes on the white lines running through the outer part of the circle.</li>
-                <li>Make one note length 4 times as long by clicking it 3 times.
-                  <ul>
-                    <li>What’s the effect when the melody includes one longer note like this?</li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li>Make a new melody with these note lengths or durations: ¹⁄₁₆, ⅛, ³⁄₁₆, and ¼. 
-              <ul>
-                <li>How are the last three related to the first in length?</li>
-              </ul>
-            </li>
+            <li>Make a new melody with 5 notes that includes these durations or note lengths: ½, ⅛, ¼, ¹⁄₁₆, ¹⁄₁₆  (feel free to change the order of these fractions in your melody).</li>
+            <li>How many times do you have to multiply the smallest fraction to get the largest? Divide the second largest to get the smallest?</li>
           </ul>
           `,
         widgets: [
@@ -1100,7 +1052,7 @@ export const sections = {
             <li>Listen to this pattern.
               <ul>
                 <li>What do you notice about the steps up in pitch - how high each note sounds compared to the one before it?</li>
-                <li>What sizes of steps are there?</li>
+                <li>How many different sizes of steps are there? (You can see this by looking at the pattern of white lines dividing up the colour block representing each pitch).</li>
                 <li>What is the pattern of steps starting with the first note (B)?</li>
                 <li>What is the pattern of steps starting with the second note (D)?</li>
               </ul>
