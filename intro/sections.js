@@ -81,7 +81,7 @@ const intro = {
     {
       // eslint-disable-next-line no-nested-ternary
       value: Array(32).fill('-').map((e, i) => ([0, 8, 16, 22].includes(i) ? 'B' : '-')),
-      amplitude: Array(32).fill(0).map((e, i) => (i % 8 == 0 ? 1 : 0)),
+      amplitude: Array(32).fill(0).map((e, i) => ([0, 8, 16, 22].includes(i) ? 1 : 0)),
       duration: Array(32).fill(0),
     },
     emptyPattern(),
@@ -134,7 +134,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.TeacherNote,
-            content: 'The mute tool helps students hear the connections between the different layers: drum, hi hat, and melody. It\'s a useful tool for musical story telling, as students can introduce an idea grad-ually, adding a layer at a time, or combine layers in unexpected ways. This is one key to creat-ing longer pieces from a single idea. Ask students to explore all the ways they can play this idea using the mute tool (i.e. one layer at a time, two layers, three).',
+            content: 'The mute tool helps students hear the connections between the different layers: drum, hi hat, and melody. It\'s a useful tool for musical story telling, as students can introduce an idea gradually, adding a layer at a time, or combine layers in unexpected ways. This is one key to creating longer pieces from a single idea. Ask students to explore all the ways they can play this idea using the mute tool (i.e. one layer at a time, two layers, three).',
           },
         ],
       },
@@ -183,7 +183,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.TeacherNote,
-            content: 'The hi hat is part of the drum kit. It\'s played by a foot pedal that bangs 2 metal cymbals to-gether. With the Closed Hi Hat sound, the pedal stops the cymbals from reverberating right after they are played, making a dry sound. With the Open Hi Hat sound, the cymbals are al-lowed to continue to vibrate, making a \'wetter\' sound. Ask students to describe the difference between the sounds in their own words.',
+            content: 'The hi hat is part of the drum kit. It\'s played by a foot pedal that bangs 2 metal cymbals together. With the Closed Hi Hat sound, the pedal stops the cymbals from reverberating right after they are played, making a dry sound. With the Open Hi Hat sound, the cymbals are allowed to continue to vibrate, making a \'wetter\' sound. Ask students to describe the difference between the sounds in their own words.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -216,7 +216,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.TeacherNote,
-            content: 'Almost all of music\'s reputation for complexity comes from pitch. Here we just want students to explore changing pitch and how that sounds and feels, rather than jumping into pitch nam-ing or pitch steps. We build to that gradually...',
+            content: 'Almost all of music\'s reputation for complexity comes from pitch. Here we just want students to explore changing pitch and how that sounds and feels, rather than jumping into pitch naming or pitch steps. We build to that gradually...',
           },
         ],
         pattern: patterns.constructPattern(
@@ -259,7 +259,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.TeacherNote,
-            content: 'Our emphasis is on getting students to explore and listen to how different chords sound and feel. At the same time, we\'re introducing the idea that chords in a song make a kind of melody - scaffolding the idea of a chord onto a concept (melody) with which students are  already fa-miliar. The melody is formed by the lowest note in each chord.',
+            content: 'Our emphasis is on getting students to explore and listen to how different chords sound and feel. At the same time, we\'re introducing the idea that chords in a song make a kind of melody - scaffolding the idea of a chord onto a concept (melody) with which students are  already familiar. The melody is formed by the lowest note in each chord.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -322,8 +322,8 @@ export const sections = {
           {
             type: widgets.TeacherNote,
             content: `
-            <p>When students save a pattern for the first time using the full app (as opposed to in these tuto-rials), the generic app URL switches to a personal URL. Have them bookmark this. YouthBeat organizes ideas into patterns and Sets. There are 8 slots for patterns and 8 for Sets.</p>
-            <p>When a group of patterns has been saved as a Set, students can over-write or delete the original patterns to create another Set. If they need more space, they can export their work by tapping the arrow icon in the bottom right corner of Special Tools (reached via the Note En-try button on the main screen), bookmarking the new URL that is created. Then they can over-write the patterns in their personal URL. Unlike a personal URL, an exported URL can be played by anyone, so it's helpful for evaluating student work!</p>
+            <p>When students save a pattern for the first time using the full app (as opposed to in these tutorials), the generic app URL switches to a personal URL. Have them bookmark this. YouthBeat organizes ideas into patterns and Sets. There are 8 slots for patterns and 8 for Sets.</p>
+            <p>When a group of patterns has been saved as a Set, students can over-write or delete the original patterns to create another Set. If they need more space, they can export their work by tapping the arrow icon in the bottom right corner of Special Tools (reached via the Note Entry button on the main screen), bookmarking the new URL that is created. Then they can over-write the patterns in their personal URL. Unlike a personal URL, an exported URL can be played by anyone, so it's helpful for evaluating student work!</p>
             `,
           },
         ],
@@ -489,7 +489,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.TeacherNote,
-            content: 'We only hear music one slice at a time. The regular beat is a kind of grid that helps us as lis-teners or performers to put all the individual slices together to build meaning and follow the music. When the YouthBeat app loads, it always starts with this basic beat pattern.',
+            content: 'We only hear music one slice at a time. The regular beat is a kind of grid that helps us as listeners or performers to put all the individual slices together to build meaning and follow the music. When the YouthBeat app loads, it always starts with this basic beat pattern.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -549,7 +549,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.TeacherNote,
-            content: 'Repetition is a big part of music as an auditory art form! Because we only hear music in small slices, our brain needs repetition to build an accurate mental map of how the sounds fit to-gether. The more complicated the pattern, the more times we need to hear it repeated!',
+            content: 'Repetition is a big part of music as an auditory art form! Because we only hear music in small slices, our brain needs repetition to build an accurate mental map of how the sounds fit together. The more complicated the pattern, the more times we need to hear it repeated!',
           },
         ],
         pattern: patterns.constructPattern(
@@ -614,7 +614,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.TeacherNote,
-            content: 'Pitch is complicated! We\'ve tried to make it simpler by showing which pitch locations in the melody are part of the chord that\'s playing (white lines). Chord notes tend to be heard throughout the bar, so we naturally expect to hear them in the melody, too. When other pitch-es are used instead, they create tension and contrast with the chord. A lot of the emotional impact of music comes from this clash and its resolution when the melody goes back to a chord note. So students just need to pay attention to the white lines and the mix of notes in the melody that are on the white lines or not.',
+            content: 'Pitch is complicated! We\'ve tried to make it simpler by showing which pitch locations in the melody are part of the chord that\'s playing (white lines). Chord notes tend to be heard throughout the bar, so we naturally expect to hear them in the melody, too. When other pitches are used instead, they create tension and contrast with the chord. A lot of the emotional impact of music comes from this clash and its resolution when the melody goes back to a chord note. So students just need to pay attention to the white lines and the mix of notes in the melody that are on the white lines or not.',
           },
         ],
         pattern: patterns.constructPattern(
