@@ -147,17 +147,6 @@ export const sections = {
             type: widgets.DidYouKnow,
             content: 'The first drum sound is hardly ever left out.',
           },
-          {
-            type: widgets.MathConnection,
-            content: `
-              <ul>
-                <li>What are the three fractions made when you put a gap in your pattern?</li>
-                <li>Put them on a number line.</li>
-                <li>Compare the smallest to the largest, by dividing the largest by the smallest.</li>
-              </ul>
-            `,
-          },
-
         ],
       },
       5: {
@@ -180,20 +169,6 @@ export const sections = {
             type: widgets.DidYouKnow,
             content: 'When a beat is moved one space early or late, it&#8217;s called <em>off the beat</em>. In its normal position it&#8217;s called <em>on the beat</em>.',
           },
-          {
-            type: widgets.MathConnection,
-            content: `
-              <ul>
-                <li>How would you show each of the four beats in your pattern as a part of the circle as a whole?</li>
-                <li>How many spaces are there in the circle? (This is the denominator). How many spaces are there from each beat to the next? (This is the numerator).</li>
-                <li>Put the four fractions on a number line numbered from 0 to 16, drawing a line to show each fraction above the number line.</li>
-              </ul>
-              <div class="image-container">
-                <img src="../assets/numberline.png" width="500" alt="a numberline with 17 dashes labelled 0 through 16 with the fraction 4/16 at the 5th line, 8/16 at the 9th line, 12/16 at the 13th line, and 16/16 at the 17th line." />
-              </div>
-            `,
-          },
-
         ],
       },
       6: {
@@ -298,12 +273,6 @@ export const sections = {
           },
           emptyPattern(),
         ),
-        widgets: [
-          {
-            type: widgets.LiteracyConnection,
-            content: 'What are some tools we use to highlight words in a written text?',
-          },
-        ],
       },
     },
   },
@@ -412,17 +381,6 @@ export const sections = {
             type: widgets.DidYouKnow,
             content: 'A row of close-together notes in the last quarter is called a <em>flourish</em>. It builds a sense of forward motion leading back to the first beat (called the <em>downbeat</em>).',
           },
-          {
-            type: widgets.MathConnection,
-            content: `
-              <ul>
-                <li>What part of the whole circle is the distance from each hi hat note to the next hi hat, when the notes are spaced 2 spaces apart?</li>
-                <li>Think about the number of spaces in the circle as a whole (the denominator) and the number of spaces beginning with each hi hat note and ending with the space right before the next note (the numerator).</li>
-                <li>What part of the whole circle is the distance from one hi hat to the next if the notes are 3 spaces apart?</li>
-                <li>When there are hi hats on every space?</li>
-              </ul>
-            `,
-          },
         ],
       },
       4: {
@@ -445,25 +403,6 @@ export const sections = {
         </p>
         `,
         pattern: patterns.bassSnarePattern,
-        widgets: [
-          {
-            type: widgets.MathConnection,
-            content: `
-              <ul>
-                <li>Put the drum and hi hat patterns on a number line, circling the spaces where the hi hat and drum come together.</li>
-                <li>Divide these space numbers by 3 - the number of spaces between each pair of hi hat notes.</li>
-                <li>Divide the space numbers by 4 - the number of spaces between each pair of drum notes. </li>
-              </ul>
-              <p>
-                <strong>Notice</strong> you can divide the space numbers where the two patterns come together by both 3 and 4. This is the <strong>common multiple</strong> of the spacing of the hi hat (3) and drum (4).
-              </p>
-            `,
-          },
-          {
-            type: widgets.LiteracyConnection,
-            content: 'Think of an adjective that seems to be at odds with the noun it is describing. This creates a kind of tension because we don&#8217;t normally associate this noun with this adjective. Now resolve the tension, by creating a new sentence where you use other adjectives to help explain the adjective that clashes with the noun.',
-          },
-        ],
       },
       5: {
         title: 'Half to half changes',
@@ -497,12 +436,6 @@ export const sections = {
           },
           emptyPattern(),
         ),
-        widgets: [
-          {
-            type: widgets.LiteracyConnection,
-            content: 'The empty space that tells us the notes before it go together is like punctuation in writing. What punctuation tells us a small group of words go together?',
-          },
-        ],
       },
       6: {
         title: 'Quarter to quarter changes',
@@ -648,19 +581,6 @@ export const sections = {
             type: widgets.DidYouKnow,
             content: 'Tempo is measured in BPM - beat units per minute.',
           },
-          {
-            type: widgets.MathConnection,
-            content: `
-            <p>Tempo is a <em>unit rate</em>. It tells us how many of one kind of unit (beats) there are for every number of another kind of unit (a minute).</p>
-            <ul>
-              <li> How would you show 60 BPM as a unit rate, using math symbols? </li>
-              <li> How many beat units are there in a second if there are 60 in a minute? </li>
-            `,
-          },
-          {
-            type: widgets.LiteracyConnection,
-            content: 'What are some ways you can change the <em>pacing</em> of a story or text to make it seem to go faster or slower?',
-          },
         ],
         pattern: patterns.constructPattern(
           {
@@ -713,27 +633,6 @@ export const sections = {
             <strong>Notice</strong> the louder the music gets, the more upbeat and brighter it sounds. The opposite applies, too: as the music gets softer, it gets moodier.
           </p>
         `,
-        widgets: [
-          {
-            type: widgets.MathConnection,
-            content: `
-            <p>The volume slider measures the loudness in decibels. </p>
-            <ul>
-              <li> 
-                What is the percentage increase from 30 decibels to 110? 
-                <ul>
-                  <li>Think of this first as a fraction. 30 decibels is the denominator. The difference from 30 to 110 is the numerator. </li>
-                </ul>
-              </li>
-              <li> Now divide out the fraction and multiply by 100 to get the percentage increase. </li>
-            </ul>
-            `,
-          },
-          {
-            type: widgets.LiteracyConnection,
-            content: 'How does lowering or increasing the volume of speech change what we hear and understand?',
-          },
-        ],
         pattern: patterns.constructPattern(
           emptyPattern(),
           {
@@ -838,10 +737,6 @@ export const sections = {
             type: widgets.DidYouKnow,
             content: 'A skilled guitar player can create a huge range of sound colours.',
           },
-          {
-            type: widgets.LiteracyConnection,
-            content: 'How can we use words that start with the same sound to create a musical flow to a text? Words that have the same vowel sound?',
-          },
         ],
         pattern: patterns.constructPattern(
           {
@@ -905,10 +800,6 @@ export const sections = {
             type: widgets.DidYouKnow,
             content: 'All instruments, including drums, have pitch. Instruments like the guitar make it easy to play a wider range of pitches.',
           },
-          {
-            type: widgets.MathConnection,
-            content: 'Think about how music could be represented using x and y coordinates, with the x being time and y pitch.',
-          },
         ],
         pattern: patterns.constructPattern(
           emptyPattern(),
@@ -941,15 +832,6 @@ export const sections = {
           {
             type: widgets.DidYouKnow,
             content: 'A scale with five pitches (making five steps up in pitch) is called pentatonic? (Penta means 5).',
-          },
-          {
-            type: widgets.MathConnection,
-            content: `
-            <ul>
-              <li>What part of the whole scale is each of the steps in the pentatonic scale beginning on B?</li> 
-              <li>The total number of steps is 6 (the denominator). What is the numerator for each step?</li>
-            </ul>
-           `,
           },
         ],
         pattern: patterns.constructPattern(
@@ -1128,10 +1010,6 @@ export const sections = {
             type: widgets.DidYouKnow,
             content: 'Hi hat patterns have more notes, so they are useful for lyrics or raps - which have lots of syllables.',
           },
-          {
-            type: widgets.LiteracyConnection,
-            content: 'Write a lyric to fit a popular melody. Write down the pattern of notes in the melody using short lines separated by spaces, then pencil in the syllables of your lyric or rap.',
-          },
         ],
         pattern: patterns.constructPattern(
           {
@@ -1269,10 +1147,6 @@ export const sections = {
             type: widgets.DidYouKnow,
             content: 'Repeated pitches are used a lot in thriller and horror movie scores.',
           },
-          {
-            type: widgets.LiteracyConnection,
-            content: 'What are some tools you can use to create a sense of suspense in a story?',
-          },
         ],
         pattern: patterns.constructPattern(
           emptyPattern(),
@@ -1311,18 +1185,6 @@ export const sections = {
             type: widgets.DidYouKnow,
             content: 'Singers often hold a note for a long time when they want to stress a particular word.',
           },
-          {
-            type: widgets.MathConnection,
-            content: `
-             <ul>
-               <li>Plot the four note lengths on a number line.</li> 
-               <li>What do you have to do to the shortest to get the next longest? </li>
-               <li>What do you have to do to this to get the next longest? And from that to the next longest?</li>
-               <li>And from that, what do you have to do to get to the longest of all? </li>
-               <li>What would have to do to get from the shortest to the longest? </li>
-             </ul>
-            `,
-          },
         ],
         pattern: patterns.constructPattern(
           emptyPattern(),
@@ -1352,12 +1214,6 @@ export const sections = {
             <strong>Notice</strong> repeating D, moving to a nearby pitch and back, and reversing the order all help us remember D is the main pitch.
           </p>
         `,
-        widgets: [
-          {
-            type: widgets.LiteracyConnection,
-            content: 'Read a familiar story and notice what the writer does to help us become familiar with the main character’s environment. Write your own story that uses these same tools at the beginning.',
-          },
-        ],
         pattern: patterns.constructPattern(
           {
             // eslint-disable-next-line no-nested-ternary
