@@ -1236,6 +1236,107 @@ export const sections = {
       },
     },   
   },
+  ORANGE_SHIRT: {
+    title: 'Orange Shirt Day Music Project',
+    activities: {
+      1: {
+        title: 'Introducing the Heartbeat pattern played by Elder Nk\'xetko',
+        content:
+          `
+          <ul>
+            <li>Press the Play button in the middle of the circle to listen to this pattern several times.</li>
+            <li>Press the Play button again to stop.</li>
+            <li>When Elder Nk\'xetko played this pattern, she made one of the 2 drum notes in each heartbeat louder. Sometimes, it was the 2nd note, sometimes the first.</li>
+            <li>Click the 1st note in each pair of purple notes to make it louder.</li>
+            <li>Press Play to listen. Then press \'Save Pattern\' (at the right above)</li>
+            <li>Put the notes back to their original loudness by clicking the notes you made louder 3 times. Then click the 2nd note in each pair to make it louder.</li>
+            <li>Press \'Save Pattern\'.</li>
+            <li>Press Play to listen, then click on Pattern 1 to compare.</li>
+            <li>Play one pattern a few times then switch to the other one for one rotation, then go back to the other. How do you feel when the pattern changes and then changes back?</li>
+          </ul>
+          `,
+          pattern: patterns.constructPattern(
+            emptyPattern(),
+            {
+              // eslint-disable-next-line no-nested-ternary
+              value: Array(32).fill('-').map((e, i) => ([0, 12, 16, 28].includes(i) ? 'B' : '-')),
+              amplitude: Array(32).fill(0).map((e, i) => ([0, 12, 16, 28].includes(i) ? 1 : 0)),
+              duration: Array(32).fill(0),
+            },
+            emptyPattern(),
+          ),
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'You may wish to play the part of the video where Elder Nk\'xetko plays the drum and ask students to pay attention to the loudness of the drum notes. Is it always the same? You might also explain that this is similar to accentuating one word when we\'re speaking.',
+          },
+        ],
+      },
+      2: {
+        title: 'Set the Loudness (Volume) and Speed (Tempo) to make a soothing heartbeat',
+        content:
+          `
+          <ul>
+            <li>Press Play, then click, hold, and drag the Volume slider left and right (it\'s located at the bottom left above).</li>
+            <li>Which volume seems to create the most soothing effect?</li>
+            <li>Press Play and click, hold, and drag the Tempo slider to the left and right (It\'s also at the bottom left).</li>
+            <li>As you drag the slider to the left, when does the music become too slow to sound like a heartbeat?</li>
+            <li>Press Play to listen. Then press \'Save Pattern\' (at the right above)</li>
+            <li>As you drag the slider to the right, where does the heartbeat become too fast to be soothing?</li>
+            <li>What\'s the best tempo to create a soothing feeling?</li>
+          </ul>
+          `,
+          pattern: patterns.constructPattern(
+            emptyPattern(),
+            {
+              // eslint-disable-next-line no-nested-ternary
+              value: Array(32).fill('-').map((e, i) => ([0, 12, 16, 28].includes(i) ? 'B' : '-')),
+              amplitude: Array(32).fill(0).map((e, i) => ([0, 12, 16, 28].includes(i) ? 1 : 0)),
+              duration: Array(32).fill(0),
+            },
+            emptyPattern(),
+          ),
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'Almost nothing changes music as much as changing the volume and tempo. Prompt students for words that describe these changes: this will help firm up their awareness.',
+          },
+        ],
+      },
+      3: {
+        title: 'Create a heartbeat Melody',
+        content:
+          `
+          <ul>
+            <li>Click on Synth or Rock or RnB guitar at the top right above.</li>
+            <li>On the 4 spaces that have a drum note, click in the outer part of the circle to enter a note.</li>
+            <li>Clicking higher or lower in the space will make the note higher or lower sounding (called pitch). You can also click/hold/scroll to change pitch.</li>
+            <li>Use 2 or 3 different pitches for your 4 melody notes.</li>
+            <li>Make 2 or 3 notes longer by clicking them one or more times. Play with which notes you make the longest and how long they are.</li>
+            <li>As your melody is playing, click one of the chords in the lettered list at the top right.</li>
+            <li>To make a longer section of music, play your melody while changing chord several times.</li>
+            <li>Choose chords that make you feel quiet and calm.</li>
+          </ul>
+          `,
+          pattern: patterns.constructPattern(
+            emptyPattern(),
+            {
+              // eslint-disable-next-line no-nested-ternary
+              value: Array(32).fill('-').map((e, i) => ([0, 12, 16, 28].includes(i) ? 'B' : '-')),
+              amplitude: Array(32).fill(0).map((e, i) => ([0, 12, 16, 28].includes(i) ? 1 : 0)),
+              duration: Array(32).fill(0),
+            },
+            emptyPattern(),
+          ),
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'Gave students share their melodies with each other and, if time permits, with the whole class. It\'s empowering to have others listen to their work, and it\'s great for students to hear how many different possible solutions there are to this activity.',
+          },
+        ],
+      },
+    },
+  },
 };
 
 /*
