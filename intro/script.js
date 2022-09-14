@@ -1172,7 +1172,8 @@ function drawPattern(targetGroup, pattern, radius, step = 0) {
       // var tick = createTick(patternOriginX, patternOriginY, radius, normalizedStep)
       // targetGroup.add(tick)
     } else if (noteColors.hasOwnProperty(note)) {
-      var noteColor = noteColors.getColor(note, amplitude);
+      // var noteColor = noteColors.getColor(note, amplitude);
+      var noteColor = noteColors[note];
       if (note.length > 1) {
         var duration = pattern.duration[i] || 1;
         var noteNode = createHarmonicNote(i, duration, noteColor, note, patternOriginX, patternOriginY, radius)
