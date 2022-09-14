@@ -1238,6 +1238,7 @@ export const sections = {
   },
   ORANGE_SHIRT: {
     title: 'Orange Shirt Day Music Project',
+    image: 'TheOrangeShirtDayMusicProject.png',
     activities: {
       1: {
         title: 'Introducing the Heartbeat Pattern Played by Elder Nk\'xetko',
