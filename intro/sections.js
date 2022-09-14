@@ -1240,19 +1240,18 @@ export const sections = {
     title: 'Orange Shirt Day Music Project',
     activities: {
       1: {
-        title: 'Introducing the Heartbeat pattern played by Elder Nk\'xetko',
+        title: 'Introducing the Heartbeat Pattern Played by Elder Nk\'xetko',
         content:
           `
           <ul>
             <li>Press the Play button in the middle of the circle to listen to this pattern several times.</li>
             <li>Press the Play button again to stop.</li>
-            <li>When Elder Nk\'xetko played this pattern, she made one of the 2 drum notes in each heartbeat louder. Sometimes, it was the 2nd note, sometimes the first.</li>
-            <li>Click the 1st note in each pair of purple notes to make it louder.</li>
-            <li>Press Play to listen. Then press \'Save Pattern\' (at the right above)</li>
-            <li>Put the notes back to their original loudness by clicking the notes you made louder 3 times. Then click the 2nd note in each pair to make it louder.</li>
-            <li>Press \'Save Pattern\'.</li>
-            <li>Press Play to listen, then click on Pattern 1 to compare.</li>
-            <li>Play one pattern a few times then switch to the other one for one rotation, then go back to the other. How do you feel when the pattern changes and then changes back?</li>
+            <li>Each heartbeat is shown by a pair of purple notes.</li>
+            <li>When Elder Nk'xetko played this, she made one of each pair of notes a little louder.</li>
+            <li>Make one note in each pair louder by clicking it once. (Choose the same note in each pair).</li>
+            <li>Listen, then press 'Save Pattern' (at the right above)</li>
+            <li>Now make the other note louder instead. Click the two notes you made louder 3 times, then click the other notes once. Listen, then Save Pattern. </li>
+            <li>Play Pattern 1 a few times then click on Pattern 2, then go right back to Pattern 1. How do you feel when the pattern changes and then goes back? </li>
           </ul>
           `,
           pattern: patterns.constructPattern(
@@ -1273,17 +1272,15 @@ export const sections = {
         ],
       },
       2: {
-        title: 'Set the Loudness (Volume) and Speed (Tempo) to make a soothing heartbeat',
+        title: 'Set the Loudness (Volume) and Speed (Tempo) to Make a Soothing Pattern',
         content:
           `
           <ul>
-            <li>Press Play, then click, hold, and drag the Volume slider left and right (it\'s located at the bottom left above).</li>
-            <li>Which volume seems to create the most soothing effect?</li>
-            <li>Press Play and click, hold, and drag the Tempo slider to the left and right (It\'s also at the bottom left).</li>
-            <li>As you drag the slider to the left, when does the music become too slow to sound like a heartbeat?</li>
-            <li>Press Play to listen. Then press \'Save Pattern\' (at the right above)</li>
-            <li>As you drag the slider to the right, where does the heartbeat become too fast to be soothing?</li>
-            <li>What\'s the best tempo to create a soothing feeling?</li>
+            <li>Press Play, then change the loudness by clicking, holding, and dragging the Volume slider left and right (it's at the bottom left).</li>
+            <li>Find a volume setting that makes the drum sound soothing.</li>
+            <li>Next, press Play and change the tempo or speed: click, hold, and drag the Tempo slider to the left and right (It's at the bottom left, too).</li>
+            <li>Find a tempo that sounds the most soothing.</li>
+            <li>Share your settings with your partner. Did you both choose the same settings?</li>
           </ul>
           `,
           pattern: patterns.constructPattern(
@@ -1304,18 +1301,17 @@ export const sections = {
         ],
       },
       3: {
-        title: 'Create a heartbeat Melody',
+        title: 'Create a Soothing Heartbeat Melody',
         content:
           `
           <ul>
             <li>Click on Synth or Rock or RnB guitar at the top right above.</li>
-            <li>On the 4 spaces that have a drum note, click in the outer part of the circle to enter a note.</li>
-            <li>Clicking higher or lower in the space will make the note higher or lower sounding (called pitch). You can also click/hold/scroll to change pitch.</li>
-            <li>Use 2 or 3 different pitches for your 4 melody notes.</li>
-            <li>Make 2 or 3 notes longer by clicking them one or more times. Play with which notes you make the longest and how long they are.</li>
-            <li>As your melody is playing, click one of the chords in the lettered list at the top right.</li>
-            <li>To make a longer section of music, play your melody while changing chord several times.</li>
-            <li>Choose chords that make you feel quiet and calm.</li>
+            <li>Click in the outer part of the circle to enter melody notes in the same position in the circle as the 4 purple drum notes. (Melody is the part of the music the singer sings).</li>
+            <li>Click higher or lower in the space to make the notes higher or lower sounding, called pitch. (You can also click/hold/scroll to change pitch).</li>
+            <li>Make 2 or 3 notes longer by clicking them one or more times.</li>
+            <li>Move one pair of notes so they begin a bit before or after the drum. Click the notes you want to move a few times until they disappear, then enter them again in the new position.</li>
+            <li>Finally, add one short note in between the two pairs of melody notes.</li>
+            <li>As your melody is playing, listen to it with different chords (click a chord in the lettered list at the top right). Which one is the most soothing?</li>
           </ul>
           `,
           pattern: patterns.constructPattern(
