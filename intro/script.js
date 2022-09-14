@@ -1177,7 +1177,7 @@ function drawPattern(targetGroup, pattern, radius, step = 0) {
         var duration = pattern.duration[i] || 1;
         var noteNode = createHarmonicNote(i, duration, noteColor, note, patternOriginX, patternOriginY, radius)
       } else {
-        var noteNode = createNote(i, noteColor, patternOriginX, patternOriginY, radius)
+        var noteNode = createNote(i, noteColor, patternOriginX, patternOriginY, radius, amplitude)
       }
       targetGroup.add(noteNode)
     }
@@ -1228,17 +1228,25 @@ function createTick(originX, originY, radius, step) {
   return tick
 }
 
-function createNote(step, color, originX, originY, radius) {
+function createNote(step, color, originX, originY, radius, amplitude) {
   var segmentDegree = 360/32;
   var rotation = -90 + step * segmentDegree;
   var angle = step % 2 == 0 ? 360/16 : 360/32;
+  var innerRadius = radius - patternWidth/2;
+  var outerRadius = radius + patternWidth/2;
+  var amplitudeStop = amplitude / 3 / 2;
   var note = new Konva.Arc({
     x: originX,
     y: originY,
-    innerRadius: radius - patternWidth/2,
-    outerRadius: radius + patternWidth/2,
+    innerRadius: innerRadius,
+    outerRadius: outerRadius,
     angle: angle,
-    fill: color,
+    // fill: color,
+    fillRadialGradientStartPoint: { x: 0, y: 0 },
+    fillRadialGradientStartRadius: innerRadius,
+    fillRadialGradientEndPoint: { x: 0, y: 0 },
+    fillRadialGradientEndRadius: outerRadius,
+    fillRadialGradientColorStops: [amplitudeStop, color, 1.0, 'rgba(255,255,255,0.5)'],
     stroke: 'rgba(255,255,255,0.5)',
     strokeWidth: 3,
     rotation: rotation,
