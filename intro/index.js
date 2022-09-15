@@ -26,12 +26,12 @@ window.addEventListener('load', async () => {
   // Construct section
   sectionHeadingElement.textContent = section.title;
 
-  if (section.hasOwnProperty('image') && section.image) {
-    var img = document.createElement("img");
-    img.src = "../assets/" + section.image;
-    var src = document.getElementById("header");
-    sectionHeaderElement.prepend(img);
-  }
+  // if (section.hasOwnProperty('image') && section.image) {
+  //   var img = document.createElement("img");
+  //   img.src = "../assets/" + section.image;
+  //   var src = document.getElementById("header");
+  //   sectionHeaderElement.prepend(img);
+  // }
 
   /*
   sectionHeaderElement.prepend(
