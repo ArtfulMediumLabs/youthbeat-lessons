@@ -407,7 +407,7 @@ for (var i = 0; i < scale.length; i++) {
 }
 
 noteColors.getColor = function(note, amplitude=3) {
-  var p = (3 - amplitude) * 0.1;
+  var p = (3 - amplitude) * 0.3;
   return pSBC(p, this[note]);
 }
 
@@ -1172,8 +1172,7 @@ function drawPattern(targetGroup, pattern, radius, step = 0) {
       // var tick = createTick(patternOriginX, patternOriginY, radius, normalizedStep)
       // targetGroup.add(tick)
     } else if (noteColors.hasOwnProperty(note)) {
-      // var noteColor = noteColors.getColor(note, amplitude);
-      var noteColor = noteColors[note];
+      var noteColor = noteColors.getColor(note, amplitude);
       if (note.length > 1) {
         var duration = pattern.duration[i] || 1;
         var noteNode = createHarmonicNote(i, duration, noteColor, note, patternOriginX, patternOriginY, radius)
@@ -1242,12 +1241,7 @@ function createNote(step, color, originX, originY, radius, amplitude) {
     innerRadius: innerRadius,
     outerRadius: outerRadius,
     angle: angle,
-    // fill: color,
-    fillRadialGradientStartPoint: { x: 0, y: 0 },
-    fillRadialGradientStartRadius: innerRadius,
-    fillRadialGradientEndPoint: { x: 0, y: 0 },
-    fillRadialGradientEndRadius: outerRadius,
-    fillRadialGradientColorStops: [amplitudeStop, color, 1.0, 'rgba(255,255,255,0.5)'],
+    fill: color,
     stroke: 'rgba(255,255,255,0.5)',
     strokeWidth: 3,
     rotation: rotation,
