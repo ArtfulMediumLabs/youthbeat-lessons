@@ -1328,7 +1328,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.TeacherNote,
-            content: 'Gave students share their melodies with each other and, if time permits, with the whole class. It\'s empowering to have others listen to their work, and it\'s great for students to hear how many different possible solutions there are to this activity.',
+            content: 'Have students share their melodies with each other and, if time permits, with the whole class. It\'s empowering to have others listen to their work, and it\'s great for students to hear how many different possible solutions there are to this activity.',
           },
         ],
       },
