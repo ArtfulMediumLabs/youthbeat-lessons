@@ -1,0 +1,381 @@
+body {
+    background-color: #F5F1F0;
+}
+.center {
+    margin: auto;
+    width: 1028px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.active {
+    font-weight: bold;
+    color: #DB3352;
+}
+
+/*
+ * Instrument
+ */
+
+#content {
+    background-color: white;
+    width: 1028px;
+    /* height: 300px; */
+    margin: auto;
+    position: relative;
+}
+
+#rhythmButtons {
+    position: absolute;
+    left: 10px;
+    top: 0px;
+}
+
+#muteGroup, #rotateGroup {
+    margin-top: 20px;
+}
+
+#content #rotateGroup button {
+    width: 136px;
+}
+
+#content button, #sets button {
+    margin-top: 10px;
+    height: 30px;
+    width: 100px;
+    display: block;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: #B5B5B5;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+button.controlB {
+    float: right;
+}
+
+#content button.deletePreset, #content button.sequencePreset {
+    width: auto;
+    height: 20px;
+    margin: 2px;
+    padding: 2px;
+    display: inline-block;
+}
+
+#controlA {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+#tempoLabel {
+    display: block;
+    margin-top: 20px
+}
+
+#volumeControl {
+    position: absolute;
+    left: 150px;
+    bottom: 10px;
+}
+
+#volumeLabel {
+    display: block;
+    margin-top: 20px
+}
+
+#voices {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+
+#voices button {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0;
+}
+
+#voices button.selected {
+    background-color: #eeb8bd;
+}
+
+#voices button.selected.activeInstrument {
+    background-color: #DB3352;
+}
+
+#notes {
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    width: 100px;
+}
+
+#notes fieldset {
+    margin: 10px 0;  
+    padding: 0;
+    border: none;
+}
+
+#controlB {
+    position: absolute;
+    width: 175px;
+    right: 10px;
+    bottom: 10px;
+    overflow: hidden;
+    clear: both;
+}
+
+#mirrorControl {
+    position: absolute;
+    left: 150px;
+    top: 10px;
+}
+
+#presetList {
+    clear: both;
+    margin-top: 5px;
+    text-align: right;
+    padding: 5px 0 0 0;
+    list-style: outside none none;
+}
+
+#presets {
+    height: 260px;
+    overflow: hidden;
+    float: right;
+}
+
+#sequence {
+    height: 100px;
+    float: right;
+}
+
+#sequenceDisplay {
+    height: 20px;
+    width: 180px;
+    overflow: hidden;
+    text-align: right;
+    clear: both;
+}
+
+#sequenceDisplay span {
+    display: inline-block;
+    padding-left: 2px;
+}
+
+#sets, #fieldRecordings {
+    background-color: white;
+    width: 1018px;
+    margin: 5px auto;
+    padding: 5px;
+    position: relative;
+}
+
+#sets div {
+    display: inline;
+    padding: 5px;
+    margin: 0px;
+}
+
+#sets ul, #sets li {
+    display: inline;
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+}
+
+#sets #saveSetButton, #sets #loadSetButton {
+    width: auto;
+    height: 20px;
+    margin: 2px 2px 2px 10px;
+    display: inline-block;
+}
+
+#sets #saveSetButton:active, #sets #loadSetButton:active {
+    background-color: #DB3352;
+}
+
+#setsFull {
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.feature {
+    visibility: hidden;
+}
+
+
+
+/* 
+ *  Section heading
+ */
+
+.section-header {
+    width: 1028px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-family: Verdana, sans-serif;
+}
+
+.section-header img {
+    float: left;
+    height: 114px;
+    margin: -20px 10px 0px -10px;
+}
+
+.section-header__heading {
+    font-size: 16px;
+    letter-spacing: 1.1px;
+    color: gray;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.section-header__sub-heading {
+    color: rgb(21, 21, 21);
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.section-header__link {
+    font-size: 14px;
+    text-decoration: none;
+}
+
+
+/* 
+ *  Section content styling
+ */
+
+.section-content {
+    background-color: white;
+    width: 1028px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    position: relative;
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+}
+
+.section-content__container {
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+
+/* 
+ *  Section pagination
+ */
+
+.section-pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.section-pagination__button {
+    padding: 5px;
+    font-family: Verdana, sans-serif;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.section-pagination__button:hover {
+    background-color: #ddd;
+    transition: background-color .25s ease-in-out;
+}
+
+.section-pagination__button--selected, .section-pagination__button--selected:hover {
+    background-color: rgb(198, 135, 198);
+    color: white;
+}
+
+/* 
+ * Widget
+ */
+
+.widget-element {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.widget-element__header {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.widget-element__title {
+    font-weight: 700;
+}
+
+.widget-element__content{
+    padding: 20px 0;
+}
+
+.widget-element__icon {
+    padding-right: 5px;
+    width: 30px;
+}
+
+.widget-element__arrow-down {
+    transform: rotate(180deg);
+}
+
+.widget-element--disabled .widget-element__arrow-up, .widget-element--enabled .widget-element__arrow-down, .widget-element--disabled .widget-element__content {
+    display: none;
+}
+
+/* 
+ * Action steps
+ */
+
+.action-steps {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #888888;
+    margin: 20px 25px;
+    border-radius: 2px;
+}
+
+.action-steps__header {
+    background: #888888;
+    color: white;
+    padding: 5px;
+}
+
+.action-steps__heading {
+    margin: 0;    
+}
+
+.action-steps__content {
+    background: #F8F8F8;
+}
+
+.action-steps__content-list {
+    list-style-type: decimal;
+    line-height: 1.3;
+    padding-right: 15px;
+}
+
+.action-steps__description {
+    padding-left: 15px;
+}
