@@ -371,7 +371,6 @@ var stage = new Konva.Stage({
   container: 'container',   // id of container <div>
   width: 1028,
   height: 768 - 200
-  // height: 768 - 380
 });
 
 var layer = new Konva.Layer();
@@ -382,12 +381,10 @@ var samplerWidth = (34 + 12) + 48
 var innerRadius = (97 + 12) - 48
 var patternOriginX = stage.width() / 2
 var patternOriginY = innerRadius + patternWidth * 2 + samplerWidth + outerPadding
-// patternOriginY = patternOriginY / 1.5
 var innerMidRadius = innerRadius + patternWidth / 2
 var outerMidRadius = innerRadius + patternWidth * 1.5
 var samplerMidRadius = innerRadius + patternWidth * 2 + samplerWidth * 0.5
 var outerRadius = samplerMidRadius + samplerWidth * 0.5
-// var outerRadius = innerRadius + patternWidth * 2
 
 
 // https://jsfiddle.net/PimpTrizkit/a7ac0qvp/
@@ -1234,7 +1231,6 @@ function createNote(step, color, originX, originY, radius, amplitude) {
   var angle = step % 2 == 0 ? 360/16 : 360/32;
   var innerRadius = radius - patternWidth/2;
   var outerRadius = radius + patternWidth/2;
-  var amplitudeStop = amplitude / 3 / 2;
   var note = new Konva.Arc({
     x: originX,
     y: originY,
@@ -1698,16 +1694,7 @@ function capturePreset() {
       outerCustomPattern: patternFrom(outerCustomPattern),
       samplerCustomPattern: patternFrom(samplerCustomPattern)
   }
-  // logPattern(preset.samplerCustomPattern)
   return preset;
-}
-
-function logPattern(pattern) {
-  console.log(`{
-  value: [${pattern.value.map(v => `'${v}'`).join(', ')}],
-  amplitude: [${pattern.amplitude.join(', ')}],
-  duration: [${pattern.duration.join(', ')}]
-}`);
 }
 
 function captureMeta() {
