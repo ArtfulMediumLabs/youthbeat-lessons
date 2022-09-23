@@ -275,6 +275,10 @@ button.controlB {
     font-family: Verdana, sans-serif;
 }
 
+.section-content__image {
+    max-width: 400px;
+}
+
 .section-content__container {
     margin-bottom: 50px;
     font-size: 18px;

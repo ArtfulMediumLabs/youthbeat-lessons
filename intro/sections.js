@@ -53,6 +53,7 @@ const constructActionSteps = (actions, description = '') => `
 
 const intro = {
   title: 'Getting Started',
+  image: 'BrainMusicNB.png',
   content:
     `
     <ul>
@@ -96,6 +97,7 @@ export const sections = {
       1: intro,
       2: {
         title: 'Music\'s built up in layers, starting with the drum',
+        image: 'YB cake.png',
         content:
           `
           <ul>
@@ -140,6 +142,7 @@ export const sections = {
       },
       3: {
         title: 'What can you do with drum notes?',
+        image: 'DrumNB.png',
         content:
           `
           <ul>
@@ -171,6 +174,7 @@ export const sections = {
       },
       4: {
         title: 'What can you do with hi hat notes?',
+        image: 'Hi-HatNB.png',
         content:
           `
           <ul>
@@ -204,6 +208,7 @@ export const sections = {
       },
       5: {
         title: 'What can you do with melody notes?',
+        image: 'BrainSingNB.png',
         content:
           `
           <ul>
@@ -248,6 +253,7 @@ export const sections = {
       },
       6: {
         title: 'What can you do with chords (blended pitches played at the same time)?',
+        image: 'Brain Sing + Chord.png',
         content:
           `
             <ul>
@@ -279,6 +285,7 @@ export const sections = {
       },
       7: {
         title: 'Find the right tempo (speed) and volume (loudness)',
+        image: 'BrainClockNB.png',
         content:
           `
             <ul>
@@ -310,6 +317,7 @@ export const sections = {
       },
       8: {
         title: 'There\'s nothing worse than forgetting to save an idea you really like',
+        image: 'BrainFunNB.png',
         content:
           `
             <ul>
@@ -363,6 +371,7 @@ export const sections = {
       },
       9: {
         title: 'How Do You Play Longer Sections of Music?',
+        image: 'BrainMixNB.png',
         content:
           `
           <ul>
@@ -422,6 +431,7 @@ export const sections = {
     activities: {
       1: {
         title: 'Let your music breathe',
+        image: 'Brain HuffPuff NB.png',
         content:
           `
           <ul>
@@ -476,6 +486,7 @@ export const sections = {
       },
       2: {
         title: 'Make sure we always hear the steady beat',
+        image: 'BrainCountNB.png',
         content:
           `
           <ul>
@@ -506,6 +517,7 @@ export const sections = {
       },
       3: {
         title: 'Use the backbeat to make your rhythm patterns easier to follow',
+        image: 'Brain Backbeat NB.png',
         content:
           `
           <ul>
@@ -537,6 +549,7 @@ export const sections = {
       },
       4: {
         title: 'Repeat anything you don\'t catch the first time',
+        image: 'BrainQuestionNB.png',
         content:
           `
           <ul>
@@ -566,6 +579,7 @@ export const sections = {
       },
       5: {
         title: 'With melody, less is more',
+        image: 'BrainNoiseNB.png',
         content:
           `
           <ul>
@@ -601,6 +615,7 @@ export const sections = {
       },
       6: {
         title: 'The melody and chord talk to each other',
+        image: 'Brain Sing + Chord.png',
         content:
           `
           <ul>
@@ -638,6 +653,7 @@ export const sections = {
       },
       7: {
         title: 'Good ideas happen when you work fast',
+        image: 'BrainIdeaNB.png',
         content:
           `
           <ul>
@@ -679,6 +695,7 @@ export const sections = {
       },
       8: {
         title: 'Build longer songs up in pairs of bars',
+        image: 'Brain Pair of Patterns.png',
         content:
           `
           <ul>
