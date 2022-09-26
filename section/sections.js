@@ -72,12 +72,12 @@ export const sections = {
         title: 'The Beat Helps Us Count the Music',
         content:
           `
-          <ul>
+          <ol>
             <li>Press Play. Press again to stop.</li>
             <li>Choose one word to describe this pattern.</li>
             <li>The basic beat is like a clock. It helps listeners count the music.</li>
             <li>Always start a new idea with this pattern!</li>
-          </ul>
+          </ol>
           `,
         pattern: patterns.bassPattern,
         widgets: [
@@ -91,11 +91,11 @@ export const sections = {
         title: 'Hearing the Beat in Pairs',
         content:
           `
-          <ul>
+          <ol>
             <li>Listen.</li>
             <li>Now tap Snare Drum, then tap the 2nd and 4th beats.</li>
             <li>What's different now?</li>
-          </ul>
+          </ol>
           `,
         widgets: [
           {
@@ -109,13 +109,13 @@ export const sections = {
         title: 'What A Pause Does',
         content:
           `
-          <ul>
+          <ol>
             <li>Press "Save Pattern"</li>
             <li>Click the 3rd or 4th beat 3 times to delete it. Save.</li>
             <li>Listen to Pattern 1, then 2.</li>
             <li>What difference do you hear?</li>
             <li>What note sticks out in Pattern 2?</li>
-          </ul>
+          </ol>
           `,
         pattern: patterns.bassPattern,
         widgets: [
@@ -129,10 +129,10 @@ export const sections = {
         title: 'Making a Funky Beat',
         content:
           `
-          <ul>
+          <ol>
             <li>Click/tap the 3rd or 4th beat 3 times to delete it. Click it back in one space earlier.</li>
             <li>Choose a word to describe the change this makes.</li>
-          </ul>
+          </ol>
           `,
         pattern: patterns.bassSnarePattern,
         widgets: [
@@ -146,10 +146,10 @@ export const sections = {
         title: 'Smoothing Out The Flow',
         content:
           `
-          <ul>
+          <ol>
             <li>Listen. Add a drum note midway between each pair of beats.</li>
             <li>Choose a word to describe the change this makes.</li>
-          </ul>
+          </ol>
           `,
         widgets: [
           {
@@ -163,11 +163,11 @@ export const sections = {
         title: 'Making it Easier to Follow Complicated Rhythms',
         content:
           `
-          <ul>
+          <ol>
             <li>Tap the 1st beat twice to make it as loud as possible.</li>
             <li>Tap the 3rd beat once to make it a little louder.</li>
             <li>Tap play then close your eyes. Listen for the 1st beat every time it’s played. Now listen for the 3rd beat.</li>
-          </ul>
+          </ol>
           `,
 
         pattern: patterns.bassPattern,
@@ -182,12 +182,12 @@ export const sections = {
         title: 'Level 2: How Long Can a Gap Get Before it Breaks the Flow of the Music?',
         content:
           `
-          <ul>
+          <ol>
             <li>Listen and save this pattern.</li>
             <li>Put a note midway between the 3rd and 4th beats. Save.</li>
             <li>Play the 2 patterns in a row.</li>
             <li>What difference do you hear?</li>
-          </ul>
+          </ol>
           `,
         widgets: [
           {
@@ -210,11 +210,11 @@ export const sections = {
         title: 'Level 2: Ways to Draw Attention',
         content:
           `
-          <ul>
+          <ol>
             <li>Tap one note twice to make it louder. Save.</li>
             <li>Now, double a note - putting a note in the very next space. Save.</li>
             <li>Play the patterns back in a row. Which one gets your attention the most?</li>
-          </ul>
+          </ol>
           `,
         widgets: [
           {
@@ -237,11 +237,11 @@ export const sections = {
         title: 'Level 2: How to Up the Energy',
         content:
           `
-          <ul>
+          <ol>
             <li>Fill in the empty spaces between the last two beats. </li>
             <li>Listen.</li>
             <li>Where does the energy in the pattern peak?</li>
-          </ul>
+          </ol>
           `,
         pattern: patterns.bassSnarePattern,
         widgets: [
@@ -255,11 +255,11 @@ export const sections = {
         title: 'Level 2: Creating a Stop-Start Effect',
         content:
           `
-          <ul>
+          <ol>
             <li>Fill in all the empty spaces in the 1st half and save.</li>
             <li>Now take away the two beats in the 2nd half and save.</li>
             <li>Listen to Pattern 1 then 2. Choose one word to describe the change you hear.</li>
-          </ul>
+          </ol>
           `,
         pattern: patterns.bassSnarePattern,
         widgets: [
@@ -273,11 +273,11 @@ export const sections = {
         title: 'Level 3: Do You Need to Hear It More Than Once?',
         content:
           `
-          <ul>
+          <ol>
             <li>Listen.</li>
             <li>How many times do you need to hear this pattern before you can remember it?</li>
             <li>Now move the 1st snare drum one space early. Add a bass drum in the 7th space. How many times do you need to hear it?</li>
-          </ul>
+          </ol>
           `,
         widgets: [
           {
@@ -300,14 +300,14 @@ export const sections = {
         title: 'Level 3: Smaller and Bigger Changes to a Rhythm ',
         content:
           `
-          <ul>
+          <ol>
             <li>Listen and Save.</li>
             <li>Add a drum between 2 beats. Save.</li>
             <li>Move a drum beat just off the beat. Save.</li>
             <li>Add fills between 2 beats. Save.</li>
             <li>Put in a gap right after the fills. Save.</li>
             <li>Listen to all the patterns. Is there one that's harder to follow?</li>
-          </ul>
+          </ol>
           `,
         widgets: [
           {
