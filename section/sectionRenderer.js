@@ -1,5 +1,5 @@
 import { parseHTML, removeAllChildNodes } from '../utils.js';
-import { emptyPreset, loadPreset, updatePattern } from './script.js';
+import { emptyPreset, loadPreset, updatePattern, setActiveInstrument, featureVisibility} from './script.js';
 import { widgets } from '../constants.js';
 
 export const sectionContentContainer = document.querySelector('.section-content__container');
@@ -14,6 +14,12 @@ export const renderSection = (activity) => {
     loadPreset(activity.pattern);
     updatePattern();
   }
+
+  if (activity.activeInstrument) {
+    setActiveInstrument(activity.activeInstrument);
+  }
+
+  featureVisibility(activity.features ?? [])
 
   removeAllChildNodes(sectionContentContainer);
   sectionSubHeader.textContent = activity.title;
@@ -49,7 +55,10 @@ export const renderSection = (activity) => {
       } else if (widget.type === widgets.LiteracyConnection) {
         widgetIcon = createWidgetIcon('books');
         widgetTitle = 'Literacy Connection';
-      } 
+      } else if (widget.type === widgets.TeacherNote) {
+        widgetIcon = createWidgetIcon('teacher-note');
+        widgetTitle = 'Teacher Note';
+      }
 
       widgetElement.appendChild(parseHTML(
         `
