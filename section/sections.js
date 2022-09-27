@@ -816,23 +816,21 @@ export const sections = {
     key: 'VOLUME',
     activities: {
       1: {
-        title: 'Volume (loudness)',
+        title: 'Changing Volume (Loudness) Changes the Energy Level of the Music',
         content: `
-          <p>Changing the volume or loudness of music changes the mood of the music.</p>
-          ${
-  constructActionSteps([
-    'As you listen to this pattern, click, hold, and drag the volume slider to the left.',
-    'As the music gets softer, how does it change the mood?',
-    'Now drag the slider to the right.',
-    'As the music gets louder, how does it change the mood?',
-    'Now make the tempo a bit faster.',
-    'Does this sound more upbeat, brighter?',
-  ])
-}
-          <p>
-            <strong>Notice</strong> the louder the music gets, the more upbeat and brighter it sounds. The opposite applies, too: as the music gets softer, it gets moodier.
-          </p>
+        <ol>
+          <li>Click, hold, and drag the volume slider to the left as you listen.</li>
+          <li>As the music gets softer, how does it change the mood?</li>
+          <li>Now drag the slider to the right.</li>
+          <li>As the music gets louder, how does it change the mood?</li>
+        </ol>
         `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: `The louder the music gets, the brighter it sounds. The softer the music gets, the moodier.`,
+          },
+        ],
         pattern: patterns.constructPattern(
           emptyPattern(),
           {
@@ -855,11 +853,51 @@ export const sections = {
           },
         ),
       },
-
+      2: {
+        title: 'Volume and Tempo Work Together',
+        content: `
+        <ol>
+          <li>Listen and Save.</li>
+          <li>Make this pattern softer. Save.</li>
+          <li>Now make it a little slower, too. Save.</li>
+          <li>Reload Pattern 1 and make it louder. Save.</li>
+          <li>Now make it a little faster too. Save.</li>
+          <li>Listen to all your patterns.</li>
+          <li>How does the mood change as the music first gets softer, then slower? Louder, then faster?</li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: `A faster tempo and louder volume both boost the energy of the music.`,
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 14].includes(i) ? 'B' : ([8, 20].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 20].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            value: ['-', '-', '-', '-', 'E4', '-', '-', '-', 'E4', '-', '-', '-', 'D4', '-', 'E4', '-', '-', '-', 'E4', '-', '-', '-', 'D4', '-', '-', '-', 'B3', '-', '-', '-', 'D4', '-'],
+            amplitude: Array(32).fill(0).map((e, i) => ([4, 8, 12, 14, 18, 22, 26, 30].includes(i) ? 3 : 0)),
+            duration: Array(32).fill(0).map((e, i) => ([4, 8, 12, 18, 22, 26, 30].includes(i) ? 1 : ([14].includes(i) ? 2 : 0))),
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
+        ),
+      },
     },
     tierFilter: {
       1: {
-        cutoff: 1,
+        cutoff: 2,
       },
       2: {
         cutoff: 2,
