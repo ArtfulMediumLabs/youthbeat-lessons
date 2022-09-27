@@ -562,16 +562,136 @@ export const sections = {
           emptyPattern(),
         ),
       },
+      9: {
+        title: 'Level 2: Two Hi Hat Sounds: Open and Closed',
+        content:
+        `
+        <ol>
+          <li>Listen & Save.</li>
+          <li>Change the 2nd hi hat note in each pair to Open Hi Hat. Save.</li>
+          <li>Reload Pattern 1. Change the first note in the first 2 pairs to Open Hi Hat.</li>
+          <li>Listen to Pattern 2 then 3. Does the Open HI Hat sound change how you hear the drum pattern?</li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: `In Pattern 2, the Open sound glides into the 2nd snare sound. In Pattern 3, the Open sound is cut off, making a small break.`,
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([2, 4, 10, 12, 18, 20, 26, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([2, 4, 10, 12, 18, 20, 26, 28].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16, 18].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 18, 8, 22].includes(i) ? 1 : ([16].includes(i) ? 2 : 0))),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+      },
+      10: {
+        title: 'Level 2: Ride Cymbal - the Ultimate Highlighting Tool',
+        content:
+        `
+        <ol>
+          <li>Choose a drum beat to highlight in this pattern. Change one hi hat sound leading up to this beat to Ride Cymbal. Save.</li>
+          <li>Now change more Hi Hat notes to Ride Cymbal. Save.</li>
+          <li>Listen to both patterns.</li>
+          <li>Where does the Ride Cymbal stand out the most?</li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: `The Ride Cymbal really gets out attention, so using it just once or twice in a pattern is powerful.`,
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => (i % 2 == 0 ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => (i % 2 == 0 ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 14, 22].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 22, 8, 24].includes(i) ? 1 : ([16].includes(i) ? 2 : 0))),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+      },
+      11: {
+        title: 'Level 3: Smaller and Larger Changes (Do This Activity Together with #12)',
+        content:
+        `
+        <ol>
+          <li>Listen and Save.</li>
+          <li>Move the 3rd pair of hi hat notes 1 space early. Save.</li>
+          <li>Add one hi hat on the 4th beat. Save.</li>
+          <li>Fill in hi hat notes between the 3rd and 4th hi hat pairs. Save.</li>
+          <li>Change the 2nd hi hat in the first 2 pairs to Open Hi Hat. Save.</li>
+          <li>Which of these patterns are easy to follow the first time you hear them? Which do you need to hear more than once?</li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: `When you\'re making a song, always start with the smaller changes, and play the bigger changes more than once.`,
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([2, 4, 10, 12, 18, 20, 26, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([2, 4, 10, 12, 18, 20, 26, 28].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 8, 22].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+      },
+      12: {
+        title: 'Level 3: When the Hi Hat Stands Alone (Uses the Patterns You Created in #12)',
+        content:
+        `
+        <ol>
+          <li>Listen to the patterns you saved in activity 12.</li>
+          <li>In Pattern 3, untick the drum. Save.</li>
+          <li>Do the same in Pattern 5.</li>
+          <li>Now play the patterns in a row.</li>
+          <li>Think about where to put the hi hat-only patterns so they stand out the most. </li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: `When the hi hat is heard on its own, it takes on the role of marking the beat.`,
+          },
+        ],
+      },
     },   
     tierFilter: {
       1: {
-        cutoff: 8,
+        cutoff: 12,
       },
       2: {
-        cutoff: 11,
+        cutoff: 12,
       },
       3: {
-        cutoff: 13,
+        cutoff: 12,
       },
     },
   },
