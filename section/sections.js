@@ -333,23 +333,14 @@ export const sections = {
     key: 'RHYTHM_HI_HAT',
     activities: {
       1: {
-        title: 'Introducing the Hi Hat',
+        title: '1. The Hi Hat Adds a New Layer',
         content:
           `
-          <p>Music is built up in layers. The drum is the bottom layer. The next layer is the hi hat.</p>
-          <p>Which layer leads? Which follows?</p>
-          ${
-  constructActionSteps([
-    'Press Play to listen.',
-    'How is the sound of the hi hat different from the drum?',
-    'Is it shorter or longer sounding? Higher or lower sounding?',
-    'Choose one word to describe it.',
-    'What stands out most - the drum or the hi hat?',
-  ])
-}
-          <p>
-            <strong>Notice</strong> the drum is louder and deeper sounding - you can&#8217;t help but pay attention to it. The hi hat seems to follow the drum.
-          </p>
+          <ol>
+            <li>Listen. This piece has a new layer, played by the hi hat.</li>
+            <li>Is the new sound shorter or longer than the drum? Higher or lower?</li>
+            <li>What stands out - the drum or the hi hat? How do they fit together?</li>
+          </ol>
           `,
         pattern: patterns.constructPattern(
           {
@@ -368,23 +359,21 @@ export const sections = {
         ),
       },
       2: {
-        title: 'The hi hat changes how we hear the drum pattern',
+        title: 'Smoothing Out the Beat',
         content:
         `
-        <p>The drum is like a noun, and the hi hat is like an adjective.</p>
-        ${
-  constructActionSteps([
-    'Listen to this drum pattern.',
-    'How would you describe it? Is it easy to follow?',
-    'Now click on Hi Hat: enter notes every 2 spaces, starting with the 1st space in the circle.',
-    'Press Play.',
-    'How does this change the way you hear the drum pattern. Is it easier to follow now?',
-  ])
-}
-        <p>
-          <strong>Notice</strong> the hi hat gives us a regular pattern that helps us keep track of the big changes in the second half of the drum pattern. This makes the music smoother sounding.
-        </p>
+        <ol>
+          <li>Listen to this complicated drum.</li>
+          <li>Now click on Hi Hat and enter notes every 2 spaces, starting with the 1st space in the circle.</li>
+          <li>Listen. Is it easier to follow the drum now?</li>
+        </ol>
         `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'The regular spacing of the hi hat smooths out the music.',
+          },
+        ],
         pattern: patterns.constructPattern(
           emptyPattern(),
           {
@@ -396,22 +385,15 @@ export const sections = {
         ),
       },
       3: {
-        title: 'Playing tricks with time',
+        title: 'Playing Tricks with Time',
         content:
         `
-        <p>The hi hat can play tricks with how we hear time, making the music seem to build speed as it leads up to a change in the drum pattern.</p>
-        ${
-  constructActionSteps([
-    'Listen to this example.',
-    'Add a hi hat note on the 3rd space of each beat unit or quarter and listen.',
-    'How does this change the way the music moves?',
-    'Now add hi hat notes on the empty spaces in the last beat unit or quarter and listen. ',
-    'How does this change the way the music moves?',
-  ])
-}
-        <p>
-          <strong>Notice</strong> the closer together the hi hat notes are, the more the energy picks up. This highlights where the drum goes back on the beat after having gone off the beat just before.
-        </p>
+        <ol>
+          <li>Add a hi hat note right before each drum beat.</li>
+          <li>How does this change the way the music moves?</li>
+          <li>Now add hi hat notes on all the empty spaces in the last quarter.</li>
+          <li>How does this change the way the music moves?</li>
+        </ol>
         `,
         pattern: patterns.constructPattern(
           {
@@ -431,49 +413,44 @@ export const sections = {
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'A row of close-together notes in the last quarter is called a <em>flourish</em>. It builds a sense of forward motion leading back to the first beat (called the <em>downbeat</em>).',
+            content: 'The closer together the hi hat notes are, the more the energy picks up. The music seems to go a bit faster.',
           },
         ],
       },
       4: {
-        title: 'Push and Pull',
+        title: 'Pushing and Pulling Against/With the Beat',
         content:
         `
-        <p>The drum and hi hat are often in sync, with hi hat notes either on or between drum beats.</p>
-        <p>What happens if the hi hat notes are out of sync with the drum?</p>
-        ${
-  constructActionSteps([
-    'Listen to the basic beat again.',
-    'Add hi hat notes 3 spaces apart, starting with the 1st space in the circle. Listen',
-    'Where does the hi hat move away from the drum, and where are they in sync?',
-    'How does this make you feel?',
-    'How does this change the way the music moves?',
-  ])
-}
-        <p>
-          <strong>Notice</strong> there is a push-pull effect as the hi hat pattern pushes back against the drum, then comes back to the drum. 
-        </p>
+        <ol>
+          <li>Add hi hat notes 3 spaces apart, starting with the 1st space in the circle. Listen.</li>
+          <li>Where does the hi hat move away from the drum. Where do they line up?</li>
+        </ol>
         `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'When it\'s off the beat, the hi hat pattern pushes against the drum. Then the beat pulls it back in.',
+          },
+        ],
         pattern: patterns.bassSnarePattern,
       },
       5: {
-        title: 'Half to half changes',
+        title: 'Hearing Hi Hat Notes Not as Individual Notes but as Groups',
         content:
         `
-        <p>How do hi hat patterns change from half to half?</p>
-        ${
-  constructActionSteps([
-    'Listen to this pattern.',
-    'Do you hear two groups of 3 hi hat notes?',
-    'What is it that tells you they go in groups?',
-    'Now take away one of the notes in the 2nd group.',
-    'Listen. How does the music change from half to half?',
-  ])
-}
-        <p>
-          <strong>Notice</strong> the empty space at the end of each group of 3 tells us the notes before it go together. Taking away a note on the beat stands out more (especially when there is no drum playing).
-        </p>
+        <ol>
+          <li>Listen.</li>
+          <li>Do you hear 2 groups of 3?</li>
+          <li>Take away one note in the 2nd group.</li>
+          <li>Listen. Is it easy to follow the change from half to half?</li>
+        </ol>
         `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'The empty space at the end of each group of 3 tells us the notes before it go together.',
+          },
+        ],
         pattern: patterns.constructPattern(
           {
             // eslint-disable-next-line no-nested-ternary
@@ -490,23 +467,23 @@ export const sections = {
         ),
       },
       6: {
-        title: 'Quarter to quarter changes',
+        title: 'Smaller Changes',
         content:
         `
-        <p>Smaller changes in the hi hat tend to happen from one quarter to the next.</p>
-        ${
-  constructActionSteps([
-    'Listen to this pattern with a big change from half to half and save.',
-    'Move the 2nd or 4th note one space early or late. Save.',
-    'Go back to Pattern 1 and delete the 2nd or 4th note. Save.',
-    'Play the 3 patterns in a row. Is it easy to follow the changes from the 1st to 2nd quarter?',
-    'Listen. How does the music change from half to half?',
-  ])
-}
-        <p>
-          <strong>Notice</strong> that these changes are easier to follow because they don&#8217;t involve moving or deleting a hi hat note that falls on the beat.
-        </p>
+        <ol>
+          <li>Listen and Save.</li>
+          <li>Move the 2nd or 4th hi hat one space early or late. Save.</li>
+          <li>Load Pattern 1. Delete the 2nd or 4th note. Save.</li>
+          <li>Play the 3 patterns in a row.</li>
+          <li>Are the changes easy to follow?</li>
+        </ol>
         `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Smaller changes mostly affect notes between beats.',
+          },
+        ],
         pattern: patterns.constructPattern(
           {
             // eslint-disable-next-line no-nested-ternary
@@ -519,24 +496,16 @@ export const sections = {
         ),
       },
       7: {
-        title: 'Level 2: Editing Groups of 3',
+        title: 'Level 2: Playing with Groups of 3',
         content:
         `
-        <p>Hi hat patterns often involve repeated groups of 2-3 notes.</p>
-        <p>What happens if we combine groups or make a larger gap in a group?</p>
-
-        ${
-  constructActionSteps([
-    'Listen then save this pattern.',
-    'Move one whole group of 3 one space later. Save.',
-    'Which beat is highlighted now?',
-    'Click Pattern 1. Take away the 6th hi hat note. Save.',
-    'Which beat is highlighted now? ',
-  ])
-}
-        <p>
-          <strong>Notice</strong> Pattern 2 highlights the beat that falls in the middle of the run of short notes. Pattern 3 highlights the 2nd snare, as it puts a gap just after it that makes the snare linger in our mind.
-        </p>
+        <ol>
+          <li>Listen and Save.</li>
+          <li>Pick a group of 3. Move each of the 3 notes one space later. Save.</li>
+          <li>Which beat is highlighted?</li>
+          <li>Reload Pattern 1. Move one group of 3 a space early.</li>
+          <li>Which beat is highlighted now?</li>
+        </ol>
         `,
         pattern: patterns.constructPattern(
           {
@@ -556,29 +525,27 @@ export const sections = {
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: `
-            You can also move one note in a group of three early or late. It's surprising how different the music can sound with these small changes - because they make us to pay attention to a different drum beat.
-            `,
+            content: `The run of hi hat notes draws our attention to the beat within or at the end of the run.`,
           },
         ],
       },
       8: {
-        title: 'Level 2: Editing Groups - Part 2',
+        title: 'Level 2: How the Hi Hat Groups Affect How We Hear the Beat',
         content:
         `
-        <p>A gap in the hi hat after a drum beat or a run leading up to one both make make the beat stand out. Let’s explore this using different positions for the drum beat.</p>
-        ${
-  constructActionSteps([
-    'Listen and Save. Move the 2nd drum beat one space early or late.',
-    'Now move a hi hat group or delete one of the 3 notes to make a bigger gap after the drum beat you moved. Save.',
-    'Now move the 3rd drum beat one space early or late also. Change the hi hat pattern to highlight this beat, either with a run or a larger gap after it. Save.',
-    'Play the patterns back. What does each highlight?',
-  ])
-}
-        <p>
-          <strong>Notice</strong> Since changes to a drum beat location are bigger changes, hi hat patterns that highlight these changes make a bigger difference than ones where the beat is more regular.
-        </p>
+        <ol>
+          <li>Listen.</li>
+          <li>Move the 2nd drum beat 1 space early. Save.</li>
+          <li>Move the 2nd group of 3 hi hat notes one space later. Save.</li>
+          <li>Listen to the 2 patterns. What\'s different?</li>
+        </ol>
         `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: `In pattern 1, the hi hat carries on through the off beat drum, smoothing the flow. In pattern 2, the break in the hi hat makes the off beat drum stand out.`,
+          },
+        ],
         pattern: patterns.constructPattern(
           {
             // eslint-disable-next-line no-nested-ternary
