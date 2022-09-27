@@ -700,25 +700,19 @@ export const sections = {
     key: 'TEMPO',
     activities: {
       1: {
-        title: 'Tempo is the speed of the music',
+        title: 'Tempo - Speed - Makes a Huge Difference',
         content:
           `
-          <p>Almost nothing changes music as much as the tempo or speed.</p>
-          ${
-  constructActionSteps([
-    'Listen to this pattern. As it plays, click, hold, and drag the tempo slider left and right.',
-    'How does changing the tempo change the way the music moves?',
-    'How does it change how the hi hat and drum work together? The mood the music creates?',
-  ])
-}
-          <p>
-            <strong>Notice</strong> that speeding up music makes it more upbeat and brighter, while slowing it down can do the opposite. Changing speed also can change how we group notes together.
-          </p>
+          <ol>
+            <li>Listen. As it plays, click, hold, and drag the tempo slider left and right.</li>
+            <li>How does changing the tempo change the way the music moves?</li>
+            <li>How does it change how the hi hat and drum fit together? The mood?</li>
+          </ol>
           `,
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'Tempo is measured in BPM - beat units per minute.',
+            content: 'Speeding up music makes it brighter, slowing it down makes it sadder. Tempo is measured in BPM - beat units per minute.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -737,13 +731,80 @@ export const sections = {
           emptyPattern(),
         ),
       },
+      2: {
+        title: 'Level 2: Musical Genres Have Different Tempo Ranges',
+        content:
+          `
+          <ol>
+            <li>Click, hold, and drag the tempo slider to play this pattern at these speeds.
+              <ul>
+                <li>Hip hop: 80-100 BPM</li>
+                <li>Techno: 120-140 BPM</li>
+                <li>Dubstep:	135-145 BPM</li>
+              </ul>
+            </li>
+            <li>How does the tempo change the way you want to move?</li>
+          </ol>
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Outside the tempo range, we feel the beat in a different way. That’s why each genre has a specific tempo range.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => (i % 2 == 0 ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => (i % 2 == 0 ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 14].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 24].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+      },
+      3: {
+        title: 'Level 3: Gradually Speeding Up or Slowing Down',
+        content:
+          `
+          <p>We normally expect the tempo to stay the same for a whole song or piece of music.</p>
+          <p>But tempo can be used to attract attention within a piece.</p>
+          <ol>
+            <li>Listen and save.</li>
+            <li>Make and save 2-3 versions that get a little slower each time.</li>
+            <li>Play them starting with the slowest, building up to the tempo of Pattern 1.</li>
+            <li>How does this change the way you hear the music?</li>
+          </ol>
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Gradually increasing the tempo builds energy and makes us wonder what\'s about to happen.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 12, 14, 18, 20].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 12, 14, 18, 20, 8, 24].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+      },
     },
     tierFilter: {
       1: {
-        cutoff: 1,
+        cutoff: 3,
       },
       2: {
-        cutoff: 2,
+        cutoff: 3,
       },
       3: {
         cutoff: 3,
