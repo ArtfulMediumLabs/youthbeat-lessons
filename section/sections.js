@@ -1044,7 +1044,7 @@ export const sections = {
     },
   },
   PITCH: {
-    title: 'Pitch',
+    title: 'Introducing Pitch',
     key: 'PITCH',
     activities: {
       1: {
@@ -1111,31 +1111,22 @@ export const sections = {
     },
   },
   CHORDS: {
-    title: 'Chords',
+    title: 'Introducing the Chord',
     key: 'CHORDS',
     activities: {
       1: {
-        title: 'Chords paint a mood',
+        title: 'Chords Paint a Mood',
         content: `
-          <p>A chord is made from 3 or more pitches that blend together so you can&#8217;t easily tell the individual pitches apart.</p>
-          <p>Different chords paint different moods.</p>
-          ${
-  constructActionSteps([
-    'Listen to this rhythm. ',
-    'Tick the box beside the D (major) chord in the list at the top right and listen.',
-    'Now tick the box beside Bm (minor) and listen.',
-    'What difference in mood do you hear?',
-    'Which chord seems brighter, more upbeat? Which seems more intense, sadder?',
-  ])
-}    
-          <p>
-            <strong>Notice</strong> the D chord (major) seems brighter. The Bm chord (minor) seems either more dramatic or sadder.
-          </p>
+        <ol>
+          <li>Listen.</li>
+          <li>Tick the box beside the D chord at top right and listen.</li>
+          <li>What difference in mood do you hear?</li>
+        </ol>
         `,
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'Major and minor are the two main types of chords. Minor means smaller. A minor chord has a smaller step up in pitch from the 1st to 2nd chord note than a major chord.',
+            content: 'The D chord seems brighter. It’s called a major chord. The Bm chord seems either more dramatic or sadder. It’s called a minor chord.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -1154,25 +1145,21 @@ export const sections = {
         ),
       },
       2: {
-        title: 'Level 2: Home Chord',
+        title: 'Level 2: The Home Chord',
         content: `
-          <p>The first chord we hear in a song is the most important - it's the 'home' chord that the music keeps coming back to throughout the piece.</p>
-          <p>How can we help listeners relate other chords to this one?</p>
-          ${
-  constructActionSteps([
-    'While this rhythm pattern is playing, change the chord to create these patterns:',
-    'D/D/Bm/D',
-    'Bm/Bm/D/Bm',
-  ])
-}    
-          <p>
-            <strong>Notice</strong> the main chord is played twice before the chord is changed. And after the change, we go back to the main chord again. This helps listeners remember the main chord and connect the new chord to it.
-          </p>
+        <ol>
+          <li>While this pattern is playing, change chord to create these patterns:
+            <ul>
+              <li>D/D/Bm/D</li>
+              <li>Bm/Bm/D/Bm</li>
+            </ul>
+          </li>
+        </ol>
         `,
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'Further into a song, you don’t need to repeat the main chord as often, as listeners are familiar with it now.',
+            content: 'Repeating the main chord at the beginning of a song helps listeners remember it so they can connect other chords to it more easily.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -1191,26 +1178,117 @@ export const sections = {
         ),
       },
       3: {
-        title: 'Level 2: Which chords are more like and which less?',
+        title: 'Level 2: Chords with 2 Pitches in Common Are More Alike',
         content: `
-          <p>Which pairs of chords sound more like each other, and which are more different?</p>
-          ${
-  constructActionSteps([
-    'Listen to the D chord, then the Bm chord.',
-    'Now listen to the D chord then G.',
-    'Which pair of chords seem more like, and which are more different?',
-    'How many notes (white lines) are in common between the D and Bm chords?',
-    'Between D and G chords?',
-  ])
-}
-          <p>
-            <strong>Notice</strong> there is only one pitch in common between D to G (D), but two pitches in common between D and Bm (D, F#). This may explain why D and Bm seem more like.
-          </p>
+        <ol>
+          <li>Listen to the D chord, then the Bm chord. Notice the pattern of white lines each makes in the melody circle. How many white lines are in both chords?</li>
+          <li>Now listen to the D chord then G. How many white lines are in both?</li>
+          <li>Which pair of chords (D/Bm or D/G) seem more like? More different?
+            <ol>
+              <li>Which pair has more white lines in common?</li>
+            </ol>
+          </li>
+        </ol>
         `,
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'Bm is called the relative minor of D - another way of saying these two chords are similar.',
+            content: 'There is only one pitch in common between D to G (D), but two pitches in common between D and Bm (D, F#). So D and Bm seem more similar.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          emptyPattern(),
+        ),
+      },
+      4: {
+        title: 'Level 3: Smaller and Larger Changes in Chords',
+        content: `
+        <ol>
+          <li>Play this pattern with the D chord twice.</li>
+          <li>Next, play Bm (a chord that's like the D chord), then go back to D.</li>
+          <li>Now play a chord that's different from D, then end with D again.</li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'We keep going back to the main chord so listeners can compare each new chord to the \'home chord\'. ',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            value: Array(32).fill('-').map((e, i) => ([2, 12, 18, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([2, 12, 18, 28].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 14].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 24].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+      },
+      5: {
+        title: 'Level 3: Keeping the Chord Pattern Fresh',
+        content:
+          `
+          <ol>
+            <li>Play these chords over this beat. 
+              <ul>
+                <li>D-Bm-G-D</li>
+                <li>Bm-D-G-D</li>
+                <li>Bm-D-G-Bm</li>
+                <li>Bm-D-Em-Bm</li>
+              </ul>
+            </li>
+          </ol>
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Chords that have two notes in common, like D and Bm or G and Em, are used in place of each other (called a substitution).',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => (i % 2 == 0 ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => (i % 2 == 0 ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 14].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 24].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+        ),
+      },
+      6: {
+        title: 'Level 3: The Three Main Chords in Popular Music',
+        content:
+          `
+          <ol>
+            <li>Listen to these chords in a row: D, G, and Asus.</li>
+            <li>Use these 3 chords to make a four-chord pattern by:
+              <ul>
+                <li>Repeating D at the end.</li>
+                <li>Adding Bm somewhere in the pattern.</li>
+                <li>Adding Em to the pattern.</li>
+                <li>What do you notice about the melody these patterns make?</li>
+              </ul>
+            </li>
+          </ol>
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'D, G, A are the three main chords in popular music. Songs add a substitution for D (Bm) or G (Em) to create a 4-chord pattern from these 3 chords.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -1222,11 +1300,10 @@ export const sections = {
     },
     tierFilter: {
       1: {
-        cutoff: 3,
+        cutoff: 6,
       },
       2: {
-        start: 2,
-        cutoff: 3,
+        cutoff: 6,
       },
       3: {
         cutoff: 6,
