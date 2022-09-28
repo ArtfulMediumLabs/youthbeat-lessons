@@ -1048,23 +1048,17 @@ export const sections = {
     key: 'PITCH',
     activities: {
       1: {
-        title: 'Introducing pitch',
+        title: 'Notes that Sound Higher and Lower Are Called Pitches',
         content: `
-          <p>Pitch is the quality of a note sounding higher or lower.</p>
-          ${
-  constructActionSteps([
-    'Click on the synth note in the pattern above. Hold and drag it up and down, to hear all the pitches.',
-    'How many different higher or lower sounding notes or pitches did you find?',
-  ])
-}
-          <p>
-            <strong>Notice</strong> the pitches are all named for letters of the alphabet. The higher the pitch, the further into the alphabet the letter used to name them. 
-          </p>
+        <ol>
+          <li>Click on the synth note in the pattern above. Hold and drag it up and down.</li>
+          <li>How many different higher or lower sounding notes (pitches) did you find?</li>
+        </ol>
         `,
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'All instruments, including drums, have pitch. Instruments like the guitar make it easy to play a wider range of pitches.',
+            content: 'The pitches are all named for letters of the alphabet. A higher pitch has a letter that’s further into the alphabet.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -1078,26 +1072,19 @@ export const sections = {
         ),
       },
       2: {
-        title: 'Scale',
+        title: 'A Scale is a Pattern of Steps Up in Pitch',
         content: `
-          <p>A scale is a kind of pitch ladder.</p>
-          <p>Are the steps in the ladder always the same distance apart? </p>
-          ${
-  constructActionSteps([
-    'On the locations of the hi hat notes, add Synth pitches that rise in pitch from the lower to higher B.',
-    'Listen.',
-    'How many steps up are there from the lower to the higher B?',
-    'Are they all the same size?',
-  ])
-}
-          <p>
-            <strong>Notice</strong> there are two sizes. The pattern is B-D (larger), D-E (smaller), E-F# (smaller), F#-A (larger), A-B (smaller). 
-          </p>
+        <ol>
+          <li>On the spaces with hi hat notes, add Synth pitches that rise in pitch from low B to high B.</li>
+          <li>Listen.</li>
+          <li>How many steps up are there?</li>
+          <li>Are they all the same size?</li>
+        </ol>
         `,
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'A scale with five pitches (making five steps up in pitch) is called pentatonic? (Penta means 5).',
+            content: 'The steps are: B-D (larger), D-E (smaller), E-F# (smaller), F#-A (larger), A-B (smaller). This is called a pentatonic scale (penta means 5).',
           },
         ],
         pattern: patterns.constructPattern(
