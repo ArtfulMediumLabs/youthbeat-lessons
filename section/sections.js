@@ -912,26 +912,19 @@ export const sections = {
     key: 'TIMBRE',
     activities: {
       1: {
-        title: 'Melody instruments',
+        title: 'Introducing the Synth and Guitar Sounds',
         content: `
-          <p>When we hear a synth and a guitar playing together, we can instantly tell them apart.</p>
-          <p>What is it about the sound of these instruments that makes them so easy to recognize?</p>
-          ${
-  constructActionSteps([
-    'Listen to this example played on the synth, then on Guitar (Rock then RnB).',
-    'Which sound has the most bite?',
-    'Which is heard for the longest?',
-    'Which is smoothest?',
-  ])
-}
-          <p>
-            <strong>Notice</strong> that listening to the beginning and ending of the sound helps us identify  different instruments. 
-          </p>
+          <ol>
+            <li>Listen to this example played on the synth, then on Guitar (Rock then RnB).</li>
+            <li>Which sound has the most bite?</li>
+            <li>Which is heard for the longest?</li>
+            <li>Which is smoothest?</li>
+          </ol>
         `,
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'Synth is short for Synthesizer, a computer generated sound. RnB stands for Rhythm and Blues, a guitar that often syncs up with the rhythm section (drums, hi hat).',
+            content: 'Synth is short for Synthesizer, a computer-generated sound. RnB stands for Rhythm and Blues, a guitar that often plays as part of the rhythm section.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -957,23 +950,19 @@ export const sections = {
         ),
       },
       2: {
-        title: 'Timbre or Sound Colour',
+        title: 'Instruments add Colour to the Music',
         content: `
-          <p>We can also think about instrument sounds in terms of colour.</p>
-          <p>How are the colours related/different?</p>
-          ${
-  constructActionSteps([
-    'Press Play to listen to this pattern with Synth, then Rock, then RnB guitar.',
-    'Which sound is brightest, which is darkest, most dramatic or intense?',
-    'What colour would you choose to represent each instrument sound?',
-    'Which one grabs your attention the most? Stands out the most?',
-  ])
-}
+        <ol>
+          <li>Listen first with Synth, then Rock, then RnB guitar.</li>
+          <li>Which is brightest, darkest, most dramatic?</li>
+          <li>What colour would you choose to represent each instrument sound?</li>
+          <li>Which one stands out the most?</li>
+        </ol>
         `,
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'A skilled guitar player can create a huge range of sound colours.',
+            content: 'Sound colour (called Timbre in music) makes a huge difference to the mood of the music.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -1002,13 +991,52 @@ export const sections = {
           },
         ),
       },
+      3: {
+        title: 'Level 3: Switching Instruments Changes the Mood',
+        content: `
+        <ol>
+          <li>Listen and save.</li>
+          <li>Make the 2nd last note longer by clicking it, then delete the last note. Save.</li>
+          <li>Take away 1-2 notes. Save.</li>
+          <li>Change 2 patterns to another instrument. Save.</li>
+          <li>Listen to the patterns in a row. How does switching instruments change the mood?</li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'The longer we hear an instrument, the more contrast we hear when we switch instruments.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 14].includes(i) ? 'B' : ([8, 20].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 20].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            value: ['-', '-', '-', '-', 'E4', '-', '-', '-', 'E4', '-', '-', '-', 'D4', '-', 'E4', '-', '-', '-', 'E4', '-', '-', '-', 'D4', '-', '-', '-', 'B3', '-', '-', '-', 'D4', '-'],
+            amplitude: Array(32).fill(0).map((e, i) => ([4, 8, 12, 14, 18, 22, 26, 30].includes(i) ? 3 : 0)),
+            duration: Array(32).fill(0).map((e, i) => ([4, 8, 12, 18, 22, 26, 30].includes(i) ? 1 : ([14].includes(i) ? 2 : 0))),
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
+        ),
+      },
     },
     tierFilter: {
       1: {
-        cutoff: 2,
+        cutoff: 3,
       },
       2: {
-        cutoff: 2,
+        cutoff: 3,
       },
       3: {
         cutoff: 3,
