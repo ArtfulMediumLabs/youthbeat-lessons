@@ -18,6 +18,12 @@ body {
     color: #DB3352;
 }
 
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+}
+
+
+
 /*
  * Instrument
  */
@@ -231,7 +237,6 @@ button.controlB {
     padding: 20px;
     box-sizing: border-box;
     margin-bottom: 10px;
-    font-family: Verdana, sans-serif;
 }
 
 .section-header img {
@@ -272,7 +277,7 @@ button.controlB {
     padding: 20px;
     position: relative;
     box-sizing: border-box;
-    font-family: Verdana, sans-serif;
+    font-family: 'Playfair Display', serif;
 }
 
 .section-content__image {
@@ -296,7 +301,7 @@ button.controlB {
 
 .section-pagination__button {
     padding: 5px;
-    font-family: Verdana, sans-serif;
+    font-family: sans-serif;
     background: none;
     border: none;
     border-radius: 5px;
