@@ -97,7 +97,7 @@ export const sections = {
       1: intro,
       2: {
         title: 'Music\'s built up in layers, starting with the drum',
-        image: 'YB cake.png',
+        image: 'YB-Cake.png',
         content:
           `
           <ul>
@@ -142,7 +142,7 @@ export const sections = {
       },
       3: {
         title: 'What can you do with drum notes?',
-        image: 'DrumNB.png',
+        image: 'BrainDrumNB.png',
         content:
           `
           <ul>
@@ -174,7 +174,7 @@ export const sections = {
       },
       4: {
         title: 'What can you do with hi hat notes?',
-        image: 'Hi-HatNB.png',
+        image: 'BrainHi-HatNB.png',
         content:
           `
           <ul>
@@ -253,7 +253,7 @@ export const sections = {
       },
       6: {
         title: 'What can you do with chords (blended pitches played at the same time)?',
-        image: 'Brain Sing + Chord.png',
+        image: 'BrainSingChordsNB.png',
         content:
           `
             <ul>
@@ -431,7 +431,7 @@ export const sections = {
     activities: {
       1: {
         title: 'Let your music breathe',
-        image: 'Brain HuffPuff NB.png',
+        image: 'BrainHuffPuffNB.png',
         content:
           `
           <ul>
@@ -517,7 +517,7 @@ export const sections = {
       },
       3: {
         title: 'Use the backbeat to make your rhythm patterns easier to follow',
-        image: 'Brain Backbeat NB.png',
+        image: 'BrainBackbeatNB.png',
         content:
           `
           <ul>
@@ -615,7 +615,7 @@ export const sections = {
       },
       6: {
         title: 'The melody and chord talk to each other',
-        image: 'Brain Sing + Chord.png',
+        image: 'BrainSingChordsNB.png',
         content:
           `
           <ul>
@@ -695,7 +695,7 @@ export const sections = {
       },
       8: {
         title: 'Build longer songs up in pairs of bars',
-        image: 'Brain Pair of Patterns.png',
+        image: 'BrainYBCircleNB.png',
         content:
           `
           <ul>
