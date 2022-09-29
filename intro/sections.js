@@ -91,6 +91,10 @@ const intro = {
 };
 
 export const sections = {
+  PREVIEW: {
+    title: 'Preview',
+    activities: {1: intro},
+  },
   BASICS: {
     title: '8 Basics You Need To Know',
     activities: {
