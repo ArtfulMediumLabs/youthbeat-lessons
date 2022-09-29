@@ -22,8 +22,6 @@ h1, h2, h3 {
     font-family: 'Oswald', sans-serif;
 }
 
-
-
 /*
  * Instrument
  */
@@ -247,9 +245,7 @@ button.controlB {
 
 .section-header__heading {
     font-size: 16px;
-    letter-spacing: 1.1px;
     color: gray;
-    font-weight: 600;
     margin: 10px 0;
 }
 
