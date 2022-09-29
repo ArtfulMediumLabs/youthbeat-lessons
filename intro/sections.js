@@ -56,7 +56,7 @@ const intro = {
   image: 'BrainMusicNB.png',
   content:
     `
-    <ul>
+    <ol>
       <li>Press the Play button in the middle of the circle. Press again to stop. The purple squares show you the timing of the drum sounds.</li>
       <li>Press Snare Drum at top left, then click 2 of the purple notes. Listen.</li>
       <li>Click Hi Hat and click spaces in the circle to make a pattern. Listen.</li>
@@ -69,7 +69,7 @@ const intro = {
       <li>Click on a Guitar sound and press play to listen.</li>
       <li>Take a few minutes to play with your pattern. When you're done, share it with a classmate.</li>
       <li>To save it, press Save Pattern at the right.</li>
-    </ul>          
+    </ol>          
     `,
   widgets: [
     {
@@ -91,6 +91,10 @@ const intro = {
 };
 
 export const sections = {
+  PREVIEW: {
+    title: 'Preview',
+    activities: {1: intro},
+  },
   BASICS: {
     title: '8 Basics You Need To Know',
     activities: {
@@ -100,13 +104,13 @@ export const sections = {
         image: 'YB-Cake.png',
         content:
           `
-          <ul>
+          <ol>
             <li>The Mute tool lets you hear how the layers work together.</li>
             <li>Press Play then tick each of the layers one by one.</li>
             <li>Tick a chord in the list at top right.</li>
             <li>Listen to how the drum, hi hat, chord, and melody fit together.</li>
             <li>Press Play again to stop.</li>
-          </ul>
+          </ol>
           `,
           pattern: patterns.constructPattern(
             {
@@ -145,14 +149,14 @@ export const sections = {
         image: 'BrainDrumNB.png',
         content:
           `
-          <ul>
+          <ol>
             <li>Make them louder (tap more than once)</li>
             <li>Delete them (click 3 times)</li>
             <li>Change instrument (click a different drum then the note)</li>
             <li>Double a note</li>
             <li>Add a row of notes in one part of the pattern</li>
             <li>To clear the pattern, press Reset at top left</li>
-          </ul>
+          </ol>
           `,
         widgets: [
           {
@@ -177,12 +181,12 @@ export const sections = {
         image: 'BrainHi-HatNB.png',
         content:
           `
-          <ul>
+          <ol>
             <li>Delete a note to make a gap (tap 3 times)</li>
             <li>Fill in the spaces between the last snare drum sound and the top of the circle to make the music pick up energy</li>
             <li>Change the hi hat note before the last snare to "Open Hi Hat"</li>
             <li>Listen to how each edit changes the way you hear the drum pattern.</li>
-          </ul>
+          </ol>
         `,
         widgets: [
           {
@@ -211,12 +215,12 @@ export const sections = {
         image: 'BrainSingNB.png',
         content:
           `
-          <ul>
+          <ol>
             <li>Delete a note (click several times)</li>
             <li>Make the note right before the one you deleted away longer (tap more than once)</li>
             <li>Change pitch (how high or low the note sounds): click/hold/scroll up and down</li>
             <li>Put in a bigger leap in pitch somewhere that stands out in the melody</li>
-          </ul>
+          </ol>
           `,
         widgets: [
           {
@@ -256,11 +260,11 @@ export const sections = {
         image: 'BrainSingChordsNB.png',
         content:
           `
-            <ul>
+            <ol>
               <li>Create a mood: compare Bm ("minor"), then D ("major"). Which is brighter? Which is sadder?</li>
               <li>Choose 3 chords and play them in a row, then repeat the pattern.</li>
               <li>Turn chords into a kind of melody: make a 4-chord pattern using Bm/Em, D, Asus, and G.</li>
-            </ul>
+            </ol>
           `,
         widgets: [
           {
@@ -288,11 +292,11 @@ export const sections = {
         image: 'BrainClockNB.png',
         content:
           `
-            <ul>
+            <ol>
               <li>Click/hold/slide the Tempo slider to play this pattern faster or slower</li>
               <li>Click/hold/slide the Volume slider to make the whole pattern louder or softer</li>
               <li>Make a faster tempo louder, and slower one softer</li>
-            </ul>
+            </ol>
           `,
         widgets: [
           {
@@ -320,11 +324,11 @@ export const sections = {
         image: 'BrainFunNB.png',
         content:
           `
-            <ul>
+            <ol>
               <li>Make a 2-3 changes to this pattern - delete or move a note, or add hi hat notes. Press "Save Pattern" after each change.</li>
               <li>Now press "Save Set"</li>
               <li>Press "Load Set" to reload later. You can save up to 8 patterns in a set.</li>
-            </ul>
+            </ol>
           `,
         widgets: [
           {
@@ -374,11 +378,11 @@ export const sections = {
         image: 'BrainMixNB.png',
         content:
           `
-          <ul>
+          <ol>
             <li>Make a few changes to this idea: delete a note, or change a pitch. Save each.</li>
             <li>Enter patterns in the Sequencer in the order you want by clicking the + symbol beside each pattern</li>
             <li>Press Start, then Play to listen. Press Stop, then Clear to re-enter them.</li>
-          </ul>
+          </ol>
           `,
         widgets: [
           {
@@ -434,14 +438,14 @@ export const sections = {
         image: 'BrainHuffPuffNB.png',
         content:
           `
-          <ul>
+          <ol>
             <li>More notes = more energy</li>
             <li>But if all the spaces are filled in, as in this example, nothing stands out.</li>
             <li>To get us to pay attention, put a gap in the music</li>
             <li>Listen to this idea, then delete notes right before and after part of it</li>
             <li>It's still got energy, but now you hear something you missed before</li>
             <li>Try different places to put space into this pattern. What stands out in each of them?</li>
-          </ul>          
+          </ol>          
           `,
         widgets: [
           {
@@ -489,13 +493,13 @@ export const sections = {
         image: 'BrainCountNB.png',
         content:
           `
-          <ul>
+          <ol>
             <li>The steady drum beat helps us count the music.</li>
             <li>Always start with this pattern.</li>
             <li>Mix it up a bit, but make sure we can still hear the beat.</li>
             <li>Try moving one of the beats above one space early or late.</li>
             <li>Now try moving it 2 spaces, can you still hear the beat?</li>
-          </ul>          
+          </ol>          
           `,
         widgets: [
           {
@@ -520,14 +524,14 @@ export const sections = {
         image: 'BrainBackbeatNB.png',
         content:
           `
-          <ul>
+          <ol>
             <li>This is called the BackBeat. It\'s like the audience clapping back the 1st and 3rd beats.</li>
             <li>It puts the beat into pairs: Bass Drum-Snare Drum, Bass Drum-Snare Drum.</li>
             <li>This helps listeners follow rhythms by comparing the pairs.</li>
             <li>Change the two snare drums to bass drum.</li>
             <li>Move the 3rd of 4th bass drum one space earlier or later and listen.</li>
             <li>Now change the 2nd and 4th drum sounds to snare drum and listen to the difference this makes.</li>
-          </ul>          
+          </ol>          
           `,
         widgets: [
           {
@@ -552,12 +556,12 @@ export const sections = {
         image: 'BrainQuestionNB.png',
         content:
           `
-          <ul>
+          <ol>
             <li>Make this drum pattern more complicated: move 2 beats one space earlier or later (but not the first one at the top of the circle - we always need to hear this to know when the bar is beginning).</li>
             <li>Now add a note between two beats somewhere in the pattern.</li>
             <li>See if you can 'get' it the first time you hear it. How many times do you need to hear it before you do?</li>
             <li>Your listeners will need to hear it at least that many times!</li>
-          </ul>          
+          </ol>          
           `,
         widgets: [
           {
@@ -582,13 +586,13 @@ export const sections = {
         image: 'BrainNoiseNB.png',
         content:
           `
-          <ul>
+          <ol>
             <li>Hit melodies start with just a few pitches.</li>
             <li>Enter pitches in the outer circle on 3-5 drum/hi hat spaces (click/hold/scroll to change pitch)</li>
             <li>Make one note longer (click 1-3 times)</li>
             <li>Give your melody at least one change in direction (going up instead of down or down instead of up).</li>
             <li>Everything you do stands out in a melody with just a few notes!</li>
-          </ul>          
+          </ol>          
           `,
         widgets: [
           {
@@ -618,13 +622,13 @@ export const sections = {
         image: 'BrainSingChordsNB.png',
         content:
           `
-          <ul>
+          <ol>
             <li>We hear the melody against the backdrop of the chord.</li>
             <li>Enter  3-5 melody pitches on drum/hi hat spaces</li>
             <li>Put all the pitches on white lines (so they sync with the chord)</li>
             <li>Now make one pitch clash by putting it between white lines</li>
             <li>We expect to hear the pitches in the chord used in the melody, too, So when a note that\'s not in the chord is heard in the melody, it draws our attention.</li>
-          </ul>          
+          </ol>          
           `,
         widgets: [
           {
@@ -656,13 +660,13 @@ export const sections = {
         image: 'BrainIdeaNB.png',
         content:
           `
-          <ul>
+          <ol>
             <li>Tick Mirror Horizontal and enter a drum pattern</li>
             <li>Next, rotate the melody one or more times by pressing Melody +90</li>
             <li>Now make one pitch longer</li>
             <li>This creates an idea that's so different, you could use it as the Chorus to a Verse</li>
             <li>When using the full app, press the Note Entry button to get to Special Tools - this is where you\'ll find the Rotation and Reflection tools.</li>
-          </ul>
+          </ol>
           `,
         widgets: [
           {
@@ -698,12 +702,12 @@ export const sections = {
         image: 'BrainYBCircleNB.png',
         content:
           `
-          <ul>
+          <ol>
             <li>Make a few small changes to this idea (saving each): delete a note, move a note, make the melody go down at the end</li>
             <li>Next, make a couple of bigger changes (saving each): change chord, change drum pattern</li>
             <li>Play the first pattern 2x, then the 1st & 2nd, 2nd & 3rd, 3rd & 4th, and so on.</li>
             <li>Playing patterns in pairs makes it easier for listeners to follow the changes.</li>
-          </ul>
+          </ol>
           <p>You'll find many more tips in our full YouthBeat tutorials. Happy music making!</p>
           `,
         widgets: [
@@ -761,7 +765,7 @@ export const sections = {
         title: 'Without math, there would be no music!',
         content:
           `
-          <ul>
+          <ol>
             <li>Press the Play button in the middle of the circle to listen, Press again to stop.</li>
             <li>Find 4 tools on the screen that involve numbers.</li>
             <li>Let's see how they work:
@@ -773,7 +777,7 @@ export const sections = {
             </li>
             <li>Which of these tools involves a unit rate - measuring how many of one kind of thing there are for each unit of another kind of thing?</li>
             <li>Now, make your own musical idea, trying out different volume and tempo settings.</li>
-          </ul>          
+          </ol>          
           `,
         widgets: [
           {
@@ -824,7 +828,7 @@ export const sections = {
         title: 'We love symmetry in music!',
         content:
           `
-          <ul>
+          <ol>
             <li>At top left, click Mirror Vertical.
               <ul>
                 <li>Enter a drum beat in the 1st space of the 2nd quarter of the circle. (Click a drum, then the space. Click a note a few times to delete it).</li>
@@ -844,7 +848,7 @@ export const sections = {
                 <li>To save your ideas, press Save Pattern. Press Reset to clear the idea.</li>
               </ul>
             </li>
-          </ul>          
+          </ol>          
           `,
         widgets: [
           {
@@ -868,7 +872,7 @@ export const sections = {
         title: 'There\'s a hidden geometry behind the music - what\'s it telling us?',
         content:
           `
-          <ul>
+          <ol>
             <li>Press Play to listen.</li>
             <li>Just below the drum list, tick Rhythm Polygon.</li>
             <li>This joins the notes using straight lines inside the circle. What shapes do you see?</li>
@@ -882,7 +886,7 @@ export const sections = {
                 <li>Be sure to include a drum in the first space of the first quarter - we need to hear this to follow your beat.</li>
               </ul>
             </li>
-          </ul>          
+          </ol>          
           `,
         widgets: [
           {
@@ -916,7 +920,7 @@ export const sections = {
         title: 'Rotation totally changes the music. It can even turn a verse into a chorus!',
         content:
           `
-          <ul>
+          <ol>
             <li>Press Play to listen.</li>
             <li>Press the Melody +90 button three times. This rotates the pattern 270 degrees in a clockwise direction.
               <ul>
@@ -936,7 +940,7 @@ export const sections = {
               </ul>
             </li>
             <li>Listen. Can you still connect this new idea to the original one?</li>
-          </ul>          
+          </ol>          
           `,
         widgets: [
           {
@@ -980,7 +984,7 @@ export const sections = {
         title: 'How do we know it\'s hip hop, not dubstep?',
         content:
           `
-          <ul>
+          <ol>
             <li>Move 1-2 drum or hi hat notes to personalize this beat.
               <ul>
                 <li>To move a note, tap it several times to delete it, then re-enter it.</li>
@@ -1011,7 +1015,7 @@ export const sections = {
               </ul>
             </li>
             <li>Listen again to the 3 patterns and how different they sound and make you want to move.</li>
-          </ul>          
+          </ol>          
           `,
         widgets: [
           {
@@ -1043,7 +1047,7 @@ export const sections = {
         title: 'Fractions get our toes tapping!',
         content:
           `
-          <ul>
+          <ol>
             <li>Listen to this pattern, called the basic beat.
               <ul>
                 <li>The notes are all placed in the first space of a quarter or beat unit.</li>
@@ -1062,7 +1066,7 @@ export const sections = {
                 <li>⅛,¹⁄₁₆,¼,½</li>
               </ul>
             </li>
-          </ul>          
+          </ol>          
           `,
         widgets: [
           {
@@ -1090,7 +1094,7 @@ export const sections = {
         title: 'Pushing And Pulling Against the Beat - there\'s math behind that!',
         content:
           `
-          <ul>
+          <ol>
             <li>Add Hi Hat notes 3 spaces apart to this pattern, starting with the 1st space at the top of the circle. (Click closed hi hat, then the space). Listen.</li> 
             <li>Where does the hi hat move away from the drum? Where do the two patterns sync up?</li>
             <li>What do you feel when the hi hat moves away from the drum? When it comes back to the beat?</li>
@@ -1098,7 +1102,7 @@ export const sections = {
             <li>Circle the spaces where the hi hat and drum come together.</li>
             <li>Divide these space numbers by 3 - the number of spaces between each pair of hi hat notes.</li>
             <li>Now divide these same space numbers where the drum and hi hat come together by 4 - the number of spaces between each pair of drum notes.</li>
-          </ul>
+          </ol>
           `,
         widgets: [
           {
@@ -1126,10 +1130,10 @@ export const sections = {
         title: 'The melody is the signature of a song. It\'s also a set of fractions (Part 1)',
         content:
           `
-          <ul>
+          <ol>
             <li>Make a new melody with 5 notes that includes these durations or note lengths: ½, ⅛, ¼, ¹⁄₁₆, ¹⁄₁₆  (feel free to change the order of these fractions in your melody).</li>
             <li>How many times do you have to multiply the smallest fraction to get the largest? Divide the second largest to get the smallest?</li>
-          </ul>
+          </ol>
           `,
         widgets: [
           {
@@ -1169,7 +1173,7 @@ export const sections = {
         title: 'The melody is the signature of the song. It\'s also a set of fractions (Part 2)',
         content:
           `
-          <ul>
+          <ol>
             <li>Listen to this pattern.
               <ul>
                 <li>What do you notice about the steps up in pitch - how high each note sounds compared to the one before it?</li>
@@ -1185,7 +1189,7 @@ export const sections = {
                 <li>What\'s the effect when you go from small steps to a larger leap?</li>
               </ul>
             </li>
-          </ul>
+          </ol>
           `,
         widgets: [
           {
@@ -1220,7 +1224,7 @@ export const sections = {
         title: 'Putting it all together.',
         content:
           `
-          <ul>
+          <ol>
             <li>Create a musical idea using all the math tools we've explored so far:
               <ul>
                 <li>Mirror Vertical and Horizontal</li>
@@ -1231,7 +1235,7 @@ export const sections = {
               </ul>
             </li>
             <li>Write out how you built the idea, including the patterns of fractions of the beat, the steps in pitch and the sizes of durations, as well as the percentage increases and decreases in tempo and volume.</li>
-          </ul>
+          </ol>
           `,
         widgets: [
           {
@@ -1261,7 +1265,7 @@ export const sections = {
         title: 'Introducing the Heartbeat Pattern Played by Elder Nk\'xetko',
         content:
           `
-          <ul>
+          <ol>
             <li>Press the Play button in the middle of the circle to listen to this pattern several times.</li>
             <li>Press the Play button again to stop.</li>
             <li>Each heartbeat is shown by a pair of purple notes.</li>
@@ -1270,7 +1274,7 @@ export const sections = {
             <li>Listen, then press 'Save Pattern' (at the right above)</li>
             <li>Now make the other note louder instead. Click the two notes you made louder 3 times, then click the other notes once. Listen, then Save Pattern. </li>
             <li>Play Pattern 1 a few times then click on Pattern 2, then go right back to Pattern 1. How do you feel when the pattern changes and then goes back? </li>
-          </ul>
+          </ol>
           `,
           pattern: patterns.constructPattern(
             emptyPattern(),
@@ -1293,13 +1297,13 @@ export const sections = {
         title: 'Set the Loudness (Volume) and Speed (Tempo) to Make a Soothing Pattern',
         content:
           `
-          <ul>
+          <ol>
             <li>Press Play, then change the loudness by clicking, holding, and dragging the Volume slider left and right (it's at the bottom left).</li>
             <li>Find a volume setting that makes the drum sound soothing.</li>
             <li>Next, press Play and change the tempo or speed: click, hold, and drag the Tempo slider to the left and right (It's at the bottom left, too).</li>
             <li>Find a tempo that sounds the most soothing.</li>
             <li>Share your settings with your partner. Did you both choose the same settings?</li>
-          </ul>
+          </ol>
           `,
           pattern: patterns.constructPattern(
             emptyPattern(),
@@ -1322,7 +1326,7 @@ export const sections = {
         title: 'Create a Soothing Heartbeat Melody',
         content:
           `
-          <ul>
+          <ol>
             <li>Click on Synth or Rock or RnB guitar at the top right above.</li>
             <li>Click in the outer part of the circle to enter melody notes in the same position in the circle as the 4 purple drum notes. (Melody is the part of the music the singer sings).</li>
             <li>Click higher or lower in the space to make the notes higher or lower sounding, called pitch. (You can also click/hold/scroll to change pitch).</li>
@@ -1330,7 +1334,7 @@ export const sections = {
             <li>Move one pair of notes so they begin a bit before or after the drum. Click the notes you want to move a few times until they disappear, then enter them again in the new position.</li>
             <li>Finally, add one short note in between the two pairs of melody notes.</li>
             <li>As your melody is playing, listen to it with different chords (click a chord in the lettered list at the top right). Which one is the most soothing?</li>
-          </ul>
+          </ol>
           `,
           pattern: patterns.constructPattern(
             emptyPattern(),

@@ -19,11 +19,7 @@ export const constructFooter = (user = null) => {
       )
       : parseHTML(
         `
-          This is an educator preview of Youthbeat. 
-          ${exceededMaxActivityLimit
-    ? `You have viewed all ${activityLimit} activities available to unregistered viewers.`
-    : `You have ${activityLimit - window.localStorageService.activityCount} activities remaining.`}
-          Register to access all free activities.<br/>
+        This is an educator preview of Youthbeat. Please register before sharing with students.<br/>
           <div class="footer__links">
             <a href="./register" class="footer__link">Register</a>
           </div>
