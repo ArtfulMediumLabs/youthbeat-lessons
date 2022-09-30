@@ -53,6 +53,60 @@ const constructActionSteps = (actions, description = '') => `
 */
 
 export const sections = {
+  GETTING_STARTED: {
+    key: 'GETTING_STARTED',
+    title: 'Getting Started',
+    activites: {
+      1: {
+        title: 'Getting Started',
+        content:
+          `
+          <ol>
+            <li>Press the Play button in the middle of the circle. Press again to stop. The purple squares show you the timing of the drum sounds.</li>
+            <li>Press Snare Drum at top left, then click 2 of the purple notes. Listen.</li>
+            <li>Click Hi Hat and click spaces in the circle to make a pattern. Listen.</li>
+            <li>Delete a note, by clicking it 3 times.</li>
+            <li>Click Synth and enter 3-4 notes. Click/hold/scroll to change how high or low they sound.
+              <ul>
+                <li>Make a synth note longer by tapping it more than once.</li>
+              </ul>
+            </li>
+            <li>Click on a Guitar sound and press play to listen.</li>
+            <li>Take a few minutes to play with your pattern. When you're done, share it with a classmate.</li>
+            <li>To save it, press Save Pattern at the right.</li>
+          </ol>          
+          `,
+        widgets: [
+          {
+            type: widgets.TeacherNote,
+            content: 'Students may need a little more time the first time they use the app, as they are excited to create their first idea. Some students even create 4 or 5 the first time they use the app!',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 8, 16, 22].includes(i) ? 'B' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 8, 16, 22].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+        ),
+        activeInstrument: 'B',
+      },
+    },
+    tierFilter: {
+      1: {
+        cutoff: 1,
+      },
+      2: {
+        cutoff: 1,
+      },
+      3: {
+        cutoff: 1,
+      },
+    },
+  },
   RHYTHM_DRUMS: {
     key: 'RHYTHM_DRUMS',
     title: 'Exploring Rhythm - The Drums',
@@ -1874,6 +1928,7 @@ export const sections = {
 */
 
 export const getOrderedSections = (tier) => [
+  sections.GETTING_STARTED,
   sections.RHYTHM_DRUMS,
   sections.RHYTHM_HI_HAT,
   sections.TEMPO,
