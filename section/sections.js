@@ -56,7 +56,7 @@ export const sections = {
   GETTING_STARTED: {
     key: 'GETTING_STARTED',
     title: 'Getting Started',
-    activites: {
+    activities: {
       1: {
         title: 'Getting Started',
         content:
