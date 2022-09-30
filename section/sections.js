@@ -83,7 +83,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'The whole circle shows <bold>one bar</bold> of music. Each beat is a quarter of the circle.',
+            content: 'The whole circle shows <b>one bar</b> of music. Each beat is a quarter of the circle.',
           },
         ],
       },
@@ -1360,7 +1360,7 @@ export const sections = {
         content: `
         <ol>
           <li>Listen to this idea where all the pitches are on the white lines (meaning they are all part of the Bm chord that's playing).</li>
-          <li>Change <bold>one</bold> pitch so it's <bold>not</bold> on a white line. Save.</li>
+          <li>Change <b>one</b> pitch so it's <b>not</b> on a white line. Save.</li>
           <li>Do this for a different note instead. Save.</li>
           <li>Listen to the different patterns, especially where the melody note clashes with the chord, then comes back to the chord.</li>
         </ol>
@@ -1399,7 +1399,7 @@ export const sections = {
         <ol>
           <li>Listen.</li>
           <li>In this melody, the melody note that's not in the chord falls between beats - a weaker position.</li>
-          <li>Change one of the two other pitches so it's <bold>between</bold> white lines. Listen to the difference this makes.</li>
+          <li>Change one of the two other pitches so it's <b>between</b> white lines. Listen to the difference this makes.</li>
         </ol>
         `,
         widgets: [
@@ -1544,18 +1544,255 @@ export const sections = {
             content: 'A leap up is exciting, especially when it comes after small steps in pitch.',
           },
         ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          emptyPattern(),
+        ),
       },
-      
+      8: {
+        title: 'Level 2: The Feeling of Gravity in a Melody',
+        content: `
+        <ol>
+          <li>Create a melody with 4-5 notes. Start with D, then go up in small steps. Save.</li>
+          <li>Change the last note to the original D. Save.</li>
+          <li>Listen to both patterns.
+            <ul>
+              <li>What do you feel when the pitch falls at the end?</li>
+            </ul>
+          </li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'The ending is like gravity pulling us back to where we started. We feel a sense of closure.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          emptyPattern(),
+        ),
+      },
+      9: {
+        title: `Level 2: How Different Shapes (Contours) Change a Melody`,
+        content: `
+        <ol>
+          <li>Using 3-5 pitches on hi hat spaces, make these shapes: (save each):
+            <ul>
+              <li>Rise, fall, rise</li>
+              <li>Fall, rise, fall</li>
+              <li>Rising</li>
+              <li>Falling</li>
+            </ul>
+          </li>
+          <li>Listen to all the patterns.</li>
+          <li>How do the different shapes make you feel?</li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Contour helps us remember the melody. We might not get the exact pitches, but we remember the shape.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([4, 8, 12, 16, 22, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([4, 8, 12, 16, 22, 28].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 14].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 22].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          emptyPattern(),
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'D2',
+            voice: 'synth',
+          },
+        ),
+      },
+      10: {
+        title: 'Level 3: How Many Changes to a Melody Can We Follow at a Time?',
+        content: `
+        <ol>
+          <li>Make one note longer. Save.</li>
+          <li>Reload Pattern 1, add 1-2 notes. Save.</li>
+          <li>Reload 1, change one pitch and its duration. Save.</li>
+          <li>Reload 1, change a note location, duration, and pitch. Save.</li>
+          <li>Playback all.
+            <ul>
+              <li>Which changes are easy to follow? Which are harder?</li>
+            </ul>
+          </li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: `It's easier to follow a melody that makes just one or two changes at a time.`,
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          {
+            value: ['B3', '-', '-', '-', '-', '-', '-', '-', 'D4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'B3', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 8, 20].includes(i) ? 3 : 0)),
+            duration: Array(32).fill(0).map((e, i) => ([0, 8, 20].includes(i) ? 1 : 0)),
+          },
+        ),
+      },
+      11: {
+        title: 'Level 3: What Happens to the Melody When the Chord Changes?',
+        content: `
+        <ol>
+          <li>Listen. Save. </li>
+          <li>Write down the pitch pattern (the pattern of pitches on or between white lines).</li>
+          <li>Tick the G chord. Save.</li>
+          <li>Change the first melody pitch to G. Give the melody the same pitch pattern as Pattern 1. Save.</li>
+          <li>Listen to all.
+            <ul>
+              <li>What's the difference between 2 and 3?</li>
+            </ul>
+          </li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Changing the pitch pattern in 3 makes the melody blend with the chord G.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 6, 12, 20, 24, 28].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 6, 12, 20, 24, 28].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 16].includes(i) ? 'B' : ([8, 22].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 22].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => {
+              if ([0].includes(i)) return 'D4';
+              if ([16, 28].includes(i)) return 'F#4';
+              if ([22].includes(i)) return 'E4';
+              return '-';
+            }),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 16, 28, 22].includes(i) ? 3 : 0)),
+            duration: Array(32).fill(0).map((e, i) => {
+              if ([0].includes(i)) return 4;
+              if ([16, 28].includes(i)) return 1;
+              if ([22].includes(i)) return 1;
+              return 0;
+            })
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'D2',
+            voice: 'synth',
+          },
+        ),
+      },
+      12: {
+        title: 'Level 3: How to Make a Change of Chord Smoother in a Melody',
+        content: `
+        <ol>
+          <li>Listen and save.</li>
+          <li>Change the chord to G and save.</li>
+          <li>Reload 1, change one pitch to a different white line. Save. </li>
+          <li>Do the same with 2. Save.</li>
+          <li>Now change one pitch that's between lines to another position between lines. Save.</li>
+          <li>Playback all. How do these changes affect the melody?</li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'When the chord changes, the melody is smoother in Patterns 3-4.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 14].includes(i) ? 'B' : ([8, 24].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 14, 8, 24].includes(i) ? 1 : 0)),
+            duration: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => {
+              if ([8].includes(i)) return 'B4';
+              if ([14].includes(i)) return 'A4';
+              if ([18, 22].includes(i)) return 'D4';
+              return '-';
+            }),
+            amplitude: Array(32).fill(0).map((e, i) => ([8, 14, 18, 22].includes(i) ? 3 : 0)),
+            duration: Array(32).fill(0).map((e, i) => {
+              if ([8, 14, 18].includes(i)) return 1;
+              if ([22].includes(i)) return 3;
+              return 0;
+            })
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'D2',
+            voice: 'synth',
+          },
+        ),
+      },
+      13: {
+        title: 'Level 3: What Happens When the Melody Begins or Ends with an Unexpected Pitch?',
+        content: `
+        <ol>
+          <li>Tick the D chord.</li>
+          <li>Enter a melody, beginning and ending with D. Save.</li>
+          <li>Change the first D to a pitch that's between white lines (not in the chord). Save.</li>
+          <li>Change the last D to a pitch that’s not in the chord. Save.</li>
+          <li>Playback all.</li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'A non-chord note at the end makes us wonder if the music is about to switch to a different chord. A non-chord note at the beginning ties the melody back to the previous chord.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          emptyPattern(),
+        ),
+      },
     },
     tierFilter: {
       1: {
-        cutoff: 8,
+        cutoff: 13,
       },
       2: {
-        cutoff: 10,
+        cutoff: 13,
       },
       3: {
-        cutoff: 14,
+        cutoff: 13,
       },
     },
   },
