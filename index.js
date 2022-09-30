@@ -47,6 +47,17 @@ window.addEventListener('load', async () => {
     );
   });
 
+  
+  if (getOrderedSections(tier).length % 2 > 0) {
+    sectionList.appendChild(
+      parseHTML(
+        `
+          <li class="making-music__section"></li>
+        `,
+      ),
+    );
+  }
+
   constructHeader(user);
   constructFooter(user);
 });
