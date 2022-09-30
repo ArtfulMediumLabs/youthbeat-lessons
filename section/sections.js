@@ -1711,8 +1711,8 @@ export const sections = {
         <ol>
           <li>Listen. Save. </li>
           <li>Write down the pitch pattern (the pattern of pitches on or between white lines).</li>
-          <li>Tick the G chord. Save.</li>
-          <li>Change the first melody pitch to G. Give the melody the same pitch pattern as Pattern 1. Save.</li>
+          <li>Tick the B chord. Save.</li>
+          <li>Change the first melody pitch to B. Give the melody the same pattern of pitches on or between white lines as Pattern 1. Save.</li>
           <li>Listen to all.
             <ul>
               <li>What's the difference between 2 and 3?</li>
@@ -1723,7 +1723,7 @@ export const sections = {
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: 'Changing the pitch pattern in 3 makes the melody blend with the chord G.',
+            content: 'Changing the pitch pattern in 3 makes the melody blend with the chord B',
           },
         ],
         pattern: patterns.constructPattern(
