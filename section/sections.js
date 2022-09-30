@@ -1851,7 +1851,7 @@ export const sections = {
     },
   },
   TOOLS: {
-    title: 'Tools to Help You Create Ideas',
+    title: 'Special Tools',
     key: 'TOOLS',
     activities: {
       1: {
