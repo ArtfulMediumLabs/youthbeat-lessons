@@ -1796,21 +1796,64 @@ export const sections = {
       },
     },
   },
-  ADVANCED_TOOLS: {
-    title: 'Advanced Tools',
-    key: 'ADVANCED_TOOLS',
-    activities: {},
-    tierFilter: {
-      3: {
-        cutoff: 2,
+  TOOLS: {
+    title: 'Tools to Help You Create Ideas',
+    key: 'TOOLS',
+    activities: {
+      1: {
+        title: 'Level 3: Patterns that Shift from On to Off the Beat and Back',
+        content: `
+        <ol>
+          <li>Tick Mirror Vertical and enter a drum note.</li>
+          <li>Now enter a second drum note. Listen.</li>
+          <li>Press Reset. Tick Mirror Horizontal and enter two notes. Listen.
+            <ol>
+              <li>How is this pattern different from the first one?</li>
+            </ol>
+          </li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Reflection creates patterns that shift from on the beat to off the beat and back.  When you tick Horizontal and Vertical, whole groups of notes go on and off the beat.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          emptyPattern(),
+        ),
+        features: ['mirror'],
+      },
+      2: {
+        title: 'Level 3: Changing The Part of the Melody You Hear First',
+        content: `
+        <ol>
+          <li>Enter a melody with 4-5 notes. Save.</li>
+          <li>Press Melody +90. Press again. And again. Save each.</li>
+          <li>Choose your favourite.</li>
+          <li>Change one or two durations and delete one note. Save. Listen.</li>
+        </ol>
+        `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Rotating an idea and changing durations can be used to turn a verse idea into a chorus.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          emptyPattern(),
+          emptyPattern(),
+        ),
+        features: ['mirror','rotate'],
       },
     },
-  },
-  SPECIAL_PROJECTS: {
-    title: 'Special Projects',
-    key: 'SPECIAL_PROJECTS',
-    activities: {},
     tierFilter: {
+      1: {
+        cutoff: 2,
+      },
       2: {
         cutoff: 2,
       },
@@ -1839,6 +1882,5 @@ export const getOrderedSections = (tier) => [
   sections.PITCH,
   sections.CHORDS,
   sections.MELODY,
-  sections.ADVANCED_TOOLS,
-  sections.SPECIAL_PROJECTS,
+  sections.TOOLS,
 ].filter((section) => !!section.tierFilter[tier]);
