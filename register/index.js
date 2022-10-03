@@ -1,5 +1,5 @@
 import { createUser } from '../firestore.js';
-import { hideElement } from '../utils.js';
+import { hideElement, getBaseUrl } from '../utils.js';
 import LocalStorageService from '../localStorage.js';
 import { queryParams } from '../constants.js';
 
@@ -36,7 +36,9 @@ window.addEventListener('load', async () => {
       });
 
       window.localStorageService.accessToken = newUser.accessToken;
-      window.location.href = '../';
+      const lastProduct = window.localStorage.lastProduct;
+      const destinationUrl = lastProduct ? `/intro/?${queryParams.sectionKey}=${lastProduct}` : getBaseUrl();
+      window.location.href = destinationUrl;
     } catch (error) {
       registrationFormError.textContent = error.message;
     }

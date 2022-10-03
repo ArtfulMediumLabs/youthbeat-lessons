@@ -9,6 +9,7 @@ import { constructFooter } from './footer.js';
 
 window.addEventListener('load', async () => {
   window.localStorageService = new LocalStorageService();
+  window.localStorage.removeItem("lastProduct");
 
   // DOM Elements
   const sectionList = document.querySelector('.making-music__section-list');

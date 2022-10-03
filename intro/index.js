@@ -39,7 +39,7 @@ window.addEventListener('load', async () => {
     try {
       user = await getUser(window.localStorageService.accessToken);
     } catch {
-      window.localStorage.removeItem("accessToken")
+      window.localStorage.removeItem("accessToken");
     }
   }
 
@@ -65,7 +65,10 @@ window.addEventListener('load', async () => {
   titleElement.textContent = `Youthbeat | ${section.title}`;
   renderSection(initialActivity);
   window.sectionPagination = new SectionPagination(section);
-
-  const productPath =  `/intro/${queryParamKeys.sectionKey}=${sectionKey}`;
-  constructFooter(user, productPath);
+  
+  if (['PREVIEW','BASICS','MUSIC_CREATION','MATH'].includes(sectionKey)){
+    window.localStorage.lastProduct = sectionKey;
+    const productPath =  `/intro/?${queryParamKeys.sectionKey}=${sectionKey}`;
+    constructFooter(user, productPath);
+  }
 });

@@ -28,9 +28,12 @@ export function getBaseUrl() {
 }
 
 export function generateClassLink(accessToken, productPath='') {
-  return `
-    ${getBaseUrl() + productPath}?access_token=${accessToken}
-  `;
+  if (productPath.length > 0) {
+    return `${getBaseUrl() + productPath}&access_token=${accessToken}`;
+  }  else {
+    return `${getBaseUrl()}/?access_token=${accessToken}`;
+  }
+   
 }
 
 export function hideElement(element) {

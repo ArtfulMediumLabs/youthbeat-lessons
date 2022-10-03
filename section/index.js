@@ -23,6 +23,7 @@ window.addEventListener('load', async () => {
   const queryParams = new URLSearchParams(window.location.search);
   const tier = queryParams.get(queryParamKeys.tier) || 1;
   const sectionKey = queryParams.get(queryParamKeys.sectionKey) || 'RHYTHM_DRUMS';
+  window.localStorage.removeItem("lastProduct");
 
   // Check for valid section
   if (!sections[sectionKey]) throw new Error(`Failed to fetch section from section dictionary by key ${sectionKey}.`);
