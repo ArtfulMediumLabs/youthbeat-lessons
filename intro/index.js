@@ -27,11 +27,20 @@ window.addEventListener('load', async () => {
   const section = sections[sectionKey];
   const initialActivity = section.activities[1];
 
+  const searchParams = new URLSearchParams(window.location.search);
+  const accessToken = searchParams.get(queryParamKeys.accessToken);
+
+  if (accessToken) {
+    window.localStorageService.accessToken = accessToken;
+  }
+
   // Retrieve User
   if (window.localStorageService.accessToken) {
     try {
       user = await getUser(window.localStorageService.accessToken);
-    } catch {}
+    } catch {
+      window.localStorage.removeItem("accessToken")
+    }
   }
 
   // Construct section
