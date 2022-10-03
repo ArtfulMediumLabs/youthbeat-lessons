@@ -27,9 +27,9 @@ export function getBaseUrl() {
     : origin;
 }
 
-export function generateClassLink(accessToken) {
+export function generateClassLink(accessToken, productPath='') {
   return `
-    ${getBaseUrl()}?access_token=${accessToken}
+    ${getBaseUrl() + productPath}?access_token=${accessToken}
   `;
 }
 
