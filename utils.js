@@ -27,10 +27,13 @@ export function getBaseUrl() {
     : origin;
 }
 
-export function generateClassLink(accessToken) {
-  return `
-    ${getBaseUrl()}?access_token=${accessToken}
-  `;
+export function generateClassLink(accessToken, productPath='') {
+  if (productPath.length > 0) {
+    return `${getBaseUrl() + productPath}&access_token=${accessToken}`;
+  }  else {
+    return `${getBaseUrl()}/?access_token=${accessToken}`;
+  }
+   
 }
 
 export function hideElement(element) {

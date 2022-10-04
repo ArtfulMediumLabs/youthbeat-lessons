@@ -2,9 +2,13 @@ import { sections } from './sections.js';
 import { renderSection } from './sectionRenderer.js';
 import SectionPagination from './sectionPagination.js';
 import { parseHTML, getBaseUrl } from '../utils.js';
+import LocalStorageService from '../localStorage.js';
+import { getUser } from '../firestore.js';
 import { queryParams as queryParamKeys, activityLimit } from '../constants.js';
+import { constructFooter } from '../footer.js';
 
 window.addEventListener('load', async () => {
+  window.localStorageService = new LocalStorageService();
   let user = null;
 
   // Elements
@@ -22,6 +26,22 @@ window.addEventListener('load', async () => {
 
   const section = sections[sectionKey];
   const initialActivity = section.activities[1];
+
+  const searchParams = new URLSearchParams(window.location.search);
+  const accessToken = searchParams.get(queryParamKeys.accessToken);
+
+  if (accessToken) {
+    window.localStorageService.accessToken = accessToken;
+  }
+
+  // Retrieve User
+  if (window.localStorageService.accessToken) {
+    try {
+      user = await getUser(window.localStorageService.accessToken);
+    } catch {
+      window.localStorage.removeItem("accessToken");
+    }
+  }
 
   // Construct section
   sectionHeadingElement.textContent = section.title;
@@ -45,4 +65,10 @@ window.addEventListener('load', async () => {
   titleElement.textContent = `Youthbeat | ${section.title}`;
   renderSection(initialActivity);
   window.sectionPagination = new SectionPagination(section);
+  
+  if (['PREVIEW','BASICS','MUSIC_CREATION','MATH'].includes(sectionKey)){
+    window.localStorage.lastProduct = sectionKey;
+    const productPath =  `/intro/?${queryParamKeys.sectionKey}=${sectionKey}`;
+    constructFooter(user, productPath);
+  }
 });

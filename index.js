@@ -9,6 +9,7 @@ import { constructFooter } from './footer.js';
 
 window.addEventListener('load', async () => {
   window.localStorageService = new LocalStorageService();
+  window.localStorage.removeItem("lastProduct");
 
   // DOM Elements
   const sectionList = document.querySelector('.making-music__section-list');
@@ -46,6 +47,17 @@ window.addEventListener('load', async () => {
       ),
     );
   });
+
+  
+  if (getOrderedSections(tier).length % 2 > 0) {
+    sectionList.appendChild(
+      parseHTML(
+        `
+          <li class="making-music__section"></li>
+        `,
+      ),
+    );
+  }
 
   constructHeader(user);
   constructFooter(user);

@@ -23,6 +23,18 @@ export const renderSection = (activity) => {
 
   removeAllChildNodes(sectionContentContainer);
   sectionSubHeader.textContent = activity.title;
+
+  const title = document.createElement('H3');
+  title.textContent = activity.title;
+  sectionContentContainer.appendChild(title);
+
+  if (activity.image) {
+    const img = document.createElement('img');
+    img.src = '../assets/brain/' + activity.image;
+    img.className = 'section-content__image';
+    sectionContentContainer.appendChild(img);
+  }
+
   sectionContentContainer.appendChild(parseHTML(activity.content));
 
   if (activity.widgets) {

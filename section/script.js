@@ -110,9 +110,9 @@ export function updatePattern(time) {
   // updateNumbers(progressStep);
   updateHand(progressStep);
 
-//   if (rhythmPolygon.checked) {
-//     drawPolygons();
-//   }
+  if (rhythmPolygon.checked) {
+    drawPolygons();
+  }
 
   updatePosition(positionGroup, currentBeat());
   layer.batchDraw();
@@ -252,20 +252,20 @@ var loop = new Tone.Sequence(function(time, step){
   if (step == 0 & chordNote.length > 0) {
     chords.triggerAttackRelease(chordNote, '1m', time, 0.5);
   }
-//   if (hiHat.checked) {
+  if (hiHat.checked) {
     playActiveNote(innerCustomPattern, step, time);
-//   }
-//   if (bassSnare.checked) {
+  }
+  if (bassSnare.checked) {
     playActiveNote(outerCustomPattern, step, time);
-//   }
-//   if (melody.checked) {
+  }
+  if (melody.checked) {
     playActiveNote(samplerCustomPattern, step, time);
-//   }
-//   if (currentSequence >= 0 && step == 31) {
-//     currentSequence = ++currentSequence % sequence.length
-//     updateSequenceDisplay();
-//     loadPreset(presets[sequence[currentSequence]]);
-//   }
+  }
+  if (currentSequence >= 0 && step == 31) {
+    currentSequence = ++currentSequence % sequence.length
+    updateSequenceDisplay();
+    loadPreset(presets[sequence[currentSequence]]);
+  }
 }, allSteps, "32n").start(0);
 
 function playActiveNote(customPattern, step, time) {
@@ -832,31 +832,31 @@ function disable32(step) {
   if (enable32.indexOf(activeInstrument.toUpperCase()) == -1) {
     return step % 2 == 1;
   }
-//   if (mirrorVertical.checked || mirrorHorizontal.checked) {
-//     return step % 2 == 1;
-//   }
+  if (mirrorVertical.checked || mirrorHorizontal.checked) {
+    return step % 2 == 1;
+  }
   return false;
 }
 
-// var mirrorHorizontal = document.getElementById('mirrorHorizontal');
-// mirrorHorizontal.addEventListener('click',
-//   function(event){
-//     mirrorHorizontalLine.visible(this.checked);
-//     layer.batchDraw();
-//   }, false)
-// var mirrorVertical = document.getElementById('mirrorVertical');
-// mirrorVertical.addEventListener('click',
-//   function(event){
-//     mirrorVerticalLine.visible(this.checked);
-//     layer.batchDraw();
-//   }, false)
+var mirrorHorizontal = document.getElementById('mirrorHorizontal');
+mirrorHorizontal.addEventListener('click',
+  function(event){
+    mirrorHorizontalLine.visible(this.checked);
+    layer.batchDraw();
+  }, false)
+var mirrorVertical = document.getElementById('mirrorVertical');
+mirrorVertical.addEventListener('click',
+  function(event){
+    mirrorVerticalLine.visible(this.checked);
+    layer.batchDraw();
+  }, false)
 
-// var resetButton = document.getElementById('reset');
-// resetButton.addEventListener('click',
-//   function(event){
-//     loadPreset(emptyPreset());
-//     updatePattern();
-//   }, false)
+var resetButton = document.getElementById('reset');
+resetButton.addEventListener('click',
+  function(event){
+    loadPreset(emptyPreset());
+    updatePattern();
+  }, false)
 
 function toggleStep(index, pattern, length, instrument=activeInstrument) {
   var currentStep = pattern.value[index];
@@ -895,16 +895,16 @@ function toggleStep(index, pattern, length, instrument=activeInstrument) {
   pattern.value[index] = value;
 
 
-//   if (mirrorVertical.checked) {
-//     var verticalIndex = reflectPatternVertical(index, value, amplitude, pattern, duration);
-//     if (mirrorHorizontal.checked) {
-//       reflectPatternHorizontal(verticalIndex, value, amplitude, pattern, duration);
-//     }
-//   }
+  if (mirrorVertical.checked) {
+    var verticalIndex = reflectPatternVertical(index, value, amplitude, pattern, duration);
+    if (mirrorHorizontal.checked) {
+      reflectPatternHorizontal(verticalIndex, value, amplitude, pattern, duration);
+    }
+  }
 
-//   if (mirrorHorizontal.checked) {
-//     horizontalIndex = reflectPatternHorizontal(index, value, amplitude, pattern, duration);
-//   }
+  if (mirrorHorizontal.checked) {
+    var horizontalIndex = reflectPatternHorizontal(index, value, amplitude, pattern, duration);
+  }
 
   updatePattern();
 }
@@ -1418,14 +1418,18 @@ Array.prototype.forEach.call(rhythmButtons, function(button){
   var instrument = button.dataset.instrument;
   button.addEventListener('click', 
     function() { 
-      activeInstrument = instrument;
-      showSelectedButton();
-      updateVoiceDisplay(getVoice());
-      selectRing();
+      setActiveInstrument(instrument);
     }, 
     false
   );
 })
+
+export function setActiveInstrument(instrument) {
+  activeInstrument = instrument;
+  showSelectedButton();
+  updateVoiceDisplay(getVoice());
+  selectRing();
+}
 
 function showSelectedButton() {
   Array.prototype.forEach.call(rhythmButtons, function(button){
@@ -1453,42 +1457,42 @@ function selectRing() {
   layer.batchDraw();
 }
 
-// var bass90Button = document.getElementById("bass90");
-// bass90Button.addEventListener('click', 
-//   function() {
-//     rotateAnimation(outerCustomPattern, outerMidRadius - patternWidth / 2,
-//     function() {
-//       patternRotate(outerCustomPattern, 8)
-//       updatePattern();
-//     });
-//   }, 
-//   false
-// );
+var bass90Button = document.getElementById("bass90");
+bass90Button.addEventListener('click', 
+  function() {
+    rotateAnimation(outerCustomPattern, outerMidRadius - patternWidth / 2,
+    function() {
+      patternRotate(outerCustomPattern, 8)
+      updatePattern();
+    });
+  }, 
+  false
+);
 
-// var hihat90Button = document.getElementById("hihat90");
-// hihat90Button.addEventListener('click', 
-//   function() {
-//     rotateAnimation(innerCustomPattern, innerMidRadius - patternWidth / 2,
-//     function() {
-//       patternRotate(innerCustomPattern, 8);
-//       updatePattern();
-//     });
-//   }, 
-//   false
-// );
+var hihat90Button = document.getElementById("hihat90");
+hihat90Button.addEventListener('click', 
+  function() {
+    rotateAnimation(innerCustomPattern, innerMidRadius - patternWidth / 2,
+    function() {
+      patternRotate(innerCustomPattern, 8);
+      updatePattern();
+    });
+  }, 
+  false
+);
 
-// var melody90Button = document.getElementById("melody90");
-// melody90Button.addEventListener('click', 
-//   function() {
+var melody90Button = document.getElementById("melody90");
+melody90Button.addEventListener('click', 
+  function() {
 
-//     rotateAnimation(samplerCustomPattern, samplerMidRadius - patternWidth / 2,
-//     function() {
-//       patternRotate(samplerCustomPattern, 8);
-//       updatePattern();
-//     });
-//   }, 
-//   false
-// );
+    rotateAnimation(samplerCustomPattern, samplerMidRadius - patternWidth / 2,
+    function() {
+      patternRotate(samplerCustomPattern, 8);
+      updatePattern();
+    });
+  }, 
+  false
+);
 
 function patternRotate(pattern, count) {
   arrayRotate(pattern.value, count);
@@ -1594,7 +1598,7 @@ function addPreset(preset) {
       event.preventDefault();
     }, false)
   entry.appendChild(deleteButton(presetCounter));
-  // entry.appendChild(sequenceButton(presetCounter));
+  entry.appendChild(sequenceButton(presetCounter));
   presetList.appendChild(entry);
   presetCounter += 1;
   updatePattern();
@@ -1659,7 +1663,6 @@ function sequenceButton(preset) {
 }
 
 function updateSequenceDisplay() {
-  return;
   var display = sequence.map(function(preset, index){
     var step = document.createElement("SPAN")
     step.innerHTML = preset;
@@ -1669,21 +1672,21 @@ function updateSequenceDisplay() {
   sequenceDisplay.innerHTML = display.join(",");
 }
 
-// var sequenceControl = document.getElementById("sequenceControl");
-// sequenceControl.addEventListener('click', 
-//   function() {
-//     if (currentSequence >= 0) {
-//       currentSequence = -1;
-//       this.innerHTML = localizedString("Start");
-//     } else {
-//       currentSequence = 0;
-//       loadPreset(presets[sequence[currentSequence]]);
-//       updateSequenceDisplay();
-//       this.innerHTML = localizedString("Stop");
-//     }
-//   }, 
-//   false
-// );
+var sequenceControl = document.getElementById("sequenceControl");
+sequenceControl.addEventListener('click', 
+  function() {
+    if (currentSequence >= 0) {
+      currentSequence = -1;
+      this.innerHTML = localizedString("Start");
+    } else {
+      currentSequence = 0;
+      loadPreset(presets[sequence[currentSequence]]);
+      updateSequenceDisplay();
+      this.innerHTML = localizedString("Stop");
+    }
+  }, 
+  false
+);
 
 function capturePreset() {
   var preset = {
@@ -1764,7 +1767,7 @@ function loadMeta(meta) {
   setVolume(meta.volume);
   updateVolumeDisplay(meta.volume);
 
-  // updateMuteGroupDisplay(meta.mute);
+  updateMuteGroupDisplay(meta.mute);
 
   updateChordDisplay(meta.chord);
 
@@ -1773,26 +1776,26 @@ function loadMeta(meta) {
 }
 
 
-// var sequenceClear = document.getElementById("sequenceClear");
-// sequenceClear.addEventListener('click', 
-//   function() {
-//     currentSequence = -1;
-//     sequence = [];
-//     updateSequenceDisplay();
-//   }, 
-//   false
-// );
+var sequenceClear = document.getElementById("sequenceClear");
+sequenceClear.addEventListener('click', 
+  function() {
+    currentSequence = -1;
+    sequence = [];
+    updateSequenceDisplay();
+  }, 
+  false
+);
 
 
 
-// var rhythmPolygon = document.getElementById('rhythmPolygon');
+var rhythmPolygon = document.getElementById('rhythmPolygon');
 
-// rhythmPolygon.addEventListener('change', 
-//   function() {
-//     togglePolygon(rhythmPolygon.checked);
-//   }, 
-//   false
-// );
+rhythmPolygon.addEventListener('change', 
+  function() {
+    togglePolygon(rhythmPolygon.checked);
+  }, 
+  false
+);
 
 function togglePolygon(show) {
   if (show) {
@@ -1865,7 +1868,7 @@ function drawPolygon(pattern, radius) {
     return new Konva.Shape();
   }
 
-  polygon = new Konva.Line({
+  var polygon = new Konva.Line({
         points: points,
         stroke: 'black',
         strokeWidth: 1,
@@ -2066,22 +2069,31 @@ function updateVisibility() {
   return;
   const levelText = ["Note Entry", "Sequencing", "Special Tools"][level]
   enableAllButton.innerText = localizedString(levelText);
-    var controls = document.querySelectorAll(".level2")
-    for (var i = 0; i < controls.length; i++) {
-        controls[i].style.visibility = level >= 1 ? 'visible' : 'hidden';
-    }
-    controls = document.querySelectorAll(".level3")
-    for (var i = 0; i < controls.length; i++) {
-        controls[i].style.visibility = level >= 2 ? 'visible' : 'hidden';
-    }
+  var controls = document.querySelectorAll(".level2")
+  for (var i = 0; i < controls.length; i++) {
+      controls[i].style.visibility = level >= 1 ? 'visible' : 'hidden';
+  }
+  controls = document.querySelectorAll(".level3")
+  for (var i = 0; i < controls.length; i++) {
+      controls[i].style.visibility = level >= 2 ? 'visible' : 'hidden';
+  }
 }
 
-
+export function featureVisibility(featureClassNames) {
+  var controls = document.querySelectorAll(".feature")
+  for (var i = 0; i < controls.length; i++) {
+    var visibility = 'hidden'
+    if (featureClassNames.some(className => controls[i].classList.contains(className))) {
+      visibility = 'visible'
+    }
+    controls[i].style.visibility = visibility;
+  }
+}
 
 var setCounter = 1;
 var sets = [];
 var currentSetID = 0;
-var exportSetButton = document.getElementById("exportSetButton");
+// var exportSetButton = document.getElementById("exportSetButton");
 
 var saveSetButton = document.getElementById("saveSetButton");
 var saveSetsList = document.getElementById("saveSetList");
@@ -2095,12 +2107,12 @@ function selectSaveSet(setID) {
   }
 }
 
-// saveSetButton.onclick = function(){
-//   var setID = saveSetsList.options[saveSetsList.selectedIndex].value
-//   saveSet(setID)
-//   selectLoadSet(setID)
-//   displaySetsFull()
-// }
+saveSetButton.onclick = function(){
+  var setID = saveSetsList.options[saveSetsList.selectedIndex].value
+  saveSet(setID)
+  selectLoadSet(setID)
+  displaySetsFull()
+}
 
 function saveSet(setID) {
   if (checkSetRange(setID)) {
@@ -2160,13 +2172,13 @@ function selectLoadSet(setID) {
   }
 }
 
-// loadSetButton.onclick = function(){
-//   var setID = loadSetsList.options[loadSetsList.selectedIndex].value
-//   loadSetID(setID);
-//   updatePattern();
-//   updateSequenceDisplay();
-//   updateVisibility();
-// }
+loadSetButton.onclick = function(){
+  var setID = loadSetsList.options[loadSetsList.selectedIndex].value
+  loadSetID(setID);
+  updatePattern();
+  updateSequenceDisplay();
+  updateVisibility();
+}
 
 var setsFull = document.getElementById("setsFull");
 function displaySetsFull() {

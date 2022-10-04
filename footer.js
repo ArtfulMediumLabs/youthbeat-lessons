@@ -1,31 +1,27 @@
 import { activityLimit } from './constants.js';
-import { generateClassLink, parseHTML, removeAllChildNodes } from './utils.js';
+import { generateClassLink, parseHTML, getBaseUrl, removeAllChildNodes } from './utils.js';
 
-export const constructFooter = (user = null) => {
+export const constructFooter = (user = null, productPath = '') => {
   const footer = document.querySelector('.footer__content');
-  const exceededMaxActivityLimit = window.localStorageService.activityCount >= activityLimit;
 
   removeAllChildNodes(footer);
 
   // Construct footer based on authentication state
+  const registerUrl = new URL(`${getBaseUrl()}/register`);
   footer.appendChild(
     user !== null
       ? parseHTML(
         `
           <span>${user.name} | ${user.school} | ${user.city} </span><br/><br/>
           <span>Grade ${user.grade}</span><br/><br/>
-          <span>Class URL: <a href="${generateClassLink(window.localStorageService.accessToken)}">${generateClassLink(window.localStorageService.accessToken)}</a><span>
+          <span>Class URL: <a href="${generateClassLink(window.localStorageService.accessToken, productPath)}">${generateClassLink(window.localStorageService.accessToken, productPath)}</a><span>
           `,
       )
       : parseHTML(
         `
-          This is an educator preview of Youthbeat. 
-          ${exceededMaxActivityLimit
-    ? `You have viewed all ${activityLimit} activities available to unregistered viewers.`
-    : `You have ${activityLimit - window.localStorageService.activityCount} activities remaining.`}
-          Register to access all free activities.<br/>
+        This is an educator preview of Youthbeat. Please register before sharing with students.<br/>
           <div class="footer__links">
-            <a href="./register" class="footer__link">Register</a>
+            <a href="${registerUrl}" class="footer__link">Register</a>
           </div>
         `,
       ),
