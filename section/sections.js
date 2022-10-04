@@ -71,7 +71,7 @@ export const sections = {
                 <li>Make a synth note longer by tapping it more than once.</li>
               </ul>
             </li>
-            <li>Click on a Guitar sound and press play to listen.</li>
+            <li>Click on a guitar sound, choose a lettered chord, then press Play.</li>
             <li>Take a few minutes to play with your pattern. When you're done, share it with a classmate.</li>
             <li>To save it, press Save Pattern at the right.</li>
           </ol>          
@@ -1873,11 +1873,7 @@ export const sections = {
             content: 'Reflection creates patterns that shift from on the beat to off the beat and back.  When you tick Horizontal and Vertical, whole groups of notes go on and off the beat.',
           },
         ],
-        pattern: patterns.constructPattern(
-          emptyPattern(),
-          emptyPattern(),
-          emptyPattern(),
-        ),
+        pattern: patterns.bassPattern,
         features: ['mirror'],
       },
       2: {
@@ -1896,11 +1892,7 @@ export const sections = {
             content: 'Rotating an idea and changing durations can be used to turn a verse idea into a chorus.',
           },
         ],
-        pattern: patterns.constructPattern(
-          emptyPattern(),
-          emptyPattern(),
-          emptyPattern(),
-        ),
+        pattern: patterns.bassPattern,
         features: ['mirror','rotate'],
       },
     },
