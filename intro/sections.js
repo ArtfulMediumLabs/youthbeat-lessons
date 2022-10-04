@@ -66,7 +66,7 @@ const intro = {
           <li>Make a synth note longer by tapping it more than once.</li>
         </ul>
       </li>
-      <li>Click on a Guitar sound and press play to listen.</li>
+      <li>Click on a guitar sound, choose a lettered chord, then press Play.</li>
       <li>Take a few minutes to play with your pattern. When you're done, share it with a classmate.</li>
       <li>To save it, press Save Pattern at the right.</li>
     </ol>          
