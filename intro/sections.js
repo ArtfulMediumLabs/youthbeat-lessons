@@ -1366,7 +1366,7 @@ export const sections = {
           <ol>
             <li>Press the Play button in the middle of the circle to listen to the regular drum beat.</li>
             <li>Now click on another space in the circle to add a sound. Listen to how it is pulled towards the drum beat.</li>
-            <li>There are 3 empty spaces between each drum beat and next. Enter a drum sound between each pair of drum beats. Use a different space for the sound in each quarter of the circle.</li>
+            <li>There are 3 empty spaces between each drum beat and the next. Enter a drum sound between each pair of drum beats. Use a different space for the sound in each quarter of the circle.</li>
             <li>Listen. Which sound that you added seems to be pulled towards the drum beat before it? Which is pulled by the drum beat after it? By both the drum beat before and after it?</li>
             <li>Make a new pattern beginning with just the original 4 drum beats. (Click the other drum sounds you entered several times to delete them).
               <ul>
@@ -1382,7 +1382,7 @@ export const sections = {
           },
           {
             type: widgets.TeacherNote,
-            content: 'The goal of this activity is to have students hear the way the drum beat pulls on other notes, as an analogy for how the sun pulls on the planets. We need to hear the drum beat in order to follow the music, so it is the centre of the music, just like the sun is at the centre of the solar system.',
+            content: 'The goal of this activity is to have students hear the way the drum beat pulls on other notes, as an analogy for how the sun pulls on the planets. We need to hear the drum beat in order to follow the music, so it is at the centre of the music, just like the sun is at the centre of the solar system.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -1400,12 +1400,12 @@ export const sections = {
         title: 'Forest Ecosystem',
         content:
           `
-          <p>Drum beats dominate a rhythm pattern just like trees dominate the forest ecosystem. All the other sounds relate to the drum beats, just as shrubs and other plants relate to the trees. Let's explore how the drum and hi hat notes are connected...
+          <p>Drum beats dominate a rhythm pattern just like trees dominate the forest ecosystem. All the other sounds relate to the drum beats, just as shrubs and other plants relate to the trees.
           <ol>
             <li>Press Play to listen to this pattern - the basic drum beat that’s been slightly altered. (Can you spot how?) </li>
             <li>Click on Hi Hat at the top left then click in the circle to add a row of 2-3 hi hat notes leading up to one of the drum beats. Listen. How does the hi hat change the way you hear the drum beat that follows?</li>
-            <li>Change the starting position of the row by deleting the first note (click it several times) and adding it at the end instead. How does this change the way you hear the drum beat?</li>
-            <li>At the left hand margin, there is a tool that has check marks beside each of the instrument names. Click to turn off the drum, then press Play. (This turns the drum line off).
+            <li>Change the starting position of the hi hat row by deleting the first note (click it several times) and adding it at the end instead. How does this change the way you hear the drum beat?</li>
+            <li>At the left hand margin, there is a tool that has check marks beside each of the instrument names. Click to turn off the Bass Snare, then press Play. (This turns the drum line off).
               <ul>
                 <li>What do you notice about the hi hat line now?</li>
               </ul>
@@ -1421,7 +1421,7 @@ export const sections = {
           },
           {
             type: widgets.TeacherNote,
-            content: 'The drum and hi hat have a symbiotic relationship. Sometimes the hi hat takes over from the drum, by playing a missing drum beat. But normally the hi hat depends - and qualifies - the drum beat.',
+            content: 'The drum and hi hat have a symbiotic relationship. Sometimes the hi hat takes over from the drum, by playing a missing drum beat. But normally the hi hat depends on - and qualifies - the drum beat.',
           },
         ],
         pattern: patterns.constructPattern(
@@ -1436,7 +1436,7 @@ export const sections = {
         ),
       },
       3: {
-        title: 'Solid, Liquid, Gas',
+        title: 'What is Matter? Solid, Liquid, Gas',
         content:
           `
           <p>Music is like water or another element that changes state as the energy level is increased.</p>
@@ -1465,15 +1465,15 @@ export const sections = {
         widgets: [
           {
             type: widgets.DidYouKnow,
-            content: `The basic beat is very solid. It sounds square. It never seems to change.`,
+            content: `1. The basic beat is very solid. It sounds square. It never seems to change.`,
           },
           {
             type: widgets.DidYouKnow,
-            content: `The hi hat notes make the rhythm start to flow - like a liquid - by adding more energy and by carrying the energy of the drum over and past the beat itself so it connects to the next beat. It's as if the solid ice of the basic drum pattern is being melted...`,
+            content: `2. The hi hat notes make the rhythm start to flow - like a liquid - by adding more energy and by carrying the energy of the drum over and past the beat itself so it connects to the next beat. It's as if the solid ice of the basic drum pattern is being melted...`,
           },
           {
             type: widgets.DidYouKnow,
-            content: `When you add enough notes and also speed up the timing of the music and increase the loudness, the energy level explodes. The music is in a completely different state from where it started, like water that gets hotter and hotter until it turns to steam.`,
+            content: `5. When you add enough notes and also speed up the timing of the music and increase the loudness, the energy level explodes. The music is in a completely different state from where it started, like water that gets hotter and hotter until it turns to steam.`,
           },
           {
             type: widgets.TeacherNote,
