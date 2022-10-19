@@ -1355,6 +1355,134 @@ export const sections = {
       },
     },
   },
+  SCIENCE_MUSIC: {
+    title: 'Science and Music Experiments',
+    activities: {
+      1: {
+        title: 'Drumbeat Gravity',
+        content:
+          `
+          <p>The regular drum beat pulls the other notes in a rhythm towards it, just like the sun pulls the planets towards it. Let's explore this gravity-like effect in music...
+          <ol>
+            <li>Press the Play button in the middle of the circle to listen to the regular drum beat.</li>
+            <li>Now click on another space in the circle to add a sound. Listen to how it is pulled towards the drum beat.</li>
+            <li>There are 3 empty spaces between each drum beat and the next. Enter a drum sound between each pair of drum beats. Use a different space for the sound in each quarter of the circle.</li>
+            <li>Listen. Which sound that you added seems to be pulled towards the drum beat before it? Which is pulled by the drum beat after it? By both the drum beat before and after it?</li>
+            <li>Make a new pattern beginning with just the original 4 drum beats. (Click the other drum sounds you entered several times to delete them).
+              <ul>
+                <li>This time, add a drum sound in the same space in each quarter, except in one quarter - choose the next space to the right or left there. What do you hear and feel when the position of the extra sound changes, then changes back?</li>
+              </ul>
+            </li>
+          </ol>
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: `The sound that's midway between drum beats is pulled equally by the drum beat before it and the one after it. So it sounds more balanced.`,
+          },
+          {
+            type: widgets.TeacherNote,
+            content: 'The goal of this activity is to have students hear the way the drum beat pulls on other notes, as an analogy for how the sun pulls on the planets. We need to hear the drum beat in order to follow the music, so it is at the centre of the music, just like the sun is at the centre of the solar system.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 8, 16, 24].includes(i) ? 'B' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 8, 16, 24].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+        ),
+      },
+      2: {
+        title: 'Forest Ecosystem',
+        content:
+          `
+          <p>Drum beats dominate a rhythm pattern just like trees dominate the forest ecosystem. All the other sounds relate to the drum beats, just as shrubs and other plants relate to the trees.
+          <ol>
+            <li>Press Play to listen to this pattern - the basic drum beat that’s been slightly altered. (Can you spot how?) </li>
+            <li>Click on Hi Hat at the top left then click in the circle to add a row of 2-3 hi hat notes leading up to one of the drum beats. Listen. How does the hi hat change the way you hear the drum beat that follows?</li>
+            <li>Change the starting position of the hi hat row by deleting the first note (click it several times) and adding it at the end instead. How does this change the way you hear the drum beat?</li>
+            <li>At the left hand margin, there is a tool that has check marks beside each of the instrument names. Click to turn off the Bass Snare, then press Play. (This turns the drum line off).
+              <ul>
+                <li>What do you notice about the hi hat line now?</li>
+              </ul>
+            </li>
+            <li>Now create a richer rhythm ecosystem by adding a regular pattern of 2 hi hat notes to each quarter (place the hi hat notes on the same position in each quarter).</li>
+            <li>Choose a chord to represent the sky above your forest, completing the picture. Tick a lettered chord at the top right and press Play.</li>
+          </ol>
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: `Without the drum beat, we don't know when to expect the hi hat. We're confused. The hi hat gets a sense of place from the drum beat, just like a shrub or plant gets a safe location under a tree. The hi hat gives something back to the drum - it changes how we hear the drum, just like the shrub or plant helps the tree - for example by breaking down nutrients or attracting helpful animals and insects.`,
+          },
+          {
+            type: widgets.TeacherNote,
+            content: 'The drum and hi hat have a symbiotic relationship. Sometimes the hi hat takes over from the drum, by playing a missing drum beat. But normally the hi hat depends on - and qualifies - the drum beat.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 8, 14, 24].includes(i) ? 'B' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 8, 14, 24].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+        ),
+      },
+      3: {
+        title: 'What is Matter? Solid, Liquid, Gas',
+        content:
+          `
+          <p>Music is like water or another element that changes state as the energy level is increased.</p>
+          <ol>
+            <li>Press the Play button to hear the basic beat.</li>
+            <li>Click on Hi Hat then click in the circle and add 1-2 notes in each quarter of the circle so they are partly before and partly after each drum beat. Put them in the same location in each quarter of the circle. How do they change the way the music sounds?</li>
+            <li>Now speed up the music by clicking and dragging on the tempo slider at bottom left.</li>
+            <li>As the music gets faster, fill in more spaces, this time using melody notes played by the Synth.
+              <ol>
+                <li>Click Synth at the top right, then the spaces where you want to add notes. Click/hold/scroll to change how high or low the notes sound (called pitch).  Increase the volume as well, by dragging the volume slider at the bottom left.</li>
+              </ol>
+            </li>
+            <li>When does the music start to sound completely different?</li>
+          </ol>
+          `,
+          pattern: patterns.constructPattern(
+            emptyPattern(),
+            {
+              // eslint-disable-next-line no-nested-ternary
+              value: Array(32).fill('-').map((e, i) => ([0, 8, 16, 24].includes(i) ? 'B' : '-')),
+              amplitude: Array(32).fill(0).map((e, i) => ([0, 8, 16, 24].includes(i) ? 1 : 0)),
+              duration: Array(32).fill(0),
+            },
+            emptyPattern(),
+          ),
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: `1. The basic beat is very solid. It sounds square. It never seems to change.`,
+          },
+          {
+            type: widgets.DidYouKnow,
+            content: `2. The hi hat notes make the rhythm start to flow - like a liquid - by adding more energy and by carrying the energy of the drum over and past the beat itself so it connects to the next beat. It's as if the solid ice of the basic drum pattern is being melted...`,
+          },
+          {
+            type: widgets.DidYouKnow,
+            content: `5. When you add enough notes and also speed up the timing of the music and increase the loudness, the energy level explodes. The music is in a completely different state from where it started, like water that gets hotter and hotter until it turns to steam.`,
+          },
+          {
+            type: widgets.TeacherNote,
+            content: 'Adding more notes and volume increases the energy level of the music, changing its state. Increasing the tempo packs more notes into the same time, and this also boosts the energy level. The changes are stark and almost as impactful as going from ice to water to steam.',
+          },
+        ],
+      },
+    },
+  },
 };
 
 /*
