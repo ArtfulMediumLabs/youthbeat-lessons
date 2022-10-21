@@ -2080,6 +2080,14 @@ function updateVisibility() {
 }
 
 export function featureVisibility(featureClassNames) {
+  mirrorVertical.checked = false;
+  mirrorHorizontal.checked = false;
+  mirrorVerticalLine.visible(false);
+  mirrorHorizontalLine.visible(false);
+
+  rhythmPolygon.checked = false;
+  togglePolygon(rhythmPolygon.checked);
+  
   var controls = document.querySelectorAll(".feature")
   for (var i = 0; i < controls.length; i++) {
     var visibility = 'hidden'
