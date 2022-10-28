@@ -901,8 +901,8 @@ export const sections = {
         pattern: patterns.constructPattern(
           {
             // eslint-disable-next-line no-nested-ternary
-            value: Array(32).fill('-').map((e, i) => ([0,6,12,20,26].includes(i) ? 'H' : '-')),
-            amplitude: Array(32).fill(0).map((e, i) => ([0,6,12,20,26].includes(i) ? 1 : 0)),
+            value: Array(32).fill('-').map((e, i) => ([0,6,12,18,24].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([0,6,12,18,24].includes(i) ? 1 : 0)),
             duration: Array(32).fill(0),
           },
           {
