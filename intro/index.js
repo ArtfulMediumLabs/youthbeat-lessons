@@ -66,7 +66,7 @@ window.addEventListener('load', async () => {
   renderSection(initialActivity);
   window.sectionPagination = new SectionPagination(section);
   
-  if (['PREVIEW','BASICS','MUSIC_CREATION','MATH'].includes(sectionKey)){
+  if (['BASICS','MUSIC_CREATION','MATH'].includes(sectionKey)){
     window.localStorage.lastProduct = sectionKey;
     const productPath =  `/intro/?${queryParamKeys.sectionKey}=${sectionKey}`;
     constructFooter(user, productPath);
