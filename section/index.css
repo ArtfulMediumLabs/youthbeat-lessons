@@ -122,13 +122,18 @@ button.controlB {
     right: 10px;
     top: 40px;
     width: 100px;
+    margin: 10px 0;  
 }
 
-#notes fieldset {
-    margin: 10px 0;  
-    padding: 0;
-    border: none;
+#scaleSelect, #chordSelect {
+    width: 100px;
+    margin: 5px 0;
 }
+
+#muteGroup, #rotateGroup {
+    margin-top: 20px;
+}
+
 
 #controlB {
     position: absolute;
