@@ -96,7 +96,7 @@ export const sections = {
     activities: {1: intro},
   },
   BASICS: {
-    title: '8 Basics You Need To Know',
+    title: 'Basics You Need To Know',
     activities: {
       1: intro,
       2: {
@@ -256,6 +256,62 @@ export const sections = {
         activeInstrument: 'B3'
       },
       6: {
+        title: 'What you can do with scales that have different numbers of pitches?',
+        image: 'BrainSingNB.png',
+        content:
+          `
+          <p>The scale dialog lets you switch between pentatonic (5 pitches), and diatonic (7 pitches).</p>
+          <ol>
+            <li>Start with pentatonic, switch to diatonic.
+              <ul>
+                <li>Press play, then Save Pattern.</li>
+                <li>In the Scale dialog at top right, select 'diatonic'. This changes the pattern of lines running across the pitch space.</li>
+                <li>Change 1-2 notes to a diatonic pitch (one of the new spaces). Save Pattern. Compare the two ideas.</li>
+              </ul>
+            </li>
+            <li>Start with diatonic, switch to pentatonic.
+              <ul>
+                <li>Enter a new melody using 4-5 diatonic pitches, then save.</li>
+                <li>Switch to pentatonic. Pitches that are not in the diatonic scale will disappear, changing the idea.</li>
+                <li>If you like it, save it. Or you can re-enter the missing pitches using the nearest pentatonic pitch, then save. Compare ideas.</li>
+              </ul>
+            </li>
+          </ol>
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: 'Most songs start with a small group of pitches so listeners get familiar with the basic idea before it starts changing. So starting with pentatonic is a great way to begin a song.',
+          },
+          {
+            type: widgets.TeacherNote,
+            content: 'In every tutorial after this one that involves pitch, have students start with pentatonic, then when they are comfortable with the concept, have them switch to diatonic. Starting with pentatonic ensures early success and builds confidence. Diatonic expands the range of possibilities so students can create melodies that are more like what\'s streaming today.',
+          },
+        ],
+        pattern: patterns.constructPattern(
+          emptyPattern(),
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 8, 22, 28].includes(i) ? 'B' : ([14, 18].includes(i) ? 'S' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 8, 22, 28, 14, 18].includes(i) ? 1 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            value: ['B3', '-', 'C#4', '-', 'D4', '-', 'D4', '-', 'D4', '-', 'G4', '-', 'E4', '-', 'E4', '-', 'C#5', '-', 'D4', '-', 'D4', '-', 'D4', '-', '-', '-', 'B3', '-', '-', '-', '-', '-'],
+            amplitude: [3, 0, 3, 0, 3, 0, 3, 0, 3, 0, 3, 0, 3, 0, 3, 0, 3, 0, 3, 0, 3, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0],
+            duration:  [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+          },
+          {
+            tempo: 90,
+            volume: 60,
+            mute: { bassSnare: true, hiHat: true, melody: true },
+            chord: 'B1',
+            voice: 'synth',
+          },
+        ),
+        activeInstrument: 'B3'
+      },
+      7: {
         title: 'What can you do with chords (blended pitches played at the same time)?',
         image: 'BrainSingChordsNB.png',
         content:
@@ -287,7 +343,7 @@ export const sections = {
           emptyPattern(),
         ),
       },
-      7: {
+      8: {
         title: 'Find the right tempo (speed) and volume (loudness)',
         image: 'BrainClockNB.png',
         content:
@@ -319,7 +375,7 @@ export const sections = {
           emptyPattern(),
           ),
       },
-      8: {
+      9: {
         title: 'There\'s nothing worse than forgetting to save an idea you really like',
         image: 'BrainFunNB.png',
         content:
@@ -373,7 +429,7 @@ export const sections = {
           },
         ),
       },
-      9: {
+      10: {
         title: 'How Do You Play Longer Sections of Music?',
         image: 'BrainMixNB.png',
         content:

@@ -96,6 +96,7 @@ function patternMeta() {
     volume: 60,
     mute: {bassSnare: true, hiHat: true, melody: true},
     chord: "",
+    scale: "",
     voice: "synth"
   }
 }
@@ -132,11 +133,72 @@ function createSequence() {
     return keys; 
 }
 
-var scale = ['B3', 'D4', 'E4', 'F#4', 'A4', 'B4', 'D5'];
-var semitones = [2,3,2,2,3,2,3];
+
+/*
+var oldScale = ['B3', 'D4', 'E4', 'F#4', 'A4', 'B4', 'D5'];
+0: 'B3'
+1: 'D4'
+2: 'E4'
+3: 'F#4'
+4: 'A4'
+5: 'B4'
+6: 'D5'
+
+var scale = ['B3', 'C#4', 'D4', 'E4', 'F#4', 'G4', 'A4', 'B4', 'C#5', 'D5'];
+0: 'B3'
+1: 'C#4'
+2: 'D4'
+3: 'E4'
+4: 'F#4'
+5: 'G4'
+6: 'A4'
+7: 'B4'
+8: 'C#5'
+9: 'D5'
+/*
+
+/*
+Asus: A,D,E
+Bm: B,D,F#
+D: D,F#,A
+Em: E,(G),B
+G: (G),B,D
+*/
+
+var pentatonicScale = ['B3', 'D4', 'E4', 'F#4', 'A4', 'B4', 'D5'];
+var diatonicScale = ['B3', 'C#4', 'D4', 'E4', 'F#4', 'G4', 'A4', 'B4', 'C#5', 'D5'];
+var scale = pentatonicScale;
+
+var pentatonicSemitones = [2,3,2,2,3,2,3];
+var diatonicSemitones = [2,2,1,2,2,1,2,2,2,1];
+var semitones = pentatonicSemitones;
+
+var pentatonicChordHighlights = {
+  'A1' : [1,2,4,6],
+  'B1' : [0,1,3,5,6],
+  'D2' : [1,3,4,6],
+  'E2' : [0,2,5],
+  'G2' : [0,1,5,6]
+}
+
+var diatonicChordHighlights = {
+  'A1' : [2,3,6,9],
+  'B1' : [0,2,4,7,9],
+  'D2' : [2,4,6,9],
+  'E2' : [0,3,5,7],
+  'G2' : [0,2,5,7,9]
+}
+
+var chordHighlights = pentatonicChordHighlights;
+
 // https://mycolor.space/?hex=%23845EC2&sub=1
 // var gradient = ['#0089BA','#2C73D2','#845EC2','#D65DB1','#FF6F91','#FF9671','#FFC75F'];
-var gradient = ['#0089BA','#2C73D2','#845EC2','#D65DB1','#FF6F91','#0089BA','#2C73D2'];
+// https://colorkit.io to interpolate new colors for diatonic
+var pentatonicGradient = ['#0089BA','#2C73D2','#845EC2','#D65DB1','#FF6F91','#0089BA','#2C73D2'];
+// var pentatonicGradient = ['#008F7A','#2C73D2','#845EC2','#D65DB1','#FF9671','#008F7A','#2C73D2'];
+var diatonicGradient = ['#0089BA','#157DC6','#2C73D2','#845EC2','#D65DB1','#EB66A2','#FF6F91','#0089BA','#157DC6','#2C73D2'];
+// var diatonicGradient = ['#008F7A','#0089BA','#2C73D2','#845EC2','#D65DB1','#FF6F91','#FF9671','#008F7A','#0089BA','#2C73D2'];
+var gradient = pentatonicGradient;
 
 function createSampler(voice) {
   var extension = ".wav";
@@ -190,6 +252,40 @@ function getVoice() {
 
 updateVoiceDisplay("synth");
 
+var scaleSelect = document.getElementById("scaleSelect");
+
+scaleSelect.addEventListener('change', function() {
+  updateScale(scaleSelect.value);
+});
+
+function updateScale(scale) {
+  selectScale(scale)
+
+  scaleSelect.value = scale || 'pentatonic';
+
+  createNoteColors();
+  createNoteRings(noteRings);
+  selectNoteRings(chordSelect.value);
+
+  updatePattern();
+  
+  layer.batchDraw();
+}
+
+function selectScale(newScale) {
+  if (newScale == 'diatonic') {
+    scale = diatonicScale;
+    semitones = diatonicSemitones;
+    chordHighlights = diatonicChordHighlights;
+    gradient = diatonicGradient;
+  } else {
+    scale = pentatonicScale;
+    semitones = pentatonicSemitones;
+    chordHighlights = pentatonicChordHighlights;
+    gradient = pentatonicGradient;
+  }
+}
+
 function createChords(voice) {
   var extension = ".wav";
   var config = {}
@@ -199,22 +295,6 @@ function createChords(voice) {
   var sampler = new Tone.Sampler(config).toDestination();
   sampler.volume.value = +2;
   return sampler;
-}
-
-var chordHighlights = {
-  'A1' : [1,2,4,6],
-  'B1' : [0,1,3,5,6],
-  'D2' : [1,3,4,6],
-  'E2' : [0,2,5],
-  'G2' : [0,1,5,6]
-}
-
-var options = document.getElementsByName("chord")
-for (var i=0; i < options.length; i++) {
-  options[i].addEventListener('change', function() {
-    selectNoteRings(this.value);
-    layer.batchDraw();
-  });
 }
 
 function selectNoteRings(chord) {
@@ -227,8 +307,15 @@ function selectNoteRings(chord) {
   }
 }
 
+var chordSelect = document.getElementById("chordSelect");
+
+chordSelect.addEventListener('change', function() {
+  selectNoteRings(this.value);
+  layer.batchDraw();
+});
+
 function updateChordDisplay(chord) {
-  document.querySelector('input[name="chord"][value="' + chord + '"').checked = true;
+  chordSelect.value = chord;
   selectNoteRings(chord);
 }
 
@@ -248,7 +335,7 @@ function updateMuteGroupDisplay(muteGroup) {
 }
 
 var loop = new Tone.Sequence(function(time, step){
-  var chordNote = document.querySelector('input[name="chord"]:checked').value
+  var chordNote = chordSelect.value
   if (step == 0 & chordNote.length > 0) {
     chords.triggerAttackRelease(chordNote, '1m', time, 0.5);
   }
@@ -278,9 +365,11 @@ function playActiveNote(customPattern, step, time) {
     keys.player(note).volume.value = amplitudeFor(customPattern, step);
     keys.player(note).start(time);
   } else {
-    var velocity = velocityFor(customPattern, step);
-    var duration = durationFor(customPattern, step);
-    sampler.triggerAttackRelease(note, duration, time, velocity);
+    if (scale.includes(note)) {
+      var velocity = velocityFor(customPattern, step);
+      var duration = durationFor(customPattern, step);
+      sampler.triggerAttackRelease(note, duration, time, velocity);
+    }
   }
 }
 
@@ -359,7 +448,7 @@ function durationFor(pattern, step) {
   }
 }
 
-var buffersLoaded = false
+export var buffersLoaded = false
 
 Tone.loaded().then(function(){
   buffersLoaded = true
@@ -399,9 +488,13 @@ var noteColors = {
     "C" : "#41C398",
   }
 
-for (var i = 0; i < scale.length; i++) {
-  noteColors[scale[i]] = gradient[i];
+function createNoteColors() {
+  for (var i = 0; i < scale.length; i++) {
+    noteColors[scale[i]] = gradient[i];
+  }
 }
+
+createNoteColors();
 
 noteColors.getColor = function(note, amplitude=3) {
   var p = (3 - amplitude) * 0.3;
@@ -459,7 +552,8 @@ layer.add(innerPatternRing);
 var slices = createSlices();
 layer.add(slices);
 
-var noteRings = createNoteRings();
+var noteRings = new Konva.Group();
+createNoteRings(noteRings);
 layer.add(noteRings);
 
 layer.add(innerPatternNotes);
@@ -472,17 +566,16 @@ layer.add(samplerPatternControls);
 
 
 
-function createNoteRings() {
+function createNoteRings(group) {
+  group.destroyChildren();
   // var color = '#F5F1F0';
   // var color = '#FFF2C6';
   // var color = '#B5B5B5';
   var color = 'white';
-  var group = new Konva.Group();
   for (var i=0; i < scale.length; i++) {
     var noteRing = createNoteRing(patternOriginX, patternOriginY, innerRadius + patternWidth * 2, innerRadius + patternWidth * 2 + samplerWidth, color, i);
     group.add(noteRing)
   }
-  return group
 }
 
 function createNoteRing(originX, originY, innerRadius, outerRadius, fill, index) {
@@ -1279,8 +1372,8 @@ function createHarmonicNote(step, duration, color, label, originX, originY, radi
   var dx = Math.cos(dAlpha) * radius;
   var dy = Math.sin(dAlpha) * radius;
 
-  var size = 32;
-    
+  var size = 48;
+
   var noteLabel = new Konva.Text({
     x: patternOriginX + dx,
     y: patternOriginY + dy,
@@ -1698,16 +1791,17 @@ function capturePreset() {
 }
 
 function captureMeta() {
-  var chordNote = document.querySelector('input[name="chord"]:checked').value ?? "";
+  var scale = scaleSelect.value ?? "";
+  var chordNote = chordSelect.value ?? "";
   return {
     tempo: Tone.Transport.bpm.value,
     volume: getVolume(),
-    mute: {bassSnare: true, hiHat: true, melody: true},
-    // mute: {
-    //   bassSnare: bassSnare.checked, 
-    //   hiHat: hiHat.checked, 
-    //   melody: melody.checked},
+    mute: {
+      bassSnare: bassSnare.checked, 
+      hiHat: hiHat.checked, 
+      melody: melody.checked},
     chord: chordNote,
+    scale: scale,
     voice: getVoice()
   }
 }
@@ -1740,6 +1834,7 @@ function metaFrom(meta) {
       hiHat: meta.mute.hiHat, 
       melody: meta.mute.melody},
     chord: meta.chord,
+    scale: meta.scale,
     voice: meta.voice
   }  
 }
@@ -1760,6 +1855,8 @@ function loadMeta(meta) {
   updateMuteGroupDisplay(meta.mute);
 
   updateChordDisplay(meta.chord);
+
+  updateScale(meta.scale);
 
   setVoice(meta.voice);
   updateVoiceDisplay(meta.voice);
@@ -2077,7 +2174,7 @@ export function featureVisibility(featureClassNames) {
 
   rhythmPolygon.checked = false;
   togglePolygon(rhythmPolygon.checked);
-
+  
   var controls = document.querySelectorAll(".feature")
   for (var i = 0; i < controls.length; i++) {
     var visibility = 'hidden'
@@ -2277,8 +2374,17 @@ function exportSequence(set) {
   return encodeURIComponent(JSON.stringify(set.sequence))
 }
 
+// 3 instruments + 3 amplitudes + off status = 10 options
 // base 10 x 8 = base 62 x 5 -> 20 (x2)
+// legacy pentatonic: 7 notes + 3 amplitudes + off status = 22 options
+// 22^8: 54875873536
+// 62^6: 56800235584
+// new diatonic mode: 10 notes + 3 amplitudes + off status = 31 options
+// 31^8: 852891037441
+// 62^7: 3521614606208
+// 1 extra character, 32 
 // base 22 x 8 = base 62 x 6 -> 24
+// 5 durations + off = 6 options
 // base 6 x 8 = base 62 x 4  -> 16
 
 function shortEncode(preset) {
@@ -2288,8 +2394,8 @@ function shortEncode(preset) {
   var outer = encodeValueAmplitudePattern(preset.outerCustomPattern, outerFilter);
   var outer62 = base62(outer, 5);
 
-  var sampler = encodeValueAmplitudePattern(preset.samplerCustomPattern, scale).map(function(value){ return value.toString(22) });
-  var sampler62 = base62(sampler, 6, 22);
+  var sampler = encodeValueAmplitudePattern(preset.samplerCustomPattern, diatonicScale).map(function(value){ return value.toString(32) });
+  var sampler62 = base62(sampler, 7, 32);
 
   var samplerDuration = encodeDurationPattern(preset.samplerCustomPattern);
   var samplerDuration62 = base62(samplerDuration, 4, 6);
@@ -2346,16 +2452,25 @@ function encodeMeta(pattern) {
   encoded.push(Number(meta.mute.bassSnare) << 0 | Number(meta.mute.hiHat) << 1 | Number(meta.mute.melody) << 2);
   encoded.push(chordFilter.indexOf(meta.chord));
   encoded.push(voiceFilter.indexOf(meta.voice));
-
+  encoded.push(meta.scale == 'diatonic' ? 1: 0);
   return encoded
 }
 
+// tempo: < 200 
+// volume: < 100 
+// mutes: 8 (2 x 2 x 2)
+// chordFilter: 6
+// voice: 3
+// 863 x8, 62^2 3844
+// scale: 2
+// 8632 x8, 62^3
+// legacy length 6, scale length 7
+
 function base62Meta(encoded) {
-  base62Encoded = [];
+  var base62Encoded = [];
   base62Encoded.push(toBase62(parseInt(encoded[0], 8)).padStart(2, 0));
   base62Encoded.push(toBase62(parseInt(encoded[1], 8)).padStart(2, 0));
-  base62Encoded.push(toBase62(parseInt(encoded.slice(2).join(''), 8)).padStart(2, 0));
-
+  base62Encoded.push(toBase62(parseInt(encoded.slice(2).join(''), 8)).padStart(3, 0));
   return base62Encoded.join('')
 }
 
@@ -2419,8 +2534,14 @@ function importSet(setString) {
     var outerValues = parseBase62(patterns[1].split(''), 5);
     var outerPattern = decodeValueAmplitudePattern(outerValues, outerFilter);
 
-    var samplerValues = parseBase62(patterns[2].split(''), 6, 22).map(function(value){ return parseInt(value, 22).toString(10) });
-    var samplerPattern = decodeValueAmplitudePattern(samplerValues, samplerFilter);
+    if (patterns[2].length < 28) {
+      var samplerValues = parseBase62(patterns[2].split(''), 6, 22).map(function(value){ return parseInt(value, 22).toString(10) });
+      var samplerPattern = decodeValueAmplitudePattern(samplerValues, pentatonicScale);
+    } else {
+      var samplerValues = parseBase62(patterns[2].split(''), 7, 32).map(function(value){ return parseInt(value, 32).toString(10) });
+      var samplerPattern = decodeValueAmplitudePattern(samplerValues, diatonicScale);
+    }
+
     var durationValues = parseBase62(patterns[3].split(''), 4, 6).map(function(value) { return parseInt(value, 6); });
     samplerPattern.duration = durationValues;
 
@@ -2458,7 +2579,14 @@ function parseBase62Meta(values) {
   decoded.push(parseInt(fromBase62(chunks[0].join(''), 10)));
   decoded.push(parseInt(fromBase62(chunks[1].join(''), 10)));
 
-  var octalValues = fromBase62(chunks[2].join('')).toString(8).padStart(3,0).split('');
+  var octalString = chunks[2].join('')
+  if (chunks.length > 3) {
+    octalString = octalString.concat(chunks[3]);
+    var octalValues = fromBase62(octalString).toString(8).padStart(4,0).split('');
+  } else {
+    var octalValues = fromBase62(octalString).toString(8).padStart(3,0).split('');
+    octalValues.push(0);
+  }
 
   return decoded.concat(octalValues);
 }
@@ -2491,7 +2619,6 @@ function decodeValueAmplitudePattern(values, filter) {
     }
     pattern.value[i] = note;
     pattern.amplitude[i] = amplitude;
-    // console.log(i,value,noteValue,note,amplitude)
   }
   return pattern
 }
@@ -2502,9 +2629,9 @@ function decodeMeta(values) {
     volume: values[1], // 0-100 -> oct x 3
     mute: {bassSnare: Boolean(values[2] & (1 << 0)), hiHat: Boolean(values[2] & (1 << 1)), melody: Boolean(values[2] & (1 << 2))}, // 3 bits -> oct
     chord: chordFilter[values[3]], // 5 values -> oct
-    voice: voiceFilter[values[4]] // 3 values -> oct
+    voice: voiceFilter[values[4]], // 3 values -> oct
+    scale: (values[5] ?? 0) == 1 ? 'diatonic' : 'pentatonic',
   }
-
 }
 
 importSetFromURL();
