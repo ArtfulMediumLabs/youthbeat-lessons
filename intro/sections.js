@@ -1100,6 +1100,45 @@ export const sections = {
         activeInstrument: 'B',
       },
       7: {
+        title: 'Loops and Doubling',
+        content:
+          `
+          <p>Loops are a tool DJ's use to bridge from one song to the next. The melody changes, but the beat stays the same.
+          <ol>
+            <li>Tick a chord from the list at top right and press Play to listen. Press Save Pattern.</li>
+            <li>Change the chord and press Save Pattern again.</li>
+            <li>Click the + icon to the right of each pattern once. Press Start, then Play. This makes a 2 bar loop. Press Stop and Clear.</li>
+            <li>Choose 2 different chords and save the 2 patterns. Click the + icon once for each of the 4 patterns. Press Start, and Play. This loops the 4 bar pattern. Press Stop and Clear.</li>
+            <li>Now, double the length of the loop again, this time by playing each pattern more than once. Press Start and Play to listen to the difference.</li>
+            <li>How would you double the length again if the app allowed it? (8 patterns is the current limit).</li>
+          </ol>
+          `,
+        widgets: [
+          {
+            type: widgets.DidYouKnow,
+            content: `DJ's usually play loops that are 2, 4, 8 or 16 bars in length. Each length is exactly double the previous one. Why is that, do you think?`,
+          },
+          {
+            type: widgets.TeacherNote,
+            content: `This is an opportunity to introduce exponents, showing the loop length as doubling at each step, and expressing this first as 2 x 2 x 2, then as 2 to the power of 3. You might also ask the kids who are most into music if they've built any loops using other programs, and ask them to play them for the class.`,
+          },
+        ],
+        pattern: patterns.constructPattern(
+          {
+            value: Array(32).fill('-').map((e, i) => ([10, 20, 30].includes(i) ? 'H' : '-')),
+            amplitude: Array(32).fill(0).map((e, i) => ([10, 20, 30].includes(i) ? 2 : 0)),
+            duration: Array(32).fill(0),
+          },
+          {
+            // eslint-disable-next-line no-nested-ternary
+            value: Array(32).fill('-').map((e, i) => ([0, 12, 16, 24].includes(i) ? 'B' : ([6, 22, 28].includes(i) ? 'R' : '-'))),
+            amplitude: Array(32).fill(0).map((e, i) => ([0, 12, 16, 24].includes(i) ? 2 : ([6, 22, 28].includes(i) ? 2 : 0))),
+            duration: Array(32).fill(0),
+          },
+          emptyPattern(),
+        ),
+      },
+      8: {
         title: 'Fractions get our toes tapping!',
         content:
           `
@@ -1146,7 +1185,7 @@ export const sections = {
         ),
         activeInstrument: 'B',
       },
-      8: {
+      9: {
         title: 'Pushing And Pulling Against the Beat - there\'s math behind that!',
         content:
           `
@@ -1182,7 +1221,7 @@ export const sections = {
         ),
         activeInstrument: 'B',
       },
-      9: {
+      10: {
         title: 'The melody is the signature of a song. It\'s also a set of fractions (Part 1)',
         content:
           `
@@ -1225,7 +1264,7 @@ export const sections = {
         ),
         activeInstrument: 'B3',
       },
-      10: {
+      11: {
         title: 'The melody is the signature of the song. It\'s also a set of fractions (Part 2)',
         content:
           `
@@ -1276,7 +1315,7 @@ export const sections = {
         ),
         activeInstrument: 'B3',
       },
-      11: {
+      12: {
         title: 'Putting it all together.',
         content:
           `
