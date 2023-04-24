@@ -1868,6 +1868,7 @@ sequenceClear.addEventListener('click',
   function() {
     currentSequence = -1;
     sequence = [];
+    sequenceControl.innerHTML = localizedString("Start");
     updateSequenceDisplay();
   }, 
   false
