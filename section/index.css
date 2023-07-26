@@ -78,7 +78,12 @@ button.controlB {
 
 #tempoLabel {
     display: block;
-    margin-top: 20px
+    margin-top: 20px;
+    margin-bottom: 18px;
+}
+
+#tempoInput {
+    width: 50px;
 }
 
 #volumeControl {
